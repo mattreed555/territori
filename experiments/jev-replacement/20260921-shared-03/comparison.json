@@ -1,0 +1,1651 @@
+{
+  "purpose": "Development/model selection only; no independent acceptance games used",
+  "datasetSha256": "539d6cf53614152412bc792dcd689805ab4c1f30e91a6f480ce00ee9ef5b800a",
+  "teacherProbabilityMass": {
+    "min": 0.99,
+    "max": 1.0000000000000004,
+    "normalizedRows": 407,
+    "rule": "Renormalize mass within 1% of one; reject missing legal keys, invalid values, or larger discrepancies"
+  },
+  "coverage": {
+    "train": {
+      "Aggressive": {
+        "states": 52,
+        "chosenTypes": {
+          "place": 50,
+          "remove": 2
+        },
+        "legalCaptureStates": 2
+      },
+      "Cautious": {
+        "states": 59,
+        "chosenTypes": {
+          "place": 50,
+          "remove": 9
+        },
+        "legalCaptureStates": 11
+      },
+      "Expansive": {
+        "states": 82,
+        "chosenTypes": {
+          "place": 53,
+          "remove": 29
+        },
+        "legalCaptureStates": 42
+      },
+      "Fluid": {
+        "states": 56,
+        "chosenTypes": {
+          "place": 35,
+          "remove": 21
+        },
+        "legalCaptureStates": 27
+      },
+      "Balanced": {
+        "states": 27,
+        "chosenTypes": {
+          "place": 25,
+          "remove": 2
+        },
+        "legalCaptureStates": 6
+      }
+    },
+    "validation": {
+      "Aggressive": {
+        "states": 60,
+        "chosenTypes": {
+          "place": 47,
+          "remove": 13
+        },
+        "legalCaptureStates": 16
+      },
+      "Cautious": {
+        "states": 57,
+        "chosenTypes": {
+          "place": 43,
+          "remove": 14
+        },
+        "legalCaptureStates": 16
+      },
+      "Expansive": {
+        "states": 27,
+        "chosenTypes": {
+          "place": 17,
+          "remove": 10
+        },
+        "legalCaptureStates": 10
+      },
+      "Fluid": {
+        "states": 55,
+        "chosenTypes": {
+          "place": 36,
+          "remove": 19
+        },
+        "legalCaptureStates": 19
+      },
+      "Balanced": {
+        "states": 87,
+        "chosenTypes": {
+          "place": 75,
+          "remove": 12
+        },
+        "legalCaptureStates": 16
+      }
+    }
+  },
+  "seed": 511,
+  "testFraction": 0.5,
+  "epochs": 60,
+  "trainGameIds": [
+    "20260921-all-strategies-01:1",
+    "20260921-all-strategies-01:3",
+    "20260921-all-strategies-01:9",
+    "20260921-all-strategies-01:2",
+    "20260921-all-strategies-01:4"
+  ],
+  "validationGameIds": [
+    "20260921-all-strategies-01:5",
+    "20260921-all-strategies-01:6",
+    "20260921-all-strategies-01:8",
+    "20260921-all-strategies-01:7",
+    "20260921-all-strategies-01:0"
+  ],
+  "comparisons": [
+    {
+      "name": "baseline-hard",
+      "softTargetMix": 0,
+      "sharedPriorStrength": 0,
+      "features": [
+        "territoryGain",
+        "opponentTerritoryLost",
+        "ownExposureChange",
+        "opponentExposureChange",
+        "ownGroupChange",
+        "largestTerritoryChange",
+        "ownMobility",
+        "opponentMobility",
+        "spreadChange",
+        "centerDistance",
+        "ownPiecesRemaining",
+        "opponentPiecesRemaining",
+        "place",
+        "remove",
+        "shift",
+        "placeReserve",
+        "removeReserve",
+        "shiftReserve",
+        "terminalWin",
+        "terminalLoss",
+        "repetitionCount"
+      ],
+      "trainGames": 5,
+      "testGames": 5,
+      "trainDecisions": 276,
+      "testDecisions": 286,
+      "validation": {
+        "overall": {
+          "states": 286,
+          "agreementPercent": 44.40559440559441,
+          "averageTeacherRank": 6.8426573426573425
+        },
+        "byStrategy": {
+          "Aggressive": {
+            "states": 60,
+            "agreementPercent": 51.666666666666664,
+            "averageTeacherRank": 6.183333333333334
+          },
+          "Cautious": {
+            "states": 57,
+            "agreementPercent": 43.85964912280702,
+            "averageTeacherRank": 6.754385964912281
+          },
+          "Expansive": {
+            "states": 27,
+            "agreementPercent": 55.55555555555556,
+            "averageTeacherRank": 5.222222222222222
+          },
+          "Fluid": {
+            "states": 55,
+            "agreementPercent": 50.90909090909091,
+            "averageTeacherRank": 7
+          },
+          "Balanced": {
+            "states": 87,
+            "agreementPercent": 32.18390804597701,
+            "averageTeacherRank": 7.758620689655173
+          }
+        },
+        "byTeacherMoveType": {
+          "place": {
+            "states": 218,
+            "agreementPercent": 28.89908256880734,
+            "averageTeacherRank": 8.605504587155963
+          },
+          "remove": {
+            "states": 68,
+            "agreementPercent": 94.11764705882354,
+            "averageTeacherRank": 1.1911764705882353
+          },
+          "shift": {
+            "states": 0,
+            "agreementPercent": null,
+            "averageTeacherRank": null
+          }
+        },
+        "unsupportedStates": 0,
+        "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+      },
+      "modelCompactGzipBytes": 3209,
+      "serverLatency": {
+        "samples": 325,
+        "p95ms": 3.8950079999999616,
+        "maxMs": 7.9261420000002545,
+        "environment": "Node v24.19.0 Linux/x64, unthrottled; not the mobile gate"
+      },
+      "commonStateDiagnostic": {
+        "note": "Same held-out positions for all local strategies, not teacher-matched strategy validation.",
+        "stateIds": [
+          "20260921-all-strategies-01:0:0",
+          "20260921-all-strategies-01:0:4",
+          "20260921-all-strategies-01:0:8",
+          "20260921-all-strategies-01:0:12",
+          "20260921-all-strategies-01:0:16",
+          "20260921-all-strategies-01:0:20",
+          "20260921-all-strategies-01:0:24",
+          "20260921-all-strategies-01:0:28",
+          "20260921-all-strategies-01:0:32",
+          "20260921-all-strategies-01:0:36",
+          "20260921-all-strategies-01:0:40",
+          "20260921-all-strategies-01:0:44",
+          "20260921-all-strategies-01:0:48",
+          "20260921-all-strategies-01:0:52",
+          "20260921-all-strategies-01:0:56",
+          "20260921-all-strategies-01:0:60",
+          "20260921-all-strategies-01:5:10",
+          "20260921-all-strategies-01:5:14",
+          "20260921-all-strategies-01:5:18",
+          "20260921-all-strategies-01:5:22",
+          "20260921-all-strategies-01:5:26",
+          "20260921-all-strategies-01:5:30",
+          "20260921-all-strategies-01:5:34",
+          "20260921-all-strategies-01:5:38",
+          "20260921-all-strategies-01:5:42",
+          "20260921-all-strategies-01:5:46",
+          "20260921-all-strategies-01:5:50",
+          "20260921-all-strategies-01:5:54",
+          "20260921-all-strategies-01:6:9",
+          "20260921-all-strategies-01:6:13",
+          "20260921-all-strategies-01:6:17",
+          "20260921-all-strategies-01:6:21",
+          "20260921-all-strategies-01:6:25",
+          "20260921-all-strategies-01:6:29",
+          "20260921-all-strategies-01:6:33",
+          "20260921-all-strategies-01:6:37",
+          "20260921-all-strategies-01:6:41",
+          "20260921-all-strategies-01:6:45",
+          "20260921-all-strategies-01:6:49",
+          "20260921-all-strategies-01:6:53",
+          "20260921-all-strategies-01:6:57",
+          "20260921-all-strategies-01:7:5",
+          "20260921-all-strategies-01:7:9",
+          "20260921-all-strategies-01:7:13",
+          "20260921-all-strategies-01:7:17",
+          "20260921-all-strategies-01:7:21",
+          "20260921-all-strategies-01:7:25",
+          "20260921-all-strategies-01:7:29",
+          "20260921-all-strategies-01:7:33",
+          "20260921-all-strategies-01:7:37",
+          "20260921-all-strategies-01:7:41",
+          "20260921-all-strategies-01:7:45",
+          "20260921-all-strategies-01:7:49",
+          "20260921-all-strategies-01:7:53",
+          "20260921-all-strategies-01:8:12",
+          "20260921-all-strategies-01:8:16",
+          "20260921-all-strategies-01:8:20",
+          "20260921-all-strategies-01:8:24",
+          "20260921-all-strategies-01:8:28",
+          "20260921-all-strategies-01:8:32",
+          "20260921-all-strategies-01:8:36",
+          "20260921-all-strategies-01:8:40",
+          "20260921-all-strategies-01:8:44",
+          "20260921-all-strategies-01:8:48",
+          "20260921-all-strategies-01:8:52"
+        ],
+        "style": {
+          "Aggressive": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3846153846153846,
+              "ownExposureChange": 0.23076923076923078,
+              "spreadChange": 4.769230769230769,
+              "ownGroupChange": 0.07692307692307693,
+              "captureReplyOwnGain": 1.5538461538461539,
+              "movedStoneExposed": 0.4153846153846154
+            }
+          },
+          "Cautious": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.4461538461538463,
+              "ownExposureChange": 0.09230769230769231,
+              "spreadChange": 4.553846153846154,
+              "ownGroupChange": 0.13846153846153847,
+              "captureReplyOwnGain": 1.6153846153846154,
+              "movedStoneExposed": 0.27692307692307694
+            }
+          },
+          "Expansive": {
+            "states": 65,
+            "actions": {
+              "place": 51,
+              "remove": 14
+            },
+            "meanFeatures": {
+              "territoryGain": 2.1538461538461537,
+              "ownExposureChange": -0.26153846153846155,
+              "spreadChange": 5.461538461538462,
+              "ownGroupChange": 0.09230769230769231,
+              "captureReplyOwnGain": 2.046153846153846,
+              "movedStoneExposed": 0
+            }
+          },
+          "Fluid": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.169230769230769,
+              "ownExposureChange": -0.26153846153846155,
+              "spreadChange": 5.753846153846154,
+              "ownGroupChange": 0.1076923076923077,
+              "captureReplyOwnGain": 2.046153846153846,
+              "movedStoneExposed": 0.015384615384615385
+            }
+          },
+          "Balanced": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.5692307692307694,
+              "ownExposureChange": -0.03076923076923077,
+              "spreadChange": 5.584615384615384,
+              "ownGroupChange": 0.35384615384615387,
+              "captureReplyOwnGain": 1.8461538461538463,
+              "movedStoneExposed": 0.2153846153846154
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Aggressive",
+            "b": "Cautious",
+            "states": 65,
+            "differentMoves": 18
+          },
+          {
+            "a": "Aggressive",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 34
+          },
+          {
+            "a": "Aggressive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 31
+          },
+          {
+            "a": "Aggressive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 34
+          },
+          {
+            "a": "Cautious",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 26
+          },
+          {
+            "a": "Cautious",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 24
+          },
+          {
+            "a": "Cautious",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 31
+          },
+          {
+            "a": "Expansive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 4
+          },
+          {
+            "a": "Expansive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 39
+          },
+          {
+            "a": "Fluid",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 36
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline-soft-prior",
+      "softTargetMix": 1,
+      "sharedPriorStrength": 0.05,
+      "features": [
+        "territoryGain",
+        "opponentTerritoryLost",
+        "ownExposureChange",
+        "opponentExposureChange",
+        "ownGroupChange",
+        "largestTerritoryChange",
+        "ownMobility",
+        "opponentMobility",
+        "spreadChange",
+        "centerDistance",
+        "ownPiecesRemaining",
+        "opponentPiecesRemaining",
+        "place",
+        "remove",
+        "shift",
+        "placeReserve",
+        "removeReserve",
+        "shiftReserve",
+        "terminalWin",
+        "terminalLoss",
+        "repetitionCount"
+      ],
+      "trainGames": 5,
+      "testGames": 5,
+      "trainDecisions": 276,
+      "testDecisions": 286,
+      "validation": {
+        "overall": {
+          "states": 286,
+          "agreementPercent": 45.80419580419581,
+          "averageTeacherRank": 6.583916083916084
+        },
+        "byStrategy": {
+          "Aggressive": {
+            "states": 60,
+            "agreementPercent": 48.333333333333336,
+            "averageTeacherRank": 6.5
+          },
+          "Cautious": {
+            "states": 57,
+            "agreementPercent": 43.85964912280702,
+            "averageTeacherRank": 6.43859649122807
+          },
+          "Expansive": {
+            "states": 27,
+            "agreementPercent": 59.25925925925926,
+            "averageTeacherRank": 5.333333333333333
+          },
+          "Fluid": {
+            "states": 55,
+            "agreementPercent": 50.90909090909091,
+            "averageTeacherRank": 6.636363636363637
+          },
+          "Balanced": {
+            "states": 87,
+            "agreementPercent": 37.93103448275862,
+            "averageTeacherRank": 7.091954022988506
+          }
+        },
+        "byTeacherMoveType": {
+          "place": {
+            "states": 218,
+            "agreementPercent": 33.027522935779814,
+            "averageTeacherRank": 8.073394495412844
+          },
+          "remove": {
+            "states": 68,
+            "agreementPercent": 86.76470588235294,
+            "averageTeacherRank": 1.8088235294117647
+          },
+          "shift": {
+            "states": 0,
+            "agreementPercent": null,
+            "averageTeacherRank": null
+          }
+        },
+        "unsupportedStates": 0,
+        "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+      },
+      "modelCompactGzipBytes": 3285,
+      "serverLatency": {
+        "samples": 325,
+        "p95ms": 4.747241000000031,
+        "maxMs": 12.312879000000066,
+        "environment": "Node v24.19.0 Linux/x64, unthrottled; not the mobile gate"
+      },
+      "commonStateDiagnostic": {
+        "note": "Same held-out positions for all local strategies, not teacher-matched strategy validation.",
+        "stateIds": [
+          "20260921-all-strategies-01:0:0",
+          "20260921-all-strategies-01:0:4",
+          "20260921-all-strategies-01:0:8",
+          "20260921-all-strategies-01:0:12",
+          "20260921-all-strategies-01:0:16",
+          "20260921-all-strategies-01:0:20",
+          "20260921-all-strategies-01:0:24",
+          "20260921-all-strategies-01:0:28",
+          "20260921-all-strategies-01:0:32",
+          "20260921-all-strategies-01:0:36",
+          "20260921-all-strategies-01:0:40",
+          "20260921-all-strategies-01:0:44",
+          "20260921-all-strategies-01:0:48",
+          "20260921-all-strategies-01:0:52",
+          "20260921-all-strategies-01:0:56",
+          "20260921-all-strategies-01:0:60",
+          "20260921-all-strategies-01:5:10",
+          "20260921-all-strategies-01:5:14",
+          "20260921-all-strategies-01:5:18",
+          "20260921-all-strategies-01:5:22",
+          "20260921-all-strategies-01:5:26",
+          "20260921-all-strategies-01:5:30",
+          "20260921-all-strategies-01:5:34",
+          "20260921-all-strategies-01:5:38",
+          "20260921-all-strategies-01:5:42",
+          "20260921-all-strategies-01:5:46",
+          "20260921-all-strategies-01:5:50",
+          "20260921-all-strategies-01:5:54",
+          "20260921-all-strategies-01:6:9",
+          "20260921-all-strategies-01:6:13",
+          "20260921-all-strategies-01:6:17",
+          "20260921-all-strategies-01:6:21",
+          "20260921-all-strategies-01:6:25",
+          "20260921-all-strategies-01:6:29",
+          "20260921-all-strategies-01:6:33",
+          "20260921-all-strategies-01:6:37",
+          "20260921-all-strategies-01:6:41",
+          "20260921-all-strategies-01:6:45",
+          "20260921-all-strategies-01:6:49",
+          "20260921-all-strategies-01:6:53",
+          "20260921-all-strategies-01:6:57",
+          "20260921-all-strategies-01:7:5",
+          "20260921-all-strategies-01:7:9",
+          "20260921-all-strategies-01:7:13",
+          "20260921-all-strategies-01:7:17",
+          "20260921-all-strategies-01:7:21",
+          "20260921-all-strategies-01:7:25",
+          "20260921-all-strategies-01:7:29",
+          "20260921-all-strategies-01:7:33",
+          "20260921-all-strategies-01:7:37",
+          "20260921-all-strategies-01:7:41",
+          "20260921-all-strategies-01:7:45",
+          "20260921-all-strategies-01:7:49",
+          "20260921-all-strategies-01:7:53",
+          "20260921-all-strategies-01:8:12",
+          "20260921-all-strategies-01:8:16",
+          "20260921-all-strategies-01:8:20",
+          "20260921-all-strategies-01:8:24",
+          "20260921-all-strategies-01:8:28",
+          "20260921-all-strategies-01:8:32",
+          "20260921-all-strategies-01:8:36",
+          "20260921-all-strategies-01:8:40",
+          "20260921-all-strategies-01:8:44",
+          "20260921-all-strategies-01:8:48",
+          "20260921-all-strategies-01:8:52"
+        ],
+        "style": {
+          "Aggressive": {
+            "states": 65,
+            "actions": {
+              "place": 54,
+              "remove": 11
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3692307692307693,
+              "ownExposureChange": 0.16923076923076924,
+              "spreadChange": 4,
+              "ownGroupChange": 0.07692307692307693,
+              "captureReplyOwnGain": 1.5692307692307692,
+              "movedStoneExposed": 0.35384615384615387
+            }
+          },
+          "Cautious": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.4153846153846152,
+              "ownExposureChange": -0.046153846153846156,
+              "spreadChange": 4.015384615384615,
+              "ownGroupChange": 0.16923076923076924,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.18461538461538463
+            }
+          },
+          "Expansive": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.076923076923077,
+              "ownExposureChange": -0.27692307692307694,
+              "spreadChange": 3.4153846153846152,
+              "ownGroupChange": 0.15384615384615385,
+              "captureReplyOwnGain": 2,
+              "movedStoneExposed": 0
+            }
+          },
+          "Fluid": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.0153846153846153,
+              "ownExposureChange": -0.18461538461538463,
+              "spreadChange": 1.7384615384615385,
+              "ownGroupChange": 0.09230769230769231,
+              "captureReplyOwnGain": 1.7692307692307692,
+              "movedStoneExposed": 0.06153846153846154
+            }
+          },
+          "Balanced": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.4461538461538463,
+              "ownExposureChange": -0.12307692307692308,
+              "spreadChange": 4.661538461538462,
+              "ownGroupChange": 0.26153846153846155,
+              "captureReplyOwnGain": 1.9384615384615385,
+              "movedStoneExposed": 0.13846153846153847
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Aggressive",
+            "b": "Cautious",
+            "states": 65,
+            "differentMoves": 17
+          },
+          {
+            "a": "Aggressive",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 28
+          },
+          {
+            "a": "Aggressive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 25
+          },
+          {
+            "a": "Aggressive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 25
+          },
+          {
+            "a": "Cautious",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 21
+          },
+          {
+            "a": "Cautious",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 16
+          },
+          {
+            "a": "Cautious",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 12
+          },
+          {
+            "a": "Expansive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 23
+          },
+          {
+            "a": "Expansive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 24
+          },
+          {
+            "a": "Fluid",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 25
+          }
+        ]
+      }
+    },
+    {
+      "name": "tactical-hard-prior",
+      "softTargetMix": 0,
+      "sharedPriorStrength": 0.05,
+      "features": [
+        "territoryGain",
+        "opponentTerritoryLost",
+        "ownExposureChange",
+        "opponentExposureChange",
+        "ownGroupChange",
+        "largestTerritoryChange",
+        "ownMobility",
+        "opponentMobility",
+        "spreadChange",
+        "centerDistance",
+        "ownPiecesRemaining",
+        "opponentPiecesRemaining",
+        "place",
+        "remove",
+        "shift",
+        "placeReserve",
+        "removeReserve",
+        "shiftReserve",
+        "terminalWin",
+        "terminalLoss",
+        "repetitionCount",
+        "movedStoneExposed",
+        "captureReplyAvailable",
+        "captureReplyOwnGain",
+        "captureReplyOpponentLoss",
+        "captureReplyLargestChange",
+        "captureReplyWastesStone",
+        "captureReplyTerminalWin",
+        "captureReplyTerminalLoss",
+        "movedStoneSupport",
+        "territoryLeadLastSupply"
+      ],
+      "trainGames": 5,
+      "testGames": 5,
+      "trainDecisions": 276,
+      "testDecisions": 286,
+      "validation": {
+        "overall": {
+          "states": 286,
+          "agreementPercent": 44.75524475524475,
+          "averageTeacherRank": 6.870629370629371
+        },
+        "byStrategy": {
+          "Aggressive": {
+            "states": 60,
+            "agreementPercent": 46.666666666666664,
+            "averageTeacherRank": 5.8
+          },
+          "Cautious": {
+            "states": 57,
+            "agreementPercent": 50.87719298245614,
+            "averageTeacherRank": 5.842105263157895
+          },
+          "Expansive": {
+            "states": 27,
+            "agreementPercent": 59.25925925925926,
+            "averageTeacherRank": 5.148148148148148
+          },
+          "Fluid": {
+            "states": 55,
+            "agreementPercent": 50.90909090909091,
+            "averageTeacherRank": 7.545454545454546
+          },
+          "Balanced": {
+            "states": 87,
+            "agreementPercent": 31.03448275862069,
+            "averageTeacherRank": 8.39080459770115
+          }
+        },
+        "byTeacherMoveType": {
+          "place": {
+            "states": 218,
+            "agreementPercent": 29.81651376146789,
+            "averageTeacherRank": 8.463302752293577
+          },
+          "remove": {
+            "states": 68,
+            "agreementPercent": 92.6470588235294,
+            "averageTeacherRank": 1.7647058823529411
+          },
+          "shift": {
+            "states": 0,
+            "agreementPercent": null,
+            "averageTeacherRank": null
+          }
+        },
+        "unsupportedStates": 0,
+        "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+      },
+      "modelCompactGzipBytes": 4557,
+      "serverLatency": {
+        "samples": 325,
+        "p95ms": 6.832193999998708,
+        "maxMs": 28.148377999999866,
+        "environment": "Node v24.19.0 Linux/x64, unthrottled; not the mobile gate"
+      },
+      "commonStateDiagnostic": {
+        "note": "Same held-out positions for all local strategies, not teacher-matched strategy validation.",
+        "stateIds": [
+          "20260921-all-strategies-01:0:0",
+          "20260921-all-strategies-01:0:4",
+          "20260921-all-strategies-01:0:8",
+          "20260921-all-strategies-01:0:12",
+          "20260921-all-strategies-01:0:16",
+          "20260921-all-strategies-01:0:20",
+          "20260921-all-strategies-01:0:24",
+          "20260921-all-strategies-01:0:28",
+          "20260921-all-strategies-01:0:32",
+          "20260921-all-strategies-01:0:36",
+          "20260921-all-strategies-01:0:40",
+          "20260921-all-strategies-01:0:44",
+          "20260921-all-strategies-01:0:48",
+          "20260921-all-strategies-01:0:52",
+          "20260921-all-strategies-01:0:56",
+          "20260921-all-strategies-01:0:60",
+          "20260921-all-strategies-01:5:10",
+          "20260921-all-strategies-01:5:14",
+          "20260921-all-strategies-01:5:18",
+          "20260921-all-strategies-01:5:22",
+          "20260921-all-strategies-01:5:26",
+          "20260921-all-strategies-01:5:30",
+          "20260921-all-strategies-01:5:34",
+          "20260921-all-strategies-01:5:38",
+          "20260921-all-strategies-01:5:42",
+          "20260921-all-strategies-01:5:46",
+          "20260921-all-strategies-01:5:50",
+          "20260921-all-strategies-01:5:54",
+          "20260921-all-strategies-01:6:9",
+          "20260921-all-strategies-01:6:13",
+          "20260921-all-strategies-01:6:17",
+          "20260921-all-strategies-01:6:21",
+          "20260921-all-strategies-01:6:25",
+          "20260921-all-strategies-01:6:29",
+          "20260921-all-strategies-01:6:33",
+          "20260921-all-strategies-01:6:37",
+          "20260921-all-strategies-01:6:41",
+          "20260921-all-strategies-01:6:45",
+          "20260921-all-strategies-01:6:49",
+          "20260921-all-strategies-01:6:53",
+          "20260921-all-strategies-01:6:57",
+          "20260921-all-strategies-01:7:5",
+          "20260921-all-strategies-01:7:9",
+          "20260921-all-strategies-01:7:13",
+          "20260921-all-strategies-01:7:17",
+          "20260921-all-strategies-01:7:21",
+          "20260921-all-strategies-01:7:25",
+          "20260921-all-strategies-01:7:29",
+          "20260921-all-strategies-01:7:33",
+          "20260921-all-strategies-01:7:37",
+          "20260921-all-strategies-01:7:41",
+          "20260921-all-strategies-01:7:45",
+          "20260921-all-strategies-01:7:49",
+          "20260921-all-strategies-01:7:53",
+          "20260921-all-strategies-01:8:12",
+          "20260921-all-strategies-01:8:16",
+          "20260921-all-strategies-01:8:20",
+          "20260921-all-strategies-01:8:24",
+          "20260921-all-strategies-01:8:28",
+          "20260921-all-strategies-01:8:32",
+          "20260921-all-strategies-01:8:36",
+          "20260921-all-strategies-01:8:40",
+          "20260921-all-strategies-01:8:44",
+          "20260921-all-strategies-01:8:48",
+          "20260921-all-strategies-01:8:52"
+        ],
+        "style": {
+          "Aggressive": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3846153846153846,
+              "ownExposureChange": 0.07692307692307693,
+              "spreadChange": 4.861538461538461,
+              "ownGroupChange": 0.1076923076923077,
+              "captureReplyOwnGain": 1.676923076923077,
+              "movedStoneExposed": 0.27692307692307694
+            }
+          },
+          "Cautious": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3384615384615386,
+              "ownExposureChange": -0.03076923076923077,
+              "spreadChange": 5.107692307692307,
+              "ownGroupChange": 0.15384615384615385,
+              "captureReplyOwnGain": 1.7692307692307692,
+              "movedStoneExposed": 0.2
+            }
+          },
+          "Expansive": {
+            "states": 65,
+            "actions": {
+              "place": 51,
+              "remove": 14
+            },
+            "meanFeatures": {
+              "territoryGain": 2.1846153846153844,
+              "ownExposureChange": -0.2153846153846154,
+              "spreadChange": 5.446153846153846,
+              "ownGroupChange": 0.1076923076923077,
+              "captureReplyOwnGain": 2.046153846153846,
+              "movedStoneExposed": 0.046153846153846156
+            }
+          },
+          "Fluid": {
+            "states": 65,
+            "actions": {
+              "place": 49,
+              "remove": 15,
+              "shift": 1
+            },
+            "meanFeatures": {
+              "territoryGain": 2.230769230769231,
+              "ownExposureChange": -0.06153846153846154,
+              "spreadChange": 4.661538461538462,
+              "ownGroupChange": 0.13846153846153847,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.18461538461538463
+            }
+          },
+          "Balanced": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.6,
+              "ownExposureChange": 0.03076923076923077,
+              "spreadChange": 5.384615384615385,
+              "ownGroupChange": 0.3230769230769231,
+              "captureReplyOwnGain": 1.7384615384615385,
+              "movedStoneExposed": 0.27692307692307694
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Aggressive",
+            "b": "Cautious",
+            "states": 65,
+            "differentMoves": 9
+          },
+          {
+            "a": "Aggressive",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 20
+          },
+          {
+            "a": "Aggressive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 12
+          },
+          {
+            "a": "Aggressive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 31
+          },
+          {
+            "a": "Cautious",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 14
+          },
+          {
+            "a": "Cautious",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 9
+          },
+          {
+            "a": "Cautious",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 29
+          },
+          {
+            "a": "Expansive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 17
+          },
+          {
+            "a": "Expansive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 38
+          },
+          {
+            "a": "Fluid",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 30
+          }
+        ]
+      }
+    },
+    {
+      "name": "tactical-soft-prior",
+      "softTargetMix": 1,
+      "sharedPriorStrength": 0.05,
+      "features": [
+        "territoryGain",
+        "opponentTerritoryLost",
+        "ownExposureChange",
+        "opponentExposureChange",
+        "ownGroupChange",
+        "largestTerritoryChange",
+        "ownMobility",
+        "opponentMobility",
+        "spreadChange",
+        "centerDistance",
+        "ownPiecesRemaining",
+        "opponentPiecesRemaining",
+        "place",
+        "remove",
+        "shift",
+        "placeReserve",
+        "removeReserve",
+        "shiftReserve",
+        "terminalWin",
+        "terminalLoss",
+        "repetitionCount",
+        "movedStoneExposed",
+        "captureReplyAvailable",
+        "captureReplyOwnGain",
+        "captureReplyOpponentLoss",
+        "captureReplyLargestChange",
+        "captureReplyWastesStone",
+        "captureReplyTerminalWin",
+        "captureReplyTerminalLoss",
+        "movedStoneSupport",
+        "territoryLeadLastSupply"
+      ],
+      "trainGames": 5,
+      "testGames": 5,
+      "trainDecisions": 276,
+      "testDecisions": 286,
+      "validation": {
+        "overall": {
+          "states": 286,
+          "agreementPercent": 44.40559440559441,
+          "averageTeacherRank": 6.923076923076923
+        },
+        "byStrategy": {
+          "Aggressive": {
+            "states": 60,
+            "agreementPercent": 41.666666666666664,
+            "averageTeacherRank": 8.233333333333333
+          },
+          "Cautious": {
+            "states": 57,
+            "agreementPercent": 49.12280701754386,
+            "averageTeacherRank": 6.245614035087719
+          },
+          "Expansive": {
+            "states": 27,
+            "agreementPercent": 59.25925925925926,
+            "averageTeacherRank": 5.185185185185185
+          },
+          "Fluid": {
+            "states": 55,
+            "agreementPercent": 50.90909090909091,
+            "averageTeacherRank": 6.0181818181818185
+          },
+          "Balanced": {
+            "states": 87,
+            "agreementPercent": 34.48275862068966,
+            "averageTeacherRank": 7.574712643678161
+          }
+        },
+        "byTeacherMoveType": {
+          "place": {
+            "states": 218,
+            "agreementPercent": 33.944954128440365,
+            "averageTeacherRank": 7.756880733944954
+          },
+          "remove": {
+            "states": 68,
+            "agreementPercent": 77.94117647058823,
+            "averageTeacherRank": 4.25
+          },
+          "shift": {
+            "states": 0,
+            "agreementPercent": null,
+            "averageTeacherRank": null
+          }
+        },
+        "unsupportedStates": 0,
+        "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+      },
+      "modelCompactGzipBytes": 4578,
+      "serverLatency": {
+        "samples": 325,
+        "p95ms": 6.736299000000145,
+        "maxMs": 26.01756000000023,
+        "environment": "Node v24.19.0 Linux/x64, unthrottled; not the mobile gate"
+      },
+      "commonStateDiagnostic": {
+        "note": "Same held-out positions for all local strategies, not teacher-matched strategy validation.",
+        "stateIds": [
+          "20260921-all-strategies-01:0:0",
+          "20260921-all-strategies-01:0:4",
+          "20260921-all-strategies-01:0:8",
+          "20260921-all-strategies-01:0:12",
+          "20260921-all-strategies-01:0:16",
+          "20260921-all-strategies-01:0:20",
+          "20260921-all-strategies-01:0:24",
+          "20260921-all-strategies-01:0:28",
+          "20260921-all-strategies-01:0:32",
+          "20260921-all-strategies-01:0:36",
+          "20260921-all-strategies-01:0:40",
+          "20260921-all-strategies-01:0:44",
+          "20260921-all-strategies-01:0:48",
+          "20260921-all-strategies-01:0:52",
+          "20260921-all-strategies-01:0:56",
+          "20260921-all-strategies-01:0:60",
+          "20260921-all-strategies-01:5:10",
+          "20260921-all-strategies-01:5:14",
+          "20260921-all-strategies-01:5:18",
+          "20260921-all-strategies-01:5:22",
+          "20260921-all-strategies-01:5:26",
+          "20260921-all-strategies-01:5:30",
+          "20260921-all-strategies-01:5:34",
+          "20260921-all-strategies-01:5:38",
+          "20260921-all-strategies-01:5:42",
+          "20260921-all-strategies-01:5:46",
+          "20260921-all-strategies-01:5:50",
+          "20260921-all-strategies-01:5:54",
+          "20260921-all-strategies-01:6:9",
+          "20260921-all-strategies-01:6:13",
+          "20260921-all-strategies-01:6:17",
+          "20260921-all-strategies-01:6:21",
+          "20260921-all-strategies-01:6:25",
+          "20260921-all-strategies-01:6:29",
+          "20260921-all-strategies-01:6:33",
+          "20260921-all-strategies-01:6:37",
+          "20260921-all-strategies-01:6:41",
+          "20260921-all-strategies-01:6:45",
+          "20260921-all-strategies-01:6:49",
+          "20260921-all-strategies-01:6:53",
+          "20260921-all-strategies-01:6:57",
+          "20260921-all-strategies-01:7:5",
+          "20260921-all-strategies-01:7:9",
+          "20260921-all-strategies-01:7:13",
+          "20260921-all-strategies-01:7:17",
+          "20260921-all-strategies-01:7:21",
+          "20260921-all-strategies-01:7:25",
+          "20260921-all-strategies-01:7:29",
+          "20260921-all-strategies-01:7:33",
+          "20260921-all-strategies-01:7:37",
+          "20260921-all-strategies-01:7:41",
+          "20260921-all-strategies-01:7:45",
+          "20260921-all-strategies-01:7:49",
+          "20260921-all-strategies-01:7:53",
+          "20260921-all-strategies-01:8:12",
+          "20260921-all-strategies-01:8:16",
+          "20260921-all-strategies-01:8:20",
+          "20260921-all-strategies-01:8:24",
+          "20260921-all-strategies-01:8:28",
+          "20260921-all-strategies-01:8:32",
+          "20260921-all-strategies-01:8:36",
+          "20260921-all-strategies-01:8:40",
+          "20260921-all-strategies-01:8:44",
+          "20260921-all-strategies-01:8:48",
+          "20260921-all-strategies-01:8:52"
+        ],
+        "style": {
+          "Aggressive": {
+            "states": 65,
+            "actions": {
+              "place": 57,
+              "remove": 8
+            },
+            "meanFeatures": {
+              "territoryGain": 2.353846153846154,
+              "ownExposureChange": 0.12307692307692308,
+              "spreadChange": 4.969230769230769,
+              "ownGroupChange": 0.07692307692307693,
+              "captureReplyOwnGain": 1.7384615384615385,
+              "movedStoneExposed": 0.2923076923076923
+            }
+          },
+          "Cautious": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.230769230769231,
+              "ownExposureChange": -0.15384615384615385,
+              "spreadChange": 3.830769230769231,
+              "ownGroupChange": 0.18461538461538463,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.12307692307692308
+            }
+          },
+          "Expansive": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.046153846153846,
+              "ownExposureChange": -0.27692307692307694,
+              "spreadChange": 1.8153846153846154,
+              "ownGroupChange": 0.16923076923076924,
+              "captureReplyOwnGain": 2,
+              "movedStoneExposed": 0.015384615384615385
+            }
+          },
+          "Fluid": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.1846153846153844,
+              "ownExposureChange": -0.09230769230769231,
+              "spreadChange": 4.323076923076923,
+              "ownGroupChange": 0.1076923076923077,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.16923076923076924
+            }
+          },
+          "Balanced": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.4153846153846152,
+              "ownExposureChange": -0.13846153846153847,
+              "spreadChange": 5.030769230769231,
+              "ownGroupChange": 0.26153846153846155,
+              "captureReplyOwnGain": 1.9538461538461538,
+              "movedStoneExposed": 0.13846153846153847
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Aggressive",
+            "b": "Cautious",
+            "states": 65,
+            "differentMoves": 22
+          },
+          {
+            "a": "Aggressive",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 27
+          },
+          {
+            "a": "Aggressive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 15
+          },
+          {
+            "a": "Aggressive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 29
+          },
+          {
+            "a": "Cautious",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 14
+          },
+          {
+            "a": "Cautious",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 13
+          },
+          {
+            "a": "Cautious",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 15
+          },
+          {
+            "a": "Expansive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 21
+          },
+          {
+            "a": "Expansive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 21
+          },
+          {
+            "a": "Fluid",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 22
+          }
+        ]
+      }
+    },
+    {
+      "name": "tactical-soft-prior-strong",
+      "softTargetMix": 1,
+      "sharedPriorStrength": 0.2,
+      "features": [
+        "territoryGain",
+        "opponentTerritoryLost",
+        "ownExposureChange",
+        "opponentExposureChange",
+        "ownGroupChange",
+        "largestTerritoryChange",
+        "ownMobility",
+        "opponentMobility",
+        "spreadChange",
+        "centerDistance",
+        "ownPiecesRemaining",
+        "opponentPiecesRemaining",
+        "place",
+        "remove",
+        "shift",
+        "placeReserve",
+        "removeReserve",
+        "shiftReserve",
+        "terminalWin",
+        "terminalLoss",
+        "repetitionCount",
+        "movedStoneExposed",
+        "captureReplyAvailable",
+        "captureReplyOwnGain",
+        "captureReplyOpponentLoss",
+        "captureReplyLargestChange",
+        "captureReplyWastesStone",
+        "captureReplyTerminalWin",
+        "captureReplyTerminalLoss",
+        "movedStoneSupport",
+        "territoryLeadLastSupply"
+      ],
+      "trainGames": 5,
+      "testGames": 5,
+      "trainDecisions": 276,
+      "testDecisions": 286,
+      "validation": {
+        "overall": {
+          "states": 286,
+          "agreementPercent": 48.25174825174825,
+          "averageTeacherRank": 6.356643356643357
+        },
+        "byStrategy": {
+          "Aggressive": {
+            "states": 60,
+            "agreementPercent": 50,
+            "averageTeacherRank": 6.366666666666666
+          },
+          "Cautious": {
+            "states": 57,
+            "agreementPercent": 49.12280701754386,
+            "averageTeacherRank": 6.017543859649122
+          },
+          "Expansive": {
+            "states": 27,
+            "agreementPercent": 59.25925925925926,
+            "averageTeacherRank": 5.222222222222222
+          },
+          "Fluid": {
+            "states": 55,
+            "agreementPercent": 58.18181818181818,
+            "averageTeacherRank": 5.6
+          },
+          "Balanced": {
+            "states": 87,
+            "agreementPercent": 36.7816091954023,
+            "averageTeacherRank": 7.402298850574713
+          }
+        },
+        "byTeacherMoveType": {
+          "place": {
+            "states": 218,
+            "agreementPercent": 35.321100917431195,
+            "averageTeacherRank": 7.536697247706422
+          },
+          "remove": {
+            "states": 68,
+            "agreementPercent": 89.70588235294117,
+            "averageTeacherRank": 2.573529411764706
+          },
+          "shift": {
+            "states": 0,
+            "agreementPercent": null,
+            "averageTeacherRank": null
+          }
+        },
+        "unsupportedStates": 0,
+        "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+      },
+      "modelCompactGzipBytes": 4565,
+      "serverLatency": {
+        "samples": 325,
+        "p95ms": 6.98152299999856,
+        "maxMs": 23.526644999998098,
+        "environment": "Node v24.19.0 Linux/x64, unthrottled; not the mobile gate"
+      },
+      "commonStateDiagnostic": {
+        "note": "Same held-out positions for all local strategies, not teacher-matched strategy validation.",
+        "stateIds": [
+          "20260921-all-strategies-01:0:0",
+          "20260921-all-strategies-01:0:4",
+          "20260921-all-strategies-01:0:8",
+          "20260921-all-strategies-01:0:12",
+          "20260921-all-strategies-01:0:16",
+          "20260921-all-strategies-01:0:20",
+          "20260921-all-strategies-01:0:24",
+          "20260921-all-strategies-01:0:28",
+          "20260921-all-strategies-01:0:32",
+          "20260921-all-strategies-01:0:36",
+          "20260921-all-strategies-01:0:40",
+          "20260921-all-strategies-01:0:44",
+          "20260921-all-strategies-01:0:48",
+          "20260921-all-strategies-01:0:52",
+          "20260921-all-strategies-01:0:56",
+          "20260921-all-strategies-01:0:60",
+          "20260921-all-strategies-01:5:10",
+          "20260921-all-strategies-01:5:14",
+          "20260921-all-strategies-01:5:18",
+          "20260921-all-strategies-01:5:22",
+          "20260921-all-strategies-01:5:26",
+          "20260921-all-strategies-01:5:30",
+          "20260921-all-strategies-01:5:34",
+          "20260921-all-strategies-01:5:38",
+          "20260921-all-strategies-01:5:42",
+          "20260921-all-strategies-01:5:46",
+          "20260921-all-strategies-01:5:50",
+          "20260921-all-strategies-01:5:54",
+          "20260921-all-strategies-01:6:9",
+          "20260921-all-strategies-01:6:13",
+          "20260921-all-strategies-01:6:17",
+          "20260921-all-strategies-01:6:21",
+          "20260921-all-strategies-01:6:25",
+          "20260921-all-strategies-01:6:29",
+          "20260921-all-strategies-01:6:33",
+          "20260921-all-strategies-01:6:37",
+          "20260921-all-strategies-01:6:41",
+          "20260921-all-strategies-01:6:45",
+          "20260921-all-strategies-01:6:49",
+          "20260921-all-strategies-01:6:53",
+          "20260921-all-strategies-01:6:57",
+          "20260921-all-strategies-01:7:5",
+          "20260921-all-strategies-01:7:9",
+          "20260921-all-strategies-01:7:13",
+          "20260921-all-strategies-01:7:17",
+          "20260921-all-strategies-01:7:21",
+          "20260921-all-strategies-01:7:25",
+          "20260921-all-strategies-01:7:29",
+          "20260921-all-strategies-01:7:33",
+          "20260921-all-strategies-01:7:37",
+          "20260921-all-strategies-01:7:41",
+          "20260921-all-strategies-01:7:45",
+          "20260921-all-strategies-01:7:49",
+          "20260921-all-strategies-01:7:53",
+          "20260921-all-strategies-01:8:12",
+          "20260921-all-strategies-01:8:16",
+          "20260921-all-strategies-01:8:20",
+          "20260921-all-strategies-01:8:24",
+          "20260921-all-strategies-01:8:28",
+          "20260921-all-strategies-01:8:32",
+          "20260921-all-strategies-01:8:36",
+          "20260921-all-strategies-01:8:40",
+          "20260921-all-strategies-01:8:44",
+          "20260921-all-strategies-01:8:48",
+          "20260921-all-strategies-01:8:52"
+        ],
+        "style": {
+          "Aggressive": {
+            "states": 65,
+            "actions": {
+              "place": 53,
+              "remove": 12
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3692307692307693,
+              "ownExposureChange": 0.06153846153846154,
+              "spreadChange": 4.969230769230769,
+              "ownGroupChange": 0.06153846153846154,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.26153846153846155
+            }
+          },
+          "Cautious": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.230769230769231,
+              "ownExposureChange": -0.15384615384615385,
+              "spreadChange": 3.830769230769231,
+              "ownGroupChange": 0.18461538461538463,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.12307692307692308
+            }
+          },
+          "Expansive": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.046153846153846,
+              "ownExposureChange": -0.27692307692307694,
+              "spreadChange": 2.3076923076923075,
+              "ownGroupChange": 0.16923076923076924,
+              "captureReplyOwnGain": 2,
+              "movedStoneExposed": 0.015384615384615385
+            }
+          },
+          "Fluid": {
+            "states": 65,
+            "actions": {
+              "place": 50,
+              "remove": 15
+            },
+            "meanFeatures": {
+              "territoryGain": 2.1846153846153844,
+              "ownExposureChange": -0.09230769230769231,
+              "spreadChange": 4.076923076923077,
+              "ownGroupChange": 0.1076923076923077,
+              "captureReplyOwnGain": 1.7846153846153847,
+              "movedStoneExposed": 0.16923076923076924
+            }
+          },
+          "Balanced": {
+            "states": 65,
+            "actions": {
+              "place": 52,
+              "remove": 13
+            },
+            "meanFeatures": {
+              "territoryGain": 2.3846153846153846,
+              "ownExposureChange": -0.13846153846153847,
+              "spreadChange": 4.384615384615385,
+              "ownGroupChange": 0.26153846153846155,
+              "captureReplyOwnGain": 1.9230769230769231,
+              "movedStoneExposed": 0.13846153846153847
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Aggressive",
+            "b": "Cautious",
+            "states": 65,
+            "differentMoves": 18
+          },
+          {
+            "a": "Aggressive",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 19
+          },
+          {
+            "a": "Aggressive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 12
+          },
+          {
+            "a": "Aggressive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 23
+          },
+          {
+            "a": "Cautious",
+            "b": "Expansive",
+            "states": 65,
+            "differentMoves": 18
+          },
+          {
+            "a": "Cautious",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 14
+          },
+          {
+            "a": "Cautious",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 12
+          },
+          {
+            "a": "Expansive",
+            "b": "Fluid",
+            "states": 65,
+            "differentMoves": 15
+          },
+          {
+            "a": "Expansive",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 22
+          },
+          {
+            "a": "Fluid",
+            "b": "Balanced",
+            "states": 65,
+            "differentMoves": 20
+          }
+        ]
+      }
+    }
+  ]
+}

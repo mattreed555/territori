@@ -25,33 +25,46 @@ export function teacherTargets(row:Decision,mix=0):number[] {
   if(Math.abs(sum-1)>.010000001)throw new Error('Teacher probability mass differs from one by more than 1%');
   return ids.map((id,i)=>(1-mix)*hard[i]+mix*probabilities[id]/sum);
 }
-export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0}={}) {
+export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0,sharedPriorStrength=0}={}) {
   if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
   if(!Number.isFinite(softTargetMix)||softTargetMix<0||softTargetMix>1)throw new Error('Soft target mix must be 0–1');
+  if(!Number.isFinite(sharedPriorStrength)||sharedPriorStrength<0)throw new Error('Shared prior strength must be nonnegative');
   const teacherRows=rows.filter(r=>r.source==='jev'),split=splitGames(teacherRows,seed,testFraction),random=seededRandom(seed);
   const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
   if(softTargetMix>0)model.training.softTargetMix=softTargetMix;
-  for(const strategy of Object.keys(STRATEGIES) as Strategy[]) {
-    const data=split.train.filter(r=>r.strategy===strategy).map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),targets:teacherTargets(r,softTargetMix)}));
-    if(!data.length)continue;
+  function fitRows(rows:Decision[],random:()=>number,prior:Weights|null=null):Weights {
+    const data=rows.map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),targets:teacherTargets(r,softTargetMix)}));
+    if(!data.length)throw new Error('Cannot fit an empty training set');
     const mean=features.map(()=>0),scale=features.map(()=>0);let n=0;
     for(const row of data)for(const x of row.x){n++;x.forEach((v,j)=>mean[j]+=v);}
     mean.forEach((_,j)=>mean[j]/=n);
     for(const row of data)for(const x of row.x)x.forEach((v,j)=>scale[j]+=(v-mean[j])**2);
     scale.forEach((_,j)=>scale[j]=Math.sqrt(scale[j]/n)||1);
     for(const row of data)for(const x of row.x)x.forEach((v,j)=>x[j]=(v-mean[j])/scale[j]);
-    const fit:Weights={weights:features.map(()=>0),mean,scale,samples:data.length};
+    // Convert the shared coefficients into this strategy's feature scaling.
+    // The different means add a constant to every legal-move logit, so rankings
+    // and softmax probabilities are unchanged. No extra runtime model is needed.
+    const center=features.map((_,j)=>prior?prior.weights[j]*scale[j]/prior.scale[j]:0);
+    const fit:Weights={weights:[...center],mean,scale,samples:data.length};
     for(let epoch=0;epoch<epochs;epoch++) {
       for(let i=data.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[data[i],data[j]]=[data[j],data[i]];}
       const step=rate/Math.sqrt(1+epoch/10);
       for(const row of data) {
         const logits=row.x.map(x=>x.reduce((sum,v,j)=>sum+v*fit.weights[j],0)),max=Math.max(...logits),exp=logits.map(v=>Math.exp(v-max)),sum=exp.reduce((a,b)=>a+b,0);
-        const gradient=fit.weights.map(w=>l2*w);
+        const gradient=fit.weights.map((w,j)=>prior?l2*w+sharedPriorStrength*(w-center[j]):l2*w);
         row.x.forEach((x,i)=>x.forEach((v,j)=>gradient[j]+=(exp[i]/sum-row.targets[i])*v));
         fit.weights.forEach((w,j)=>fit.weights[j]=w-step*gradient[j]);
       }
     }
-    model.strategies[strategy]=fit;
+    return fit;
+  }
+  // Fit general tactics only on the training side of the whole-game split.
+  // Separate RNG preserves the original path exactly when this is disabled.
+  const prior=sharedPriorStrength>0?fitRows(split.train,seededRandom(seed^0x51a7)):null;
+  if(prior)model.training.sharedPriorStrength=sharedPriorStrength;
+  for(const strategy of Object.keys(STRATEGIES) as Strategy[]) {
+    const rows=split.train.filter(r=>r.strategy===strategy);
+    if(rows.length)model.strategies[strategy]=fitRows(rows,random,prior);
   }
   return {model,report:evaluatePolicy(split.test,model),split:{trainGames:split.trainGameIds.length,testGames:split.testGameIds.length,trainDecisions:split.train.length,testDecisions:split.test.length}};
 }

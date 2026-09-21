@@ -1,5 +1,9 @@
 # Jev replacement checkpoint
 
+## Active session — 20260921-shared-03
+
+An exclusive session is active in `work-session.json`. Shared-prior training is complete (best development agreement 48.25%); ten metered development local-vs-Jev matches are about to run. `budget.json` reserves at most $0.25 for this batch, protecting the $3.25 acceptance-evaluation reserve. Do not overlap this session. No live default or deployment has changed. Reconcile the usage journal before releasing an expired reservation. This paragraph supersedes the historical closed-session status below until final checkpointing.
+
 ## 2026-09-21 — offline tactical/soft-target comparison (latest)
 
 Session `20260921-tactical-02` is CLOSED and spent **$0**. Reconciled GitHub `2358f744caf86faca4d3fb4024afac4a1f1557dc`, local checkpoint `af815ec6ec2cdbf71b0c0ea455d47e2cabf2c408`, and unchanged Sites source `85174b8ed3cbcf6a0cf88da79278e12d222535d4`. No paid calls, new dependencies, deployment, or audience change. The live game is still version 14 and defaults to Jev.

@@ -3,7 +3,7 @@ import { STRATEGIES, type Strategy } from '../game/strategies';
 import { FEATURES, FEATURE_VERSION, moveFeatures } from './features';
 import { RULESET } from './dataset';
 export type Weights={weights:number[];mean:number[];scale:number[];samples:number};
-export type PolicyModel={version:1;ruleset:string;featureVersion:number;features:string[];strategies:Partial<Record<Strategy,Weights>>;training:{seed:number;trainGameIds:string[];testGameIds:string[];softTargetMix?:number}};
+export type PolicyModel={version:1;ruleset:string;featureVersion:number;features:string[];strategies:Partial<Record<Strategy,Weights>>;training:{seed:number;trainGameIds:string[];testGameIds:string[];softTargetMix?:number;sharedPriorStrength?:number}};
 export function validateModel(value:unknown):PolicyModel {
   const m=value as PolicyModel;
   if(!m || m.version!==1 || m.ruleset!==RULESET || m.featureVersion!==FEATURE_VERSION || !Array.isArray(m.features) || !m.features.length || new Set(m.features).size!==m.features.length || m.features.some(n=>typeof n!=='string'||!Object.hasOwn(FEATURES,n)) || !m.strategies || typeof m.strategies!=='object') throw new Error('Incompatible policy model');

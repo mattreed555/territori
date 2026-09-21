@@ -2,9 +2,9 @@
   "version": 1,
   "id": "20260921-shared-03",
   "status": "active",
-  "purpose": "offline shared-prior training and evaluation; no paid calls",
+  "purpose": "shared-prior training plus ten bounded development local-vs-Jev matches",
   "startedAt": "2026-09-21T22:10:00Z",
   "expiresAt": "2026-09-21T23:00:00Z",
-  "budgetReservationNano": 0,
+  "budgetReservationNano": 250000000,
   "note": "Do not overlap this work session. Expiry requires reconciliation, not automatic takeover."
 }

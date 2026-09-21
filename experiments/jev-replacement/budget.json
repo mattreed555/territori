@@ -7,7 +7,7 @@
   "spentUpperNano": 309700230,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
-    "verifiedAt": "2026-09-21T19:52:13Z",
+    "verifiedAt": "2026-09-21T22:13:54Z",
     "source": "https://docs.typesafe.ai/models",
     "usageSource": "https://docs.typesafe.ai/api",
     "model": "jev-1.13.0",
@@ -17,6 +17,15 @@
     "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
   },
   "sessions": [
+    {
+      "id": "20260921-shared-03-devmatches",
+      "purpose": "development-evaluation",
+      "status": "reserved",
+      "capNano": 250000000,
+      "createdAt": "2026-09-21T22:13:54Z",
+      "expiresAt": "2026-09-21T23:00:00Z",
+      "note": "Ten development local-vs-Jev matches for the strongest shared-prior candidate by existing development agreement. Two games per strategy, balanced colors; NOT acceptance evidence. Reserve $3.25 for the independent acceptance suite."
+    },
     {
       "id": "20260921-all-strategies-01",
       "purpose": "training",
