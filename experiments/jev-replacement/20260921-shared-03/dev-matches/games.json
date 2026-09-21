@@ -1,0 +1,252 @@
+[
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:0",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 28,
+        "red": 29
+      },
+      "largest": {
+        "blue": 28,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    "localColor": "blue"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:1",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 30,
+        "red": 25
+      },
+      "largest": {
+        "blue": 28,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    "players": {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    "localColor": "blue"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:2",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 24,
+        "red": 33
+      },
+      "largest": {
+        "blue": 24,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    "players": {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    "localColor": "blue"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:3",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 27,
+        "red": 28
+      },
+      "largest": {
+        "blue": 24,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    "localColor": "blue"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:4",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 26
+      },
+      "largest": {
+        "blue": 18,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    "players": {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    "localColor": "blue"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:5",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 34,
+        "red": 27
+      },
+      "largest": {
+        "blue": 34,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    "players": {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    "localColor": "red"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:6",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 29,
+        "red": 28
+      },
+      "largest": {
+        "blue": 29,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    "players": {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    "localColor": "red"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:7",
+    "result": {
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 26,
+        "red": 26
+      },
+      "largest": {
+        "blue": 26,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    "players": {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    "localColor": "red"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:8",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 35,
+        "red": 29
+      },
+      "largest": {
+        "blue": 35,
+        "red": 29
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    "players": {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    "localColor": "red"
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-shared-03-devmatches:9",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 32,
+        "red": 28
+      },
+      "largest": {
+        "blue": 32,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    "localColor": "red"
+  }
+]

@@ -4,7 +4,7 @@
   "unit": "nanodollars",
   "allowanceNano": 4250000000,
   "evaluationReserveNano": 3250000000,
-  "spentUpperNano": 309700230,
+  "spentUpperNano": 457669296,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
     "verifiedAt": "2026-09-21T22:13:54Z",
@@ -20,11 +20,17 @@
     {
       "id": "20260921-shared-03-devmatches",
       "purpose": "development-evaluation",
-      "status": "reserved",
+      "status": "closed",
       "capNano": 250000000,
       "createdAt": "2026-09-21T22:13:54Z",
       "expiresAt": "2026-09-21T23:00:00Z",
-      "note": "Ten development local-vs-Jev matches for the strongest shared-prior candidate by existing development agreement. Two games per strategy, balanced colors; NOT acceptance evidence. Reserve $3.25 for the independent acceptance suite."
+      "note": "Ten development local-vs-Jev matches for the strongest shared-prior candidate by existing development agreement. Two games per strategy, balanced colors; NOT acceptance evidence. Reserve $3.25 for the independent acceptance suite.",
+      "closedAt": "2026-09-21T22:18:50.631Z",
+      "calls": 269,
+      "inputTokens": 3523073,
+      "outputTokens": 197643,
+      "spentUpperNano": 147969066,
+      "uncertain": false
     },
     {
       "id": "20260921-all-strategies-01",

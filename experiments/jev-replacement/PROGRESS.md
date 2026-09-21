@@ -1,8 +1,16 @@
 # Jev replacement checkpoint
 
-## Active session — 20260921-shared-03
+## 2026-09-21 — shared priors and actual Jev development matches (latest)
 
-An exclusive session is active in `work-session.json`. Shared-prior training is complete (best development agreement 48.25%); ten metered development local-vs-Jev matches are about to run. `budget.json` reserves at most $0.25 for this batch, protecting the $3.25 acceptance-evaluation reserve. Do not overlap this session. No live default or deployment has changed. Reconcile the usage journal before releasing an expired reservation. This paragraph supersedes the historical closed-session status below until final checkpointing.
+Session `20260921-shared-03` is CLOSED; check `work-session.json` before future work. Reconciled current GitHub `3cbe54db23a2898904ef0a010678dcb7beb7f92a` with local `967061b866f801d32e6827e8742e7ad1432a297b` and unchanged Sites source/live version 14. Shared-prior training pools only TRAINING games to learn general tactics, then regularizes each strategy toward that prior; runtime remains five ordinary linear weight vectors, with no dependency or default changes. Twenty-four tests and TypeScript pass, including validation-label leakage and exact baseline reproduction checks.
+
+Best development agreement is now **48.25%** (shared tactical soft-label model, prior strength 0.2), versus the original 44.4%. But this **does not play well enough**: in ten balanced-color, same-strategy local-vs-Jev DEVELOPMENT games it won **1**, drew **1**, lost **8** (15% score). Each strategy has only two games: Aggressive 25%, Cautious 0%, Expansive 0%, Fluid 50%, Balanced 0%. This is not the independent acceptance suite and must not be counted toward its 200 games. Forty additional local-vs-original-baseline games scored 47.5%. All 50 games completed without illegal choices, truncation or repetition endings.
+
+Paid batch `20260921-shared-03-devmatches` made 269 calls: 3,523,073 input tokens, 197,643 free output tokens, **$0.147969066** added cost, no retries or uncertain charges. Pricing/context cap reverified at https://docs.typesafe.ai/models. The 269 requests, responses and teacher decisions reconcile exactly. Cumulative added spend **$0.457669296**, remaining **$3.792330704**, including **$3.25 reserved for acceptance**. No active financial reservation. All raw decisions (local and teacher), distributions, outcomes, usage and model hashes are saved under `20260921-shared-03/`. Live Jev/default/UI/audience remain unchanged.
+
+Next session: do not spend the acceptance reserve on this weak candidate. Add a small shallow-search/tactical safety layer to the learned strategy scores, especially evaluating ordinary opposing placements as well as captures and the actual final-round outcome. Test on saved losing game states and free local matches first, measuring runtime. The newly collected 269 teacher choices in student-influenced games can also enrich training, but remain DEVELOPMENT data. Continue reporting all-five style/shift coverage gaps. A heavier neural model is not yet justified. Independent evaluation, mobile/browser gates and production integration are still pending. **Replacement is not ready.**
+
+Read the newest goal, work-session lease and cumulative ledger before further work; no session is currently active. This section supersedes earlier next-step notes.
 
 ## 2026-09-21 — offline tactical/soft-target comparison (latest)
 

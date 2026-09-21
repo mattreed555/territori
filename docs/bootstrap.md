@@ -98,6 +98,14 @@ Open `/training`, load `policy.json`, select Local policy, set exploration (defa
 Generated files under `data/` are ignored by Git. Keep datasets and model/report pairs together in your own durable storage. The pipeline is designed for modest bootstrap batches; it loads training data into memory. Optimize only if measured dataset size or runtime warrants it.
 # Bounded replacement work
 
+Read `experiments/jev-replacement/work-session.json` as well as the ledger before
+starting; acquire an exclusive durable lease for offline work too. An expired
+lease is not permission to overlap an unreconciled worker. `compare.mjs --shared`
+tests pooled tactical priors with strategy-specific adjustments. The bounded
+collector supports `--mode local-vs-jev --model FILE --epsilon 0.03` in batches of
+ten (all five strategies, both colors). These are explicitly development games.
+Use `report-matches.mjs --run DIRECTORY` to summarize saved compressed logs.
+
 Offline comparisons: `scripts/ai/compare.mjs` fits the original and optional
 capture-reply features with hard or normalized soft teacher targets. See
 `experiments/jev-replacement/20260921-tactical-02/README.md` for commands and
