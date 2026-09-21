@@ -12,12 +12,27 @@ export function splitGames(rows:Decision[],seed=1,testFraction=.2) {
   return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds};
 }
 /** Multinomial logistic regression over the legal moves in each state. No ML dependency. */
-export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES}={}) {
+export function teacherTargets(row:Decision,mix=0):number[] {
+  if(!Number.isFinite(mix)||mix<0||mix>1)throw new Error('Soft target mix must be 0–1');
+  const ids=row.legalMoves.map(moveId),chosen=moveId(row.chosenMove),hard=ids.map(id=>Number(id===chosen));
+  if(!ids.includes(chosen))throw new Error('Teacher choice is not legal');
+  if(mix===0)return hard;
+  const probabilities=(row.teacher?.answer as {probabilities?:Record<string,number>}|null)?.probabilities;
+  if(!probabilities || Object.keys(probabilities).length!==ids.length || ids.some(id=>!Object.hasOwn(probabilities,id)||!Number.isFinite(probabilities[id])||probabilities[id]<0||probabilities[id]>1))throw new Error('Missing or invalid teacher probability distribution');
+  const sum=ids.reduce((s,id)=>s+probabilities[id],0);
+  // Recorded Jev 1.13 responses often total 0.99. Normalize this small missing
+  // mass explicitly; reject materially incomplete distributions, never fill keys.
+  if(Math.abs(sum-1)>.010000001)throw new Error('Teacher probability mass differs from one by more than 1%');
+  return ids.map((id,i)=>(1-mix)*hard[i]+mix*probabilities[id]/sum);
+}
+export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0}={}) {
   if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
+  if(!Number.isFinite(softTargetMix)||softTargetMix<0||softTargetMix>1)throw new Error('Soft target mix must be 0–1');
   const teacherRows=rows.filter(r=>r.source==='jev'),split=splitGames(teacherRows,seed,testFraction),random=seededRandom(seed);
   const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
+  if(softTargetMix>0)model.training.softTargetMix=softTargetMix;
   for(const strategy of Object.keys(STRATEGIES) as Strategy[]) {
-    const data=split.train.filter(r=>r.strategy===strategy).map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),y:r.legalMoves.findIndex(m=>moveId(m)===moveId(r.chosenMove))}));
+    const data=split.train.filter(r=>r.strategy===strategy).map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),targets:teacherTargets(r,softTargetMix)}));
     if(!data.length)continue;
     const mean=features.map(()=>0),scale=features.map(()=>0);let n=0;
     for(const row of data)for(const x of row.x){n++;x.forEach((v,j)=>mean[j]+=v);}
@@ -32,7 +47,7 @@ export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,t
       for(const row of data) {
         const logits=row.x.map(x=>x.reduce((sum,v,j)=>sum+v*fit.weights[j],0)),max=Math.max(...logits),exp=logits.map(v=>Math.exp(v-max)),sum=exp.reduce((a,b)=>a+b,0);
         const gradient=fit.weights.map(w=>l2*w);
-        row.x.forEach((x,i)=>x.forEach((v,j)=>gradient[j]+=(exp[i]/sum-Number(i===row.y))*v));
+        row.x.forEach((x,i)=>x.forEach((v,j)=>gradient[j]+=(exp[i]/sum-row.targets[i])*v));
         fit.weights.forEach((w,j)=>fit.weights[j]=w-step*gradient[j]);
       }
     }

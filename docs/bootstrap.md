@@ -98,6 +98,12 @@ Open `/training`, load `policy.json`, select Local policy, set exploration (defa
 Generated files under `data/` are ignored by Git. Keep datasets and model/report pairs together in your own durable storage. The pipeline is designed for modest bootstrap batches; it loads training data into memory. Optimize only if measured dataset size or runtime warrants it.
 # Bounded replacement work
 
+Offline comparisons: `scripts/ai/compare.mjs` fits the original and optional
+capture-reply features with hard or normalized soft teacher targets. See
+`experiments/jev-replacement/20260921-tactical-02/README.md` for commands and
+limitations. `local-tournament.mjs` compares two local models with balanced colors;
+it makes no API calls and must not be reported as local-versus-Jev evidence.
+
 The authoritative goal is [jev-replacement-goal.md](jev-replacement-goal.md).
 Read `experiments/jev-replacement/PROGRESS.md` and `budget.json` before paid work.
 The older `simulate` CLI does not enforce a budget; use the bounded collector for

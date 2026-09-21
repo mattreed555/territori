@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-21 — offline tactical/soft-target comparison (latest)
+
+Session `20260921-tactical-02` is CLOSED and spent **$0**. Reconciled GitHub `2358f744caf86faca4d3fb4024afac4a1f1557dc`, local checkpoint `af815ec6ec2cdbf71b0c0ea455d47e2cabf2c408`, and unchanged Sites source `85174b8ed3cbcf6a0cf88da79278e12d222535d4`. No paid calls, new dependencies, deployment, or audience change. The live game is still version 14 and defaults to Jev.
+
+Implemented optional capture-reply features, probability-target training, common-state style diagnostics, and reproducible local-vs-local comparisons. Existing feature semantics/defaults remain unchanged; the original hard-label model reproduces exactly. All 22 tests and the TypeScript check pass. Four five-strategy models and all 120 local comparison game logs are in `20260921-tactical-02/`.
+
+Soft labels improve development agreement slightly (44.4% to 46.2%) but not demonstrated playing strength: 47.5% score against the old local baseline over 40 games. Tactical hard labels score 51.25% in another 40 games; uncertainty intervals overlap 50% broadly. Tactical soft labels regress Aggressive and are NOT a preferred candidate. All 120 games completed legally without truncation/repetition. These are local-only development matches, **not** any of the required 200 Jev acceptance matches.
+
+Key finding: strategy/action coverage is sparse despite balanced game scheduling. Aggressive training contains only TWO states with legal captures, while validation contains sixteen. Balanced has only 27 training decisions. Adding features cannot reliably fix this. Jev probability maps total 0.99 in 407/562 records; soft training now explicitly normalizes discrepancies up to 1%, rejecting missing keys/invalid values/larger errors. Raw data is unchanged.
+
+Next: try a shared tactical prior with regularized per-strategy adjustments (still tiny/interpretable), or a small targeted teacher batch on varied/student-generated states to cover captures, winning/endgame decisions and useful shifts. Compare against the saved candidates, not just exact agreement. Common-state diagnostics show differing local choices but do not yet validate faithful strategy intent; Fluid's no-shift teacher coverage remains unresolved. Preserve the $3.25 evaluation reserve. Total added cost remains **$0.309700230**, remaining **$3.940299770**. Independent Jev matches, mobile/browser checks, build/deployment, and no-API integration are pending. **Replacement is not ready.**
+
+No work session is active. Read the authoritative goal and ledger again before the next session. This section supersedes the earlier next-step notes below.
+
 ## 2026-09-21 — first all-strategy collection
 
 Read the goal and both current sources before work. GitHub `c49cb649d1b3a18d86e7c24821eaae0e1c9ca5ce` adds the goal to Sites `85174b8ed3cbcf6a0cf88da79278e12d222535d4`; no conflicting application edits were present. The public Site is still on Jev, with unchanged audience and UI.

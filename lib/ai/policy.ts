@@ -1,12 +1,12 @@
 import { legalMoves, moveId, type Game, type Move } from '../game/rules';
 import { STRATEGIES, type Strategy } from '../game/strategies';
-import { FEATURE_NAMES, FEATURE_VERSION, moveFeatures } from './features';
+import { FEATURES, FEATURE_VERSION, moveFeatures } from './features';
 import { RULESET } from './dataset';
 export type Weights={weights:number[];mean:number[];scale:number[];samples:number};
-export type PolicyModel={version:1;ruleset:string;featureVersion:number;features:string[];strategies:Partial<Record<Strategy,Weights>>;training:{seed:number;trainGameIds:string[];testGameIds:string[]}};
+export type PolicyModel={version:1;ruleset:string;featureVersion:number;features:string[];strategies:Partial<Record<Strategy,Weights>>;training:{seed:number;trainGameIds:string[];testGameIds:string[];softTargetMix?:number}};
 export function validateModel(value:unknown):PolicyModel {
   const m=value as PolicyModel;
-  if(!m || m.version!==1 || m.ruleset!==RULESET || m.featureVersion!==FEATURE_VERSION || !Array.isArray(m.features) || !m.features.length || new Set(m.features).size!==m.features.length || m.features.some(n=>!FEATURE_NAMES.includes(n)) || !m.strategies || typeof m.strategies!=='object') throw new Error('Incompatible policy model');
+  if(!m || m.version!==1 || m.ruleset!==RULESET || m.featureVersion!==FEATURE_VERSION || !Array.isArray(m.features) || !m.features.length || new Set(m.features).size!==m.features.length || m.features.some(n=>typeof n!=='string'||!Object.hasOwn(FEATURES,n)) || !m.strategies || typeof m.strategies!=='object') throw new Error('Incompatible policy model');
   for(const [name,s] of Object.entries(m.strategies)) {
     if(!(name in STRATEGIES) || !s || ![s.weights,s.mean,s.scale].every(a=>Array.isArray(a)&&a.length===m.features.length&&a.every(Number.isFinite)) || s.scale.some(v=>v<=0))throw new Error(`Invalid weights for ${name}`);
   }

@@ -1,0 +1,863 @@
+{
+  "purpose": "Local-vs-local development tournament only; not acceptance evaluation or Jev strength",
+  "candidateSha256": "b163b37be3ee33c8e6bdac6497f5c4dcef1a1fcf8dea2a9013d8e423b4a7a199",
+  "baselineSha256": "39d14b31917398c7d8270c40a3390424a62b5ea65e8e7dba10b2bbf8207bde55",
+  "seed": 954,
+  "pairs": 4,
+  "epsilon": 0.03,
+  "maxTurns": 160,
+  "overall": {
+    "completed": 40,
+    "aborted": 0,
+    "truncated": 0,
+    "wins": 17,
+    "draws": 4,
+    "losses": 19,
+    "score": 0.475,
+    "pairedBootstrap95": [
+      0.3375,
+      0.6125
+    ],
+    "meanTurns": 51.7,
+    "repetitionEnds": 0
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "completed": 8,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 4,
+      "draws": 0,
+      "losses": 4,
+      "score": 0.5,
+      "pairedBootstrap95": [
+        0.5,
+        0.5
+      ],
+      "meanTurns": 51.25,
+      "repetitionEnds": 0
+    },
+    "Cautious": {
+      "completed": 8,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 1,
+      "draws": 3,
+      "losses": 4,
+      "score": 0.3125,
+      "pairedBootstrap95": [
+        0.25,
+        0.4375
+      ],
+      "meanTurns": 50,
+      "repetitionEnds": 0
+    },
+    "Expansive": {
+      "completed": 8,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 4,
+      "draws": 0,
+      "losses": 4,
+      "score": 0.5,
+      "pairedBootstrap95": [
+        0,
+        1
+      ],
+      "meanTurns": 53.25,
+      "repetitionEnds": 0
+    },
+    "Fluid": {
+      "completed": 8,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 6,
+      "score": 0.25,
+      "pairedBootstrap95": [
+        0,
+        0.5
+      ],
+      "meanTurns": 52.75,
+      "repetitionEnds": 0
+    },
+    "Balanced": {
+      "completed": 8,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 6,
+      "draws": 1,
+      "losses": 1,
+      "score": 0.8125,
+      "pairedBootstrap95": [
+        0.625,
+        1
+      ],
+      "meanTurns": 51.25,
+      "repetitionEnds": 0
+    }
+  },
+  "results": [
+    {
+      "strategy": "Aggressive",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:0:0:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 26,
+        "red": 24
+      },
+      "largest": {
+        "blue": 21,
+        "red": 10
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:0:0:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 30,
+        "red": 20
+      },
+      "largest": {
+        "blue": 30,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:0:1:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 31,
+        "red": 24
+      },
+      "largest": {
+        "blue": 29,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:0:1:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 22
+      },
+      "largest": {
+        "blue": 21,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 2,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:0:2:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 23
+      },
+      "largest": {
+        "blue": 20,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 2,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:0:2:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 21
+      },
+      "largest": {
+        "blue": 25,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 3,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:0:3:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 22,
+        "red": 25
+      },
+      "largest": {
+        "blue": 18,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 3,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:0:3:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 25,
+        "red": 29
+      },
+      "largest": {
+        "blue": 21,
+        "red": 29
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:1:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 24,
+        "red": 26
+      },
+      "largest": {
+        "blue": 21,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:1:0:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 25,
+        "red": 25
+      },
+      "largest": {
+        "blue": 25,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:1:1:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 24,
+        "red": 26
+      },
+      "largest": {
+        "blue": 21,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:1:1:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 25,
+        "red": 25
+      },
+      "largest": {
+        "blue": 25,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 2,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:1:2:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 30
+      },
+      "largest": {
+        "blue": 26,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 2,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:1:2:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 27
+      },
+      "largest": {
+        "blue": 24,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 3,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:1:3:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 24,
+        "red": 26
+      },
+      "largest": {
+        "blue": 21,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 3,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:1:3:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 25,
+        "red": 25
+      },
+      "largest": {
+        "blue": 25,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:2:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 27
+      },
+      "largest": {
+        "blue": 21,
+        "red": 17
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:2:0:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 24
+      },
+      "largest": {
+        "blue": 21,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:2:1:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 27,
+        "red": 23
+      },
+      "largest": {
+        "blue": 23,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:2:1:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 27,
+        "red": 28
+      },
+      "largest": {
+        "blue": 18,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 56,
+      "points": 1
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 2,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:2:2:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 27,
+        "red": 25
+      },
+      "largest": {
+        "blue": 15,
+        "red": 9
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 2,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:2:2:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 27,
+        "red": 27
+      },
+      "largest": {
+        "blue": 13,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 3,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:2:3:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 22,
+        "red": 26
+      },
+      "largest": {
+        "blue": 10,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 58,
+      "points": 0
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 3,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:2:3:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 29,
+        "red": 29
+      },
+      "largest": {
+        "blue": 26,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:3:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 18,
+        "red": 24
+      },
+      "largest": {
+        "blue": 10,
+        "red": 14
+      },
+      "reason": "supply",
+      "turns": 54,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:3:0:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 24
+      },
+      "largest": {
+        "blue": 23,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 56,
+      "points": 1
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:3:1:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 24
+      },
+      "largest": {
+        "blue": 23,
+        "red": 24
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:3:1:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 26,
+        "red": 24
+      },
+      "largest": {
+        "blue": 26,
+        "red": 24
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 2,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:3:2:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 22,
+        "red": 26
+      },
+      "largest": {
+        "blue": 18,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 2,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:3:2:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 26,
+        "red": 25
+      },
+      "largest": {
+        "blue": 11,
+        "red": 24
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 3,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:3:3:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 28
+      },
+      "largest": {
+        "blue": 23,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 54,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 3,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:3:3:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 26,
+        "red": 24
+      },
+      "largest": {
+        "blue": 23,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:4:0:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 24,
+        "red": 22
+      },
+      "largest": {
+        "blue": 24,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:4:0:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:4:1:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 24,
+        "red": 22
+      },
+      "largest": {
+        "blue": 24,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:4:1:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 23
+      },
+      "largest": {
+        "blue": 10,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 2,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:4:2:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 27
+      },
+      "largest": {
+        "blue": 16,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 2,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:4:2:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 28
+      },
+      "largest": {
+        "blue": 13,
+        "red": 28
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 3,
+      "candidateColor": "blue",
+      "gameId": "tactical-soft-matches:4:3:blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 32,
+        "red": 25
+      },
+      "largest": {
+        "blue": 31,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 58,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 3,
+      "candidateColor": "red",
+      "gameId": "tactical-soft-matches:4:3:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 22,
+        "red": 25
+      },
+      "largest": {
+        "blue": 22,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    }
+  ]
+}

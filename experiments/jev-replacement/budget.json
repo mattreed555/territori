@@ -31,6 +31,19 @@
       "outputTokens": 416792,
       "spentUpperNano": 309700230,
       "uncertain": false
+    },
+    {
+      "id": "20260921-tactical-02",
+      "purpose": "offline-training-evaluation",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-21T20:32:21Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Reused the 562 existing teacher decisions; four model fits and 120 local-only development matches. No paid work."
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { applyMove, isCapturable, legalMoves, neighbors, nextPositionKey, other, score, RULES, type Cell, type Color, type Game, type Move } from '../game/rules';
+import { captureOutcome } from '../game/jev';
 export const FEATURE_VERSION = 1;
 const exposure = (board: Cell[], color: Color) => board.reduce<number>((n,c,i) => n + Number(c === color && isCapturable(board,i)),0);
 function largestGroup(board: Cell[], color: Color) {
@@ -15,7 +16,9 @@ function spread(board: Cell[], color: Color) {
 type Context = ReturnType<typeof context>;
 function context(game: Game, move: Move) {
   const next=applyMove(game,move), me=game.turn, opponent=other(me);
-  return {game,move,next,me,opponent,before:score(game.board),after:score(next.board)};
+  let reply:ReturnType<typeof captureOutcome>|undefined;
+  return {game,move,next,me,opponent,before:score(game.board),after:score(next.board),
+    capture:()=>reply===undefined ? (reply=captureOutcome(game,move)) : reply};
 }
 /** Add/remove one named feature here; bump FEATURE_VERSION when semantics change. */
 export const FEATURES: Record<string,(c: Context)=>number> = {
@@ -42,4 +45,20 @@ export const FEATURES: Record<string,(c: Context)=>number> = {
   repetitionCount:c=>c.game.positions[nextPositionKey(c.game,c.move)] || 0,
 };
 export const FEATURE_NAMES=Object.keys(FEATURES);
+// Opt-in additions. Existing feature meanings/defaults and v1 models stay intact.
+// Capture replies use exactly the same legal one-reply calculation supplied to Jev.
+const tactical:Record<string,(c:Context)=>number>={
+  movedStoneExposed:c=>Number(c.move.type!=='remove' && isCapturable(c.next.board,c.move.to)),
+  captureReplyAvailable:c=>Number(c.capture()!==null),
+  captureReplyOwnGain:c=>c.capture()?.myNetTerritoryGain ?? c.after.totals[c.me]-c.before.totals[c.me],
+  captureReplyOpponentLoss:c=>c.before.totals[c.opponent]-(c.capture()?.territoryAfterReply[c.opponent] ?? c.after.totals[c.opponent]),
+  captureReplyLargestChange:c=>(c.capture()?.myLargestAreaAfterReply ?? c.after.largest[c.me])-c.before.largest[c.me],
+  captureReplyWastesStone:c=>Number(c.move.type==='place' && !!c.capture()?.boardReturnsToCurrentPosition),
+  captureReplyTerminalWin:c=>Number(!!c.capture()?.gameEndsAfterReply && c.capture()?.winnerIfGameEnds===c.me),
+  captureReplyTerminalLoss:c=>Number(!!c.capture()?.gameEndsAfterReply && c.capture()?.winnerIfGameEnds===c.opponent),
+  movedStoneSupport:c=>c.move.type==='remove'?0:neighbors(c.move.to).filter(i=>c.next.board[i]===c.me).length,
+  territoryLeadLastSupply:c=>(c.after.totals[c.me]-c.after.totals[c.opponent])*Number(c.next.supply[c.me]<=2),
+};
+Object.assign(FEATURES,tactical);
+export const TACTICAL_FEATURE_NAMES=[...FEATURE_NAMES,...Object.keys(tactical)];
 export function moveFeatures(game:Game,move:Move,names=FEATURE_NAMES) { const c=context(game,move);return names.map(name=>{if(!FEATURES[name])throw new Error(`Unknown feature ${name}`);return FEATURES[name](c);}); }
