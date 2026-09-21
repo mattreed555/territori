@@ -96,3 +96,26 @@ Open `/training`, load `policy.json`, select Local policy, set exploration (defa
 - `scripts/ai/cli.mjs`: file I/O, batches, reports.
 
 Generated files under `data/` are ignored by Git. Keep datasets and model/report pairs together in your own durable storage. The pipeline is designed for modest bootstrap batches; it loads training data into memory. Optimize only if measured dataset size or runtime warrants it.
+# Bounded replacement work
+
+The authoritative goal is [jev-replacement-goal.md](jev-replacement-goal.md).
+Read `experiments/jev-replacement/PROGRESS.md` and `budget.json` before paid work.
+The older `simulate` CLI does not enforce a budget; use the bounded collector for
+replacement data generation:
+
+```sh
+node scripts/ai/collect.mjs --run-id RUN_ID --out experiments/jev-replacement/RUN_ID --ledger experiments/jev-replacement/budget.json --teacher-url https://territori.matthew-l-reed.chatgpt.site/api/robot --source-commit SOURCE_SHA --games 10 --seed 511 --max-turns 160
+```
+
+First commit one exclusive `reserved` session to the shared private repository,
+including its maximum spend and expiry. Re-read HEAD and use a non-forced branch
+update to avoid overlapping workers. An expired lease must be reconciled, not
+automatically replaced. Pricing must have been checked within 24 hours. The
+collector writes and syncs a request reservation before calling, records provider
+usage afterward, and preserves the full bound on errors. Never rerun the same
+session directory. Persist the reconciled ledger and compressed datasets before
+beginning another session. The seed controls matchup scheduling, not Jev sampling.
+
+Collection/validation games are development data, not independent acceptance
+tests. Public-site play is outside this offline ledger: these figures bound this
+project's additional spending, not the provider account's live balance.

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "unit": "nanodollars",
+  "allowanceNano": 4250000000,
+  "evaluationReserveNano": 2750000000,
+  "spentUpperNano": 0,
+  "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
+  "pricing": {
+    "verifiedAt": "2026-09-21T19:52:13Z",
+    "source": "https://docs.typesafe.ai/models",
+    "usageSource": "https://docs.typesafe.ai/api",
+    "model": "jev-1.13.0",
+    "nanoPerInputToken": 42,
+    "nanoPerOutputToken": 0,
+    "maxInputTokens": 65536,
+    "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
+  },
+  "sessions": [
+    {
+      "id": "20260921-all-strategies-01",
+      "purpose": "training",
+      "status": "reserved",
+      "capNano": 600000000,
+      "createdAt": "2026-09-21T19:52:13Z",
+      "expiresAt": "2026-09-21T21:52:13Z",
+      "note": "Ten sequential, balanced-color teacher games. Commit this reservation before calling. While active, charge its full cap against available funds and do not start another session. On crash preserve the cap until the journal is reconciled; expiry alone never releases funds."
+    }
+  ]
+}
