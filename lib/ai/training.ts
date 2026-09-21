@@ -1,0 +1,54 @@
+import { moveId } from '../game/rules';
+import { STRATEGIES, type Strategy } from '../game/strategies';
+import { FEATURE_NAMES, FEATURE_VERSION, moveFeatures } from './features';
+import { RULESET, type Decision } from './dataset';
+import { seededRandom, rankMoves, type PolicyModel, type Weights } from './policy';
+export function splitGames(rows:Decision[],seed=1,testFraction=.2) {
+  if(!(testFraction>0&&testFraction<1))throw new Error('Test fraction must be between 0 and 1');
+  const ids=[...new Set(rows.map(r=>r.gameId))].sort(),random=seededRandom(seed);
+  if(ids.length<2)throw new Error('At least two separate games are required for a held-out test');
+  for(let i=ids.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]];}
+  const testGameIds=ids.slice(0,Math.max(1,Math.min(ids.length-1,Math.round(ids.length*testFraction)))),test=new Set(testGameIds);
+  return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds};
+}
+/** Multinomial logistic regression over the legal moves in each state. No ML dependency. */
+export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES}={}) {
+  if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
+  const teacherRows=rows.filter(r=>r.source==='jev'),split=splitGames(teacherRows,seed,testFraction),random=seededRandom(seed);
+  const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
+  for(const strategy of Object.keys(STRATEGIES) as Strategy[]) {
+    const data=split.train.filter(r=>r.strategy===strategy).map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),y:r.legalMoves.findIndex(m=>moveId(m)===moveId(r.chosenMove))}));
+    if(!data.length)continue;
+    const mean=features.map(()=>0),scale=features.map(()=>0);let n=0;
+    for(const row of data)for(const x of row.x){n++;x.forEach((v,j)=>mean[j]+=v);}
+    mean.forEach((_,j)=>mean[j]/=n);
+    for(const row of data)for(const x of row.x)x.forEach((v,j)=>scale[j]+=(v-mean[j])**2);
+    scale.forEach((_,j)=>scale[j]=Math.sqrt(scale[j]/n)||1);
+    for(const row of data)for(const x of row.x)x.forEach((v,j)=>x[j]=(v-mean[j])/scale[j]);
+    const fit:Weights={weights:features.map(()=>0),mean,scale,samples:data.length};
+    for(let epoch=0;epoch<epochs;epoch++) {
+      for(let i=data.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[data[i],data[j]]=[data[j],data[i]];}
+      const step=rate/Math.sqrt(1+epoch/10);
+      for(const row of data) {
+        const logits=row.x.map(x=>x.reduce((sum,v,j)=>sum+v*fit.weights[j],0)),max=Math.max(...logits),exp=logits.map(v=>Math.exp(v-max)),sum=exp.reduce((a,b)=>a+b,0);
+        const gradient=fit.weights.map(w=>l2*w);
+        row.x.forEach((x,i)=>x.forEach((v,j)=>gradient[j]+=(exp[i]/sum-Number(i===row.y))*v));
+        fit.weights.forEach((w,j)=>fit.weights[j]=w-step*gradient[j]);
+      }
+    }
+    model.strategies[strategy]=fit;
+  }
+  return {model,report:evaluatePolicy(split.test,model),split:{trainGames:split.trainGameIds.length,testGames:split.testGameIds.length,trainDecisions:split.train.length,testDecisions:split.test.length}};
+}
+export function evaluatePolicy(rows:Decision[],model:PolicyModel) {
+  type Bucket={states:number;matches:number;rankSum:number};
+  const total:Bucket={states:0,matches:0,rankSum:0},byStrategy:Record<string,Bucket>=Object.fromEntries(Object.keys(STRATEGIES).map(s=>[s,{states:0,matches:0,rankSum:0}])),byMoveType:Record<string,Bucket>=Object.fromEntries(['place','remove','shift'].map(s=>[s,{states:0,matches:0,rankSum:0}]));let unsupported=0;
+  for(const r of rows.filter(r=>r.source==='jev')) {
+    if(!model.strategies[r.strategy]){unsupported++;continue;}
+    const ranked=rankMoves(r.state,r.strategy,model),rank=ranked.findIndex(x=>moveId(x.move)===moveId(r.chosenMove))+1;
+    if(rank===0)throw new Error('Teacher choice missing from legal moves');
+    for(const b of [total,byStrategy[r.strategy]??=( {states:0,matches:0,rankSum:0}),byMoveType[r.chosenMove.type]??=({states:0,matches:0,rankSum:0})]){b.states++;b.matches+=Number(rank===1);b.rankSum+=rank;}
+  }
+  const summary=(b:Bucket)=>({states:b.states,agreementPercent:b.states?100*b.matches/b.states:null,averageTeacherRank:b.states?b.rankSum/b.states:null});
+  return {overall:summary(total),byStrategy:Object.fromEntries(Object.entries(byStrategy).map(([k,v])=>[k,summary(v)])),byTeacherMoveType:Object.fromEntries(Object.entries(byMoveType).map(([k,v])=>[k,summary(v)])),unsupportedStates:unsupported,tieBreaking:'score descending, then move ID; rank is one-based; epsilon=0'};
+}

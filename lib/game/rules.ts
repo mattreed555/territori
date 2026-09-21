@@ -5,7 +5,7 @@ export type Cell = Color | null;
 export type Move = { type: 'place'; to: number } | { type: 'remove'; to: number } | { type: 'shift'; from: number; to: number };
 export type Game = { board: Cell[]; turn: Color; supply: Record<Color, number>; captured: Record<Color, number>; ply: number; finalRound: boolean; ended: 'supply' | 'repetition' | null; positions: Record<string, number>; last: { color: Color; move: Move } | null };
 export const other = (c: Color): Color => c === 'blue' ? 'red' : 'blue';
-export const title = (s: string) => s[0].toUpperCase() + s.slice(1);
+export const title = (s: string) => s === 'blue' ? 'Teal' : s === 'red' ? 'Apricot' : s[0].toUpperCase() + s.slice(1);
 export function neighbors(i: number, size: number = RULES.size): number[] {
   const row = Math.floor(i / size), col = i % size;
   return [row > 0 ? i - size : -1, row < size - 1 ? i + size : -1, col > 0 ? i - 1 : -1, col < size - 1 ? i + 1 : -1].filter(n => n >= 0);

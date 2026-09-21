@@ -6,7 +6,7 @@ A small strategy game about controlling space. Play against Jev or watch two rob
 
 ## Rules
 
-Start with an empty 8×8 board and 25 stones each. Blue goes first. On your turn, choose one action:
+Start with an empty 8×8 board and 25 stones each. Teal goes first. On your turn, choose one action:
 
 - **Place** an unused stone on an empty square.
 - **Remove** an opponent’s stone when more of your stones than theirs sit beside it. Count only up, down, left, and right. Ties are safe; captured stones stay out of play.
@@ -50,3 +50,7 @@ pnpm build
 - `lib/game/share.ts` — copyable results and emoji territory map.
 
 Games live in page memory; refreshing starts over. The live version is hosted on ChatGPT Sites. Its `TYPESAFE_API_KEY` is configured separately in secret storage and is not included in this repository.
+
+## Local AI bootstrap
+
+Jev decisions are saved in the playing browser. The [AI lab](https://territori.matthew-l-reed.chatgpt.site/training) exports JSONL and can load a trained local policy. Headless collection, feature extraction, linear imitation training, and evaluation are documented in [docs/bootstrap.md](docs/bootstrap.md). Jev remains the default.

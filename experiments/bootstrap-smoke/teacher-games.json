@@ -1,0 +1,53 @@
+{
+  "mode": "jev-vs-jev",
+  "seed": 42,
+  "games": 2,
+  "epsilon": 0.03,
+  "completed": 2,
+  "truncated": 0,
+  "localWins": null,
+  "jevWins": null,
+  "draws": 0,
+  "results": [
+    {
+      "gameId": "65189ce0-5977-4178-af87-c0a553c864cb:0",
+      "players": {
+        "blue": "Balanced",
+        "red": "Balanced"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 27,
+        "red": 26
+      },
+      "largest": {
+        "blue": 26,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    {
+      "gameId": "65189ce0-5977-4178-af87-c0a553c864cb:1",
+      "players": {
+        "blue": "Balanced",
+        "red": "Balanced"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 30,
+        "red": 23
+      },
+      "largest": {
+        "blue": 27,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 56
+    }
+  ]
+}

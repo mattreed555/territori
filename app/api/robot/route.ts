@@ -1,7 +1,7 @@
 import { env } from 'cloudflare:workers';
 import { z } from 'zod';
-import { decisionRequest } from '@/lib/game/jev';
-import { newGame, moveId, RULES, type Game } from '@/lib/game/rules';
+import { askJev } from '@/lib/ai/teacher';
+import { newGame, RULES, type Game } from '@/lib/game/rules';
 import { STRATEGIES, type Strategy } from '@/lib/game/strategies';
 
 const counts = z.object({ blue: z.number().int().min(0).max(RULES.pieces), red: z.number().int().min(0).max(RULES.pieces) });
@@ -26,14 +26,11 @@ export async function POST(request: Request) {
   if (!key) return json({ error: 'Robot players are not connected yet.', code: 'NOT_CONFIGURED' }, 503);
   if (Object.keys(data.repetitionCounts).length > 255) return json({ error: 'Invalid game state.' }, 400);
   const game: Game = { ...newGame(), ...data, last: data.last ?? null };
-  const { moves, body } = decisionRequest(game, data.strategy, data.repetitionCounts);
-  if (!moves.length) return json({ error: 'No legal move is available.' }, 409);
   try {
-    const response = await fetch('https://api.typesafe.ai/v1/systemone', { method: 'POST', headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: AbortSignal.timeout(20000) });
-    if (!response.ok) return json({ error: response.status === 429 || response.status === 529 ? 'Jev is busy. Wait a moment, then retry.' : 'Jev could not make this move. Please retry.', code: 'UPSTREAM_ERROR' }, 502);
-    const result = await response.json() as { answers?: { move?: { choice?: string } } };
-    const move = moves.find(m => moveId(m) === result.answers?.move?.choice);
-    if (!move) return json({ error: 'Jev returned an invalid move. Please retry.' }, 502);
-    return json({ move });
-  } catch { return json({ error: 'Jev did not respond in time. Please retry.' }, 504); }
+    const choice = await askJev(game, data.strategy, key, request.signal, data.repetitionCounts);
+    return json(choice);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : '';
+    return json({ error: message.includes('(429)') || message.includes('(529)') ? 'Jev is busy. Wait a moment, then retry.' : 'Jev could not make this move. Please retry.', code: 'UPSTREAM_ERROR' }, 502);
+  }
 }

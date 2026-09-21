@@ -1,0 +1,57 @@
+{
+  "trainGames": 1,
+  "testGames": 1,
+  "trainDecisions": 56,
+  "testDecisions": 56,
+  "overall": {
+    "states": 56,
+    "agreementPercent": 37.5,
+    "averageTeacherRank": 7.303571428571429
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    },
+    "Cautious": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    },
+    "Expansive": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    },
+    "Fluid": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    },
+    "Balanced": {
+      "states": 56,
+      "agreementPercent": 37.5,
+      "averageTeacherRank": 7.303571428571429
+    }
+  },
+  "byTeacherMoveType": {
+    "place": {
+      "states": 39,
+      "agreementPercent": 20.512820512820515,
+      "averageTeacherRank": 8.794871794871796
+    },
+    "remove": {
+      "states": 17,
+      "agreementPercent": 76.47058823529412,
+      "averageTeacherRank": 3.8823529411764706
+    },
+    "shift": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    }
+  },
+  "unsupportedStates": 0,
+  "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+}
