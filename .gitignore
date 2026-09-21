@@ -46,3 +46,5 @@ next-env.d.ts
 /work/
 # Generated training data and models (export deliberately when ready).
 /data/
+# Keep exact experiment logs as deterministic .jsonl.gz artifacts.
+/experiments/jev-replacement/**/*.jsonl

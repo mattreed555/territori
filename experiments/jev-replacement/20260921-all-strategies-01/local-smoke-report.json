@@ -1,0 +1,413 @@
+{
+  "mode": "local-vs-local",
+  "seed": 912,
+  "games": 20,
+  "epsilon": 0.03,
+  "completed": 20,
+  "truncated": 0,
+  "localWins": null,
+  "jevWins": null,
+  "draws": 6,
+  "results": [
+    {
+      "gameId": "20260921-linear-selfplay-01:0",
+      "players": {
+        "blue": "Cautious",
+        "red": "Fluid"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:1",
+      "players": {
+        "blue": "Fluid",
+        "red": "Expansive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 25,
+        "red": 22
+      },
+      "largest": {
+        "blue": 24,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:2",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Cautious"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:3",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Aggressive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 21,
+        "red": 25
+      },
+      "largest": {
+        "blue": 13,
+        "red": 24
+      },
+      "reason": "supply",
+      "turns": 70
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:4",
+      "players": {
+        "blue": "Fluid",
+        "red": "Aggressive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 20
+      },
+      "largest": {
+        "blue": 22,
+        "red": 14
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:5",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Aggressive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:6",
+      "players": {
+        "blue": "Cautious",
+        "red": "Expansive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:7",
+      "players": {
+        "blue": "Fluid",
+        "red": "Fluid"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 20
+      },
+      "largest": {
+        "blue": 22,
+        "red": 14
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:8",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Expansive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 25,
+        "red": 24
+      },
+      "largest": {
+        "blue": 23,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:9",
+      "players": {
+        "blue": "Cautious",
+        "red": "Aggressive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:10",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Fluid"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 28
+      },
+      "largest": {
+        "blue": 13,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 72
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:11",
+      "players": {
+        "blue": "Fluid",
+        "red": "Aggressive"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 20
+      },
+      "largest": {
+        "blue": 22,
+        "red": 14
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:12",
+      "players": {
+        "blue": "Expansive",
+        "red": "Balanced"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 19,
+        "red": 28
+      },
+      "largest": {
+        "blue": 16,
+        "red": 28
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:13",
+      "players": {
+        "blue": "Cautious",
+        "red": "Fluid"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 24,
+        "red": 23
+      },
+      "largest": {
+        "blue": 24,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:14",
+      "players": {
+        "blue": "Cautious",
+        "red": "Balanced"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 24,
+        "red": 22
+      },
+      "largest": {
+        "blue": 24,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:15",
+      "players": {
+        "blue": "Expansive",
+        "red": "Cautious"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 21
+      },
+      "largest": {
+        "blue": 10,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:16",
+      "players": {
+        "blue": "Cautious",
+        "red": "Cautious"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 22,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:17",
+      "players": {
+        "blue": "Fluid",
+        "red": "Cautious"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 22
+      },
+      "largest": {
+        "blue": 22,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 52
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:18",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Balanced"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 24,
+        "red": 22
+      },
+      "largest": {
+        "blue": 24,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    {
+      "gameId": "20260921-linear-selfplay-01:19",
+      "players": {
+        "blue": "Aggressive",
+        "red": "Fluid"
+      },
+      "localColor": null,
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 24
+      },
+      "largest": {
+        "blue": 14,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 72
+    }
+  ]
+}

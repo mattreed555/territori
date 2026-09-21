@@ -29,3 +29,13 @@ test('meter journals before calls, refuses reuse and retains timeout bounds',asy
   const saved=JSON.parse(await fs.readFile(ledgerFile,'utf8'));assert.equal(saved.spentUpperNano,summary.spentUpperNano);assert.equal(saved.sessions[0].status,'closed-with-uncertainty');
  }finally{await fs.rm(dir,{recursive:true,force:true});}
 });
+test('per-session cap prevents the next call before any money is spent',async()=>{
+ const dir=await fs.mkdtemp(path.join(os.tmpdir(),'territori-cap-'));
+ try{
+  const ledgerFile=path.join(dir,'budget.json'),journalFile=path.join(dir,'usage.jsonl'),b=fixture();b.sessions[0].capNano=REQUEST_BOUND_NANO;
+  await fs.writeFile(ledgerFile,JSON.stringify(b));const meter=await openMeter({ledgerFile,journalFile,runId:'test'});
+  await meter.request(async()=>({teacher:{model:'jev-1.13.0',usage:{input_tokens:65536,output_tokens:0}}}),{});
+  await assert.rejects(()=>meter.request(async()=>{assert.fail('must not call');},{}),/budget reached/);
+  assert.equal((await meter.close()).spentUpperNano,REQUEST_BOUND_NANO);
+ }finally{await fs.rm(dir,{recursive:true,force:true});}
+});

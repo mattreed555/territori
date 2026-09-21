@@ -1,0 +1,57 @@
+{
+  "trainGames": 5,
+  "testGames": 5,
+  "trainDecisions": 276,
+  "testDecisions": 286,
+  "overall": {
+    "states": 286,
+    "agreementPercent": 44.40559440559441,
+    "averageTeacherRank": 6.8426573426573425
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "states": 60,
+      "agreementPercent": 51.666666666666664,
+      "averageTeacherRank": 6.183333333333334
+    },
+    "Cautious": {
+      "states": 57,
+      "agreementPercent": 43.85964912280702,
+      "averageTeacherRank": 6.754385964912281
+    },
+    "Expansive": {
+      "states": 27,
+      "agreementPercent": 55.55555555555556,
+      "averageTeacherRank": 5.222222222222222
+    },
+    "Fluid": {
+      "states": 55,
+      "agreementPercent": 50.90909090909091,
+      "averageTeacherRank": 7
+    },
+    "Balanced": {
+      "states": 87,
+      "agreementPercent": 32.18390804597701,
+      "averageTeacherRank": 7.758620689655173
+    }
+  },
+  "byTeacherMoveType": {
+    "place": {
+      "states": 218,
+      "agreementPercent": 28.89908256880734,
+      "averageTeacherRank": 8.605504587155963
+    },
+    "remove": {
+      "states": 68,
+      "agreementPercent": 94.11764705882354,
+      "averageTeacherRank": 1.1911764705882353
+    },
+    "shift": {
+      "states": 0,
+      "agreementPercent": null,
+      "averageTeacherRank": null
+    }
+  },
+  "unsupportedStates": 0,
+  "tieBreaking": "score descending, then move ID; rank is one-based; epsilon=0"
+}

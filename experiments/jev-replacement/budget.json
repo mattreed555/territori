@@ -3,8 +3,8 @@
   "currency": "USD",
   "unit": "nanodollars",
   "allowanceNano": 4250000000,
-  "evaluationReserveNano": 2750000000,
-  "spentUpperNano": 0,
+  "evaluationReserveNano": 3250000000,
+  "spentUpperNano": 309700230,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
     "verifiedAt": "2026-09-21T19:52:13Z",
@@ -20,11 +20,17 @@
     {
       "id": "20260921-all-strategies-01",
       "purpose": "training",
-      "status": "reserved",
+      "status": "closed",
       "capNano": 600000000,
       "createdAt": "2026-09-21T19:52:13Z",
       "expiresAt": "2026-09-21T21:52:13Z",
-      "note": "Ten sequential, balanced-color teacher games. Commit this reservation before calling. While active, charge its full cap against available funds and do not start another session. On crash preserve the cap until the journal is reconciled; expiry alone never releases funds."
+      "note": "Ten sequential, balanced-color teacher games. Commit this reservation before calling. While active, charge its full cap against available funds and do not start another session. On crash preserve the cap until the journal is reconciled; expiry alone never releases funds.",
+      "closedAt": "2026-09-21T19:58:27.848Z",
+      "calls": 562,
+      "inputTokens": 7373815,
+      "outputTokens": 416792,
+      "spentUpperNano": 309700230,
+      "uncertain": false
     }
   ]
 }

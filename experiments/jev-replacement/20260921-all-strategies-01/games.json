@@ -1,0 +1,242 @@
+[
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:0",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 24
+      },
+      "largest": {
+        "blue": 26,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 62
+    },
+    "players": {
+      "blue": "Balanced",
+      "red": "Aggressive"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:1",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 27,
+        "red": 28
+      },
+      "largest": {
+        "blue": 25,
+        "red": 22
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Aggressive",
+      "red": "Fluid"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:2",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 28
+      },
+      "largest": {
+        "blue": 10,
+        "red": 27
+      },
+      "reason": "supply",
+      "turns": 58
+    },
+    "players": {
+      "blue": "Fluid",
+      "red": "Cautious"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:3",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 25,
+        "red": 23
+      },
+      "largest": {
+        "blue": 18,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 60
+    },
+    "players": {
+      "blue": "Cautious",
+      "red": "Expansive"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:4",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 34,
+        "red": 25
+      },
+      "largest": {
+        "blue": 29,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Expansive",
+      "red": "Balanced"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:5",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 25,
+        "red": 28
+      },
+      "largest": {
+        "blue": 25,
+        "red": 24
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    "players": {
+      "blue": "Balanced",
+      "red": "Fluid"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:6",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 26,
+        "red": 26
+      },
+      "largest": {
+        "blue": 12,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 58
+    },
+    "players": {
+      "blue": "Aggressive",
+      "red": "Cautious"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:7",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 29,
+        "red": 27
+      },
+      "largest": {
+        "blue": 27,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 54
+    },
+    "players": {
+      "blue": "Fluid",
+      "red": "Expansive"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:8",
+    "result": {
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 30,
+        "red": 25
+      },
+      "largest": {
+        "blue": 25,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 56
+    },
+    "players": {
+      "blue": "Cautious",
+      "red": "Balanced"
+    }
+  },
+  {
+    "kind": "result",
+    "version": 1,
+    "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+    "gameId": "20260921-all-strategies-01:9",
+    "result": {
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 21,
+        "red": 27
+      },
+      "largest": {
+        "blue": 9,
+        "red": 23
+      },
+      "reason": "supply",
+      "turns": 50
+    },
+    "players": {
+      "blue": "Expansive",
+      "red": "Aggressive"
+    }
+  }
+]
