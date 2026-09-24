@@ -7,7 +7,7 @@
   "spentUpperNano": 457669296,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
-    "verifiedAt": "2026-09-21T22:13:54Z",
+    "verifiedAt": "2026-09-24T02:26:00Z",
     "source": "https://docs.typesafe.ai/models",
     "usageSource": "https://docs.typesafe.ai/api",
     "model": "jev-1.13.0",
@@ -17,6 +17,15 @@
     "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
   },
   "sessions": [
+    {
+      "id": "20260924-search-05-devmatches",
+      "purpose": "development-evaluation",
+      "status": "reserved",
+      "capNano": 250000000,
+      "createdAt": "2026-09-24T02:27:00Z",
+      "expiresAt": "2026-09-24T03:25:00Z",
+      "note": "Ten balanced-color search-vs-Jev development games, not acceptance. Exact response usage required, no retries. $3.25 independent evaluation reserve preserved."
+    },
     {
       "id": "20260924-search-04",
       "purpose": "offline-search-development",

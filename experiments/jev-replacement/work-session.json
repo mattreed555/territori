@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-search-04",
-  "status": "closed",
-  "purpose": "Offline shallow search implementation and free evaluation; no paid calls",
-  "startedAt": "2026-09-24T02:09:00Z",
-  "expiresAt": "2026-09-24T03:30:00Z",
-  "budgetReservationNano": 0,
-  "closedAt": "2026-09-24T02:22:00Z",
-  "note": "Offline implementation and evaluation completed; no paid calls or active financial reservations. Read the newest checkpoint and ledger before further work."
+  "id": "20260924-search-05",
+  "status": "active",
+  "purpose": "Ten metered search-vs-Jev development matches and offline follow-up",
+  "startedAt": "2026-09-24T02:27:00Z",
+  "expiresAt": "2026-09-24T03:25:00Z",
+  "budgetReservationNano": 250000000,
+  "note": "Exclusive worker. $0.25 cap reserved for development, $3.25 acceptance reserve untouched. Do not overlap or release reservation until reconciled."
 }
