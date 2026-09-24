@@ -1,0 +1,11 @@
+{
+  "datasetSha256": "3c70ab441a0d8b70e95b49a436fef30e534c5e77cb87e1d09686368225957a24",
+  "candidateSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "baselineSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+  "searchVersion": 2,
+  "games": 20,
+  "decisions": 1216,
+  "allStatesChoicesAndOutcomesReproduced": true,
+  "paidCalls": 0
+}

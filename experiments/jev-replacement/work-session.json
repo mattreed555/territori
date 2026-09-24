@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-residual-08",
-  "status": "active",
+  "status": "closed",
   "purpose": "Offline matched-state strategy residual experiment",
   "startedAt": "2026-09-24T05:45:00Z",
   "expiresAt": "2026-09-24T06:40:00Z",
   "budgetReservationNano": 0,
-  "note": "No paid calls. Preserve evaluation reserve and live Jev; do not overlap this session."
+  "closedAt": "2026-09-24T05:57:00Z",
+  "note": "Offline residual experiment complete: three fits, nine configurations, 40 games, exact 2550-decision replay, 40 tests and TypeScript. No paid calls/reservations. Re-read progress and ledger before new work."
 }

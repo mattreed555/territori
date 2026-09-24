@@ -1,5 +1,15 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — matched-state strategy residuals (latest)
+
+Session `20260924-residual-08` is CLOSED. Reconciled GitHub `c8f05ab139be5e1bedf09e193f9f5f2ba95b8a17`, local `d6cca17a6f33f137a1e0cb57d26d5681d3612bcd`, and unchanged public Sites version14. Offline lease commit `bbd3eebbb90c8a77a878b8293e978dfd14695003` preceded work. No paid calls, dependencies, UI/default changes, deployment or audience changes.
+
+Added optional 14-feature ridge strategy contrasts from identical-position teacher probabilities, with group-safe training and a tiny validated runtime asset. Reranking stays within a one-point two-ply tactical margin; terminal wins and the loss-deferring full-width fallback remain protected. All40 tests and TypeScript pass. Three ridge fits ×three runtime weights reuse the existing100 labels (12 training/8 held-out positions). Ridge0.1 lowers held-out contrast MSE0.17489→0.15906; weight0.5 preserves35% teacher agreement. All strategy pairs differ on1–4/8 held-out positions, with stronger Expansive spread and some Cautious safety differentiation. This is promising but not all-five style validation. **Fluid still has no held-out shift evidence.** Its sole teacher shift is already searched and within the tactical margin, but all five teachers chose it; it supplies no uniquely Fluid signal.
+
+Forty local-only games: weight0.5 scores60% (8W8D4L), weight1 scores57.5% (7W9D4L), twenty games each against the same frozen base search policy. Wide paired intervals overlap50%; no strength claim. All2,550 choices/states and40 outcomes replay exactly, no illegal moves/aborts/truncations/repetitions. Residual gzip1,320 bytes; base4,565 bytes. Server Node p95≈72ms/max100.5ms is NOT mobile-class evidence. No new Jev evaluation or independent acceptance matches. **Replacement is not ready; live Jev remains unchanged.** Exact models, grid, logs, comparisons and commands: `20260924-residual-08/README.md`.
+
+Cost unchanged: **$0.660659874** cumulative, **$3.589340126** remaining including **$3.25** acceptance reserve. No active financial reservation/uncertainty. Next: prioritize profiling/reducing repeated runtime computation, verify choice parity, and measure in a documented constrained browser, including crowded boards/full-width safety fallback. A small targeted Fluid/shift teacher probe with repeated-response controls may address the remaining data gap after a fresh budget/lease check. Do not raise style weights arbitrarily or spend acceptance reserve yet. A heavier model is not currently justified. This supersedes older next steps.
+
 ## 2026-09-24 — grouped counterfactual training (latest)
 
 Session `20260924-style-07` is CLOSED. Reconciled GitHub `bbf8a7c5a029746cfab7b2d0a54e2a9bcac8f41e`, local `0e59e6e777f2f9122f9e349e12f4ab866128948b`, and unchanged public Sites version14. Durable offline lease `c8129e795142bf62bab88712e3d4030c292c246b` preceded work. No paid calls, new dependencies, UI/default changes, deployment or audience changes.

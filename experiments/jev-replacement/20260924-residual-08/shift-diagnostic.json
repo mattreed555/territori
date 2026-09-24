@@ -1,0 +1,15 @@
+{
+  "positionId": "probe-random:2406:1:68",
+  "strategy": "Fluid",
+  "policyPath": "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json",
+  "searchVersion": 2,
+  "checkedPolicyBeams": [12, 0],
+  "sameResultAtBothWidths": true,
+  "teacherMove": {"type":"shift","from":53,"to":52},
+  "teacherMoveSearchValue": -0.85,
+  "teacherMoveWorstReply": {"type":"place","to":53},
+  "selectedMove": {"type":"place","to":51},
+  "selectedMoveSearchValue": -0.2,
+  "selectedMoveWorstReply": {"type":"place","to":52},
+  "interpretation": "The lone teacher-shift position is not a beam omission: the shift is searched and is inside the one-point style margin. All five teacher strategies chose the same shift, so matched-strategy contrasts do not provide a uniquely Fluid shift signal. This is two-ply heuristic evidence, not optimal play."
+}

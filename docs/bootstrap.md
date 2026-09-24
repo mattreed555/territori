@@ -147,6 +147,20 @@ It compares search prior weights 0.75 and 3, records choices/feature tendencies 
 identical positions, and reports repeated training contexts. These small,
 repeatedly inspected development folds are not the independent acceptance suite.
 
+`fit-style.mjs --probes LABELS.jsonl.gz --policy MODEL --split comparison.json
+--out DIRECTORY` is an opt-in matched-state style experiment. Small ridge fits
+learn log-probability differences between the five teacher strategies on identical
+positions; common tactics cancel. Source-group holdouts and training-only scaling
+remain mandatory. `style.ts` reranks searched moves within a bounded tactical
+margin and preserves visible terminal wins. It does not broaden the search beam
+or prove long-term safety. The residual is a separate, validated tiny JSON asset;
+neither it nor the new policy is enabled in normal play.
+
+Free `local-tournament.mjs` accepts `--style MODEL --style-options
+'{"weight":0.5,"margin":1}'` for the candidate only. Use `verify-local.mjs --run
+PREFIX --candidate POLICY --baseline POLICY --style MODEL` to reproduce every
+saved state, seeded choice and result. Omitting style keeps the old policy path.
+
 Search version 2 expands to all root moves if every initial beam move permits
 a terminal loss within two plies. This prevents a low-ranked but necessary shift
 from being excluded. `replay-search.mjs` compares new search code with a saved
