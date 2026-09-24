@@ -1,0 +1,38 @@
+{
+  "runId": "20260924-search-04",
+  "purpose": "Offline development only; no paid calls or acceptance matches",
+  "baselineGithubCommit": "5a97341e32abf1521cc6d557c267f990f75dd8ef",
+  "leaseCommit": "dc55844a6883820191fb8f7aca8043a9a5d051e9",
+  "sites": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "versionBefore": 14,
+    "versionAfter": 14,
+    "audienceBefore": "public",
+    "audienceAfter": "public",
+    "published": false
+  },
+  "checks": {
+    "testsPassed": 30,
+    "typeScriptPassed": true,
+    "invalidCollectorOptionsFailedBeforeMeter": true,
+    "optimizedDecisionParity": true
+  },
+  "costNano": 0,
+  "hashes": {
+    "lib/ai/search.ts": "9af42507e6467cdfb1794763f0ab341cd966834458d0356e309422225894a4fd",
+    "lib/game/rules.ts": "155073daffd8fd610a57aee1182c65eaa33584ab8cc80d1d32f438cd569bfd5b",
+    "scripts/ai/audit-search.mjs": "9085f69153dd903437d9de2fded10f986c953276a43a770b070391aca5beb104",
+    "scripts/ai/local-tournament.mjs": "8ea6655f29bc32f161443ccfca534062243f7c637ab0dd9b4208daee03bc2cd0",
+    "scripts/ai/collect.mjs": "9b5d21700801bd1fdee2c4ceb141353931deefe1b1420198b5d1f4fb8a629c77",
+    "tests/search.test.mjs": "f4da285c0a6f21a2c1c1def699d2a7bcc7b9a36bbe17e3ca244de8c7a8fd0973",
+    "experiments/jev-replacement/20260924-search-04/README.md": "19ec37b9f6b449d13b5f0803f29a72bc4e243d1fc24e524621a4a8479f70f3e8",
+    "experiments/jev-replacement/20260924-search-04/final-student-state-audit.json.gz": "2d2a2d4fb261e746826dff7eae664e77956c0cab2107ef17b3c152699489ef46",
+    "experiments/jev-replacement/20260924-search-04/optimized-student-state-audit.json.gz": "7dff3691852496a90742a8e99be189c6b6156e136d6a19510da90b4df2e4be12",
+    "experiments/jev-replacement/20260924-search-04/search-vs-prior.json": "c971f95cc6799e3b5acd3b5275d45424ac507a6ff8e540db92a32f51fd92dc83",
+    "experiments/jev-replacement/20260924-search-04/search-vs-prior.jsonl.gz": "3d9b55ceef19ad23f24a831f7b1cdff483b86055207ef411c67b3dc298fc3361",
+    "experiments/jev-replacement/20260924-search-04/strong-prior-audit.json.gz": "2e9fd4f213c41d706122ea592af52c41ab5aedad505850ff61f0493093d05594",
+    "experiments/jev-replacement/20260924-search-04/strong-prior-vs-search.json": "04e30fda3c42cef583814fe0375fd9295923ec36570fb08e8785023d1ef35091",
+    "experiments/jev-replacement/20260924-search-04/strong-prior-vs-search.jsonl.gz": "9cf261e6dc70acdac54a418d28bee6f5ff6f081b2091fbffe588ee591afa3ade",
+    "experiments/jev-replacement/20260924-search-04/student-state-audit.json.gz": "9b622a4cf06015fe7fbd3266ae1290fd2c95f62b1b7c6c1160ab1cc40f5eb281"
+  }
+}

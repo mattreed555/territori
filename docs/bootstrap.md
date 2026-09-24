@@ -106,6 +106,19 @@ collector supports `--mode local-vs-jev --model FILE --epsilon 0.03` in batches 
 ten (all five strategies, both colors). These are explicitly development games.
 Use `report-matches.mjs --run DIRECTORY` to summarize saved compressed logs.
 
+Opt-in shallow search is available in the offline tools, not the live UI:
+`collect.mjs --search '{}'` adds a full opponent-reply search over a bounded
+candidate set. `local-tournament.mjs` accepts `--search` and `--baseline-search`
+JSON options; neither option makes API calls in that tool. Options are
+`policyBeam` (12), `staticBeam` (8), and `priorWeight` (0.75).
+`policyBeam: 0` searches every root move; terminal root moves are always included.
+Search uses actual final-round/repetition endings, every legal opponent reply,
+and a small board-value heuristic plus the learned strategy ranking. Exploration
+is restricted to close search alternatives, unlike the original uniform epsilon.
+This is two plies, not a proof against longer tactics. Strategy differentiation
+and mobile latency remain open gates. `audit-search.mjs` reports beam coverage
+and conditional ranks explicitly; these are not full-legal-move teacher ranks.
+
 Offline comparisons: `scripts/ai/compare.mjs` fits the original and optional
 capture-reply features with hard or normalized soft teacher targets. See
 `experiments/jev-replacement/20260921-tactical-02/README.md` for commands and

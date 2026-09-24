@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — shallow search, offline only (latest)
+
+Session `20260924-search-04` is CLOSED. Reconciled GitHub `5a97341e32abf1521cc6d557c267f990f75dd8ef`, local `b1fffa5f09b5bc56d1ff1469a5d26d85afa31bdc`, and unchanged Sites source/live version 14 (public). Acquired durable lease commit `dc55844a6883820191fb8f7aca8043a9a5d051e9` before implementation. No paid calls, new dependencies, UI/default/audience changes, or deployment.
+
+Added opt-in two-ply search: learned and immediate-value root candidates, all legal opposing placements/captures/shifts, and actual terminal-round/repetition outcomes. Shared validated successor enumeration speeds it up without changing rules; 30 tests and TypeScript pass. The metered collector now accepts an explicit search configuration and records its source hash; invalid settings fail before paid work.
+
+**20/20 wins against the previous linear local policy**, balanced colors and all five strategies; this is NOT Jev strength. A stronger-prior variant scored 47.5% in 20 matches against default search. All 40 games completed, no repetition/truncation/illegal moves. Default search avoids 3 visible two-ply losses in saved local decisions. Teacher agreement on the existing 269 student-influenced teacher states falls to 28.25% from 52.79% for the underlying linear model on those same states; conditional beam rank 6.59 with 261/269 included. No independent acceptance matches yet.
+
+Latest unthrottled Node p95 34 ms (max129 ms), NOT the mobile gate. Same-state style differences remain weak (0–6 different choices in 54 states per strategy pair; stronger prior 3–9). Fluid/shift coverage remains unresolved. Exact records, counterfactual choices, model/data hashes and reproducible commands: `20260924-search-04/README.md` and its compressed audit/tournament artifacts. Live Jev remains unchanged. **Replacement is not ready.**
+
+Cost $0 this session; cumulative $0.457669296, remaining $3.792330704, including the $3.25 acceptance reserve. Pricing verification is now stale: refresh official pricing before any future paid work. No active financial reservation or unknown charges.
+
+Next: a SMALL, metered search-vs-Jev DEVELOPMENT batch is justified by free results; do not spend the acceptance reserve on a still-unvalidated candidate. Improve same-state style behavior using existing student-influenced teacher data and/or targeted labels, and measure mobile-class latency. Independent 200-game evaluation, full legal-move rank reporting, UI integration, build/browser/deployment gates still remain. Read current work-session/ledger and acquire a new lease first. This section supersedes earlier next-step notes.
+
 ## 2026-09-21 — shared priors and actual Jev development matches (latest)
 
 Session `20260921-shared-03` is CLOSED; check `work-session.json` before future work. Reconciled current GitHub `3cbe54db23a2898904ef0a010678dcb7beb7f92a` with local `967061b866f801d32e6827e8742e7ad1432a297b` and unchanged Sites source/live version 14. Shared-prior training pools only TRAINING games to learn general tactics, then regularizes each strategy toward that prior; runtime remains five ordinary linear weight vectors, with no dependency or default changes. Twenty-four tests and TypeScript pass, including validation-label leakage and exact baseline reproduction checks.

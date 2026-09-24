@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-search-04",
+      "purpose": "offline-search-development",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T02:22:00Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Two-ply implementation, saved-state audits and 40 local-only development matches. No paid work. Pricing must be refreshed before future calls."
+    },
+    {
       "id": "20260921-shared-03-devmatches",
       "purpose": "development-evaluation",
       "status": "closed",

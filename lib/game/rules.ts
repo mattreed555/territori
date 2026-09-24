@@ -71,6 +71,15 @@ export function nextPositionKey(g: Game, m: Move): string {
 }
 export function applyMove(g: Game, m: Move): Game {
   if (!legalMoves(g).some(legal => moveId(legal) === moveId(m))) throw new Error('That move is not legal.');
+  return advanceLegalMove(g, m);
+}
+/** Enumerate already-validated successors without rechecking the full move list
+ * for every sibling. Shares exactly the normal engine's transition semantics.
+ */
+export function* legalSuccessors(g: Game): Generator<{move: Move; game: Game}> {
+  for (const move of legalMoves(g)) yield {move, game: advanceLegalMove(g, move)};
+}
+function advanceLegalMove(g: Game, m: Move): Game {
   const board = movedBoard(g.board, g.turn, m), supply = { ...g.supply }, captured = { ...g.captured };
   if (m.type === 'place') supply[g.turn]--;
   if (m.type === 'remove') captured[other(g.turn)]++;
