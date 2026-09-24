@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-shift-10",
-  "status": "closed",
-  "purpose": "Targeted shift probe with repeated-response controls and offline fitting",
-  "startedAt": "2026-09-24T07:58:00Z",
-  "expiresAt": "2026-09-24T08:45:00Z",
-  "budgetReservationNano": 120000000,
-  "closedAt": "2026-09-24T08:13:25Z",
-  "note": "120 metered labels reconciled, $0.066640308 exact cost; repeated controls, grouped refit and 40 free games/replays complete. Refit not promoted. Live Jev and $3.25 acceptance reserve unchanged."
+  "id": "20260924-intent-11",
+  "status": "active",
+  "purpose": "Offline explicit strategy-intent experiment and local evaluation",
+  "startedAt": "2026-09-24T08:52:00Z",
+  "expiresAt": "2026-09-24T09:40:00Z",
+  "budgetReservationNano": 0,
+  "note": "No paid calls. Separate authored intent from learned weights, retain tactical limits, test against saved states and free games. No live changes. Do not overlap."
 }
