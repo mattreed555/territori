@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260921-shared-03",
-  "status": "closed",
-  "purpose": "shared-prior training plus ten bounded development local-vs-Jev matches",
-  "startedAt": "2026-09-21T22:10:00Z",
-  "expiresAt": "2026-09-21T23:00:00Z",
+  "id": "20260924-search-04",
+  "status": "active",
+  "purpose": "Offline shallow search implementation and free evaluation; no paid calls",
+  "startedAt": "2026-09-24T02:09:00Z",
+  "expiresAt": "2026-09-24T03:30:00Z",
   "budgetReservationNano": 0,
-  "closedAt": "2026-09-21T22:20:06Z",
-  "note": "Training and ten development matches completed. Paid usage reconciled in budget.json; no active session or reservation. Read this file before starting future work."
+  "note": "Exclusive session. No paid work authorized for this session. Do not overlap."
 }
