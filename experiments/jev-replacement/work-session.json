@@ -1,11 +1,14 @@
 {
   "version": 1,
   "id": "20260924-acceptance-24",
-  "status": "active",
+  "status": "closed",
   "purpose": "Sealed independent acceptance batch9",
   "startedAt": "2026-09-24T21:19:42.087Z",
   "expiresAt": "2026-09-25T00:19:42.087Z",
-  "budgetReservationNano": 400000000,
+  "budgetReservationNano": 0,
   "financialSessionId": "acceptance-v1-09",
-  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9"
+  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
+  "closedAt": "2026-09-24T21:24:16.687Z",
+  "spentNano": 309272586,
+  "note": "Batch9 completed20/20, exact replay and usage; cumulative180/200."
 }
