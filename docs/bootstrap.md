@@ -179,8 +179,16 @@ or the live default. `local-tournament.mjs --style FILE --intent
 '{"strength":1,"margin":1}'` tests it locally; `verify-local.mjs` checks its
 source hash and replays choices. `audit-intent.mjs`, `intent-selfplay.mjs`, and
 `audit-intent-selfplay.mjs` preserve common-state and all-pairing evidence.
-See `experiments/jev-replacement/20260924-intent-11/README.md`. The paid collector
-does not yet support this hybrid; do not substitute another policy silently.
+See `experiments/jev-replacement/20260924-intent-11/README.md` and the broader
+`20260924-varied-12` checkpoint. The budgeted collector now accepts `--style FILE
+--intent '{"strength":1,"margin":1}'` with exact model/source/config provenance.
+`--dry-run` validates all strategies and prints the plan without opening the
+ledger, creating output or making requests; it does NOT validate available funds.
+For new local-agent batches, `verify-session.mjs --run DIR --model FILE --style
+FILE` also replays every seeded local choice and rejects incompatible metadata.
+`audit-varied.mjs` generates and replays synthetic common states;
+`build-local-runtime.mjs` measures a standalone dependency-free ESM bundle, not
+the final application delta or mobile latency. All remain separate from play.
 
 `prepare-shift-probe.mjs`, `collect-repeat-probe.mjs` and
 `analyze-repeat-probe.mjs` add a bounded two-pass counterfactual experiment.

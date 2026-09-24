@@ -1,0 +1,1118 @@
+{
+  "purpose": "Fixed intent11 candidate on synthetic legal random/greedy traces; not human data, teacher imitation or acceptance matches",
+  "seed": 2413,
+  "profiles": [
+    {
+      "name": "place-heavy",
+      "place": 0.85,
+      "remove": 0.1
+    },
+    {
+      "name": "mixed",
+      "place": 0.6,
+      "remove": 0.2
+    },
+    {
+      "name": "shift-heavy",
+      "place": 0.35,
+      "remove": 0.15
+    },
+    {
+      "name": "noisy-territory",
+      "greedy": 0.65
+    }
+  ],
+  "scheduledPlies": [
+    12,
+    25,
+    38,
+    51
+  ],
+  "traceCount": 80,
+  "positions": 319,
+  "choices": 3190,
+  "policySha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+  "intentSha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4",
+  "scriptSha256": "71d3eafc1611d41b69900614908f932f0bea4b6c5f06d3d0b5981c2f5779bb0d",
+  "summary": {
+    "Aggressive": {
+      "0": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.780564263322884,
+          "opponentTerritoryLost": 1.9184952978056427,
+          "ownExposureChange": 0.03134796238244514,
+          "opponentExposureChange": 0.009404388714733543,
+          "ownGroupChange": 0.003134796238244514,
+          "spreadChange": 1.0721003134796239,
+          "place": 0.7021943573667712,
+          "remove": 0.29780564263322884,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.01661442006269594,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      },
+      "1": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.3636363636363638,
+          "opponentTerritoryLost": 2.316614420062696,
+          "ownExposureChange": 0.14420062695924765,
+          "opponentExposureChange": 0.14106583072100312,
+          "ownGroupChange": 0.006269592476489028,
+          "spreadChange": 1.2570532915360502,
+          "place": 0.6927899686520376,
+          "remove": 0.3072100313479624,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.0335423197492163,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      }
+    },
+    "Cautious": {
+      "0": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.824451410658307,
+          "opponentTerritoryLost": 1.8275862068965518,
+          "ownExposureChange": -0.1536050156739812,
+          "opponentExposureChange": -0.12225705329153605,
+          "ownGroupChange": 0.018808777429467086,
+          "spreadChange": 1.250783699059561,
+          "place": 0.7115987460815048,
+          "remove": 0.2884012539184953,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      },
+      "1": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.699059561128527,
+          "opponentTerritoryLost": 1.7366771159874608,
+          "ownExposureChange": -0.45454545454545453,
+          "opponentExposureChange": -0.27586206896551724,
+          "ownGroupChange": 0.03134796238244514,
+          "spreadChange": 1.0752351097178683,
+          "place": 0.6426332288401254,
+          "remove": 0.3573667711598746,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.09686520376175548,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      }
+    },
+    "Expansive": {
+      "0": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 3.072100313479624,
+          "opponentTerritoryLost": 1.5329153605015673,
+          "ownExposureChange": -0.13166144200626959,
+          "opponentExposureChange": -0.0438871473354232,
+          "ownGroupChange": 0.018808777429467086,
+          "spreadChange": 1.8401253918495297,
+          "place": 0.780564263322884,
+          "remove": 0.219435736677116,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.009404388714733546,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      },
+      "1": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 3.3605015673981193,
+          "opponentTerritoryLost": 1.244514106583072,
+          "ownExposureChange": -0.07210031347962383,
+          "opponentExposureChange": -0.02821316614420063,
+          "ownGroupChange": 0.009404388714733543,
+          "spreadChange": 3.1316614420062696,
+          "place": 0.8213166144200627,
+          "remove": 0.1786833855799373,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.05266457680250783,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      }
+    },
+    "Fluid": {
+      "0": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.7899686520376177,
+          "opponentTerritoryLost": 1.890282131661442,
+          "ownExposureChange": -0.11912225705329153,
+          "opponentExposureChange": -0.12225705329153605,
+          "ownGroupChange": 0.003134796238244514,
+          "spreadChange": 1.1755485893416928,
+          "place": 0.7053291536050157,
+          "remove": 0.2946708463949843,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.000940438871473352,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      },
+      "1": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 2.780564263322884,
+          "opponentTerritoryLost": 1.8871473354231976,
+          "ownExposureChange": -0.11598746081504702,
+          "opponentExposureChange": -0.11598746081504702,
+          "ownGroupChange": 0,
+          "spreadChange": 1.1755485893416928,
+          "place": 0.7053291536050157,
+          "remove": 0.2884012539184953,
+          "shift": 0.006269592476489028,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.000940438871473352,
+        "usefulShiftOpportunityStates": 2,
+        "conditionalUsefulShiftRate": 1,
+        "selectedUsefulShifts": 2
+      }
+    },
+    "Balanced": {
+      "0": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 3.0376175548589344,
+          "opponentTerritoryLost": 1.6300940438871474,
+          "ownExposureChange": -0.12225705329153605,
+          "opponentExposureChange": -0.11285266457680251,
+          "ownGroupChange": 0.003134796238244514,
+          "spreadChange": 1.4545454545454546,
+          "place": 0.7147335423197492,
+          "remove": 0.2852664576802508,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.002194357366771161,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      },
+      "1": {
+        "positions": 319,
+        "features": {
+          "territoryGain": 3.0376175548589344,
+          "opponentTerritoryLost": 1.6300940438871474,
+          "ownExposureChange": -0.12225705329153605,
+          "opponentExposureChange": -0.11285266457680251,
+          "ownGroupChange": 0.003134796238244514,
+          "spreadChange": 1.4545454545454546,
+          "place": 0.7147335423197492,
+          "remove": 0.2852664576802508,
+          "shift": 0,
+          "repetitionCount": 0
+        },
+        "meanConcession": 0.002194357366771161,
+        "usefulShiftOpportunityStates": null,
+        "conditionalUsefulShiftRate": null,
+        "selectedUsefulShifts": 0
+      }
+    }
+  },
+  "byProfile": {
+    "place-heavy": {
+      "Aggressive": {
+        "0": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.5949367088607596,
+            "opponentTerritoryLost": 1.7721518987341771,
+            "ownExposureChange": -0.0379746835443038,
+            "opponentExposureChange": -0.05063291139240506,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 0.7341772151898734,
+            "place": 0.6582278481012658,
+            "remove": 0.34177215189873417,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.007594936708860769,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.3164556962025316,
+            "opponentTerritoryLost": 1.9873417721518987,
+            "ownExposureChange": 0.08860759493670886,
+            "opponentExposureChange": 0.11392405063291139,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 0.9493670886075949,
+            "place": 0.6455696202531646,
+            "remove": 0.35443037974683544,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.03417721518987341,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Cautious": {
+        "0": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.5822784810126582,
+            "opponentTerritoryLost": 1.7088607594936709,
+            "ownExposureChange": -0.1518987341772152,
+            "opponentExposureChange": -0.08860759493670886,
+            "ownGroupChange": 0.05063291139240506,
+            "spreadChange": 0.5189873417721519,
+            "place": 0.6835443037974683,
+            "remove": 0.31645569620253167,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.3164556962025316,
+            "opponentTerritoryLost": 1.6835443037974684,
+            "ownExposureChange": -0.5443037974683544,
+            "opponentExposureChange": -0.27848101265822783,
+            "ownGroupChange": 0.0379746835443038,
+            "spreadChange": 0.4177215189873418,
+            "place": 0.620253164556962,
+            "remove": 0.379746835443038,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.12784810126582283,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Expansive": {
+        "0": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.7974683544303796,
+            "opponentTerritoryLost": 1.4177215189873418,
+            "ownExposureChange": -0.11392405063291139,
+            "opponentExposureChange": 0.0379746835443038,
+            "ownGroupChange": 0.05063291139240506,
+            "spreadChange": 1.2151898734177216,
+            "place": 0.7848101265822784,
+            "remove": 0.21518987341772153,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.007594936708860748,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 3.0632911392405062,
+            "opponentTerritoryLost": 1.2025316455696202,
+            "ownExposureChange": -0.0759493670886076,
+            "opponentExposureChange": -0.0379746835443038,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 1.8101265822784811,
+            "place": 0.759493670886076,
+            "remove": 0.24050632911392406,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.04683544303797467,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Fluid": {
+        "0": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.569620253164557,
+            "opponentTerritoryLost": 1.7848101265822784,
+            "ownExposureChange": -0.11392405063291139,
+            "opponentExposureChange": -0.11392405063291139,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 0.5189873417721519,
+            "place": 0.6582278481012658,
+            "remove": 0.34177215189873417,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.5316455696202533,
+            "opponentTerritoryLost": 1.7721518987341771,
+            "ownExposureChange": -0.10126582278481013,
+            "opponentExposureChange": -0.08860759493670886,
+            "ownGroupChange": 0,
+            "spreadChange": 0.5189873417721519,
+            "place": 0.6582278481012658,
+            "remove": 0.31645569620253167,
+            "shift": 0.02531645569620253,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": 2,
+          "conditionalUsefulShiftRate": 1,
+          "selectedUsefulShifts": 2
+        }
+      },
+      "Balanced": {
+        "0": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.8227848101265822,
+            "opponentTerritoryLost": 1.5063291139240507,
+            "ownExposureChange": -0.11392405063291139,
+            "opponentExposureChange": -0.08860759493670886,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 0.8227848101265823,
+            "place": 0.6708860759493671,
+            "remove": 0.3291139240506329,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0025316455696202597,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 79,
+          "features": {
+            "territoryGain": 2.8227848101265822,
+            "opponentTerritoryLost": 1.5063291139240507,
+            "ownExposureChange": -0.11392405063291139,
+            "opponentExposureChange": -0.08860759493670886,
+            "ownGroupChange": 0.012658227848101266,
+            "spreadChange": 0.8227848101265823,
+            "place": 0.6708860759493671,
+            "remove": 0.3291139240506329,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0025316455696202597,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      }
+    },
+    "mixed": {
+      "Aggressive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.8625,
+            "opponentTerritoryLost": 1.9,
+            "ownExposureChange": 0.35,
+            "opponentExposureChange": 0.2875,
+            "ownGroupChange": 0,
+            "spreadChange": 1.5125,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.021249999999999974,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.4625,
+            "opponentTerritoryLost": 2.3125,
+            "ownExposureChange": 0.45,
+            "opponentExposureChange": 0.375,
+            "ownGroupChange": 0,
+            "spreadChange": 1.2875,
+            "place": 0.875,
+            "remove": 0.125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.03249999999999997,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Cautious": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.9625,
+            "opponentTerritoryLost": 1.7375,
+            "ownExposureChange": 0.1,
+            "opponentExposureChange": 0.1,
+            "ownGroupChange": 0,
+            "spreadChange": 1.5875,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.9,
+            "opponentTerritoryLost": 1.5625,
+            "ownExposureChange": -0.25,
+            "opponentExposureChange": -0.075,
+            "ownGroupChange": 0.025,
+            "spreadChange": 1.225,
+            "place": 0.8,
+            "remove": 0.2,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.1075,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Expansive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.125,
+            "opponentTerritoryLost": 1.5625,
+            "ownExposureChange": 0.075,
+            "opponentExposureChange": 0.0875,
+            "ownGroupChange": 0,
+            "spreadChange": 2.5625,
+            "place": 0.9,
+            "remove": 0.1,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.006249999999999994,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.3375,
+            "opponentTerritoryLost": 1.2625,
+            "ownExposureChange": 0.05,
+            "opponentExposureChange": 0.1,
+            "ownGroupChange": 0.0125,
+            "spreadChange": 3.3125,
+            "place": 0.9125,
+            "remove": 0.0875,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.062499999999999986,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Fluid": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.9,
+            "opponentTerritoryLost": 1.825,
+            "ownExposureChange": 0.15,
+            "opponentExposureChange": 0.125,
+            "ownGroupChange": 0,
+            "spreadChange": 1.5875,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0024999999999999953,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.9,
+            "opponentTerritoryLost": 1.825,
+            "ownExposureChange": 0.15,
+            "opponentExposureChange": 0.125,
+            "ownGroupChange": 0,
+            "spreadChange": 1.5875,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0024999999999999953,
+          "usefulShiftOpportunityStates": 0,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Balanced": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.15,
+            "opponentTerritoryLost": 1.55,
+            "ownExposureChange": 0.125,
+            "opponentExposureChange": 0.125,
+            "ownGroupChange": 0,
+            "spreadChange": 1.7875,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.002499999999999991,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.15,
+            "opponentTerritoryLost": 1.55,
+            "ownExposureChange": 0.125,
+            "opponentExposureChange": 0.125,
+            "ownGroupChange": 0,
+            "spreadChange": 1.7875,
+            "place": 0.8875,
+            "remove": 0.1125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.002499999999999991,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      }
+    },
+    "shift-heavy": {
+      "Aggressive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.3375,
+            "opponentTerritoryLost": 1.575,
+            "ownExposureChange": 0.2,
+            "opponentExposureChange": 0.175,
+            "ownGroupChange": 0,
+            "spreadChange": 1.375,
+            "place": 0.85,
+            "remove": 0.15,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0275000000000001,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.6625,
+            "opponentTerritoryLost": 2.2625,
+            "ownExposureChange": 0.3875,
+            "opponentExposureChange": 0.35,
+            "ownGroupChange": 0,
+            "spreadChange": 2.3,
+            "place": 0.8375,
+            "remove": 0.1625,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.05125000000000015,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Cautious": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.475,
+            "opponentTerritoryLost": 1.4375,
+            "ownExposureChange": -0.0875,
+            "opponentExposureChange": -0.1125,
+            "ownGroupChange": 0,
+            "spreadChange": 2.175,
+            "place": 0.85,
+            "remove": 0.15,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.3125,
+            "opponentTerritoryLost": 1.4625,
+            "ownExposureChange": -0.275,
+            "opponentExposureChange": -0.2,
+            "ownGroupChange": 0.0125,
+            "spreadChange": 1.95,
+            "place": 0.7875,
+            "remove": 0.2125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.06000000000000001,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Expansive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.8875,
+            "opponentTerritoryLost": 1.025,
+            "ownExposureChange": 0,
+            "opponentExposureChange": -0.025,
+            "ownGroupChange": 0,
+            "spreadChange": 2.5125,
+            "place": 0.9375,
+            "remove": 0.0625,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.010000000000000018,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 4.075,
+            "opponentTerritoryLost": 0.85,
+            "ownExposureChange": 0.05,
+            "opponentExposureChange": 0.0125,
+            "ownGroupChange": 0.0125,
+            "spreadChange": 5.1,
+            "place": 0.9875,
+            "remove": 0.0125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.027499999999999997,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Fluid": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.4125,
+            "opponentTerritoryLost": 1.5,
+            "ownExposureChange": -0.075,
+            "opponentExposureChange": -0.1,
+            "ownGroupChange": 0,
+            "spreadChange": 1.8375,
+            "place": 0.85,
+            "remove": 0.15,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.4125,
+            "opponentTerritoryLost": 1.5,
+            "ownExposureChange": -0.075,
+            "opponentExposureChange": -0.1,
+            "ownGroupChange": 0,
+            "spreadChange": 1.8375,
+            "place": 0.85,
+            "remove": 0.15,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": 0,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Balanced": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.7125,
+            "opponentTerritoryLost": 1.2,
+            "ownExposureChange": -0.0625,
+            "opponentExposureChange": -0.0875,
+            "ownGroupChange": 0,
+            "spreadChange": 2.2375,
+            "place": 0.875,
+            "remove": 0.125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0024999999999999996,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 3.7125,
+            "opponentTerritoryLost": 1.2,
+            "ownExposureChange": -0.0625,
+            "opponentExposureChange": -0.0875,
+            "ownGroupChange": 0,
+            "spreadChange": 2.2375,
+            "place": 0.875,
+            "remove": 0.125,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0024999999999999996,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      }
+    },
+    "noisy-territory": {
+      "Aggressive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.325,
+            "opponentTerritoryLost": 2.425,
+            "ownExposureChange": -0.3875,
+            "opponentExposureChange": -0.375,
+            "ownGroupChange": 0,
+            "spreadChange": 0.6625,
+            "place": 0.4125,
+            "remove": 0.5875,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.010000000000000004,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.0125,
+            "opponentTerritoryLost": 2.7,
+            "ownExposureChange": -0.35,
+            "opponentExposureChange": -0.275,
+            "ownGroupChange": 0.0125,
+            "spreadChange": 0.4875,
+            "place": 0.4125,
+            "remove": 0.5875,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.01625,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Cautious": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.275,
+            "opponentTerritoryLost": 2.425,
+            "ownExposureChange": -0.475,
+            "opponentExposureChange": -0.3875,
+            "ownGroupChange": 0.025,
+            "spreadChange": 0.7125,
+            "place": 0.425,
+            "remove": 0.575,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.2625,
+            "opponentTerritoryLost": 2.2375,
+            "ownExposureChange": -0.75,
+            "opponentExposureChange": -0.55,
+            "ownGroupChange": 0.05,
+            "spreadChange": 0.7,
+            "place": 0.3625,
+            "remove": 0.6375,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.09249999999999999,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Expansive": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.475,
+            "opponentTerritoryLost": 2.125,
+            "ownExposureChange": -0.4875,
+            "opponentExposureChange": -0.275,
+            "ownGroupChange": 0.025,
+            "spreadChange": 1.0625,
+            "place": 0.5,
+            "remove": 0.5,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.013750000000000017,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.9625,
+            "opponentTerritoryLost": 1.6625,
+            "ownExposureChange": -0.3125,
+            "opponentExposureChange": -0.1875,
+            "ownGroupChange": 0,
+            "spreadChange": 2.2875,
+            "place": 0.625,
+            "remove": 0.375,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.07375000000000001,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Fluid": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.275,
+            "opponentTerritoryLost": 2.45,
+            "ownExposureChange": -0.4375,
+            "opponentExposureChange": -0.4,
+            "ownGroupChange": 0,
+            "spreadChange": 0.75,
+            "place": 0.425,
+            "remove": 0.575,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0012499999999999955,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.275,
+            "opponentTerritoryLost": 2.45,
+            "ownExposureChange": -0.4375,
+            "opponentExposureChange": -0.4,
+            "ownGroupChange": 0,
+            "spreadChange": 0.75,
+            "place": 0.425,
+            "remove": 0.575,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0012499999999999955,
+          "usefulShiftOpportunityStates": 0,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      },
+      "Balanced": {
+        "0": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.4625,
+            "opponentTerritoryLost": 2.2625,
+            "ownExposureChange": -0.4375,
+            "opponentExposureChange": -0.4,
+            "ownGroupChange": 0,
+            "spreadChange": 0.9625,
+            "place": 0.425,
+            "remove": 0.575,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0012500000000000067,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        },
+        "1": {
+          "positions": 80,
+          "features": {
+            "territoryGain": 2.4625,
+            "opponentTerritoryLost": 2.2625,
+            "ownExposureChange": -0.4375,
+            "opponentExposureChange": -0.4,
+            "ownGroupChange": 0,
+            "spreadChange": 0.9625,
+            "place": 0.425,
+            "remove": 0.575,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanConcession": 0.0012500000000000067,
+          "usefulShiftOpportunityStates": null,
+          "conditionalUsefulShiftRate": null,
+          "selectedUsefulShifts": 0
+        }
+      }
+    }
+  },
+  "pairs": [
+    {
+      "a": "Aggressive",
+      "b": "Cautious",
+      "different": 191,
+      "positions": 319
+    },
+    {
+      "a": "Aggressive",
+      "b": "Expansive",
+      "different": 214,
+      "positions": 319
+    },
+    {
+      "a": "Aggressive",
+      "b": "Fluid",
+      "different": 136,
+      "positions": 319
+    },
+    {
+      "a": "Aggressive",
+      "b": "Balanced",
+      "different": 159,
+      "positions": 319
+    },
+    {
+      "a": "Cautious",
+      "b": "Expansive",
+      "different": 156,
+      "positions": 319
+    },
+    {
+      "a": "Cautious",
+      "b": "Fluid",
+      "different": 80,
+      "positions": 319
+    },
+    {
+      "a": "Cautious",
+      "b": "Balanced",
+      "different": 100,
+      "positions": 319
+    },
+    {
+      "a": "Expansive",
+      "b": "Fluid",
+      "different": 135,
+      "positions": 319
+    },
+    {
+      "a": "Expansive",
+      "b": "Balanced",
+      "different": 104,
+      "positions": 319
+    },
+    {
+      "a": "Fluid",
+      "b": "Balanced",
+      "different": 54,
+      "positions": 319
+    }
+  ],
+  "latency": {
+    "environment": "v24.19.0, unthrottled shared-host Node, NOT mobile gate",
+    "p95ms": 45.077949999998964,
+    "maxMs": 388.72881499999494
+  },
+  "paidCalls": 0
+}

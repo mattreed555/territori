@@ -1,0 +1,8 @@
+{
+  "traces": 80,
+  "traceMoves": 4926,
+  "positions": 319,
+  "choices": 3190,
+  "allTracesStatesAndGreedyChoicesReproduced": true,
+  "paidCalls": 0
+}

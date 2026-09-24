@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-varied-12",
+      "purpose": "offline-varied-state-validation-and-hybrid-collector",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T10:01:50Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Fixed candidate; 319 synthetic states/3190 choices replayed, exact hybrid collector and dry-run tests, standalone bundle/parity. 53 tests/types/build pass. No paid work; $3.25 evaluation reserve unchanged."
+    },
+    {
       "id": "20260924-intent-11",
       "purpose": "offline-authored-strategy-intent",
       "status": "closed",

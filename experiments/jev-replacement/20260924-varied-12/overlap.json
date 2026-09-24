@@ -1,0 +1,46 @@
+{
+  "purpose": "Overlap against all earlier paid-development game and counterfactual inputs, including local turns and repeats; no teacher labels on new positions",
+  "positionDatasetSha256": "aa807acc34e563491bb1761babfcfcf32b30ab91691a2a36876d500d309ec120",
+  "positions": 319,
+  "decisionContexts": 1595,
+  "boardSupplyTurnMatches": 0,
+  "fullContextMatches": 0,
+  "fullContextIncludes": "strategy, board, turn, supplies, captured, finalRound, last, sorted full repetition history; ignores ply",
+  "inputs": [
+    {
+      "file": "experiments/jev-replacement/20260921-all-strategies-01/decisions.jsonl.gz",
+      "sha256": "a6dbb62911973bffbbfbd7ff5a48b93d768d83a0b2a7934764b159f56ce6197a",
+      "loggedDecisions": 562,
+      "boardMatches": 0,
+      "contextMatches": 0
+    },
+    {
+      "file": "experiments/jev-replacement/20260921-shared-03/dev-matches/decisions.jsonl.gz",
+      "sha256": "3f57b962b5a49989a2ccced3db70f9bf4ffb23d5744bc0f8df8f4865013e60fe",
+      "loggedDecisions": 538,
+      "boardMatches": 0,
+      "contextMatches": 0
+    },
+    {
+      "file": "experiments/jev-replacement/20260924-search-05/dev-matches/decisions.jsonl.gz",
+      "sha256": "1146fa7543217047f76c24bea61ee489a2062c644129ac1741da735a1ea0b9dc",
+      "loggedDecisions": 500,
+      "boardMatches": 0,
+      "contextMatches": 0
+    },
+    {
+      "file": "experiments/jev-replacement/20260924-style-06/probe/labels.jsonl.gz",
+      "sha256": "4141ed0abd0f495ce24fc7dacbca7ebb90017f4aae0f4dd84e718aadd65300d1",
+      "loggedDecisions": 100,
+      "boardMatches": 0,
+      "contextMatches": 0
+    },
+    {
+      "file": "experiments/jev-replacement/20260924-shift-10/probe/labels.jsonl.gz",
+      "sha256": "5111b892bf24f5a6eb492577b5c81d2524086d7644f1f9cba4b7370c6fa8e036",
+      "loggedDecisions": 120,
+      "boardMatches": 0,
+      "contextMatches": 0
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "purpose": "Standalone ESM build/Node parity, NOT browser/mobile or actual application bundle delta",
+  "tool": "Existing Vite dependency, configFile:false, ES library mode, esbuild minification",
+  "newDependencies": 0,
+  "bundles": {
+    "linear": {
+      "file": "experiments/jev-replacement/20260924-varied-12/runtime/linear.mjs",
+      "bytes": 11500,
+      "gzipBytes": 3990,
+      "sha256": "8eda6172abfa0df963940239c9d4d8bbd7e1f83b894aeb5c6f660b09b1bc54b8",
+      "externalImports": 0,
+      "dynamicImports": 0
+    },
+    "hybrid": {
+      "file": "experiments/jev-replacement/20260924-varied-12/runtime/hybrid.mjs",
+      "bytes": 18089,
+      "gzipBytes": 5713,
+      "sha256": "3341ab75a0329a524fa6b9b0c8e82000080f670da8518a7dce3ec9d77ff1a460",
+      "externalImports": 0,
+      "dynamicImports": 0
+    }
+  },
+  "modelAssets": {
+    "policyGzipBytes": 4891,
+    "styleGzipBytes": 1389,
+    "totalGzipBytes": 6280
+  },
+  "standaloneCodeGzipDelta": 1723,
+  "independentlyCompressedHybridCodeAndModelsBytes": 11993,
+  "parity": {
+    "states": 25,
+    "choices": 125,
+    "allMatch": true,
+    "environment": "Node, not a browser"
+  },
+  "hashes": {
+    "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "experiments/jev-replacement/20260924-residual-08/style-ridge-0.1.json": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "experiments/jev-replacement/20260924-varied-12/positions.json.gz": "aa807acc34e563491bb1761babfcfcf32b30ab91691a2a36876d500d309ec120",
+    "scripts/ai/build-local-runtime.mjs": "8ff42083182137d6742dc347caa700ab0971a3558517c02ccb50a25a45a31229"
+  }
+}

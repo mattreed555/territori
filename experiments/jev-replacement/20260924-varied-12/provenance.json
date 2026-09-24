@@ -1,0 +1,130 @@
+{
+  "session": "20260924-varied-12",
+  "reconciledGitHub": "187844eb074a8f93d847dafe07f0a05e8e4f6369",
+  "reconciledLocal": "93ee9750cea9d52c63e5253e87e6267afb585b16",
+  "leaseCommit": "2b189afa869b42ff57707ffadbe182b1b4cf0560",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 0,
+  "costNano": 0,
+  "cumulativeSpentUpperNano": 727300182,
+  "remainingNano": 3522699818,
+  "evaluationReserveNano": 3250000000,
+  "candidate": {
+    "unchangedFrom": "20260924-intent-11",
+    "modelRefit": false,
+    "status": "development-only"
+  },
+  "verification": {
+    "tests": 53,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "syntheticTraces": 80,
+    "traceMovesReplayed": 4926,
+    "positionsReplayed": 319,
+    "choicesReplayed": 3190,
+    "bundledChoicesMatched": 125,
+    "priorPaidDevelopmentContextOverlap": 0,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured",
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260924-varied-12/README.md": {
+      "bytes": 8278,
+      "sha256": "b199aa92889bd81f6d5a2f6ff6194eef0d2175c58d6dfb5e671caabe97fb22ab"
+    },
+    "experiments/jev-replacement/20260924-varied-12/choices.json.gz": {
+      "bytes": 58547,
+      "sha256": "dc7af33002d04a1121b7a91bcd2f724d410e90375483490031bdf9e7c1c2c8b4"
+    },
+    "experiments/jev-replacement/20260924-varied-12/collector-preflight.json": {
+      "bytes": 3047,
+      "sha256": "95b3fecd411bd6930f046343152f41cde3becc5f77be4bb6e467c9a4710b7853"
+    },
+    "experiments/jev-replacement/20260924-varied-12/integrity.json": {
+      "bytes": 151,
+      "sha256": "3bf92163fa7858771da4d86fad2b9665601efddf1ae18865a7c0de6b8177863b"
+    },
+    "experiments/jev-replacement/20260924-varied-12/overlap.json": {
+      "bytes": 1859,
+      "sha256": "427cc687f24754313c69d175ca4f2557a14a4c0900d4f549b6c27b7095ab95a3"
+    },
+    "experiments/jev-replacement/20260924-varied-12/positions.json.gz": {
+      "bytes": 48807,
+      "sha256": "aa807acc34e563491bb1761babfcfcf32b30ab91691a2a36876d500d309ec120"
+    },
+    "experiments/jev-replacement/20260924-varied-12/report.json": {
+      "bytes": 35614,
+      "sha256": "2f38d06b86b36714b2dac54d9b981ea1ab638a8d4c0e6e986d2f9cd1ae2f2714"
+    },
+    "experiments/jev-replacement/20260924-varied-12/runtime/bundle-report.json": {
+      "bytes": 1717,
+      "sha256": "f52ff0a4b892d3ce6a402247d09507a4c1e112a33154ec89cf1561325c4f75d3"
+    },
+    "experiments/jev-replacement/20260924-varied-12/runtime/hybrid.mjs": {
+      "bytes": 18089,
+      "sha256": "3341ab75a0329a524fa6b9b0c8e82000080f670da8518a7dce3ec9d77ff1a460"
+    },
+    "experiments/jev-replacement/20260924-varied-12/runtime/linear.mjs": {
+      "bytes": 11500,
+      "sha256": "8eda6172abfa0df963940239c9d4d8bbd7e1f83b894aeb5c6f660b09b1bc54b8"
+    },
+    "experiments/jev-replacement/20260924-varied-12/traces.json.gz": {
+      "bytes": 64293,
+      "sha256": "5e761b7595f0cf389878cfc0ae54330e3b20312eba1e2203dd76e714f319c6d4"
+    },
+    "lib/ai/features.ts": {
+      "bytes": 5745,
+      "sha256": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3"
+    },
+    "lib/ai/intent.ts": {
+      "bytes": 3859,
+      "sha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    },
+    "lib/ai/search.ts": {
+      "bytes": 5928,
+      "sha256": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a"
+    },
+    "lib/ai/style.ts": {
+      "bytes": 4903,
+      "sha256": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a"
+    },
+    "lib/game/rules.ts": {
+      "bytes": 6980,
+      "sha256": "1f5ec95e55e5711642f0ca5a7ffc67843559f47a141295ef59407b706700cc31"
+    },
+    "scripts/ai/audit-varied.mjs": {
+      "bytes": 7277,
+      "sha256": "71d3eafc1611d41b69900614908f932f0bea4b6c5f06d3d0b5981c2f5779bb0d"
+    },
+    "scripts/ai/build-local-runtime.mjs": {
+      "bytes": 3234,
+      "sha256": "8ff42083182137d6742dc347caa700ab0971a3558517c02ccb50a25a45a31229"
+    },
+    "scripts/ai/collect.mjs": {
+      "bytes": 5903,
+      "sha256": "b706ed67ced33bcc034a0f5249de5eed2fce3b6f1e306a672bf6ef42a885c6d8"
+    },
+    "scripts/ai/local-agent.mjs": {
+      "bytes": 3016,
+      "sha256": "df07896229e4ba16a81dff6ad08bcf6a03f2a2c9fb0e3e68b9302b283a108030"
+    },
+    "scripts/ai/overlap-varied.mjs": {
+      "bytes": 2592,
+      "sha256": "e5b03bc015de4c12f86bd4cf30245929dbb3b170c0bc41d66c2e172fd3f4cb77"
+    },
+    "scripts/ai/verify-session.mjs": {
+      "bytes": 5204,
+      "sha256": "362599ee91bc8ba6e1fcbeb849b05a840c4eb00d35c5233bb9c32edb88fc00d7"
+    },
+    "tests/local-agent.test.mjs": {
+      "bytes": 6214,
+      "sha256": "e89a35c25212dae48a0d280af74d21c5e574d0521bf6a0747f5afb314e876248"
+    }
+  }
+}
