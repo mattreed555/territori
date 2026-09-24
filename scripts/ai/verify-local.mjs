@@ -15,6 +15,8 @@ const cb=await fs.readFile(v.candidate),bb=await fs.readFile(v.baseline);
 assert.equal(hash(cb),report.candidateSha256);assert.equal(hash(bb),report.baselineSha256);
 const candidate=validateModel(JSON.parse(cb)),baseline=validateModel(JSON.parse(bb));
 const {validateStyleModel,chooseStyledMove}=await load('ai/style');
+const {chooseIntentMove,INTENT_VERSION}=await load('ai/intent');
+if(report.intent){assert.equal(report.intent.version,INTENT_VERSION);assert.equal(report.intent.sourceSha256,hash(await fs.readFile('lib/ai/intent.ts')));}
 const styleBytes=v.style?await fs.readFile(v.style):null,style=styleBytes?validateStyleModel(JSON.parse(styleBytes)):null;
 assert.equal(!!style,!!report.style,'Saved style requires its exact model');if(styleBytes)assert.equal(hash(styleBytes),report.style.modelSha256);
 const config=c=>{if(!c)return null;assert.equal(c.version,SEARCH_VERSION);const {version,...options}=c;return options;};
@@ -30,7 +32,7 @@ for(const r of report.results){
   assert.equal(seenResult,false,'Event after final result');
   if(e.kind==='decision'){
    assert.deepEqual(e,recordDecision(r.gameId,game,r.strategy,e.chosenMove,'local',null));
-   const a=agents[game.turn],chosen=game.turn===r.candidateColor&&style?chooseStyledMove(game,r.strategy,a.model,style,{...report.style.options,search:a.options||{}},report.epsilon,a.random):a.options?chooseSearchMove(game,r.strategy,a.model,a.options,report.epsilon,a.random):chooseLocalMove(game,r.strategy,a.model,report.epsilon,a.random);
+   const a=agents[game.turn],chosen=game.turn===r.candidateColor&&style?(report.intent?chooseIntentMove(game,r.strategy,a.model,style,{...report.intent.options,search:a.options||{}},report.epsilon,a.random):chooseStyledMove(game,r.strategy,a.model,style,{...report.style.options,search:a.options||{}},report.epsilon,a.random)):a.options?chooseSearchMove(game,r.strategy,a.model,a.options,report.epsilon,a.random):chooseLocalMove(game,r.strategy,a.model,report.epsilon,a.random);
    assert.equal(moveId(e.chosenMove),moveId(chosen));game=applyMove(game,chosen);decisions++;
   }else{
    assert.equal(e.kind,'result');const status=game.ended?'completed':'truncated';
@@ -43,4 +45,5 @@ for(const r of report.results){
  assert.ok(seenResult);
 }
 const evidence={datasetSha256:hash(bytes),candidateSha256:hash(cb),baselineSha256:hash(bb),styleSha256:styleBytes?hash(styleBytes):null,searchVersion:SEARCH_VERSION,games:results,decisions,allStatesChoicesAndOutcomesReproduced:true,paidCalls:0};
+if(report.intent)evidence.intent=report.intent;
 await atomicJSON(v.out||v.run+'-integrity.json',evidence);console.log(JSON.stringify(evidence));

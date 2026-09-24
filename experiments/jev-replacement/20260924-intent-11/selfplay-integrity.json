@@ -1,0 +1,10 @@
+{
+  "games": 25,
+  "decisions": 1540,
+  "allStatesChoicesAndOutcomesReproduced": true,
+  "policySha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+  "sourceSha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4",
+  "datasetSha256": "80774445283f59ef3acec3787a2a02f0aeb7cf80a45a69ec10845cca6b1bb170",
+  "paidCalls": 0
+}

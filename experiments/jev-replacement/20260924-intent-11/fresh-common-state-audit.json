@@ -1,0 +1,324 @@
+{
+  "purpose": "New shared local-selfplay states, not Jev labels or independent acceptance",
+  "sampling": "One state per ordered pairing; ply 19+(index%3)*10+index%2, fixed before inspection; no outcome filtering",
+  "sourceDatasetSha256": "80774445283f59ef3acec3787a2a02f0aeb7cf80a45a69ec10845cca6b1bb170",
+  "policySha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+  "intentSourceSha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4",
+  "reports": [
+    {
+      "strength": 0,
+      "pairs": [
+        {
+          "a": "Aggressive",
+          "b": "Cautious",
+          "different": 4,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Expansive",
+          "different": 4,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Fluid",
+          "different": 4,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Balanced",
+          "different": 4,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Expansive",
+          "different": 3,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Fluid",
+          "different": 0,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Balanced",
+          "different": 1,
+          "positions": 25
+        },
+        {
+          "a": "Expansive",
+          "b": "Fluid",
+          "different": 3,
+          "positions": 25
+        },
+        {
+          "a": "Expansive",
+          "b": "Balanced",
+          "different": 2,
+          "positions": 25
+        },
+        {
+          "a": "Fluid",
+          "b": "Balanced",
+          "different": 1,
+          "positions": 25
+        }
+      ],
+      "byStrategy": {
+        "Aggressive": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.76,
+            "opponentTerritoryLost": 3.2,
+            "ownExposureChange": -0.52,
+            "opponentExposureChange": -0.56,
+            "ownGroupChange": 0,
+            "spreadChange": 1.2,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0.0040000000000000036,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Cautious": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.72,
+            "opponentTerritoryLost": 3.24,
+            "ownExposureChange": -0.56,
+            "opponentExposureChange": -0.6,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Expansive": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.92,
+            "opponentTerritoryLost": 3.04,
+            "ownExposureChange": -0.48,
+            "opponentExposureChange": -0.52,
+            "ownGroupChange": 0,
+            "spreadChange": 1.56,
+            "place": 0.28,
+            "remove": 0.72,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0.003999999999999986,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Fluid": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.72,
+            "opponentTerritoryLost": 3.24,
+            "ownExposureChange": -0.56,
+            "opponentExposureChange": -0.6,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Balanced": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.8,
+            "opponentTerritoryLost": 3.16,
+            "ownExposureChange": -0.56,
+            "opponentExposureChange": -0.6,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        }
+      }
+    },
+    {
+      "strength": 1,
+      "pairs": [
+        {
+          "a": "Aggressive",
+          "b": "Cautious",
+          "different": 7,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Expansive",
+          "different": 18,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Fluid",
+          "different": 6,
+          "positions": 25
+        },
+        {
+          "a": "Aggressive",
+          "b": "Balanced",
+          "different": 6,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Expansive",
+          "different": 16,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Fluid",
+          "different": 3,
+          "positions": 25
+        },
+        {
+          "a": "Cautious",
+          "b": "Balanced",
+          "different": 4,
+          "positions": 25
+        },
+        {
+          "a": "Expansive",
+          "b": "Fluid",
+          "different": 15,
+          "positions": 25
+        },
+        {
+          "a": "Expansive",
+          "b": "Balanced",
+          "different": 14,
+          "positions": 25
+        },
+        {
+          "a": "Fluid",
+          "b": "Balanced",
+          "different": 1,
+          "positions": 25
+        }
+      ],
+      "byStrategy": {
+        "Aggressive": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.52,
+            "opponentTerritoryLost": 3.44,
+            "ownExposureChange": -0.52,
+            "opponentExposureChange": -0.56,
+            "ownGroupChange": 0,
+            "spreadChange": 1.36,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0.0040000000000000036,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Cautious": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.72,
+            "opponentTerritoryLost": 3.04,
+            "ownExposureChange": -0.72,
+            "opponentExposureChange": -0.64,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0.10799999999999997,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Expansive": {
+          "states": 25,
+          "features": {
+            "territoryGain": 3,
+            "opponentTerritoryLost": 1.92,
+            "ownExposureChange": 0.12,
+            "opponentExposureChange": 0.08,
+            "ownGroupChange": 0,
+            "spreadChange": 6.2,
+            "place": 0.68,
+            "remove": 0.32,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0.11599999999999998,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        },
+        "Fluid": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.72,
+            "opponentTerritoryLost": 3.24,
+            "ownExposureChange": -0.56,
+            "opponentExposureChange": -0.6,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0,
+          "positionsWithEligibleUsefulShifts": 0,
+          "usefulFluidShifts": 0
+        },
+        "Balanced": {
+          "states": 25,
+          "features": {
+            "territoryGain": 1.8,
+            "opponentTerritoryLost": 3.16,
+            "ownExposureChange": -0.56,
+            "opponentExposureChange": -0.6,
+            "ownGroupChange": 0,
+            "spreadChange": 1.32,
+            "place": 0.24,
+            "remove": 0.76,
+            "shift": 0,
+            "repetitionCount": 0
+          },
+          "meanTacticalConcession": 0,
+          "positionsWithEligibleUsefulShifts": null,
+          "usefulFluidShifts": 0
+        }
+      }
+    }
+  ]
+}

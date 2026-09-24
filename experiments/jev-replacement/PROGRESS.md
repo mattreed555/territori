@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — explicit strategy intent and all-pairing local play (latest)
+
+Session `20260924-intent-11` is CLOSED. Reconciled GitHub `0055616580dc3970962120ba59bcfb5147066706`, local `6286323a83b755e5d971928130e76efc0f14457e`, and unchanged public Sites version14. Exclusive offline lease `459d89566e54ba10cc50306d9d1294b27f3dbf4d` preceded work. No teacher calls, model refits, dependencies, rule/UI/default/audience changes or deployment.
+
+Added an opt-in, bounded **authored** intent layer over the existing learned policy and residual08; explicitly not learned Jev behavior. Captures/threats, safety, expansion and useful nonrepeating shifts receive strategy-specific preferences, constrained to one searched tactical point. Terminal wins and full-width loss deferral remain protected. Strength0 matches the previous policy; strength1 is provisional. Strength2 regresses and is not preferred. **49 tests, TypeScript and production build pass.**
+
+On the same12 held-out DEVELOPMENT boards, strength1 gives four useful Fluid shifts versus zero, stronger Aggressive threats/Cautious safety/Expansive spread, and pair differences3–10/12. Teacher agreement falls23.33%→21.67%; rank7.93→8.00; this improves authored differentiation, not imitation. No newly fitted weights. Sixty free candidate-vs-base games: strengths0/1/2 score47.5%/52.5%/37.5%,20 each; all intervals are wide. Another25 games cover every ordered strategy pairing with both local. **85/85 games complete, all5,204 decisions/outcomes replay exactly, no illegal choices/aborts/truncations/repetitions.** These are not Jev acceptance evidence.
+
+Fresh common-state check: one prespecified ply per new selfplay game, all five strategies on the same25 boards. Aggressive/Cautious/Expansive directions persist; Fluid has no shifts but also zero eligible useful shifts in these searched states. Fluid/Balanced differ only1/25. Targeted4/12 and9 actual selfplay shifts are not robust all-five style validation. No policy retuning after the fresh check. Node p95≈37.5ms is NOT a mobile measurement. Exact source/model hashes, logs, comparisons, integrity checks and commands: `20260924-intent-11/README.md`.
+
+**Replacement is not ready; Jev remains live.** Independent acceptance games remain0. Current provisional candidate: original shared policy + residual08(weight0.5) + intent version1(strength1,margin1) + default search2; do not use rejected residual10. Model assets still5,885gzip bytes; authored-code bundle impact and mobile gate unmeasured. Paid collector does not yet support this hybrid.
+
+Cost **$0** this session; cumulative **$0.727300182**, remaining **$3.522699818**, including protected **$3.25** acceptance reserve; discretionary **$0.272699818**. No active financial reservation/uncertainty. Next: varied human-like/random common states containing real shift opportunities and supported mobile-class measurement; then, if justified, a SMALL bounded Jev development comparison after extending collector provenance and acquiring a fresh lease/pricing/budget check. Do not reuse the earlier10/10 wins for the changed candidate, buy more blind shift labels, or spend the acceptance reserve before freezing/validating the candidate. No-API UI integration and deployment remain pending. This supersedes older next steps.
+
 ## 2026-09-24 — targeted shifts with repeated-response controls (latest)
 
 Session `20260924-shift-10` is CLOSED. Reconciled GitHub `d9314e796ff3386dcb8bac75f6d7773173962413`, local `5deb64224387dab16b2d0de2e45f5528d22f237a` and unchanged public Sites version14. Lease/budget commit `6d959e2f7230dba33c1461d7f9e605b6544e6970`; teacher-blind inputs and collector frozen in `fce006f6de837a46ae9acd9ad64ae11116046dc2` before calls. No rule/UI/default/audience/deployment changes or new dependencies.

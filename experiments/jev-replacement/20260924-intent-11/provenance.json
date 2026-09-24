@@ -1,0 +1,168 @@
+{
+  "session": "20260924-intent-11",
+  "reconciledGitHub": "0055616580dc3970962120ba59bcfb5147066706",
+  "reconciledLocal": "6286323a83b755e5d971928130e76efc0f14457e",
+  "leaseCommit": "459d89566e54ba10cc50306d9d1294b27f3dbf4d",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 0,
+  "costNano": 0,
+  "cumulativeSpentUpperNano": 727300182,
+  "remainingNano": 3522699818,
+  "evaluationReserveNano": 3250000000,
+  "candidate": {
+    "status": "provisional-development-only",
+    "intentVersion": 1,
+    "strength": 1,
+    "margin": 1,
+    "learnedStyleWeight": 0.5,
+    "searchVersion": 2,
+    "searchOptions": {},
+    "epsilon": 0.03,
+    "authoredIntentNotDistilled": true,
+    "modelRefit": false
+  },
+  "verification": {
+    "tests": 49,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "localGames": 85,
+    "replayedDecisions": 5204,
+    "abortedGames": 0,
+    "truncatedGames": 0,
+    "repetitionEnds": 0,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured",
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json": {
+      "bytes": 14652,
+      "sha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb"
+    },
+    "experiments/jev-replacement/20260924-intent-11/README.md": {
+      "bytes": 8265,
+      "sha256": "834b05b50574872fb542d5cccc57035f50982527859bc4b52a6af59ab2c81e7a"
+    },
+    "experiments/jev-replacement/20260924-intent-11/audit.json": {
+      "bytes": 74206,
+      "sha256": "83d2e1bcc91cefdb37abeda395adbf1e5bfbc8d8a95c0e467535364e845e320c"
+    },
+    "experiments/jev-replacement/20260924-intent-11/choices.json.gz": {
+      "bytes": 17419,
+      "sha256": "5f2da89109f67fbc574c8bdde071a40631cb2613011a93ec601d0682329ab504"
+    },
+    "experiments/jev-replacement/20260924-intent-11/fresh-choices.json.gz": {
+      "bytes": 2155,
+      "sha256": "73cf377d49d6e69f6a4e849f22eeed0c24b69a7494a7603796b20f3c28db72c2"
+    },
+    "experiments/jev-replacement/20260924-intent-11/fresh-common-state-audit.json": {
+      "bytes": 8999,
+      "sha256": "c580b5333f9e62126d696730df2c34f755ed81cc989d36e343bcf830dfc6b61f"
+    },
+    "experiments/jev-replacement/20260924-intent-11/fresh-positions.json.gz": {
+      "bytes": 4044,
+      "sha256": "db1ab1510d103d6779a2f85f3720dc3b89c5e1baebbad7b800b3049790f61e2f"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-0-vs-base-integrity.json": {
+      "bytes": 664,
+      "sha256": "f7f67eba29bc6cca3ab6e65f23b2b3d75e542ec01062156229269a784f011d69"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-0-vs-base.json": {
+      "bytes": 10635,
+      "sha256": "135ad5b72e53c3faddba3457241f8308cf13aa1ee54a7cd37d3ca5d1e2a46959"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-0-vs-base.jsonl.gz": {
+      "bytes": 107224,
+      "sha256": "99bd9c805218370f837f179b384c65eca4d155efd72aac921b4647df460bd92d"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-1-vs-base-integrity.json": {
+      "bytes": 664,
+      "sha256": "9e2d6e8d0c9cf877705cd420fc5b3a5476834f3bee91e1f88145158d3daa5843"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-1-vs-base.json": {
+      "bytes": 10637,
+      "sha256": "1124ce23004bcbca435d24f2dad11ab5c9090d3aec9876450fd0ae3bc881f508"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-1-vs-base.jsonl.gz": {
+      "bytes": 103256,
+      "sha256": "17b20a299c948e93ef6e4faddf1805d1d483ecce6b03f9a6dc82ca651d2f344d"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-2-vs-base-integrity.json": {
+      "bytes": 664,
+      "sha256": "fdea028a8d27f632424dca993544b3e0b0a17a274480981819239803dde73adf"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-2-vs-base.json": {
+      "bytes": 10633,
+      "sha256": "e8a73ea8b52da62f4623a59c0ded68eb392397d34c10608b74b19f5c94fd9ba4"
+    },
+    "experiments/jev-replacement/20260924-intent-11/intent-2-vs-base.jsonl.gz": {
+      "bytes": 121519,
+      "sha256": "284f2da8c7f078f80240ec1bf56184c41de021d515e809c4cac8a7cd18b6d37c"
+    },
+    "experiments/jev-replacement/20260924-intent-11/selfplay-integrity.json": {
+      "bytes": 450,
+      "sha256": "12ff0d029a9d321d7921c19e915e6132a6b9d7b2d0ba18172063fe846f2de11c"
+    },
+    "experiments/jev-replacement/20260924-intent-11/selfplay.json": {
+      "bytes": 11753,
+      "sha256": "cecb19d7b4bc3801b9b28540ada35b26f3a4bd5c55c525bb1d940d6682113948"
+    },
+    "experiments/jev-replacement/20260924-intent-11/selfplay.jsonl.gz": {
+      "bytes": 141564,
+      "sha256": "80774445283f59ef3acec3787a2a02f0aeb7cf80a45a69ec10845cca6b1bb170"
+    },
+    "experiments/jev-replacement/20260924-residual-08/style-ridge-0.1.json": {
+      "bytes": 3563,
+      "sha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db"
+    },
+    "lib/ai/features.ts": {
+      "bytes": 5745,
+      "sha256": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3"
+    },
+    "lib/ai/intent.ts": {
+      "bytes": 3859,
+      "sha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    },
+    "lib/ai/search.ts": {
+      "bytes": 5928,
+      "sha256": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a"
+    },
+    "lib/ai/style.ts": {
+      "bytes": 4903,
+      "sha256": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a"
+    },
+    "lib/game/rules.ts": {
+      "bytes": 6980,
+      "sha256": "1f5ec95e55e5711642f0ca5a7ffc67843559f47a141295ef59407b706700cc31"
+    },
+    "scripts/ai/audit-intent-selfplay.mjs": {
+      "bytes": 3865,
+      "sha256": "8ec308c905af57ce94b9ad673cb3289f6bfacb478abc1aa7204f9d18fbe51624"
+    },
+    "scripts/ai/audit-intent.mjs": {
+      "bytes": 4439,
+      "sha256": "27afa7b1e256a3a8026db3c6f4d934671b1851e1e9af4c3a77bb9b65500b9da6"
+    },
+    "scripts/ai/intent-selfplay.mjs": {
+      "bytes": 4962,
+      "sha256": "9a582ef23e3d80473ce0abf0bc9fc9236aeca6a38631203db602e38e8e81326d"
+    },
+    "scripts/ai/local-tournament.mjs": {
+      "bytes": 6124,
+      "sha256": "621f77bf46f18d1185153ee031eea40905252c4fefb52c5a61e6097b7a052443"
+    },
+    "scripts/ai/verify-local.mjs": {
+      "bytes": 4454,
+      "sha256": "d0967a1ae1a5bb9ab7bbe26b97178e69a83d61307ff57def5ce9cdd20507a9a0"
+    },
+    "tests/intent.test.mjs": {
+      "bytes": 4449,
+      "sha256": "9d21332401eb5980c70b99d38e202d72cfe814e7fdea64dd1d91322ad70282f6"
+    }
+  }
+}

@@ -6,16 +6,19 @@ import {createHash} from 'node:crypto';
 import {parseArgs} from 'node:util';
 import {loadModules} from './modules.mjs';
 import {atomicJSON} from './budget.mjs';
-const {values:v}=parseArgs({options:Object.fromEntries(['candidate','baseline','out','pairs','seed','search','baseline-search','style','style-options'].map(k=>[k,{type:'string'}]))});
+const {values:v}=parseArgs({options:Object.fromEntries(['candidate','baseline','out','pairs','seed','search','baseline-search','style','style-options','intent'].map(k=>[k,{type:'string'}]))});
 if(!v.candidate||!v.baseline||!v.out)throw Error('Use --candidate model --baseline model --out prefix');
 await fs.mkdir(path.dirname(v.out),{recursive:true});
 const load=await loadModules(),{validateModel,chooseLocalMove,seededRandom}=await load('ai/policy'),{STRATEGIES}=await load('game/strategies'),{simulateGame}=await load('ai/simulator');
 const {chooseSearchMove,DEFAULT_SEARCH,SEARCH_VERSION}=await load('ai/search');
 const {chooseStyledMove,validateStyleModel}=await load('ai/style');
+const {chooseIntentMove,INTENT_VERSION}=await load('ai/intent');
 const styleBytes=v.style?await fs.readFile(v.style):null,style=styleBytes?validateStyleModel(JSON.parse(styleBytes)):null;
 const styleOptions=v['style-options']?JSON.parse(v['style-options']):{};
 if(v['style-options']&&!style)throw Error('Style options require --style');
 if(Object.hasOwn(styleOptions,'search'))throw Error('Use --search for search settings');
+const intent=v.intent?JSON.parse(v.intent):null;
+if(intent&&(!style||v['style-options']||Object.hasOwn(intent,'search')))throw Error('Intent requires --style, fixed learned weight .5, and separate --search');
 const search=v.search?JSON.parse(v.search):style?{}:null;
 const baselineSearch=v['baseline-search']?JSON.parse(v['baseline-search']):null;
 const candidateBytes=await fs.readFile(v.candidate),baselineBytes=await fs.readFile(v.baseline),candidate=validateModel(JSON.parse(candidateBytes)),baseline=validateModel(JSON.parse(baselineBytes));
@@ -27,7 +30,7 @@ for(const [s,strategy] of Object.keys(STRATEGIES).entries())for(let pair=0;pair<
  for(const [c,color] of ['blue','red'].entries()){
   const random=seededRandom(seed+pair*101+s*10007+c*37),model=color===candidateColor?candidate:baseline;
   const options=color===candidateColor?search:baselineSearch;
-  agents[color]={source:'local',choose:async game=>({move:color===candidateColor&&style?chooseStyledMove(game,strategy,model,style,{...styleOptions,search:options||{}},epsilon,random):options?chooseSearchMove(game,strategy,model,options,epsilon,random):chooseLocalMove(game,strategy,model,epsilon,random)})};
+  agents[color]={source:'local',choose:async game=>({move:color===candidateColor&&style?(intent?chooseIntentMove(game,strategy,model,style,{...intent,search:options||{}},epsilon,random):chooseStyledMove(game,strategy,model,style,{...styleOptions,search:options||{}},epsilon,random)):options?chooseSearchMove(game,strategy,model,options,epsilon,random):chooseLocalMove(game,strategy,model,epsilon,random)})};
  }
  try{
   const end=await simulateGame({gameId,players:{blue:strategy,red:strategy},agents,maxTurns,write:async e=>{events.push(e);}});
@@ -46,5 +49,6 @@ const summarize=rows=>{
  return {completed:completed.length,aborted:rows.filter(r=>r.status==='aborted').length,truncated:rows.filter(r=>r.status==='truncated').length,wins,draws,losses:completed.length-wins-draws,score:completed.length?(wins+draws*.5)/completed.length:null,pairedBootstrap95:scores.length?[scores[50],scores[1949]]:null,pairedHoeffding95:mean===null?null:[Math.max(0,mean-radius),Math.min(1,mean+radius)],meanTurns:completed.length?completed.reduce((s,r)=>s+r.turns,0)/completed.length:null,repetitionEnds:completed.filter(r=>r.reason!=='supply').length};
 };
 const report={purpose:'Local-vs-local development tournament only; not acceptance evaluation or Jev strength',style:style?{modelSha256:createHash('sha256').update(styleBytes).digest('hex'),options:styleOptions}:null,search:search?{version:SEARCH_VERSION,...DEFAULT_SEARCH,...search}:null,baselineSearch:baselineSearch?{version:SEARCH_VERSION,...DEFAULT_SEARCH,...baselineSearch}:null,candidateSha256:createHash('sha256').update(candidateBytes).digest('hex'),baselineSha256:createHash('sha256').update(baselineBytes).digest('hex'),seed,pairs,epsilon,maxTurns,overall:summarize(results),byStrategy:Object.fromEntries(Object.keys(STRATEGIES).map(s=>[s,summarize(results.filter(r=>r.strategy===s))])),results};
+if(intent)report.intent={version:INTENT_VERSION,options:intent,sourceSha256:createHash('sha256').update(await fs.readFile('lib/ai/intent.ts')).digest('hex')};
 await atomicJSON(v.out+'.json',report);await fs.writeFile(v.out+'.jsonl.gz',gzipSync(events.map(e=>JSON.stringify(e)).join('\n')+'\n'));
 console.log(JSON.stringify({candidate:v.candidate,...report.overall}));

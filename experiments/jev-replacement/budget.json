@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-intent-11",
+      "purpose": "offline-authored-strategy-intent",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T09:08:08Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Explicit authored preferences over unchanged learned models. 85 free games, 5204 decisions replayed, grouped and fresh common-state audits. 49 tests/types/build pass. No paid work; $3.25 evaluation reserve unchanged."
+    },
+    {
       "id": "20260924-shift-10-probe",
       "purpose": "development-repeated-shift-probe",
       "status": "closed",

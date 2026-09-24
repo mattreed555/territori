@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-intent-11",
-  "status": "active",
+  "status": "closed",
   "purpose": "Offline explicit strategy-intent experiment and local evaluation",
   "startedAt": "2026-09-24T08:52:00Z",
   "expiresAt": "2026-09-24T09:40:00Z",
   "budgetReservationNano": 0,
-  "note": "No paid calls. Separate authored intent from learned weights, retain tactical limits, test against saved states and free games. No live changes. Do not overlap."
+  "closedAt": "2026-09-24T09:08:08Z",
+  "note": "Offline intent implementation and evaluation complete. 85 free games and 5204 decisions exactly replayed. No paid calls or live changes. Provisional strength1 candidate, not ready; see PROGRESS and session README. Acquire a new exclusive session before further work."
 }

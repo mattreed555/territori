@@ -173,6 +173,15 @@ limitations. `local-tournament.mjs` compares two local models with balanced colo
 it makes no API calls and must not be reported as local-versus-Jev evidence.
 
 The authoritative goal is [jev-replacement-goal.md](jev-replacement-goal.md).
+The optional `lib/ai/intent.ts` layer adds transparent **authored** strategy
+preferences over the frozen learned policy/residual; it is not a distilled model
+or the live default. `local-tournament.mjs --style FILE --intent
+'{"strength":1,"margin":1}'` tests it locally; `verify-local.mjs` checks its
+source hash and replays choices. `audit-intent.mjs`, `intent-selfplay.mjs`, and
+`audit-intent-selfplay.mjs` preserve common-state and all-pairing evidence.
+See `experiments/jev-replacement/20260924-intent-11/README.md`. The paid collector
+does not yet support this hybrid; do not substitute another policy silently.
+
 `prepare-shift-probe.mjs`, `collect-repeat-probe.mjs` and
 `analyze-repeat-probe.mjs` add a bounded two-pass counterfactual experiment.
 The distinct `repeated-counterfactual` wrapper preserves repeat identity; it is
