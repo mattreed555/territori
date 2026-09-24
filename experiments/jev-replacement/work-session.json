@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-intent-11",
-  "status": "closed",
-  "purpose": "Offline explicit strategy-intent experiment and local evaluation",
-  "startedAt": "2026-09-24T08:52:00Z",
-  "expiresAt": "2026-09-24T09:40:00Z",
+  "id": "20260924-varied-12",
+  "status": "active",
+  "purpose": "Offline varied-state validation and exact hybrid collector support",
+  "startedAt": "2026-09-24T09:51:00Z",
+  "expiresAt": "2026-09-24T10:40:00Z",
   "budgetReservationNano": 0,
-  "closedAt": "2026-09-24T09:08:08Z",
-  "note": "Offline intent implementation and evaluation complete. 85 free games and 5204 decisions exactly replayed. No paid calls or live changes. Provisional strength1 candidate, not ready; see PROGRESS and session README. Acquire a new exclusive session before further work."
+  "note": "No paid calls. Fixed intent11 candidate, seeded varied legal traces and common-state audit, dry-run collector validation. No live changes; do not overlap."
 }
