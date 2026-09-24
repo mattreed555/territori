@@ -1,14 +1,11 @@
 {
   "version": 1,
-  "id": "20260924-acceptance-21",
-  "status": "closed",
-  "purpose": "Sealed independent acceptance batch6",
-  "startedAt": "2026-09-24T20:59:27.854Z",
-  "expiresAt": "2026-09-24T23:59:27.854Z",
-  "budgetReservationNano": 0,
-  "financialSessionId": "acceptance-v1-06",
-  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
-  "closedAt": "2026-09-24T21:03:46.593Z",
-  "spentNano": 296081856,
-  "note": "Batch6 completed20/20, exact replay and usage; cumulative120/200."
+  "id": "20260924-acceptance-22",
+  "status": "active",
+  "purpose": "Sealed independent acceptance batch7",
+  "startedAt": "2026-09-24T21:05:57.301Z",
+  "expiresAt": "2026-09-25T00:05:57.301Z",
+  "budgetReservationNano": 400000000,
+  "financialSessionId": "acceptance-v1-07",
+  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9"
 }
