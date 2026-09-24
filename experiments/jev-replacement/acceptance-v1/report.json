@@ -2,83 +2,83 @@
   "purpose": "Independent strength gate only; NOT full replacement readiness",
   "protocolId": "acceptance-v1",
   "scheduledGames": 200,
-  "batchesPresent": 9,
+  "batchesPresent": 10,
   "unverifiedBatches": [],
   "overall": {
-    "completed": 180,
+    "completed": 200,
     "aborted": 0,
     "truncated": 0,
-    "wins": 175,
-    "draws": 1,
+    "wins": 194,
+    "draws": 2,
     "losses": 4,
     "score": 0.975,
     "conservative95ScoreInterval": [
-      0.8737730896819491,
+      0.8789677208680079,
       1
     ],
-    "meanTurns": 50.62222222222222,
+    "meanTurns": 50.59,
     "maxTurns": 88,
     "repetitionEnds": 0
   },
   "byStrategy": {
     "Aggressive": {
-      "completed": 36,
+      "completed": 40,
       "aborted": 0,
       "truncated": 0,
-      "wins": 32,
-      "draws": 1,
+      "wins": 35,
+      "draws": 2,
       "losses": 3,
-      "score": 0.9027777777777778,
+      "score": 0.9,
       "conservative95ScoreInterval": [
-        0.6764275251543412,
+        0.6852652958266312,
         1
       ],
-      "meanTurns": 52,
+      "meanTurns": 51.9,
       "maxTurns": 64,
       "repetitionEnds": 0
     },
     "Cautious": {
-      "completed": 36,
+      "completed": 40,
       "aborted": 0,
       "truncated": 0,
-      "wins": 35,
+      "wins": 39,
       "draws": 0,
       "losses": 1,
-      "score": 0.9722222222222222,
+      "score": 0.975,
       "conservative95ScoreInterval": [
-        0.7458719695987857,
+        0.7602652958266312,
         1
       ],
-      "meanTurns": 51.05555555555556,
+      "meanTurns": 51,
       "maxTurns": 88,
       "repetitionEnds": 0
     },
     "Expansive": {
-      "completed": 36,
+      "completed": 40,
       "aborted": 0,
       "truncated": 0,
-      "wins": 36,
+      "wins": 40,
       "draws": 0,
       "losses": 0,
       "score": 1,
       "conservative95ScoreInterval": [
-        0.7736497473765634,
+        0.7852652958266312,
         1
       ],
-      "meanTurns": 50.05555555555556,
+      "meanTurns": 50.05,
       "maxTurns": 52,
       "repetitionEnds": 0
     },
     "Fluid": {
-      "completed": 36,
+      "completed": 40,
       "aborted": 0,
       "truncated": 0,
-      "wins": 36,
+      "wins": 40,
       "draws": 0,
       "losses": 0,
       "score": 1,
       "conservative95ScoreInterval": [
-        0.7736497473765634,
+        0.7852652958266312,
         1
       ],
       "meanTurns": 50,
@@ -86,15 +86,15 @@
       "repetitionEnds": 0
     },
     "Balanced": {
-      "completed": 36,
+      "completed": 40,
       "aborted": 0,
       "truncated": 0,
-      "wins": 36,
+      "wins": 40,
       "draws": 0,
       "losses": 0,
       "score": 1,
       "conservative95ScoreInterval": [
-        0.7736497473765634,
+        0.7852652958266312,
         1
       ],
       "meanTurns": 50,
@@ -105,65 +105,65 @@
   "byStrategyColor": {
     "Aggressive": {
       "blue": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
-        "meanTurns": 51.888888888888886,
+        "meanTurns": 51.9,
         "maxTurns": 52,
         "repetitionEnds": 0
       },
       "red": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 14,
-        "draws": 1,
+        "wins": 15,
+        "draws": 2,
         "losses": 3,
-        "score": 0.8055555555555556,
+        "score": 0.8,
         "conservative95ScoreInterval": [
-          0.48544795844891536,
+          0.49631926904584744,
           1
         ],
-        "meanTurns": 52.111111111111114,
+        "meanTurns": 51.9,
         "maxTurns": 64,
         "repetitionEnds": 0
       }
     },
     "Cautious": {
       "blue": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 17,
+        "wins": 19,
         "draws": 0,
         "losses": 1,
-        "score": 0.9444444444444444,
+        "score": 0.95,
         "conservative95ScoreInterval": [
-          0.6243368473378041,
+          0.6463192690458474,
           1
         ],
-        "meanTurns": 52.111111111111114,
+        "meanTurns": 52,
         "maxTurns": 88,
         "repetitionEnds": 0
       },
       "red": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -173,15 +173,15 @@
     },
     "Expansive": {
       "blue": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -189,33 +189,33 @@
         "repetitionEnds": 0
       },
       "red": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
-        "meanTurns": 50.111111111111114,
+        "meanTurns": 50.1,
         "maxTurns": 52,
         "repetitionEnds": 0
       }
     },
     "Fluid": {
       "blue": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -223,15 +223,15 @@
         "repetitionEnds": 0
       },
       "red": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -241,15 +241,15 @@
     },
     "Balanced": {
       "blue": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -257,15 +257,15 @@
         "repetitionEnds": 0
       },
       "red": {
-        "completed": 18,
+        "completed": 20,
         "aborted": 0,
         "truncated": 0,
-        "wins": 18,
+        "wins": 20,
         "draws": 0,
         "losses": 0,
         "score": 1,
         "conservative95ScoreInterval": [
-          0.6798924028933597,
+          0.6963192690458474,
           1
         ],
         "meanTurns": 50,
@@ -274,8 +274,8 @@
       }
     }
   },
-  "complete": false,
-  "strengthPass": false,
+  "complete": true,
+  "strengthPass": true,
   "readyForDeployment": false,
   "intervalMethod": "Two-sided Hoeffding bound, mean reward in [0,1], draws=.5; assumes independent runs. Report trajectory/context duplicates separately.",
   "batches": [
@@ -4324,6 +4324,456 @@
         },
         {
           "gameId": "acceptance-v1-09:19",
+          "status": "completed",
+          "reason": "supply"
+        }
+      ]
+    },
+    {
+      "runId": "acceptance-v1-10",
+      "verified": true,
+      "results": [
+        {
+          "gameId": "acceptance-v1-10:0",
+          "strategy": "Fluid",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 25,
+            "red": 23
+          },
+          "largest": {
+            "blue": 25,
+            "red": 23
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:1",
+          "strategy": "Cautious",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 26,
+            "red": 23
+          },
+          "largest": {
+            "blue": 25,
+            "red": 22
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:2",
+          "strategy": "Expansive",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 24,
+            "red": 22
+          },
+          "largest": {
+            "blue": 24,
+            "red": 22
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:3",
+          "strategy": "Balanced",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 22,
+            "red": 20
+          },
+          "largest": {
+            "blue": 20,
+            "red": 20
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:4",
+          "strategy": "Aggressive",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 22,
+            "red": 20
+          },
+          "largest": {
+            "blue": 22,
+            "red": 20
+          },
+          "reason": "supply",
+          "turns": 52
+        },
+        {
+          "gameId": "acceptance-v1-10:5",
+          "strategy": "Fluid",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 22,
+            "red": 24
+          },
+          "largest": {
+            "blue": 22,
+            "red": 21
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:6",
+          "strategy": "Cautious",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 20,
+            "red": 21
+          },
+          "largest": {
+            "blue": 20,
+            "red": 18
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:7",
+          "strategy": "Expansive",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 23,
+            "red": 24
+          },
+          "largest": {
+            "blue": 12,
+            "red": 20
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:8",
+          "strategy": "Balanced",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 24,
+            "red": 27
+          },
+          "largest": {
+            "blue": 24,
+            "red": 21
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:9",
+          "strategy": "Aggressive",
+          "localColor": "red",
+          "status": "completed",
+          "winner": null,
+          "territory": {
+            "blue": 12,
+            "red": 12
+          },
+          "largest": {
+            "blue": 5,
+            "red": 5
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:10",
+          "strategy": "Fluid",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 23,
+            "red": 20
+          },
+          "largest": {
+            "blue": 23,
+            "red": 20
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:11",
+          "strategy": "Cautious",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 26,
+            "red": 19
+          },
+          "largest": {
+            "blue": 25,
+            "red": 15
+          },
+          "reason": "supply",
+          "turns": 52
+        },
+        {
+          "gameId": "acceptance-v1-10:12",
+          "strategy": "Expansive",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 24,
+            "red": 22
+          },
+          "largest": {
+            "blue": 24,
+            "red": 22
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:13",
+          "strategy": "Balanced",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 23,
+            "red": 22
+          },
+          "largest": {
+            "blue": 23,
+            "red": 22
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:14",
+          "strategy": "Aggressive",
+          "localColor": "blue",
+          "status": "completed",
+          "winner": "blue",
+          "territory": {
+            "blue": 25,
+            "red": 23
+          },
+          "largest": {
+            "blue": 22,
+            "red": 19
+          },
+          "reason": "supply",
+          "turns": 52
+        },
+        {
+          "gameId": "acceptance-v1-10:15",
+          "strategy": "Fluid",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 22,
+            "red": 24
+          },
+          "largest": {
+            "blue": 21,
+            "red": 24
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:16",
+          "strategy": "Cautious",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 20,
+            "red": 22
+          },
+          "largest": {
+            "blue": 16,
+            "red": 18
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:17",
+          "strategy": "Expansive",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 23,
+            "red": 26
+          },
+          "largest": {
+            "blue": 19,
+            "red": 22
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:18",
+          "strategy": "Balanced",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 24,
+            "red": 25
+          },
+          "largest": {
+            "blue": 24,
+            "red": 21
+          },
+          "reason": "supply",
+          "turns": 50
+        },
+        {
+          "gameId": "acceptance-v1-10:19",
+          "strategy": "Aggressive",
+          "localColor": "red",
+          "status": "completed",
+          "winner": "red",
+          "territory": {
+            "blue": 7,
+            "red": 7
+          },
+          "largest": {
+            "blue": 4,
+            "red": 5
+          },
+          "reason": "supply",
+          "turns": 50
+        }
+      ],
+      "failure": null,
+      "costUpperNano": 297359244,
+      "observedStatuses": [
+        {
+          "gameId": "acceptance-v1-10:0",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:1",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:2",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:3",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:4",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:5",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:6",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:7",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:8",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:9",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:10",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:11",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:12",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:13",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:14",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:15",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:16",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:17",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:18",
+          "status": "completed",
+          "reason": "supply"
+        },
+        {
+          "gameId": "acceptance-v1-10:19",
           "status": "completed",
           "reason": "supply"
         }
