@@ -6,7 +6,8 @@ import {parseArgs} from 'node:util';
 import {loadModules} from './modules.mjs';
 import {openMeter, atomicJSON} from './budget.mjs';
 import {prepareLocalAgent} from './local-agent.mjs';
-const {values:v}=parseArgs({options:{...Object.fromEntries(['run-id','out','ledger','teacher-url','games','seed','max-turns','source-commit','mode','model','epsilon','search','style','intent'].map(k=>[k,{type:'string'}])),'dry-run':{type:'boolean'}}});
+import {checkAcceptance,checkAcceptanceReservation} from './acceptance.mjs';
+const {values:v}=parseArgs({options:{...Object.fromEntries(['run-id','out','ledger','teacher-url','games','seed','max-turns','source-commit','mode','model','epsilon','search','style','intent','protocol'].map(k=>[k,{type:'string'}])),'dry-run':{type:'boolean'}}});
 const runId=v['run-id'], directory=v.out, games=Number(v.games||10), seed=Number(v.seed||511), maxTurns=Number(v['max-turns']||160);
 if(!runId||!directory||!v.ledger||!v['teacher-url']||!v['source-commit'])throw Error('Required: --run-id --out --ledger --teacher-url --source-commit');
 if(![games,seed,maxTurns].every(Number.isSafeInteger)||games<1||maxTurns<1)throw Error('Invalid numeric argument');
@@ -29,7 +30,10 @@ for(let i=strategies.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[strat
 const matchups=Array.from({length:games},(_,i)=>({blue:strategies[i%5],red:mode==='local-vs-jev'?strategies[i%5]:strategies[(i+1+Math.floor(i/5))%5]}));
 const hash=async file=>createHash('sha256').update(await fs.readFile(file)).digest('hex');
 const provenance={runId,seed,mode,epsilon,localAgent:prepared?.metadata??null,search:prepared?.metadata.search??null,searchSourceSha256:prepared?.metadata.sourceHashes['lib/ai/search.ts']??null,modelSha256:prepared?.metadata.modelSha256??null,ruleset:RULESET,sourceCommit:v['source-commit'],promptSha256:await hash('lib/game/jev.ts'),strategiesSha256:await hash('lib/game/strategies.ts'),maxTurns,matchups,seedScope:'matchup order and local epsilon sampling (seed + game index); provider decisions are not seeded',purpose:'training/development validation, not independent acceptance evaluation',teacherEndpoint:endpoint.href,startedAt:new Date().toISOString()};
+const acceptance=v.protocol?await checkAcceptance(v.protocol,provenance):null;
+if(acceptance){provenance.purpose='independent-acceptance';provenance.acceptance=acceptance.metadata;}
 if(v['dry-run']){console.log(JSON.stringify({dryRun:true,paidCalls:0,budgetValidated:false,provenance}));process.exit(0);}
+if(acceptance)checkAcceptanceReservation(JSON.parse(await fs.readFile(v.ledger,'utf8')),acceptance);
 await fs.mkdir(directory,{recursive:true});
 const meter=await openMeter({ledgerFile:v.ledger,journalFile:path.join(directory,'usage.jsonl'),runId});
 const file=await fs.open(path.join(directory,'decisions.jsonl'),'wx');
@@ -47,7 +51,7 @@ try {
     const localColor=Math.floor(i/5)%2===0?'blue':'red',localRandom=seededRandom(seed+i);
     const local={source:'local',choose:async(game,strategy)=>({move:prepared.choose(game,strategy,localRandom)})};
     const agents=mode==='jev-vs-jev'?{blue:teacher,red:teacher}:{blue:localColor==='blue'?local:teacher,red:localColor==='red'?local:teacher};
-    const result=await simulateGame({gameId:activeGameId,players:matchups[i],agents,maxTurns,write:async e=>{await file.write(JSON.stringify(e)+'\n');await file.sync();}});
+    const result=await simulateGame({gameId:activeGameId,players:matchups[i],agents,maxTurns,write:async e=>{await file.write(JSON.stringify(acceptance?{...e,evaluationProtocol:acceptance.metadata.sha256}:e)+'\n');await file.sync();}});
     results.push({...result,players:matchups[i],localColor:mode==='local-vs-jev'?localColor:null});
     await atomicJSON(path.join(directory,'games.json'),results);
     console.log(JSON.stringify({game:i+1,players:matchups[i],...result.result}));

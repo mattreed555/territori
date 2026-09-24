@@ -37,6 +37,7 @@ export function trainPolicy(rows:TrainingDecision[],{seed=1,epochs=60,rate=.03,l
   if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
   if(!Number.isFinite(softTargetMix)||softTargetMix<0||softTargetMix>1)throw new Error('Soft target mix must be 0–1');
   if(!Number.isFinite(sharedPriorStrength)||sharedPriorStrength<0)throw new Error('Shared prior strength must be nonnegative');
+  if(rows.some(r=>r.evaluationProtocol))throw new Error('Independent acceptance decisions are evaluation-only and cannot train a policy');
   const teacherRows=rows.filter(r=>r.source==='jev'),split=testGameIds===undefined?splitGames(teacherRows,seed,testFraction):splitByGameIds(teacherRows,testGameIds),random=seededRandom(seed);
   const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
   if(softTargetMix>0)model.training.softTargetMix=softTargetMix;

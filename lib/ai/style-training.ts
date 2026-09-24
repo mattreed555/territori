@@ -12,6 +12,7 @@ export const STYLE_FEATURES=['territoryGain','opponentTerritoryLost','ownExposur
  * the small style signal. No game result is used or invented. Equal state weight.
  */
 export function trainStyle(probes:ReturnType<typeof recordCounterfactual>[],testGroupIds:string[],{ridge=.1,probabilityFloor=.001,features=STYLE_FEATURES}={}) {
+  if(probes.some(p=>p.decision.evaluationProtocol))throw new Error('Independent acceptance decisions cannot train a style model');
   if(!Number.isFinite(ridge)||ridge<=0||!Number.isFinite(probabilityFloor)||probabilityFloor<=0||probabilityFloor>=1)throw new Error('Invalid ridge/floor');
   trainingDecisions([],probes); // Validate all records, including held-out records.
   const strategies=Object.keys(STRATEGIES) as Strategy[],groups=[...new Set(probes.map(p=>p.groupId))].sort();

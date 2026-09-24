@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "status": "sealed",
+  "id": "acceptance-v1",
+  "candidateSourceCommit": "e4843b77120ccec82020195f84cfcdf8c0f798ba",
+  "sealedAt": "2026-09-24T13:48:41.434Z",
+  "targets": {
+    "completed": 200,
+    "perStrategy": 40,
+    "perStrategyColor": 20,
+    "overallScore": 0.5,
+    "perStrategyScore": 0.4
+  },
+  "capNano": 3250000000,
+  "maxTurns": 160,
+  "teacherModel": "jev-1.13.0",
+  "teacherEndpoint": "https://territori.matthew-l-reed.chatgpt.site/api/robot",
+  "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+  "handling": "all-attempts-reported-no-retries-no-refits-no-retrospective-relabel",
+  "candidate": {
+    "kind": "learned-search-style-authored-intent",
+    "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "epsilon": 0.03,
+    "search": {
+      "version": 2,
+      "policyBeam": 12,
+      "staticBeam": 8,
+      "priorWeight": 0.75
+    },
+    "intent": {
+      "version": 1,
+      "strength": 1,
+      "margin": 1,
+      "learnedStyleWeight": 0.5,
+      "authored": true
+    },
+    "sourceHashes": {
+      "lib/game/rules.ts": "49d95c9d3584787341e27baf30df505f36c9d4c1b4d4af2c735f42de9289a70d",
+      "lib/ai/policy.ts": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3",
+      "lib/ai/features.ts": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3",
+      "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+      "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+      "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    }
+  },
+  "pipelineHashes": {
+    "docs/jev-replacement-goal.md": "5779a14f08178162906ec9f1ce097febc289330fec9bd2ae97d6eb4810913e9d",
+    "scripts/ai/collect.mjs": "4d61e65d537d95fa0c80120a0b080beb11c8505bcb7d0c7d732925a9bc3ffea6",
+    "scripts/ai/acceptance.mjs": "3628bf002c68c5d6b7f196295042214089e71d598b70388f2feec9401edf9ec0",
+    "scripts/ai/budget.mjs": "04e4ae84b098c826b880b69e706b87b6fe45a35f4211a2cbf2964f19d1752358",
+    "scripts/ai/local-agent.mjs": "df07896229e4ba16a81dff6ad08bcf6a03f2a2c9fb0e3e68b9302b283a108030",
+    "scripts/ai/modules.mjs": "da0a0e72f0b5f22a73b86b5c3f4e60b6abaeac76a1a6ca358f3c1dc0a6bc913a",
+    "scripts/ai/verify-session.mjs": "63a5ee2ec3de849a576da42933ff4c1a00e7491e4da301d5800df822b60c52ea",
+    "scripts/ai/report-acceptance.mjs": "c5a23704180fb03ab63bdeced22ca5766e683ce5881d559a1da88fdb6294c29d",
+    "lib/ai/simulator.ts": "e5d18d81ab75c7326095971647b58c1d36774a41db57b31ff90db405c1740f97",
+    "lib/ai/dataset.ts": "6a80492f8d9aebc533966b92ba8c5283abc7c72861b42f9d76524fe68090a086",
+    "lib/game/jev.ts": "7730309736cce20b41538ff3db84fe6fc65b7407c3c55c2b0fa20b3accc654fc",
+    "lib/game/strategies.ts": "7004e4d1cc2898652c5b68ee118383de7a35fff48ac39ec338a8fe215ea6f0c8"
+  },
+  "batches": [
+    {
+      "runId": "acceptance-v1-01",
+      "games": 20,
+      "seed": 260924900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-02",
+      "games": 20,
+      "seed": 260925900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-03",
+      "games": 20,
+      "seed": 260926900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-04",
+      "games": 20,
+      "seed": 260927900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-05",
+      "games": 20,
+      "seed": 260928900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-06",
+      "games": 20,
+      "seed": 260929900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-07",
+      "games": 20,
+      "seed": 260930900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-08",
+      "games": 20,
+      "seed": 260931900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-09",
+      "games": 20,
+      "seed": 260932900,
+      "capNano": 400000000
+    },
+    {
+      "runId": "acceptance-v1-10",
+      "games": 20,
+      "seed": 260933900,
+      "capNano": 400000000
+    }
+  ]
+}

@@ -2,9 +2,11 @@
   "version": 1,
   "id": "20260924-acceptance-16",
   "status": "active",
-  "purpose": "Prepare sealed independent acceptance protocol and validate the collector",
+  "purpose": "Sealed independent acceptance preparation and first20-game evaluation batch",
   "startedAt": "2026-09-24T13:38:00Z",
   "expiresAt": "2026-09-24T14:30:00Z",
-  "budgetReservationNano": 0,
-  "note": "No paid work until a protocol and a bounded evaluation reservation are durably committed. Jev stays live/default."
+  "budgetReservationNano": 400000000,
+  "note": "Frozen candidate/pipeline, no refits or retrospective relabeling. Jev remains live/default. Retain financial cap if interrupted until reconciled.",
+  "financialSessionId": "acceptance-v1-01",
+  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9"
 }

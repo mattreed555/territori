@@ -3,7 +3,7 @@ import { STRATEGIES, type Strategy } from '../game/strategies';
 export const DATA_VERSION = 1;
 export const RULESET = '8x8-25-permanent-majority-single-opening-v1';
 export type TeacherMetadata = { model: string; answer: unknown; response?: unknown; usage?: unknown };
-export type Decision = { kind: 'decision'; version: 1; ruleset: string; id: string; gameId: string; turnNumber: number; source: 'jev' | 'local'; strategy: Strategy; state: Game; legalMoves: Move[]; chosenMove: Move; teacher: TeacherMetadata | null; finalResult: Result | null; localPolicy?: {id:string;epsilon:number} };
+export type Decision = { kind: 'decision'; version: 1; ruleset: string; id: string; gameId: string; turnNumber: number; source: 'jev' | 'local'; strategy: Strategy; state: Game; legalMoves: Move[]; chosenMove: Move; teacher: TeacherMetadata | null; finalResult: Result | null; localPolicy?: {id:string;epsilon:number}; evaluationProtocol?:string };
 export type Result = { status: 'completed' | 'truncated' | 'aborted'; winner: ReturnType<typeof score>['winner']; territory: { blue: number; red: number }; largest: { blue: number; red: number }; reason: string; turns: number };
 export type GameResult = { kind: 'result'; version: 1; ruleset: string; gameId: string; result: Result };
 export type DatasetEvent = Decision | GameResult;

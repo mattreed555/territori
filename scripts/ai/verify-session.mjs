@@ -8,11 +8,18 @@ import {parseArgs} from 'node:util';
 import {loadModules} from './modules.mjs';
 import {chargeForUsage,atomicJSON} from './budget.mjs';
 import {prepareLocalAgent} from './local-agent.mjs';
-const {values:v}=parseArgs({options:Object.fromEntries(['run','model','style'].map(k=>[k,{type:'string'}]))});if(!v.run)throw Error('Use --run batch-directory [--model FILE --style FILE]');
+import {checkAcceptance} from './acceptance.mjs';
+const {values:v}=parseArgs({options:Object.fromEntries(['run','model','style','protocol'].map(k=>[k,{type:'string'}]))});if(!v.run)throw Error('Use --run batch-directory [--model FILE --style FILE --protocol FILE]');
 const load=await loadModules(),{newGame,applyMove,moveId}=await load('game/rules'),{recordResult,finalizedDecisions}=await load('ai/dataset');
 const read=async name=>JSON.parse(await fs.readFile(path.join(v.run,name),'utf8'));
 const readLines=async name=>gunzipSync(await fs.readFile(path.join(v.run,name+'.gz'))).toString().trim().split('\n').map(JSON.parse);
-const events=await readLines('decisions.jsonl'),journal=await readLines('usage.jsonl'),summary=await read('summary.json'),provenance=await read('provenance.json');
+const rawEvents=await readLines('decisions.jsonl'),journal=await readLines('usage.jsonl'),summary=await read('summary.json'),provenance=await read('provenance.json');
+if(provenance.acceptance){
+ assert.ok(v.protocol,'Acceptance replay requires the original sealed protocol');
+ const verified=await checkAcceptance(v.protocol,provenance);assert.deepEqual(verified.metadata,provenance.acceptance);assert.equal(provenance.purpose,'independent-acceptance');
+ for(const e of rawEvents)assert.equal(e.evaluationProtocol,verified.metadata.sha256,'Untagged acceptance event');
+}else{assert.ok(!v.protocol,'Cannot relabel development games as acceptance');assert.ok(rawEvents.every(e=>!e.evaluationProtocol));}
+const events=rawEvents.map(({evaluationProtocol,...event})=>event);
 const rows=finalizedDecisions(events),results=events.filter(e=>e.kind==='result'),requests=journal.filter(e=>e.kind==='request'),usage=journal.filter(e=>e.kind==='usage'),teacher=rows.filter(r=>r.source==='jev');
 let localAgent=null,localChoicesReplayed=0;
 const {seededRandom}=await load('ai/policy');
