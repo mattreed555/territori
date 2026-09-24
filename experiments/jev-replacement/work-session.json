@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-search-05",
-  "status": "closed",
-  "purpose": "Ten metered search-vs-Jev development matches and offline follow-up",
-  "startedAt": "2026-09-24T02:27:00Z",
-  "expiresAt": "2026-09-24T03:25:00Z",
-  "budgetReservationNano": 0,
-  "closedAt": "2026-09-24T02:35:00Z",
-  "note": "Ten paid development matches and offline refits/audits completed. Exact $0.148640898 reconciled; no unknown charges or active reservations. Read newest progress and cumulative ledger before further work."
+  "id": "20260924-style-06",
+  "status": "active",
+  "purpose": "Common-position strategy probe and counterfactual collection tooling",
+  "startedAt": "2026-09-24T03:43:00Z",
+  "expiresAt": "2026-09-24T04:40:00Z",
+  "budgetReservationNano": 100000000,
+  "note": "Exclusive session. Up to $0.10 for at most 100 counterfactual teacher labels; keep $3.25 acceptance reserve. Do not overlap or release until usage reconciled."
 }
