@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-performance-15",
+      "purpose": "offline-fixed-policy-performance-and-parity",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T12:32:48Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Exact policy/rules parity and lower Node latency;61tests/types/build. No training, paid work, dependencies or deployment. Mobile/browser and independent acceptance remain pending. Evaluation reserve unchanged."
+    },
+    {
       "id": "20260924-client-14",
       "purpose": "offline-client-integration-and-bundle-validation",
       "status": "closed",

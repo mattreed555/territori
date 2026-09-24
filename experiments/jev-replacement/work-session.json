@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-performance-15",
-  "status": "active",
+  "status": "closed",
   "purpose": "Offline fixed-policy profiling and semantics-preserving latency work",
   "startedAt": "2026-09-24T12:20:00Z",
   "expiresAt": "2026-09-24T13:10:00Z",
   "budgetReservationNano": 0,
-  "note": "No paid calls; keep Jev live/default; preserve existing build cache. Profile before changing code, verify exact full policy parity."
+  "note": "Zero paid calls. Fixed-policy performance improved with exact parity:61tests/types/build;1680full output comparisons;23470successors/100teacher requests;3190prior choices and634adapter actions replay. Keep Jev default; prepare sealed acceptance mode next. Browser/mobile still pending. Acquire a new lease before work.",
+  "closedAt": "2026-09-24T12:32:48Z"
 }

@@ -1,0 +1,192 @@
+[
+  {
+    "gameId": "client-14-0",
+    "strategy": "Aggressive",
+    "mode": "bots",
+    "seed": 241500,
+    "humanSeed": 912,
+    "status": "completed",
+    "winner": null,
+    "territory": {
+      "blue": 10,
+      "red": 10
+    },
+    "largest": {
+      "blue": 10,
+      "red": 10
+    },
+    "reason": "supply",
+    "turns": 52
+  },
+  {
+    "gameId": "client-14-1",
+    "strategy": "Aggressive",
+    "mode": "simulated-human",
+    "seed": 241501,
+    "humanSeed": 913,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 12,
+      "red": 38
+    },
+    "largest": {
+      "blue": 4,
+      "red": 36
+    },
+    "reason": "supply",
+    "turns": 62
+  },
+  {
+    "gameId": "client-14-2",
+    "strategy": "Cautious",
+    "mode": "bots",
+    "seed": 241502,
+    "humanSeed": 914,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 19,
+      "red": 21
+    },
+    "largest": {
+      "blue": 15,
+      "red": 15
+    },
+    "reason": "supply",
+    "turns": 60
+  },
+  {
+    "gameId": "client-14-3",
+    "strategy": "Cautious",
+    "mode": "simulated-human",
+    "seed": 241503,
+    "humanSeed": 915,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 11,
+      "red": 38
+    },
+    "largest": {
+      "blue": 4,
+      "red": 36
+    },
+    "reason": "supply",
+    "turns": 64
+  },
+  {
+    "gameId": "client-14-4",
+    "strategy": "Expansive",
+    "mode": "bots",
+    "seed": 241504,
+    "humanSeed": 916,
+    "status": "completed",
+    "winner": "blue",
+    "territory": {
+      "blue": 17,
+      "red": 16
+    },
+    "largest": {
+      "blue": 4,
+      "red": 6
+    },
+    "reason": "supply",
+    "turns": 86
+  },
+  {
+    "gameId": "client-14-5",
+    "strategy": "Expansive",
+    "mode": "simulated-human",
+    "seed": 241505,
+    "humanSeed": 917,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 9,
+      "red": 46
+    },
+    "largest": {
+      "blue": 4,
+      "red": 46
+    },
+    "reason": "supply",
+    "turns": 70
+  },
+  {
+    "gameId": "client-14-6",
+    "strategy": "Fluid",
+    "mode": "bots",
+    "seed": 241506,
+    "humanSeed": 918,
+    "status": "completed",
+    "winner": "blue",
+    "territory": {
+      "blue": 21,
+      "red": 16
+    },
+    "largest": {
+      "blue": 17,
+      "red": 9
+    },
+    "reason": "supply",
+    "turns": 52
+  },
+  {
+    "gameId": "client-14-7",
+    "strategy": "Fluid",
+    "mode": "simulated-human",
+    "seed": 241507,
+    "humanSeed": 919,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 6,
+      "red": 40
+    },
+    "largest": {
+      "blue": 3,
+      "red": 39
+    },
+    "reason": "supply",
+    "turns": 66
+  },
+  {
+    "gameId": "client-14-8",
+    "strategy": "Balanced",
+    "mode": "bots",
+    "seed": 241508,
+    "humanSeed": 920,
+    "status": "completed",
+    "winner": null,
+    "territory": {
+      "blue": 15,
+      "red": 15
+    },
+    "largest": {
+      "blue": 5,
+      "red": 5
+    },
+    "reason": "supply",
+    "turns": 50
+  },
+  {
+    "gameId": "client-14-9",
+    "strategy": "Balanced",
+    "mode": "simulated-human",
+    "seed": 241509,
+    "humanSeed": 921,
+    "status": "completed",
+    "winner": "red",
+    "territory": {
+      "blue": 7,
+      "red": 48
+    },
+    "largest": {
+      "blue": 3,
+      "red": 48
+    },
+    "reason": "supply",
+    "turns": 72
+  }
+]

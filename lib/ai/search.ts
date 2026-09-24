@@ -1,5 +1,5 @@
 /** Opt-in two-ply development policy. No API, dependency, or UI default change. */
-import { legalSuccessors, legalValueSuccessors, moveId, neighbors, other, score, RULES, type Color, type Game, type Move, type ValueState } from '../game/rules';
+import { legalSuccessors, legalValueSuccessors, moveId, neighbors, other, score, RULES, type Cell, type Color, type Game, type Move, type ValueState } from '../game/rules';
 import type { Strategy } from '../game/strategies';
 import { rankMoves, type PolicyModel } from './policy';
 
@@ -8,6 +8,36 @@ export type SearchOptions = { policyBeam?: number; staticBeam?: number; priorWei
 export const DEFAULT_SEARCH = { policyBeam: 12, staticBeam: 8, priorWeight: .75 } as const;
 const adjacency = Array.from({length: RULES.size ** 2}, (_, i) => neighbors(i));
 const WIN = 10000;
+
+// A move changes local control/exposure only at its endpoints and their
+// neighbors. Cache topology, never game state, across calls.
+const affected = adjacency.map((ns,i)=>[i,...ns]);
+const shifted = adjacency.map((ns,from)=>new Map(ns.map(to=>[to,[...new Set([...affected[from],...affected[to]])]])));
+function cellTerms(board:Cell[],i:number,color:Color):[number,number,number] {
+ const piece=board[i],enemy=other(color);let own=0,opposing=0;
+ for(const n of adjacency[i]){if(board[n]===color)own++;else if(board[n]===enemy)opposing++;}
+ if(piece===color)return [1,1,Number(opposing>own)];
+ if(piece===enemy)return [-1,-1,-Number(own>opposing)];
+ return [own&&!opposing?1:opposing&&!own?-1:0,0,0];
+}
+/** Internal fast leaf scorer: state must be the legal successor for move.
+ * Integer totals preserve the reference evaluator's arithmetic exactly. Supply,
+ * repetition and final-round outcomes still come from the canonical engine.
+ */
+function replyEvaluator(parent:Game,color:Color) {
+ const terms=parent.board.map((_,i)=>cellTerms(parent.board,i,color));
+ const totals=terms.reduce((a,t)=>[a[0]+t[0],a[1]+t[1],a[2]+t[2]],[0,0,0]);
+ const enemy=other(color);
+ return (state:ValueState,move:Move)=>{
+  let [territory,stones,exposure]=totals;
+  for(const i of move.type==='shift'?shifted[move.from].get(move.to)!:affected[move.to]){
+   const next=cellTerms(state.board,i,color),before=terms[i];
+   territory+=next[0]-before[0];stones+=next[1]-before[1];exposure+=next[2]-before[2];
+  }
+  if(state.ended){const winner=territory===0?score(state.board).winner:territory>0?color:enemy;return winner===color?WIN:winner===null?0:-WIN;}
+  return territory+.25*stones-.5*exposure+.1*(state.supply[color]-state.supply[enemy]);
+ };
+}
 
 /** Board points, not probabilities. Terminal scores use the actual tiebreak rule.
  * Supplies have a small positive value; captures never replenish them.
@@ -54,9 +84,10 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
   let nodes = roots.length;
   const evaluateRoot = (root: typeof roots[number]) => {
     let worst = root.value, reply: Move | null = null;
+    const valueOfReply=replyEvaluator(root.next,game.turn);
     // Include ALL opposing placements, shifts and captures, not just captures.
     for (const child of legalValueSuccessors(root.next)) {
-      const value = searchValue(child.state, game.turn); nodes++;
+      const value = valueOfReply(child.state,child.move); nodes++;
       if (reply === null || value < worst) { worst = value; reply = child.move; }
     }
     return {move: root.move, score: worst + config.priorWeight * root.prior,

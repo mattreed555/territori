@@ -14,7 +14,11 @@ export function neighbors(i: number, size: number = RULES.size): number[] {
 // fresh array, so callers cannot mutate the engine's cached topology.
 const adjacency = Array.from({length:RULES.size ** 2},(_,i)=>neighbors(i));
 const adjacent = (i:number,size:number) => size===RULES.size && Number.isInteger(i) && i>=0 && i<adjacency.length ? adjacency[i] : neighbors(i,size);
-export const positionKey = (board: Cell[], turn: Color, supply: Record<Color, number>) => `${turn}:${supply.blue}:${supply.red}:` + board.map(c => c === 'blue' ? 'B' : c === 'red' ? 'R' : '.').join('');
+export const positionKey = (board: Cell[], turn: Color, supply: Record<Color, number>) => {
+  let key=`${turn}:${supply.blue}:${supply.red}:`;
+  for(const piece of board)key+=piece==='blue'?'B':piece==='red'?'R':'.';
+  return key;
+};
 export function newGame(): Game {
   const board: Cell[] = Array(RULES.size ** 2).fill(null);
   return { board, turn: 'blue', supply: { blue: RULES.pieces, red: RULES.pieces }, captured: { blue: 0, red: 0 }, ply: 0, finalRound: false, ended: null, positions: { [positionKey(board, 'blue', { blue: RULES.pieces, red: RULES.pieces })]: 1 }, last: null };
@@ -35,18 +39,19 @@ export function isCapturable(board: Cell[], i: number, size: number = RULES.size
 export function territory(board: Cell[], size: number = RULES.size): Cell[] {
   return board.map((piece, i) => {
     if (piece) return piece;
-    const reach = new Set(adjacent(i, size).map(n => board[n]).filter(Boolean));
-    return reach.size === 1 ? [...reach][0] as Color : null;
+    let blue=false,red=false;
+    for(const n of adjacent(i,size)){if(board[n]==='blue')blue=true;else if(board[n]==='red')red=true;}
+    return blue===red?null:blue?'blue':'red';
   });
 }
 export function score(board: Cell[], size: number = RULES.size) {
-  const land = territory(board, size), totals = { blue: 0, red: 0 }, largest = { blue: 0, red: 0 }, seen = new Set<number>();
+  const land = territory(board, size), totals = { blue: 0, red: 0 }, largest = { blue: 0, red: 0 }, seen = new Uint8Array(board.length);
   land.forEach((c, i) => {
     if (!c) return;
     totals[c]++;
-    if (seen.has(i)) return;
-    const stack = [i]; seen.add(i); let count = 0;
-    while (stack.length) { const n = stack.pop()!; count++; adjacent(n, size).forEach(j => { if (!seen.has(j) && land[j] === c) { seen.add(j); stack.push(j); } }); }
+    if (seen[i]) return;
+    const stack = [i]; seen[i]=1; let count = 0;
+    while (stack.length) { const n = stack.pop()!; count++; for(const j of adjacent(n,size)){if(!seen[j] && land[j]===c){seen[j]=1;stack.push(j);}} }
     largest[c] = Math.max(largest[c], count);
   });
   const delta = totals.blue - totals.red || largest.blue - largest.red;

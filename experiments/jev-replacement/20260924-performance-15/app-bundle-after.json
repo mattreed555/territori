@@ -1,0 +1,78 @@
+{
+  "files": [
+    {
+      "path": "_next/static/61441c06-c56b-4b23-8594-43198dd01605/_buildManifest.js",
+      "bytes": 159,
+      "gzipBytes": 121,
+      "sha256": "47f02b34be6dc481257b6efce4c19e19111f37ef5c437f8ffed44f0da97fa9bb"
+    },
+    {
+      "path": "_next/static/61441c06-c56b-4b23-8594-43198dd01605/_ssgManifest.js",
+      "bytes": 76,
+      "gzipBytes": 60,
+      "sha256": "653f3e53e89b4f8548ff86c19e92bb3c6b84b6be7485a320b1e00893ed877479"
+    },
+    {
+      "path": "_next/static/chunks/app-route-prefetch-policy-BnYXRq_-.js",
+      "bytes": 937,
+      "gzipBytes": 488,
+      "sha256": "05cacd78b46ad6b86021b6693b8cc4c4720ef0cfa58677e44598e7518257ac62"
+    },
+    {
+      "path": "_next/static/chunks/candidate-kJAjG7cU.js",
+      "bytes": 20223,
+      "gzipBytes": 8928,
+      "sha256": "ed0481fcc6e72c5b772b05293ac9a893b11db1b78f95db58450fda64015607c4"
+    },
+    {
+      "path": "_next/static/chunks/framework-D_rUT4EX.js",
+      "bytes": 190152,
+      "gzipBytes": 59092,
+      "sha256": "939d0fabebb3b2f01753bb866b067d8d3384fb06da19f0e6557609d3b1a9f4f7"
+    },
+    {
+      "path": "_next/static/chunks/index-Bm2OQuII.js",
+      "bytes": 193904,
+      "gzipBytes": 55975,
+      "sha256": "c1115c7c9ba75ff7e7e33c8309a8c63f8cc8575d1cd2bbd595b0668d15a91c94"
+    },
+    {
+      "path": "_next/static/chunks/layout-segment-context-BguaBFEX.js",
+      "bytes": 494,
+      "gzipBytes": 342,
+      "sha256": "c294a2f69632f64509fea6141cf194a21beed3344734668f43cc55c3082b765b"
+    },
+    {
+      "path": "_next/static/chunks/local-player-DplhyBnL.js",
+      "bytes": 13752,
+      "gzipBytes": 5189,
+      "sha256": "3ebdc96f6e8c142582d0af439ae105ef476986571298c3d5012f1972f1b602bf"
+    },
+    {
+      "path": "_next/static/chunks/page-BL8FX4oL.js",
+      "bytes": 3541,
+      "gzipBytes": 1660,
+      "sha256": "206b60bce8829aa83f641db6b3eb804f6afcf9defa7975f08f9b4cb50224d4af"
+    },
+    {
+      "path": "_next/static/chunks/page-BO5XzmuT.js",
+      "bytes": 168741,
+      "gzipBytes": 53216,
+      "sha256": "47904e8140fbc208ba7529a411d00043572f03f3ef8ec0c355bb1c5c07e40167"
+    },
+    {
+      "path": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+      "bytes": 694,
+      "gzipBytes": 422,
+      "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+    },
+    {
+      "path": "_next/static/chunks/streamed-icons-B7zI55ff.js",
+      "bytes": 772,
+      "gzipBytes": 490,
+      "sha256": "7eb2a6b44b9c0faa7300c8dd36b0fae7a35d9f65e139dd9046b3df193aa83bc8"
+    }
+  ],
+  "totalBytes": 593445,
+  "totalGzipBytes": 185983
+}

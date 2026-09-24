@@ -45,6 +45,23 @@ test('terminal values use actual tiebreaks and both colors, not stone count',()=
  assert.equal(searchValue(g,'blue'),10000);assert.equal(searchValue(g,'red'),-10000);
  g.board[63]='red';assert.equal(score(g.board).winner,null);assert.equal(searchValue(g,'blue'),0);
 });
+test('incremental leaf values and first worst replies match full-board reference on varied states',async()=>{
+ const positions=JSON.parse(gunzipSync(await fs.readFile(new URL('../experiments/jev-replacement/20260924-varied-12/positions.json.gz',import.meta.url))));
+ let roots=0;const kinds=new Set(),colors=new Set();
+ for(const p of positions.filter((_,i)=>i%17===0)){
+  const g=p.state,before=JSON.stringify(g),output=rankSearchMoves(g,'Balanced',model,{policyBeam:0,priorWeight:0});colors.add(g.turn);
+  for(const r of output.ranked){
+   const next=applyMove(g,r.move);let value=searchValue(next,g.turn),reply=null;
+   for(const child of rules.legalValueSuccessors(next)){
+    kinds.add(child.move.type);const n=searchValue(child.state,g.turn);
+    if(reply===null||n<value){value=n;reply=child.move;}
+   }
+   assert.equal(r.searchValue,value);assert.deepEqual(r.worstReply,reply);roots++;
+  }
+  assert.equal(JSON.stringify(g),before,'evaluation must not mutate state');
+ }
+ assert.deepEqual([...colors].sort(),['blue','red']);assert.deepEqual([...kinds].sort(),['place','remove','shift']);assert.ok(roots>500);
+});
 test('Blue final placement includes the remaining Red turn and repetition endings',()=>{
  const g=newGame();g.board[0]='blue';g.board[63]='red';g.supply.blue=1;
  const result=rankSearchMoves(g,'Balanced',model,{policyBeam:0});

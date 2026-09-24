@@ -259,3 +259,19 @@ The saved before/after manifests measure every emitted client JS file, including
 lazy code and both routes, using per-file gzip. They are not network-transfer or
 first-load measurements. The compressed event stream preserves simulated-human
 actions under a distinct kind; do not feed them to teacher training.
+
+### Runtime profiling and exact parity
+
+`compare-runtime.mjs --ref FULL_LOCAL_COMMIT --out DIR` loads immutable Git
+source alongside current source and interleaves their timings on the same
+84 saved positions, all five strategies. It requires exact complete rank-output
+hashes, not just the best move. `audit-runtime-parity.mjs` additionally compares
+canonical successors and teacher request bodies. Neither tool calls Jev.
+Both accept a full commit SHA present in the local clone; see the performance-15
+README for the equivalent private-repository baseline commit.
+
+The current search updates leaf value terms only around the changed squares;
+scoring and position keys avoid temporary sets/arrays. The reference full-board
+evaluator and regression tests remain. This changes computation, not strategy,
+rules, search width or outcome semantics. Shared-host Node measurements are
+diagnostic only: mobile/browser verification is still required before release.

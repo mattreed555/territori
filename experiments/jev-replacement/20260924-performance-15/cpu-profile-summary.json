@@ -1,0 +1,107 @@
+{
+  "purpose": "Baseline Node CPU-profile summary; inclusive compiled setup and warmup, not mobile",
+  "rawProfileSha256": "74b719bf08d6d062106de630c6976208df2a74cc9732b1ce4a889a226d121fc4",
+  "samples": 20788,
+  "topSelfMicroseconds": [
+    [
+      "searchValue search.mjs",
+      2957208
+    ],
+    [
+      " rules.mjs",
+      2780480
+    ],
+    [
+      "positionKey rules.mjs",
+      2621154
+    ],
+    [
+      "evaluateRoot search.mjs",
+      2495298
+    ],
+    [
+      "score rules.mjs",
+      2022100
+    ],
+    [
+      "legalMoveOutcome rules.mjs",
+      1394575
+    ],
+    [
+      "advanceLegalMove rules.mjs",
+      1015887
+    ],
+    [
+      " jev.mjs",
+      874086
+    ],
+    [
+      "captureOutcome jev.mjs",
+      866728
+    ],
+    [
+      "legalValueSuccessors rules.mjs",
+      823604
+    ],
+    [
+      " features.mjs",
+      673241
+    ],
+    [
+      "(garbage collector) ",
+      543000
+    ],
+    [
+      "context features.mjs",
+      433722
+    ],
+    [
+      "isCapturable rules.mjs",
+      363920
+    ],
+    [
+      "spread features.mjs",
+      280255
+    ],
+    [
+      "applyMove rules.mjs",
+      268090
+    ],
+    [
+      "rankSearchMoves search.mjs",
+      235728
+    ],
+    [
+      "detectModuleFormat get_format",
+      177097
+    ],
+    [
+      " search.mjs",
+      144823
+    ],
+    [
+      "beforeMetric features.mjs",
+      135170
+    ],
+    [
+      "repetitionCount features.mjs",
+      128086
+    ],
+    [
+      "opponentMobility features.mjs",
+      123520
+    ],
+    [
+      "ownMobility features.mjs",
+      114794
+    ],
+    [
+      " policy.mjs",
+      103757
+    ],
+    [
+      "movedBoard rules.mjs",
+      102318
+    ]
+  ]
+}

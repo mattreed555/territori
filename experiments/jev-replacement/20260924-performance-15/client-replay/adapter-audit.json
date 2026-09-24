@@ -1,0 +1,23 @@
+{
+  "purpose": "Seeded Node audit of the adapter used by the normal game; NOT UI/browser/mobile/acceptance evidence",
+  "games": 10,
+  "completed": 10,
+  "decisions": 467,
+  "simulatedHumanMoves": 167,
+  "networkCalls": 0,
+  "aborted": 0,
+  "truncated": 0,
+  "repetition": 0,
+  "eventsSha256": "cc8a210ecdbae412f4e981532fe297855b388511bec96c57afbac40ee14cad5b",
+  "hashes": {
+    "app/page.tsx": "4f2bc711aec5b3e22da465c7a779cd1bf9752b1609b1607fda5c3cd775893f49",
+    "app/training/page.tsx": "fe7dfacbae6017540aafe8cb7231971b93555eabfc92a93656c2330658dd2112",
+    "lib/ai/local-player.ts": "fe6c59ea3198520914d9dc030cee1fdfd9f82e7964deee61480526fb01166f63",
+    "lib/ai/candidate.ts": "6f7901f280e827b00a2e18f414148ab0151a0ba8679771a6b25ccf7593d873af",
+    "lib/ai/candidate-assets.ts": "7864d24cf7dadb4f9846b41772439e934fc30bb29cf31e502e6f95e2e21a3a68",
+    "lib/ai/settings.ts": "aea7dfdbd9bf0ea2fec305bf707b2f61cacdfa47d4b6d1566026a0e8f7521730",
+    "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4",
+    "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+    "scripts/ai/audit-client.mjs": "72dfecd5e89bdb95d47dad066583ebe21815fd7416f4b4383268c9ec923888f8"
+  }
+}

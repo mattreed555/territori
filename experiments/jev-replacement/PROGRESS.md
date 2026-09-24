@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — faster identical policy, offline only (latest)
+
+Session `20260924-performance-15` is CLOSED. Reconciled private GitHub937ef03dfffd8fd9b1338210c436e250f783484f with local a75fcc7fe502e14ae98efd6fa720042df3741780 (same tree7cb348425a4b47097c88ac74a10e6ab3979840f6); exclusive zero-budget lease 429ac5a933d53345801113371f75c0ad9129cc24. Sites source opening recovered this session, retaining current source/dirty work; public version14 and saved source85174b8ed3cbcf6a0cf88da79278e12d222535d4 unchanged. No push/deployment/default/audience change. Existing tsconfig.tsbuildinfo cache left unstaged.
+
+Profile-guided implementation changes only: incremental leaf evaluation around changed cells; allocation-light territory/connected scoring and position keys. **Same models, strategies, prompt, rules, search width and decision semantics.** The full-board reference scorer remains. Added immutable-revision loader and interleaved comparisons instead of inferring speed from separate noisy runs.
+
+Interleaved Node comparison on84 fixed positions ×5strategies ×4rounds: **1,680 complete-output hashes match exactly**. Measured1260samples/version: median19.07→12.69ms, p95 **42.07→28.52ms** (~32% reduction), safety-expansion p95 on30samples90.91→43.86ms. Max still200.34ms versus378.97ms on a shared Xeon host. **Not a mobile gate or guaranteed latency.** All raw measurements, CPU profile, source/input hashes and commands saved in `20260924-performance-15/`.
+
+**61tests, TypeScript and build pass.** Reference tests cover2,000random boards/custom sizes and full-width leaf/worst-reply parity.339saved states produce23,470identical complete successors;100teacher request bodies exactly unchanged. Replayed prior80traces/4926actions,319states and3190intent choices. Ten adapter games reproduce client-14's634actions byte-for-byte, including467local choices; all complete, no network/illegal/truncated/repetition cases. Actual app JS593,445bytes/185,983sum-gzip: +735raw/+289gzip versus client-14; no dependency/model size changes.
+
+**Replacement not ready; Jev remains live; independent acceptance0.** Supported control-browser skill is still absent; no workaround browser used. Mobile latency/responsiveness, small-screen UI/browser verification and final publishing gates remain. Next useful work: add explicit, protocol-checked acceptance mode (collector still labels all batches development), seal exact runtime/model/config and fresh seeds before calls, then bounded independent40completed games per strategy balanced colors with no refitting/variant selection. Acceptance can proceed independently of unavailable browser QA, but publishing cannot: no goal gate is lowered. Preserve overlap/failure reporting and budget caps; never retroactively relabel development games.
+
+Cost$0; cumulative **$0.876801366**, remaining **$3.373198634**, protected evaluation reserve$3.25, discretionary$0.123198634. No active financial reservation or uncertainty. Reverify pricing before any paid work; no more paid development. This supersedes older next steps.
+
 ## 2026-09-24 — opt-in client integration, no paid work (latest)
 
 Session `20260924-client-14` is CLOSED. Private GitHub/local trees reconciled at03c4b5d3abe4f6cbfb6be361e816a6f952129d36 /9f0e28b3b8766e1f5e34f12bcc8186ec1655c082; exclusive zero-budget lease e3fd2d73043bce633d8af7db517b820bc947dbf9. Public Sites remains version14, saved source85174b8ed3cbcf6a0cf88da79278e12d222535d4. Sites source helper returned503on three attempts; no Site push/overwrite/deployment occurred. Reconcile it again before eventual publishing. Pre-existing generated tsconfig.tsbuildinfo modification is preserved, unstaged.

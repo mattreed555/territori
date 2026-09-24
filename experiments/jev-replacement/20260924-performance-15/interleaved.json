@@ -1,0 +1,72 @@
+{
+  "purpose": "Interleaved Node fixed-policy parity/performance, NOT browser/mobile/acceptance",
+  "referenceLocalCommit": "a75fcc7fe502e14ae98efd6fa720042df3741780",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "constrainedCPU": false
+  },
+  "selection": "All20 targeted positions plus every fifth of319 scheduled synthetic states; no timing-based selection",
+  "positions": 84,
+  "strategies": 5,
+  "warmupRounds": 1,
+  "measuredRounds": 3,
+  "fullOutputComparisons": 1680,
+  "differences": 0,
+  "inputs": {
+    "experiments/jev-replacement/20260924-style-06/positions.json.gz": "71955f64ce9954ac7aa88d3871ef7296f96d6843249817d628e2a8e5487d8917",
+    "experiments/jev-replacement/20260924-varied-12/positions.json.gz": "aa807acc34e563491bb1761babfcfcf32b30ab91691a2a36876d500d309ec120"
+  },
+  "sourceHashes": {
+    "lib/game/rules.ts": "49d95c9d3584787341e27baf30df505f36c9d4c1b4d4af2c735f42de9289a70d",
+    "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+    "lib/ai/candidate.ts": "6f7901f280e827b00a2e18f414148ab0151a0ba8679771a6b25ccf7593d873af",
+    "lib/ai/candidate-assets.ts": "7864d24cf7dadb4f9846b41772439e934fc30bb29cf31e502e6f95e2e21a3a68",
+    "scripts/ai/modules.mjs": "da0a0e72f0b5f22a73b86b5c3f4e60b6abaeac76a1a6ca358f3c1dc0a6bc913a",
+    "scripts/ai/compare-runtime.mjs": "24af38c5ab4c08ac5c609c9e28a443dd76499546bf424cce7ebbda708c1acb34"
+  },
+  "summaries": {
+    "reference": {
+      "all": {
+        "samples": 1260,
+        "medianMs": 19.068435000001045,
+        "p95ms": 42.06949399999576,
+        "maxMs": 378.9662099999987
+      },
+      "safetyFallback": {
+        "samples": 30,
+        "medianMs": 46.557739999996556,
+        "p95ms": 90.9068580000021,
+        "maxMs": 378.9662099999987
+      },
+      "normal": {
+        "samples": 1230,
+        "medianMs": 18.815644000002067,
+        "p95ms": 38.042169000000285,
+        "maxMs": 250.7232079999958
+      }
+    },
+    "current": {
+      "all": {
+        "samples": 1260,
+        "medianMs": 12.693770000005316,
+        "p95ms": 28.520666999997047,
+        "maxMs": 200.34351099999913
+      },
+      "safetyFallback": {
+        "samples": 30,
+        "medianMs": 25.648066000001563,
+        "p95ms": 43.86345199999778,
+        "maxMs": 78.45649799999956
+      },
+      "normal": {
+        "samples": 1230,
+        "medianMs": 12.524411000005784,
+        "p95ms": 27.794675000004645,
+        "maxMs": 200.34351099999913
+      }
+    }
+  }
+}
