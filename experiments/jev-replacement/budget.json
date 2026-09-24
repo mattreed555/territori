@@ -3,8 +3,8 @@
   "currency": "USD",
   "unit": "nanodollars",
   "allowanceNano": 4250000000,
-  "evaluationReserveNano": 3250000000,
-  "spentUpperNano": 876801366,
+  "evaluationReserveNano": 2949500836,
+  "spentUpperNano": 1177300530,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
     "verifiedAt": "2026-09-24T13:46:00Z",
@@ -20,12 +20,18 @@
     {
       "id": "acceptance-v1-01",
       "purpose": "evaluation",
-      "status": "reserved",
+      "status": "closed",
       "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
       "capNano": 400000000,
       "createdAt": "2026-09-24T13:50:18.976Z",
       "expiresAt": "2026-09-24T14:30:00Z",
-      "note": "First predeclared20-game independent acceptance batch; frozen hybrid,seed260924900,max160. No retries/refits. Reserve full cap until exact usage reconciles. Total protocol spending<=3.25USD, total project<=4.25USD."
+      "note": "First predeclared20-game independent acceptance batch; frozen hybrid,seed260924900,max160. No retries/refits. Reserve full cap until exact usage reconciles. Total protocol spending<=3.25USD, total project<=4.25USD.",
+      "closedAt": "2026-09-24T13:55:43.542Z",
+      "calls": 509,
+      "inputTokens": 7154742,
+      "outputTokens": 385487,
+      "spentUpperNano": 300499164,
+      "uncertain": false
     },
     {
       "id": "20260924-performance-15",

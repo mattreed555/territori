@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — sealed acceptance, first20 independent games (latest)
+
+Session `20260924-acceptance-16` is CLOSED. Reconciled private GitHub e4843b77120ccec82020195f84cfcdf8c0f798ba and local4e4b15788c9649dd4bd299775978e3e5ae7b2a5a (same treee7f8a158b8590ae4a1e25d87e03824a9a62448e7); exclusive lease f7f510e63f42cf30d22b115d5c89efaca1801926. Public Site version14/source85174b8ed3cbcf6a0cf88da79278e12d222535d4 unchanged. No deployment/default/audience change; pre-existing tsconfig.tsbuildinfo left unstaged.
+
+Implemented and durably sealed `acceptance-v1/protocol.json` before calls, with exact candidate/models/pipeline/goal hashes, fresh predeclared seeds,200games across10sequential batches, all-five balanced colors, no retries/refits/relabeling, per-batch and cumulative budget enforcement. Tagged acceptance records cannot train either model. Replay validates the original protocol and exact seeded policy. Aggregate report requires the entire verified suite and never treats strength alone as deployment readiness. Protocol/source/$0.40 reservation commit: d92dfa52fb4ce3ec752b012c0d095fdfc2287b00.
+
+**20/200 acceptance games now completed:19W0D1L(95%), four per strategy/two per color.** Aggressive75%,others100%; overall conservative95%interval64.63–100%, small per-strategy intervals remain wide. All1,018states/actions/results replay,509local choices exact,509teacher requests/responses/charges reconcile. No illegal moves, aborts, truncations, repetition endings or API failures. Mean50.9turns,max64;18unique trajectories(two repeats retained). This partial suite is NOT readiness. No candidate/weights/settings were changed after results.
+
+Teacher agreement70.53%,mean complete rank2.53; placements22.22%,captures84.95%,teacher shifts absent. Eight exact training-context overlaps,157within-batch repeats; after excluding both348states,71.55%agreement/rank2.61. All raw data, provenance, probabilities, usage, integrity, agreement and costs are in `acceptance-v1/acceptance-v1-01/`; parent report marks complete=false,strengthPass=false,readyForDeployment=false.67tests,TypeScript and production build pass. No dependencies or live/runtime changes.
+
+Fresh official pricing/usage verification:2026-09-24, Jev1.13.0 input$0.042/M,outputfree.509calls/7,154,742input/385,487output, exact added **$0.300499164**. Cumulative **$1.177300530**, remaining **$3.072699470**. Remaining protected protocol reserve **$2.949500836**; discretionary$0.123198634. No active financial reservation or uncertain charge; task ledger excludes unrelated public-site play. Original protocol total remains$3.25, project allowance$4.25.
+
+**Replacement is not ready; Jev remains live.** Next: exactly `acceptance-v1-02`,seed260925900,20games under a fresh durable evaluation reservation(up to$0.40 within remaining caps). Re-read current lease/ledger, reconcile sources and pricing, use unchanged sealed runtime/models/config; no refitting or selection from these games. Continue all10batches and report failures/duplicates honestly. Supported mobile/browser timing/UI/deployment gates remain pending; do not infer mobile performance from prior Node measurements. This supersedes older next steps.
+
 ## 2026-09-24 — faster identical policy, offline only (latest)
 
 Session `20260924-performance-15` is CLOSED. Reconciled private GitHub937ef03dfffd8fd9b1338210c436e250f783484f with local a75fcc7fe502e14ae98efd6fa720042df3741780 (same tree7cb348425a4b47097c88ac74a10e6ab3979840f6); exclusive zero-budget lease 429ac5a933d53345801113371f75c0ad9129cc24. Sites source opening recovered this session, retaining current source/dirty work; public version14 and saved source85174b8ed3cbcf6a0cf88da79278e12d222535d4 unchanged. No push/deployment/default/audience change. Existing tsconfig.tsbuildinfo cache left unstaged.

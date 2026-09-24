@@ -1,0 +1,432 @@
+{
+  "purpose": "Exact replay/usage integrity check; not an independent strength evaluation",
+  "runId": "acceptance-v1-01",
+  "decisions": 1018,
+  "teacherDecisions": 509,
+  "allStatesAndResultsReplayed": true,
+  "allRequestsAndUsageMatched": true,
+  "localPolicy": {
+    "metadata": {
+      "kind": "learned-search-style-authored-intent",
+      "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+      "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+      "epsilon": 0.03,
+      "search": {
+        "version": 2,
+        "policyBeam": 12,
+        "staticBeam": 8,
+        "priorWeight": 0.75
+      },
+      "intent": {
+        "version": 1,
+        "strength": 1,
+        "margin": 1,
+        "learnedStyleWeight": 0.5,
+        "authored": true
+      },
+      "sourceHashes": {
+        "lib/game/rules.ts": "49d95c9d3584787341e27baf30df505f36c9d4c1b4d4af2c735f42de9289a70d",
+        "lib/ai/policy.ts": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3",
+        "lib/ai/features.ts": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3",
+        "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+        "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+        "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+      }
+    },
+    "choicesReplayed": 509,
+    "exact": true
+  },
+  "inputTokens": 7154742,
+  "outputTokens": 385487,
+  "costNano": 300499164,
+  "chosenTypesBySource": {
+    "local:place": 500,
+    "jev:place": 117,
+    "jev:remove": 392,
+    "local:remove": 2,
+    "local:shift": 7
+  },
+  "uniqueTrajectories": 18,
+  "games": [
+    {
+      "id": "acceptance-v1-01:0",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 28,
+          "red": 25
+        },
+        "largest": {
+          "blue": 28,
+          "red": 25
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "d65053942e57787218e6344784ae61c851968a76e805c2b8ad1181d78ebf7107"
+    },
+    {
+      "id": "acceptance-v1-01:1",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 24,
+          "red": 22
+        },
+        "largest": {
+          "blue": 24,
+          "red": 22
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "4e16f0edb4109897d16355faaf12a418a4f8b104e851012367ea2bcd250ff184"
+    },
+    {
+      "id": "acceptance-v1-01:2",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 23,
+          "red": 22
+        },
+        "largest": {
+          "blue": 23,
+          "red": 22
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "8b4fb6c013acfd01a6bcf90054f971a82ca7fad5721723df9f10878a55c9eb50"
+    },
+    {
+      "id": "acceptance-v1-01:3",
+      "turns": 52,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 25,
+          "red": 23
+        },
+        "largest": {
+          "blue": 22,
+          "red": 19
+        },
+        "reason": "supply",
+        "turns": 52
+      },
+      "trajectorySha256": "4a4e0c8b0ef4be75d91672b3600e471fac3789f2d4642128526110a376461788"
+    },
+    {
+      "id": "acceptance-v1-01:4",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 23,
+          "red": 20
+        },
+        "largest": {
+          "blue": 23,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "ad8f924543be6cc8734921167271eb5d1890139cb0338977fdacc03472286842"
+    },
+    {
+      "id": "acceptance-v1-01:5",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 22,
+          "red": 24
+        },
+        "largest": {
+          "blue": 22,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "9bf7e55f23de3f364c0aa2e9290df26acd539ca8a2e56941559e61f40342aac7"
+    },
+    {
+      "id": "acceptance-v1-01:6",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 23,
+          "red": 24
+        },
+        "largest": {
+          "blue": 12,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "45e9f7d3e657c14a9c8821a8dcbf3cac132478ca0559719e91a73c76fa97d437"
+    },
+    {
+      "id": "acceptance-v1-01:7",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 24,
+          "red": 25
+        },
+        "largest": {
+          "blue": 24,
+          "red": 21
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "b5d550f28918053e418ddedec414226931e80830c8de9bd39f6414504d35115f"
+    },
+    {
+      "id": "acceptance-v1-01:8",
+      "turns": 64,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 37,
+          "red": 3
+        },
+        "largest": {
+          "blue": 37,
+          "red": 3
+        },
+        "reason": "supply",
+        "turns": 64
+      },
+      "trajectorySha256": "3eecfc013a46b6b2c267fb24fcfc5aee9921f4104dbf0e1c7b31c7c2f1527be1"
+    },
+    {
+      "id": "acceptance-v1-01:9",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 20,
+          "red": 22
+        },
+        "largest": {
+          "blue": 15,
+          "red": 18
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "b3971eadd800bac6ed24dcc7b298076dda78fcfcdfc12433709e3482f67f7490"
+    },
+    {
+      "id": "acceptance-v1-01:10",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 23,
+          "red": 19
+        },
+        "largest": {
+          "blue": 23,
+          "red": 10
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "6d2873165f2e7e9b4fcc80881a288465f366ca8d82cfb5fe19b2d5cfe1ff2552"
+    },
+    {
+      "id": "acceptance-v1-01:11",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 24,
+          "red": 22
+        },
+        "largest": {
+          "blue": 24,
+          "red": 22
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "9eeb2c3436658d8d03c226931ca4e619e034b8aafd59968d25c222c0781826a6"
+    },
+    {
+      "id": "acceptance-v1-01:12",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 23,
+          "red": 18
+        },
+        "largest": {
+          "blue": 20,
+          "red": 18
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "1f3a26a57a264d9e26a3dc58608cf59671607b8add4b9845012daeff78452439"
+    },
+    {
+      "id": "acceptance-v1-01:13",
+      "turns": 52,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 22,
+          "red": 20
+        },
+        "largest": {
+          "blue": 22,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 52
+      },
+      "trajectorySha256": "8f86ea68f3176d54316777c673b07ad30aa1e64961267f67900b49cc7537fa14"
+    },
+    {
+      "id": "acceptance-v1-01:14",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "blue",
+        "territory": {
+          "blue": 22,
+          "red": 20
+        },
+        "largest": {
+          "blue": 22,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "6b6351b7c7386482b12675f3f0b3b36020815bc0bb83522a605dca79db08a932"
+    },
+    {
+      "id": "acceptance-v1-01:15",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 20,
+          "red": 21
+        },
+        "largest": {
+          "blue": 20,
+          "red": 18
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "ed3638c0ffdd9bf7f140e45e52d2f2c3ff6d747c2497a98d14d2e93a21818834"
+    },
+    {
+      "id": "acceptance-v1-01:16",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 23,
+          "red": 24
+        },
+        "largest": {
+          "blue": 12,
+          "red": 20
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "9a78f9f5559769c2c0be49a942bb7dead981798b46f5e6269143c48b94fa6aa9"
+    },
+    {
+      "id": "acceptance-v1-01:17",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 24,
+          "red": 25
+        },
+        "largest": {
+          "blue": 24,
+          "red": 21
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "b5d550f28918053e418ddedec414226931e80830c8de9bd39f6414504d35115f"
+    },
+    {
+      "id": "acceptance-v1-01:18",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 7,
+          "red": 7
+        },
+        "largest": {
+          "blue": 4,
+          "red": 5
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "153674a809d529928f06cea876dd1928659a72c276f25e577cab29d5a36aadd1"
+    },
+    {
+      "id": "acceptance-v1-01:19",
+      "turns": 50,
+      "result": {
+        "status": "completed",
+        "winner": "red",
+        "territory": {
+          "blue": 20,
+          "red": 22
+        },
+        "largest": {
+          "blue": 15,
+          "red": 18
+        },
+        "reason": "supply",
+        "turns": 50
+      },
+      "trajectorySha256": "b3971eadd800bac6ed24dcc7b298076dda78fcfcdfc12433709e3482f67f7490"
+    }
+  ]
+}
