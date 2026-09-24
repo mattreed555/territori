@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-varied-12",
-  "status": "closed",
-  "purpose": "Offline varied-state validation and exact hybrid collector support",
-  "startedAt": "2026-09-24T09:51:00Z",
-  "expiresAt": "2026-09-24T10:40:00Z",
-  "budgetReservationNano": 0,
-  "closedAt": "2026-09-24T10:01:50Z",
-  "note": "Offline fixed-candidate audit and exact hybrid collector support complete; 319 states/3190 choices replayed, 125 bundle choices match. 53 tests/types/build pass. No paid calls or live changes. Not ready; see PROGRESS. Acquire a new exclusive session before work."
+  "id": "20260924-hybrid-13",
+  "status": "active",
+  "purpose": "Bounded hybrid-vs-Jev development evaluation and exact replay",
+  "startedAt": "2026-09-24T11:09:44Z",
+  "expiresAt": "2026-09-24T12:00:00Z",
+  "budgetReservationNano": 220000000,
+  "note": "Financial session 20260924-hybrid-13-devmatches. Fixed candidate/source, ten games, no retries. No live changes. Do not overlap or release uncertain charges automatically."
 }

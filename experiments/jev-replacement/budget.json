@@ -7,7 +7,7 @@
   "spentUpperNano": 727300182,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
-    "verifiedAt": "2026-09-24T07:58:00Z",
+    "verifiedAt": "2026-09-24T11:09:44Z",
     "source": "https://docs.typesafe.ai/models",
     "usageSource": "https://docs.typesafe.ai/api",
     "model": "jev-1.13.0",
@@ -17,6 +17,15 @@
     "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
   },
   "sessions": [
+    {
+      "id": "20260924-hybrid-13-devmatches",
+      "purpose": "development-evaluation",
+      "status": "reserved",
+      "capNano": 220000000,
+      "createdAt": "2026-09-24T11:09:44Z",
+      "expiresAt": "2026-09-24T12:00:00Z",
+      "note": "Ten balanced-color fixed hybrid-vs-Jev DEVELOPMENT games, seed2414, max160 turns. Frozen source 01150c218357db1128a38d305f8d3eaa469d0ef7. No retries; exact response usage required. Preserve $3.25 evaluation reserve."
+    },
     {
       "id": "20260924-varied-12",
       "purpose": "offline-varied-state-validation-and-hybrid-collector",
