@@ -189,6 +189,10 @@ FILE` also replays every seeded local choice and rejects incompatible metadata.
 `audit-varied.mjs` generates and replays synthetic common states;
 `build-local-runtime.mjs` measures a standalone dependency-free ESM bundle, not
 the final application delta or mobile latency. All remain separate from play.
+`audit-hybrid-matches.mjs` reports exact-hybrid agreement/rank by strategy and
+teacher move type, plus training-context overlap, on saved metered matches.
+See `experiments/jev-replacement/20260924-hybrid-13/README.md` for the ten-game
+development evaluation; it is not the independent acceptance suite.
 
 `prepare-shift-probe.mjs`, `collect-repeat-probe.mjs` and
 `analyze-repeat-probe.mjs` add a bounded two-pass counterfactual experiment.

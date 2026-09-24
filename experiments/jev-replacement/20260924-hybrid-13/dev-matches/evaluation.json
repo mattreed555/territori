@@ -1,0 +1,344 @@
+{
+  "purpose": "Development evidence only, not the independently seeded acceptance suite",
+  "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "localAgent": {
+    "kind": "learned-search-style-authored-intent",
+    "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "epsilon": 0.03,
+    "search": {
+      "version": 2,
+      "policyBeam": 12,
+      "staticBeam": 8,
+      "priorWeight": 0.75
+    },
+    "intent": {
+      "version": 1,
+      "strength": 1,
+      "margin": 1,
+      "learnedStyleWeight": 0.5,
+      "authored": true
+    },
+    "sourceHashes": {
+      "lib/game/rules.ts": "1f5ec95e55e5711642f0ca5a7ffc67843559f47a141295ef59407b706700cc31",
+      "lib/ai/policy.ts": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3",
+      "lib/ai/features.ts": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3",
+      "lib/ai/search.ts": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a",
+      "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+      "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    }
+  },
+  "seed": 2414,
+  "epsilon": 0.03,
+  "costUpperNano": 149501184,
+  "requestedGames": 10,
+  "unstartedGames": 0,
+  "failure": null,
+  "overall": {
+    "completed": 10,
+    "aborted": 0,
+    "truncated": 0,
+    "wins": 10,
+    "draws": 0,
+    "losses": 0,
+    "score": 1,
+    "conservative95ScoreInterval": [
+      0.5705305916532624,
+      1
+    ],
+    "meanTurns": 50.4,
+    "repetitionEnds": 0
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "completed": 2,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.03967720868007929,
+        1
+      ],
+      "meanTurns": 51,
+      "repetitionEnds": 0
+    },
+    "Cautious": {
+      "completed": 2,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.03967720868007929,
+        1
+      ],
+      "meanTurns": 50,
+      "repetitionEnds": 0
+    },
+    "Expansive": {
+      "completed": 2,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.03967720868007929,
+        1
+      ],
+      "meanTurns": 50,
+      "repetitionEnds": 0
+    },
+    "Fluid": {
+      "completed": 2,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.03967720868007929,
+        1
+      ],
+      "meanTurns": 50,
+      "repetitionEnds": 0
+    },
+    "Balanced": {
+      "completed": 2,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.03967720868007929,
+        1
+      ],
+      "meanTurns": 51,
+      "repetitionEnds": 0
+    }
+  },
+  "byLocalColor": {
+    "blue": {
+      "completed": 5,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 5,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.3926385380916948,
+        1
+      ],
+      "meanTurns": 50.8,
+      "repetitionEnds": 0
+    },
+    "red": {
+      "completed": 5,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 5,
+      "draws": 0,
+      "losses": 0,
+      "score": 1,
+      "conservative95ScoreInterval": [
+        0.3926385380916948,
+        1
+      ],
+      "meanTurns": 50,
+      "repetitionEnds": 0
+    }
+  },
+  "intervalMethod": "Two-sided Hoeffding bound for a mean reward in [0,1]: mean ± sqrt(log(2/0.05)/(2n)), clipped to [0,1]; assumes independent runs, deliberately conservative. No strength claim from this small selected-model sample.",
+  "results": [
+    {
+      "gameId": "20260924-hybrid-13-devmatches:0",
+      "strategy": "Balanced",
+      "localColor": "blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 22,
+        "red": 18
+      },
+      "largest": {
+        "blue": 19,
+        "red": 17
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:1",
+      "strategy": "Aggressive",
+      "localColor": "blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 22,
+        "red": 20
+      },
+      "largest": {
+        "blue": 22,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:2",
+      "strategy": "Fluid",
+      "localColor": "blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 23,
+        "red": 20
+      },
+      "largest": {
+        "blue": 23,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:3",
+      "strategy": "Expansive",
+      "localColor": "blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 28,
+        "red": 24
+      },
+      "largest": {
+        "blue": 20,
+        "red": 19
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:4",
+      "strategy": "Cautious",
+      "localColor": "blue",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 27,
+        "red": 24
+      },
+      "largest": {
+        "blue": 27,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:5",
+      "strategy": "Balanced",
+      "localColor": "red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 24,
+        "red": 25
+      },
+      "largest": {
+        "blue": 24,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:6",
+      "strategy": "Aggressive",
+      "localColor": "red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 7,
+        "red": 7
+      },
+      "largest": {
+        "blue": 4,
+        "red": 5
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:7",
+      "strategy": "Fluid",
+      "localColor": "red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 22
+      },
+      "largest": {
+        "blue": 15,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:8",
+      "strategy": "Expansive",
+      "localColor": "red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 23,
+        "red": 24
+      },
+      "largest": {
+        "blue": 12,
+        "red": 20
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    },
+    {
+      "gameId": "20260924-hybrid-13-devmatches:9",
+      "strategy": "Cautious",
+      "localColor": "red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 21
+      },
+      "largest": {
+        "blue": 20,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 1
+    }
+  ]
+}

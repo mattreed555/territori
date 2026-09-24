@@ -1,0 +1,120 @@
+{
+  "session": "20260924-hybrid-13",
+  "reconciledGitHub": "01150c218357db1128a38d305f8d3eaa469d0ef7",
+  "reconciledLocal": "484f3e1e2efc7047ed8260045a67919643a23e79",
+  "paidSourceCommit": "01150c218357db1128a38d305f8d3eaa469d0ef7",
+  "leaseCommit": "7a443f6903640c36578a243509fb6d4264a7f65e",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 252,
+  "inputTokens": 3559552,
+  "outputTokens": 191680,
+  "costNano": 149501184,
+  "cumulativeSpentUpperNano": 876801366,
+  "remainingNano": 3373198634,
+  "evaluationReserveNano": 3250000000,
+  "uncertain": false,
+  "verification": {
+    "tests": 53,
+    "typecheck": "passed (nonincremental)",
+    "productionBuild": "prior successful build reused: product/runtime/model inputs unchanged",
+    "developmentGames": 10,
+    "wins": 10,
+    "replayedDecisions": 504,
+    "exactLocalChoicesReplayed": 252,
+    "allRequestsAndUsageMatched": true,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured",
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260924-hybrid-13/README.md": {
+      "bytes": 8123,
+      "sha256": "d50148c0af6a9d1ca44c6db921601182e0e962ebe51f9d2c5902d5aa194a35da"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/decisions.jsonl.gz": {
+      "bytes": 96554,
+      "sha256": "83f1e1b7e71017fcca9d0523bd4042a80987457f87761f6f9f0620c04c95f380"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/evaluation.json": {
+      "bytes": 7773,
+      "sha256": "b8977cec329749d35395768831adecd0f8b750f479bf2700cd8f90b914822bc9"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/games.json": {
+      "bytes": 5119,
+      "sha256": "7638d81ae46e1e4b2914a58f69920e11efe7bdf15ef91a4f17f90876a0060ca4"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/integrity.json": {
+      "bytes": 6277,
+      "sha256": "ad32cc718333c67b42fbd1ca9f793986ad682a0fc12c0e1ca4fec4dce0463df1"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/provenance.json": {
+      "bytes": 2798,
+      "sha256": "256bc58aa8577ca94660a48e559ea9b15a704e868eceb1f8353afc0704e724ca"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/summary.json": {
+      "bytes": 248,
+      "sha256": "906c6e170bff4f6485d3b05ff9d595a3dd25bf3f0991f5b1ba959e6e001600ab"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/dev-matches/usage.jsonl.gz": {
+      "bytes": 6240,
+      "sha256": "d3b515edd21c75da13b5fe406a5dd84f5ec170b063165ed60c707b75b7456cad"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/teacher-audit-choices.json.gz": {
+      "bytes": 3143,
+      "sha256": "903e305b82a0aa968156d2ad4dc17a031190bed88392d5aca900a5d189f3c8d3"
+    },
+    "experiments/jev-replacement/20260924-hybrid-13/teacher-audit.json": {
+      "bytes": 4208,
+      "sha256": "08db5158b2b597598713b7e4aaaaa9ddd48b2b473196b70d7d00c5a6c2798480"
+    },
+    "lib/ai/features.ts": {
+      "bytes": 5745,
+      "sha256": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3"
+    },
+    "lib/ai/intent.ts": {
+      "bytes": 3859,
+      "sha256": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    },
+    "lib/ai/search.ts": {
+      "bytes": 5928,
+      "sha256": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a"
+    },
+    "lib/ai/style.ts": {
+      "bytes": 4903,
+      "sha256": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a"
+    },
+    "lib/game/rules.ts": {
+      "bytes": 6980,
+      "sha256": "1f5ec95e55e5711642f0ca5a7ffc67843559f47a141295ef59407b706700cc31"
+    },
+    "scripts/ai/audit-hybrid-matches.mjs": {
+      "bytes": 4832,
+      "sha256": "61934254ebd19cf3f57fddef3f9a8ccec574c585c7480d7606a12f44cff5e156"
+    },
+    "scripts/ai/budget.mjs": {
+      "bytes": 4576,
+      "sha256": "04e4ae84b098c826b880b69e706b87b6fe45a35f4211a2cbf2964f19d1752358"
+    },
+    "scripts/ai/collect.mjs": {
+      "bytes": 5903,
+      "sha256": "b706ed67ced33bcc034a0f5249de5eed2fce3b6f1e306a672bf6ef42a885c6d8"
+    },
+    "scripts/ai/local-agent.mjs": {
+      "bytes": 3016,
+      "sha256": "df07896229e4ba16a81dff6ad08bcf6a03f2a2c9fb0e3e68b9302b283a108030"
+    },
+    "scripts/ai/report-matches.mjs": {
+      "bytes": 2658,
+      "sha256": "45db83715beff4b892148fe50fda4897c2db8cb9df4493c8a055156fe1cc2a35"
+    },
+    "scripts/ai/verify-session.mjs": {
+      "bytes": 5204,
+      "sha256": "362599ee91bc8ba6e1fcbeb849b05a840c4eb00d35c5233bb9c32edb88fc00d7"
+    }
+  }
+}
