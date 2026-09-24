@@ -1,0 +1,96 @@
+{
+  "session": "20260924-style-07",
+  "reconciledGitHub": "bbf8a7c5a029746cfab7b2d0a54e2a9bcac8f41e",
+  "leaseCommit": "c8129e795142bf62bab88712e3d4030c292c246b",
+  "reconciledLocal": "0e59e6e777f2f9122f9e349e12f4ab866128948b",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 0,
+  "costNano": 0,
+  "cumulativeSpentUpperNano": 660659874,
+  "remainingNano": 3589340126,
+  "evaluationReserveNano": 3250000000,
+  "verification": {
+    "tests": 36,
+    "typecheck": "passed",
+    "localGames": 40,
+    "replayedDecisions": 2492,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured",
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260924-style-07/README.md": {
+      "bytes": 6928,
+      "sha256": "1428760122adea12a7c7b87b8d8bc11ed2015b6e1732d392f13a2fc5c3fc90d7"
+    },
+    "experiments/jev-replacement/20260924-style-07/choices.json.gz": {
+      "bytes": 12128,
+      "sha256": "f40a44a20673d1fe1e8fb95726a77957075dd617beaa4dfafc2df300f10896c7"
+    },
+    "experiments/jev-replacement/20260924-style-07/comparison.json": {
+      "bytes": 308967,
+      "sha256": "74d03cc1db32ea7024379735daa3b839cafa8cec294925909d30fc1495573bdd"
+    },
+    "experiments/jev-replacement/20260924-style-07/probe-hard-prior.json": {
+      "bytes": 15175,
+      "sha256": "86d26a116abac545bff5e4b6621a2533c437ca88a9c43a4702cc708c8cbacf1f"
+    },
+    "experiments/jev-replacement/20260924-style-07/probe-soft-prior-strong.json": {
+      "bytes": 15278,
+      "sha256": "74026ff0b5c35b30bd25bfcc4cd1f2708465529c8e7a29a71b02115e0a8c64a4"
+    },
+    "experiments/jev-replacement/20260924-style-07/probe-soft-prior.json": {
+      "bytes": 15255,
+      "sha256": "efb72f9bbff2f0104f0a9298f100045e22fe30227fd305f23449b688aae9fd06"
+    },
+    "experiments/jev-replacement/20260924-style-07/refit-vs-frozen-integrity.json": {
+      "bytes": 392,
+      "sha256": "7cc631e6fc14d10e3b18acee3ffba169c83ed8475b12897e127a312342e3623c"
+    },
+    "experiments/jev-replacement/20260924-style-07/refit-vs-frozen.json": {
+      "bytes": 10294,
+      "sha256": "cb7a3c23d8f8ee574f65b6b311617064872cc6db77ab9d5c7d0714ae05cef34b"
+    },
+    "experiments/jev-replacement/20260924-style-07/refit-vs-frozen.jsonl.gz": {
+      "bytes": 115913,
+      "sha256": "46158aecdf358382eee88eeefdbc7d97e6c8756191f5b0713002334b180c0064"
+    },
+    "experiments/jev-replacement/20260924-style-07/strong-prior-vs-frozen-integrity.json": {
+      "bytes": 392,
+      "sha256": "d23dbbba11c380e613677d7e6e77f7a912873fc42c45d4bbb004372ee2e53c08"
+    },
+    "experiments/jev-replacement/20260924-style-07/strong-prior-vs-frozen.json": {
+      "bytes": 10430,
+      "sha256": "835b300623dab4ac9c4f35c48266da7d40e197b4dc66cf0b77fbcabd474c7628"
+    },
+    "experiments/jev-replacement/20260924-style-07/strong-prior-vs-frozen.jsonl.gz": {
+      "bytes": 117768,
+      "sha256": "de21e3859733f4e9fee3ade3f14e244e333029fa6ac090a3567d363a9688dd03"
+    },
+    "lib/ai/training-data.ts": {
+      "bytes": 2017,
+      "sha256": "94f0bb061d2c7ee2ef74654ce35d0a9ab4b0ac62f126cc8c9156f951685ff19c"
+    },
+    "lib/ai/training.ts": {
+      "bytes": 8107,
+      "sha256": "4452385e4b858dd4d2e79762f3113028a6ee29e25b40dcd0aaec94cdf4b144a1"
+    },
+    "scripts/ai/train-probe.mjs": {
+      "bytes": 8020,
+      "sha256": "18c169983be7a4f03fd559254e9a87475dc6280800323b70de3f70edffc00765"
+    },
+    "scripts/ai/verify-local.mjs": {
+      "bytes": 3490,
+      "sha256": "60c990a53545970431eb36cb360a39781c52aabe24f9d74220d5fe121b8b609f"
+    },
+    "tests/training-data.test.mjs": {
+      "bytes": 2474,
+      "sha256": "7d42da44969571303a972028bd80570d1d9f7cca458a9d012dd7b8fa67fb5340"
+    }
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "purpose": "Local-vs-local development tournament only; not acceptance evaluation or Jev strength",
+  "search": {
+    "version": 2,
+    "policyBeam": 12,
+    "staticBeam": 8,
+    "priorWeight": 3
+  },
+  "baselineSearch": {
+    "version": 2,
+    "policyBeam": 12,
+    "staticBeam": 8,
+    "priorWeight": 0.75
+  },
+  "candidateSha256": "74026ff0b5c35b30bd25bfcc4cd1f2708465529c8e7a29a71b02115e0a8c64a4",
+  "baselineSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "seed": 2407,
+  "pairs": 2,
+  "epsilon": 0.03,
+  "maxTurns": 160,
+  "overall": {
+    "completed": 20,
+    "aborted": 0,
+    "truncated": 0,
+    "wins": 3,
+    "draws": 10,
+    "losses": 7,
+    "score": 0.4,
+    "pairedBootstrap95": [
+      0.3,
+      0.5
+    ],
+    "pairedHoeffding95": [
+      0,
+      0.8294694083467375
+    ],
+    "meanTurns": 63.3,
+    "repetitionEnds": 0
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "completed": 4,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 1,
+      "draws": 3,
+      "losses": 0,
+      "score": 0.625,
+      "pairedBootstrap95": [
+        0.5,
+        0.75
+      ],
+      "pairedHoeffding95": [
+        0,
+        1
+      ],
+      "meanTurns": 60,
+      "repetitionEnds": 0
+    },
+    "Cautious": {
+      "completed": 4,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 0,
+      "draws": 3,
+      "losses": 1,
+      "score": 0.375,
+      "pairedBootstrap95": [
+        0.25,
+        0.5
+      ],
+      "pairedHoeffding95": [
+        0,
+        1
+      ],
+      "meanTurns": 54,
+      "repetitionEnds": 0
+    },
+    "Expansive": {
+      "completed": 4,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 0,
+      "draws": 2,
+      "losses": 2,
+      "score": 0.25,
+      "pairedBootstrap95": [
+        0.25,
+        0.25
+      ],
+      "pairedHoeffding95": [
+        0,
+        1
+      ],
+      "meanTurns": 50.5,
+      "repetitionEnds": 0
+    },
+    "Fluid": {
+      "completed": 4,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 0,
+      "draws": 2,
+      "losses": 2,
+      "score": 0.25,
+      "pairedBootstrap95": [
+        0.25,
+        0.25
+      ],
+      "pairedHoeffding95": [
+        0,
+        1
+      ],
+      "meanTurns": 62,
+      "repetitionEnds": 0
+    },
+    "Balanced": {
+      "completed": 4,
+      "aborted": 0,
+      "truncated": 0,
+      "wins": 2,
+      "draws": 0,
+      "losses": 2,
+      "score": 0.5,
+      "pairedBootstrap95": [
+        0.5,
+        0.5
+      ],
+      "pairedHoeffding95": [
+        0,
+        1
+      ],
+      "meanTurns": 90,
+      "repetitionEnds": 0
+    }
+  },
+  "results": [
+    {
+      "strategy": "Aggressive",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:0:0:blue",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:0:0:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:0:1:blue",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 15,
+        "red": 15
+      },
+      "largest": {
+        "blue": 11,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 84,
+      "points": 0.5
+    },
+    {
+      "strategy": "Aggressive",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:0:1:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 15,
+        "red": 15
+      },
+      "largest": {
+        "blue": 4,
+        "red": 6
+      },
+      "reason": "supply",
+      "turns": 56,
+      "points": 1
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:1:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 20,
+        "red": 21
+      },
+      "largest": {
+        "blue": 20,
+        "red": 21
+      },
+      "reason": "supply",
+      "turns": 66,
+      "points": 0
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:1:0:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:1:1:blue",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Cautious",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:1:1:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:2:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 7,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:2:0:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 15,
+        "red": 15
+      },
+      "largest": {
+        "blue": 11,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0.5
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:2:1:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 7,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 50,
+      "points": 0
+    },
+    {
+      "strategy": "Expansive",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:2:1:red",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 15,
+        "red": 15
+      },
+      "largest": {
+        "blue": 11,
+        "red": 11
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0.5
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:3:0:blue",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0.5
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:3:0:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 17,
+        "red": 15
+      },
+      "reason": "supply",
+      "turns": 56,
+      "points": 0
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:3:1:blue",
+      "status": "completed",
+      "winner": null,
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 18,
+        "red": 18
+      },
+      "reason": "supply",
+      "turns": 52,
+      "points": 0.5
+    },
+    {
+      "strategy": "Fluid",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:3:1:red",
+      "status": "completed",
+      "winner": "blue",
+      "territory": {
+        "blue": 18,
+        "red": 18
+      },
+      "largest": {
+        "blue": 17,
+        "red": 15
+      },
+      "reason": "supply",
+      "turns": 88,
+      "points": 0
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 0,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:4:0:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 9,
+        "red": 37
+      },
+      "largest": {
+        "blue": 4,
+        "red": 37
+      },
+      "reason": "supply",
+      "turns": 92,
+      "points": 0
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 0,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:4:0:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 21,
+        "red": 25
+      },
+      "largest": {
+        "blue": 17,
+        "red": 25
+      },
+      "reason": "supply",
+      "turns": 88,
+      "points": 1
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 1,
+      "candidateColor": "blue",
+      "gameId": "strong-prior-vs-frozen:4:1:blue",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 12,
+        "red": 31
+      },
+      "largest": {
+        "blue": 12,
+        "red": 31
+      },
+      "reason": "supply",
+      "turns": 92,
+      "points": 0
+    },
+    {
+      "strategy": "Balanced",
+      "pair": 1,
+      "candidateColor": "red",
+      "gameId": "strong-prior-vs-frozen:4:1:red",
+      "status": "completed",
+      "winner": "red",
+      "territory": {
+        "blue": 16,
+        "red": 29
+      },
+      "largest": {
+        "blue": 15,
+        "red": 26
+      },
+      "reason": "supply",
+      "turns": 88,
+      "points": 1
+    }
+  ]
+}

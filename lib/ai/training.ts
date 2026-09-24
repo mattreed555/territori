@@ -3,20 +3,21 @@ import { STRATEGIES, type Strategy } from '../game/strategies';
 import { FEATURE_NAMES, FEATURE_VERSION, moveFeatures } from './features';
 import { RULESET, type Decision } from './dataset';
 import { seededRandom, rankMoves, type PolicyModel, type Weights } from './policy';
-export function splitGames(rows:Decision[],seed=1,testFraction=.2) {
+import { trainingGroup, type TrainingDecision } from './training-data';
+export function splitGames(rows:TrainingDecision[],seed=1,testFraction=.2) {
   if(!(testFraction>0&&testFraction<1))throw new Error('Test fraction must be between 0 and 1');
-  const ids=[...new Set(rows.map(r=>r.gameId))].sort(),random=seededRandom(seed);
+  const ids=[...new Set(rows.map(trainingGroup))].sort(),random=seededRandom(seed);
   if(ids.length<2)throw new Error('At least two separate games are required for a held-out test');
   for(let i=ids.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]];}
   const testGameIds=ids.slice(0,Math.max(1,Math.min(ids.length-1,Math.round(ids.length*testFraction)))),test=new Set(testGameIds);
-  return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds};
+  return {train:rows.filter(r=>!test.has(trainingGroup(r))),test:rows.filter(r=>test.has(trainingGroup(r))),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds};
 }
 /** Preserve an existing development holdout when adding student-state games. */
-export function splitByGameIds(rows:Decision[],testGameIds:string[]) {
-  const ids=[...new Set(rows.map(r=>r.gameId))].sort();
+export function splitByGameIds(rows:TrainingDecision[],testGameIds:string[]) {
+  const ids=[...new Set(rows.map(trainingGroup))].sort();
   if(!Array.isArray(testGameIds)||!testGameIds.length||new Set(testGameIds).size!==testGameIds.length||testGameIds.some(id=>typeof id!=='string'||!ids.includes(id))||testGameIds.length>=ids.length)throw new Error('Invalid explicit game holdout');
   const test=new Set(testGameIds);
-  return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds:[...testGameIds]};
+  return {train:rows.filter(r=>!test.has(trainingGroup(r))),test:rows.filter(r=>test.has(trainingGroup(r))),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds:[...testGameIds]};
 }
 /** Multinomial logistic regression over the legal moves in each state. No ML dependency. */
 export function teacherTargets(row:Decision,mix=0):number[] {
@@ -32,7 +33,7 @@ export function teacherTargets(row:Decision,mix=0):number[] {
   if(Math.abs(sum-1)>.010000001)throw new Error('Teacher probability mass differs from one by more than 1%');
   return ids.map((id,i)=>(1-mix)*hard[i]+mix*probabilities[id]/sum);
 }
-export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0,sharedPriorStrength=0,testGameIds=undefined as string[]|undefined}={}) {
+export function trainPolicy(rows:TrainingDecision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0,sharedPriorStrength=0,testGameIds=undefined as string[]|undefined}={}) {
   if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
   if(!Number.isFinite(softTargetMix)||softTargetMix<0||softTargetMix>1)throw new Error('Soft target mix must be 0–1');
   if(!Number.isFinite(sharedPriorStrength)||sharedPriorStrength<0)throw new Error('Shared prior strength must be nonnegative');

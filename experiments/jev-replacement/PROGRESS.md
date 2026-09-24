@@ -1,5 +1,17 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — grouped counterfactual training (latest)
+
+Session `20260924-style-07` is CLOSED. Reconciled GitHub `bbf8a7c5a029746cfab7b2d0a54e2a9bcac8f41e`, local `0e59e6e777f2f9122f9e349e12f4ab866128948b`, and unchanged public Sites version14. Durable offline lease `c8129e795142bf62bab88712e3d4030c292c246b` preceded work. No paid calls, new dependencies, UI/default changes, deployment or audience changes.
+
+Implemented the explicit counterfactual training adapter and source-group-aware splits. Original identities/outcomes are preserved; all five labels on a position stay with its source game's ordinary decisions. Added fold/no-leakage tests and exact seeded local-tournament replay. **36 tests and TypeScript pass.** Three new five-strategy fits reuse 562 played labels plus100 existing probe labels:336 training/326 validation; original five-game holdout retained plus two random-trace groups. Ordinary validation agreement nudges48.25%→48.95%, mean rank6.36→5.94; probe linear agreement50%→52.5% (40 held-out labels/eight positions). Report excludes repeated training contexts separately; this is development, not acceptance.
+
+The strong refit/default search scores62.5% (6W13D1L) in20 free games against the frozen model/default search; stronger search prior weight3 scores40% (3W10D7L) in another20. Wide paired confidence intervals overlap50%; no strength claim. All40 complete, no illegal moves/repetition/truncation, all2,492 decisions/outcomes reproduced exactly. Models gzip below4.8KB. But default search collapses Aggressive/Cautious/Expansive/Fluid to identical choices on all20 probe states. Increasing prior weight changes more choices but weakens this small local tournament and still leaves some styles identical. **Do not promote. Replacement is not ready.**
+
+Exact code, model/input hashes, folds, full choices, logs, game reports and integrity checks: `20260924-style-07/README.md`. Jev remains live. No new paid data or acceptance matches. Cumulative spend **$0.660659874**, remaining **$3.589340126**, including **$3.25** acceptance reserve; no active financial reservation or uncertainty.
+
+Next: simple refits have now been tested with group-safe matched-state labels. Investigate a small learned style residual from differences between strategies on the SAME positions, constrained to tactically close moves; compare with saved models/free games. Do not invent style quirks or mistake pairwise differences for validated intent. Fluid generalization remains unproven. Prioritize mobile-class latency including full-width safety fallback before independent200-game spending. No heavyweight model is justified yet. Acquire a new durable session and re-read ledger/goal first. This supersedes earlier next steps.
+
 ## 2026-09-24 — common-state labels and a search safety fix (latest)
 
 Session `20260924-style-06` is CLOSED. Reconciled GitHub `ca90d7b82796e079bacbb04388bf8d3b7cf2c4ec`, local `2545cdd6fa741907ecd85fba25bfbda3b1e2dc39`, and unchanged Sites/public/version14. Lease commit `0091f92f7a96d4ecdb165b4c55b7e0c3d23c912d` reserved $0.10 before work; collector and exact input positions were frozen in `d462e746a4abe3f2e4789514f5f04a61b1fa8038` before calls.

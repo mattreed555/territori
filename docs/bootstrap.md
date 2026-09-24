@@ -131,10 +131,21 @@ uncertain sessions rather than treating their costs as exact.
 
 Common-state strategy probes use `prepare-probe.mjs`, `collect-probe.mjs` and
 `report-probe.mjs`. They record a separate `counterfactual` event kind, not played
-games. Every label retains the source `groupId`; final results stay null. Existing
-training readers ignore these events intentionally. Any future training adapter
-must split by source group, including overlap with ordinary teacher-game data.
+games. Every label retains the source `groupId`; final results stay null. The
+ordinary JSONL reader ignores these events. The explicit `trainingDecisions`
+adapter validates them and annotates their source group without rewriting their
+identities or inventing outcomes. Both split helpers honor that annotation,
+including overlap with ordinary teacher-game data. Model split IDs therefore
+identify source groups, not the probe's strategy-specific synthetic game IDs.
 See `experiments/jev-replacement/20260924-style-06/README.md` for the first probe.
+
+`train-probe.mjs --data PLAYED.jsonl.gz --probes LABELS.jsonl.gz --baseline MODEL
+--out DIRECTORY` compares three small all-strategy refits and the frozen baseline.
+It retains the original whole-game development holdout, reserves two additional
+random-trace groups, and reports ordinary and matched-state agreement separately.
+It compares search prior weights 0.75 and 3, records choices/feature tendencies in
+identical positions, and reports repeated training contexts. These small,
+repeatedly inspected development folds are not the independent acceptance suite.
 
 Search version 2 expands to all root moves if every initial beam move permits
 a terminal loss within two plies. This prevents a low-ranked but necessary shift

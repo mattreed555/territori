@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-style-07",
+      "purpose": "offline-grouped-probe-training",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T04:41:00Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Group-safe counterfactual adapter, three all-strategy fits, 40 local-only games and exact replay. No paid work; $3.25 evaluation reserve unchanged."
+    },
+    {
       "id": "20260924-style-06-probe",
       "purpose": "development-style-probe",
       "status": "closed",
