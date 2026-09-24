@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-performance-15",
-  "status": "closed",
-  "purpose": "Offline fixed-policy profiling and semantics-preserving latency work",
-  "startedAt": "2026-09-24T12:20:00Z",
-  "expiresAt": "2026-09-24T13:10:00Z",
+  "id": "20260924-acceptance-16",
+  "status": "active",
+  "purpose": "Prepare sealed independent acceptance protocol and validate the collector",
+  "startedAt": "2026-09-24T13:38:00Z",
+  "expiresAt": "2026-09-24T14:30:00Z",
   "budgetReservationNano": 0,
-  "note": "Zero paid calls. Fixed-policy performance improved with exact parity:61tests/types/build;1680full output comparisons;23470successors/100teacher requests;3190prior choices and634adapter actions replay. Keep Jev default; prepare sealed acceptance mode next. Browser/mobile still pending. Acquire a new lease before work.",
-  "closedAt": "2026-09-24T12:32:48Z"
+  "note": "No paid work until a protocol and a bounded evaluation reservation are durably committed. Jev stays live/default."
 }
