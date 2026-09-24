@@ -7,7 +7,7 @@
   "spentUpperNano": 1772133762,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
-    "verifiedAt": "2026-09-24T20:38:42.853Z",
+    "verifiedAt": "2026-09-24T20:46:47.705Z",
     "source": "https://docs.typesafe.ai/models",
     "usageSource": "https://docs.typesafe.ai/api",
     "model": "jev-1.13.0",
@@ -17,6 +17,16 @@
     "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
   },
   "sessions": [
+    {
+      "id": "acceptance-v1-04",
+      "purpose": "evaluation",
+      "status": "reserved",
+      "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
+      "capNano": 400000000,
+      "createdAt": "2026-09-24T20:46:47.705Z",
+      "expiresAt": "2026-09-24T23:46:47.705Z",
+      "note": "Sealed batch4 seed260927900,20 games,max160; exact usage/no retries/refits; full cap reserved until reconciliation."
+    },
     {
       "id": "acceptance-v1-03",
       "purpose": "evaluation",

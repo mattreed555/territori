@@ -1,14 +1,11 @@
 {
   "version": 1,
-  "id": "20260924-acceptance-18",
-  "status": "closed",
-  "purpose": "Sealed independent acceptance batches03-10, sequential reservations",
-  "startedAt": "2026-09-24T20:38:42.853Z",
-  "expiresAt": "2026-09-24T23:38:42.853Z",
-  "budgetReservationNano": 0,
-  "financialSessionId": "acceptance-v1-03",
-  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
-  "closedAt": "2026-09-24T20:43:31.387Z",
-  "spentNano": 296124402,
-  "note": "Batch03 completed20/20, exact replay and usage; cumulative60/200. Continuing sequential sealed batches after durable checkpoint."
+  "id": "20260924-acceptance-19",
+  "status": "active",
+  "purpose": "Sealed independent acceptance batch4",
+  "startedAt": "2026-09-24T20:46:47.705Z",
+  "expiresAt": "2026-09-24T23:46:47.705Z",
+  "budgetReservationNano": 400000000,
+  "financialSessionId": "acceptance-v1-04",
+  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9"
 }
