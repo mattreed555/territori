@@ -13,7 +13,7 @@ export async function loadModules() {
   await fs.mkdir(path.join(dir,group),{recursive:true});
   for(const name of await fs.readdir(path.join(root,'lib',group))) if(name.endsWith('.ts') && name!=='browser.ts') {
    const source=await fs.readFile(path.join(root,'lib',group,name),'utf8');
-   const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText.replace(/(from\s+['"])(\.[^'"]+)(['"])/g,'$1$2.mjs$3');
+   const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText.replace(/(from\s+['"])(\.[^'"]+)(['"])/g,'$1$2.mjs$3').replace(/(import\(['"])(\.[^'"]+)(['"]\))/g,'$1$2.mjs$3');
    await fs.writeFile(path.join(dir,group,name.replace(/\.ts$/,'.mjs')),js);
   }
  }

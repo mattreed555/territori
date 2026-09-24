@@ -223,3 +223,39 @@ beginning another session. The seed controls matchup scheduling, not Jev samplin
 Collection/validation games are development data, not independent acceptance
 tests. Public-site play is outside this offline ledger: these figures bound this
 project's additional spending, not the provider account's live balance.
+
+## Bundled candidate (unpublished development)
+
+The normal game now supports an opt-in `candidate` engine from the AI lab,
+alongside Jev and uploaded linear policies. **Jev remains the default; the live
+Site has not changed.** Both game modes use the same local adapter. A missing
+chunk, incompatible asset, or incomplete uploaded policy stops with an error;
+local play never silently calls Jev. New local records include policy ID and
+exploration probability. Assets are lazy-loaded at start, before any move.
+
+Candidate `hybrid-search2-intent1-residual08-v1` copies the complete original
+JSON objects into `lib/ai/candidate-assets.ts`; tests check exact equality:
+
+- Policy: `20260921-shared-03/tactical-soft-prior-strong.json`, SHA256
+  `53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb`.
+- Residual: `20260924-residual-08/style-ridge-0.1.json`, SHA256
+  `75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db`.
+- Search version2: policy beam12, static beam8, prior0.75. Intent version1:
+  strength1, margin1; learned residual weight0.5. Preferences are authored,
+  not a claim of perfect teacher imitation. Default exploration is0.03.
+
+The adapter currently computes synchronously on the main thread after loading.
+Browser responsiveness, mobile-class latency, independent Jev acceptance and
+deployment checks remain required before changing the default. Node simulations
+do not establish those gates. No new dependency was introduced.
+
+```sh
+node scripts/ai/audit-client.mjs --out experiments/jev-replacement/20260924-client-14 --verify
+npm run build
+node scripts/ai/audit-client.mjs --out /tmp/territori-bundle-check --bundle-only
+```
+
+The saved before/after manifests measure every emitted client JS file, including
+lazy code and both routes, using per-file gzip. They are not network-transfer or
+first-load measurements. The compressed event stream preserves simulated-human
+actions under a distinct kind; do not feed them to teacher training.

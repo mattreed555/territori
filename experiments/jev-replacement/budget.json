@@ -18,6 +18,19 @@
   },
   "sessions": [
     {
+      "id": "20260924-client-14",
+      "purpose": "offline-client-integration-and-bundle-validation",
+      "status": "closed",
+      "capNano": 0,
+      "closedAt": "2026-09-24T11:49:36Z",
+      "calls": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "spentUpperNano": 0,
+      "uncertain": false,
+      "note": "Opt-in lazy local candidate; 59 tests/types/build, ten adapter games/634 actions regenerated, zero fetch calls. Actual app gzip delta9485bytes. Browser/mobile and independent acceptance pending; no Site deployment, Jev remains default."
+    },
+    {
       "id": "20260924-hybrid-13-devmatches",
       "purpose": "development-evaluation",
       "status": "closed",

@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — opt-in client integration, no paid work (latest)
+
+Session `20260924-client-14` is CLOSED. Private GitHub/local trees reconciled at03c4b5d3abe4f6cbfb6be361e816a6f952129d36 /9f0e28b3b8766e1f5e34f12bcc8186ec1655c082; exclusive zero-budget lease e3fd2d73043bce633d8af7db517b820bc947dbf9. Public Sites remains version14, saved source85174b8ed3cbcf6a0cf88da79278e12d222535d4. Sites source helper returned503on three attempts; no Site push/overwrite/deployment occurred. Reconcile it again before eventual publishing. Pre-existing generated tsconfig.tsbuildinfo modification is preserved, unstaged.
+
+Normal game source now supports a lazy bundled candidate, explicitly opt-in from the AI lab. Jev stays default. All-five assets are validated before play; corrupt/missing assets, chunk failure, incompatible settings and partial uploaded models fail clearly with no silent API fallback. Uploaded linear engine remains compatible. Loading controls and stale-start guards added; local decisions record policy ID/epsilon. Exact frozen model objects and search2/intent1 configuration are preserved; no learned weights, authored preferences, rules, layout or dependencies changed.
+
+**59 tests, TypeScript and production build pass.** Ten seeded adapter games (five bot/bot, five simulated-human/bot) complete;634actions,467local choices,167simulated-human choices, no illegal/truncated/aborted/repetition games. Exact regenerated states/actions/results match, zero fetch calls including simulated chunk failure. This is Node evidence for the normal-game adapter, NOT actual UI, browser/mobile or Jev acceptance evidence. All events, hashes, test commands and before/after bundle manifests are in `20260924-client-14/`.
+
+Actual built client JS grows571,045→592,710bytes; sum of per-file gzip176,209→185,694bytes (**+9,485gzip**). Candidate lazy chunk19,531raw/8,642gzip; all model content included. This measures all emitted client JS across both routes, not first-load/network traffic. No new dependencies. Candidate still calculates synchronously: real constrained-CPU/full-width latency and UI responsiveness need testing.
+
+**Replacement is not ready; acceptance games0; live Jev unchanged.** Required managed-preview control-browser skill remains absent from complete executor and cloud inventories; no unsupported browser path used. Supported browser/mobile checks, independent200-game evaluation, final integration/default switch and deployment verification remain. Next: profile/resolve client responsiveness and restore supported browser QA; then freeze decision runtime/config for independent40completed games per strategy, balanced colors. No more paid development batches. Do not count prior10development wins as acceptance or lower gates.
+
+Session cost$0; cumulative **$0.876801366**, remaining **$3.373198634**, protected evaluation reserve **$3.25**, discretionary$0.123198634. No active financial reservations or uncertain charges. This supersedes older next steps.
+
 ## 2026-09-24 — fixed hybrid wins the small Jev development batch (latest)
 
 Session `20260924-hybrid-13` is CLOSED. Reconciled GitHub `01150c218357db1128a38d305f8d3eaa469d0ef7`, local `484f3e1e2efc7047ed8260045a67919643a23e79`, and unchanged public Sites version14. Runtime/collector source frozen at that GitHub commit before calls; exclusive lease and$0.22 cap committed as `7a443f6903640c36578a243509fb6d4264a7f65e`. No runtime/model/rules/UI/default/audience/dependency changes or deployment.
