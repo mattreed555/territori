@@ -1,14 +1,11 @@
 {
   "version": 1,
-  "id": "20260924-acceptance-16",
-  "status": "closed",
-  "purpose": "Sealed independent acceptance preparation and first20-game evaluation batch",
-  "startedAt": "2026-09-24T13:38:00Z",
-  "expiresAt": "2026-09-24T14:30:00Z",
-  "budgetReservationNano": 0,
-  "note": "First20/200 sealed acceptance games:19wins1loss. Raw data, exact replay/usage and overlap diagnostics saved.67tests/types/build pass. No refits/default/deployment changes. Next scheduledbatch02 requires new lease/financialreservation.",
-  "financialSessionId": "acceptance-v1-01",
-  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
-  "closedAt": "2026-09-24T13:57:58.494Z",
-  "spentNano": 300499164
+  "id": "20260924-acceptance-17",
+  "status": "active",
+  "purpose": "Sealed independent acceptance batch02",
+  "startedAt": "2026-09-24T15:36:54.905Z",
+  "expiresAt": "2026-09-24T16:21:54.905Z",
+  "budgetReservationNano": 400000000,
+  "financialSessionId": "acceptance-v1-02",
+  "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9"
 }
