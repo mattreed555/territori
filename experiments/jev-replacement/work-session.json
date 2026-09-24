@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-runtime-09",
-  "status": "closed",
-  "purpose": "Offline runtime profiling and behavior-preserving optimization",
-  "startedAt": "2026-09-24T06:46:00Z",
-  "expiresAt": "2026-09-24T07:40:00Z",
-  "budgetReservationNano": 0,
-  "closedAt": "2026-09-24T07:00:16Z",
-  "note": "Offline runtime optimization complete; 600 outputs and 2550 seeded choices preserved. Zero cost. 44 tests, typecheck and build pass; mobile gate unmeasured. Live Jev unchanged."
+  "id": "20260924-shift-10",
+  "status": "active",
+  "purpose": "Targeted shift probe with repeated-response controls and offline fitting",
+  "startedAt": "2026-09-24T07:58:00Z",
+  "expiresAt": "2026-09-24T08:45:00Z",
+  "budgetReservationNano": 120000000,
+  "note": "At most twelve new positions x five strategies x two repeats. Freeze inputs/collector before calls. Preserve $3.25 evaluation reserve and live Jev. Do not overlap."
 }

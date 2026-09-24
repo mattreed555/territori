@@ -7,7 +7,7 @@
   "spentUpperNano": 660659874,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
-    "verifiedAt": "2026-09-24T03:42:00Z",
+    "verifiedAt": "2026-09-24T07:58:00Z",
     "source": "https://docs.typesafe.ai/models",
     "usageSource": "https://docs.typesafe.ai/api",
     "model": "jev-1.13.0",
@@ -17,6 +17,15 @@
     "boundNote": "Official total request context is 64k tokens; reserve 65536 at $0.042 per million input tokens, including failed/unknown requests. No SDK retries. Stop on changed model or missing/invalid usage."
   },
   "sessions": [
+    {
+      "id": "20260924-shift-10-probe",
+      "purpose": "development-repeated-shift-probe",
+      "status": "reserved",
+      "capNano": 120000000,
+      "createdAt": "2026-09-24T07:58:00Z",
+      "expiresAt": "2026-09-24T08:45:00Z",
+      "note": "At most 120 calls: 12 targeted legal positions, all five strategies, two identical-input repeats. No retries, no invented outcomes. Preserve $3.25 independent evaluation reserve."
+    },
     {
       "id": "20260924-runtime-09",
       "purpose": "offline-runtime-optimization",
