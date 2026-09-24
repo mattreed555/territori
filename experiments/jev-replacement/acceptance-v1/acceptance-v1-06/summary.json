@@ -1,0 +1,12 @@
+{
+  "finishedAt": "2026-09-24T21:02:49.293Z",
+  "completed": 20,
+  "truncated": 0,
+  "requestedGames": 20,
+  "failure": null,
+  "calls": 501,
+  "inputTokens": 7049568,
+  "outputTokens": 378340,
+  "spentUpperNano": 296081856,
+  "uncertain": false
+}

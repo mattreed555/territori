@@ -1,0 +1,141 @@
+{
+  "runId": "acceptance-v1-06",
+  "seed": 260929900,
+  "mode": "local-vs-jev",
+  "epsilon": 0.03,
+  "localAgent": {
+    "kind": "learned-search-style-authored-intent",
+    "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "epsilon": 0.03,
+    "search": {
+      "version": 2,
+      "policyBeam": 12,
+      "staticBeam": 8,
+      "priorWeight": 0.75
+    },
+    "intent": {
+      "version": 1,
+      "strength": 1,
+      "margin": 1,
+      "learnedStyleWeight": 0.5,
+      "authored": true
+    },
+    "sourceHashes": {
+      "lib/game/rules.ts": "49d95c9d3584787341e27baf30df505f36c9d4c1b4d4af2c735f42de9289a70d",
+      "lib/ai/policy.ts": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3",
+      "lib/ai/features.ts": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3",
+      "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+      "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+      "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    }
+  },
+  "search": {
+    "version": 2,
+    "policyBeam": 12,
+    "staticBeam": 8,
+    "priorWeight": 0.75
+  },
+  "searchSourceSha256": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+  "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+  "sourceCommit": "e4843b77120ccec82020195f84cfcdf8c0f798ba",
+  "promptSha256": "7730309736cce20b41538ff3db84fe6fc65b7407c3c55c2b0fa20b3accc654fc",
+  "strategiesSha256": "7004e4d1cc2898652c5b68ee118383de7a35fff48ac39ec338a8fe215ea6f0c8",
+  "maxTurns": 160,
+  "matchups": [
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    }
+  ],
+  "seedScope": "matchup order and local epsilon sampling (seed + game index); provider decisions are not seeded",
+  "purpose": "independent-acceptance",
+  "teacherEndpoint": "https://territori.matthew-l-reed.chatgpt.site/api/robot",
+  "startedAt": "2026-09-24T21:00:19.274Z",
+  "acceptance": {
+    "id": "acceptance-v1",
+    "sha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
+    "candidateSourceCommit": "e4843b77120ccec82020195f84cfcdf8c0f798ba",
+    "runId": "acceptance-v1-06",
+    "seed": 260929900,
+    "games": 20,
+    "capNano": 400000000
+  }
+}
