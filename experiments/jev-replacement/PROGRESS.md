@@ -1,5 +1,13 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — sealed acceptance batch02 (latest)
+
+Session `20260924-acceptance-17` CLOSED. The $0.40 reservation was persisted on private GitHub at `f0ea969ac0eabe2f33dceff8c6d2a1856b9844ed` before calls. Frozen protocol/candidate/settings unchanged; no refit, deployment, default, audience or automation change. Batch02 seed260925900 completed20/20 games, all local wins. Cumulative acceptance40/200:39W1L, eight per strategy/four per color. Both batches pass exact replay; aggregate `complete=false`, `strengthPass=false`, `readyForDeployment=false`. Jev remains live.
+
+Batch02 has503 teacher calls/7,112,115input/383,234 free output tokens, cost **$0.298708830**, no uncertain charges. All1,006 decisions/results and503 local choices replay; no illegal moves, failed/truncated/repetition games. Agreement71.37%, mean rank2.61; eight training-context overlaps and97 within-batch repeats documented. Project cumulative **$1.476009360**, remaining **$2.773990640**; protocol reserve remaining **$2.650792006**. No active reservation. Source/assets unchanged, so previous67tests/types/build stand; no redundant full gate rerun. Raw data, audit and exact commands are in `acceptance-v1/acceptance-v1-02/`; compact next-session instructions in `HANDOFF.md`.
+
+Next is exactly batch03,seed260926900,20games after fresh remote/head/ledger/pricing verification and durable exclusive lease plus up-to-$0.40 evaluation reservation. Continue all200 before the strength gate. Mobile/browser/UI and publishing checks remain separate; do not deploy or change default based on partial results. Hourly automation stays PAUSED.
+
 ## 2026-09-24 — sealed acceptance, first20 independent games (latest)
 
 Session `20260924-acceptance-16` is CLOSED. Reconciled private GitHub e4843b77120ccec82020195f84cfcdf8c0f798ba and local4e4b15788c9649dd4bd299775978e3e5ae7b2a5a (same treee7f8a158b8590ae4a1e25d87e03824a9a62448e7); exclusive lease f7f510e63f42cf30d22b115d5c89efaca1801926. Public Site version14/source85174b8ed3cbcf6a0cf88da79278e12d222535d4 unchanged. No deployment/default/audience change; pre-existing tsconfig.tsbuildinfo left unstaged.

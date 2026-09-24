@@ -1,0 +1,9 @@
+# Acceptance batch 2 of 10
+
+The sealed seed 260925900 produced 20/20 completed local-vs-Jev games, four per strategy and two per color. Local won all 20; cumulative acceptance is 39W/1L in 40/200 games. This partial sample is not the strength or deployment gate. No refitting, configuration selection, or live/default changes followed the results.
+
+The collector made 503 pinned Jev 1.13 calls, 7,112,115 input and 383,234 free output tokens. Exact added cost is $0.298708830 under the durable $0.40 reservation; no retries, unknown charges, aborts, truncations, illegal moves or repetition endings. All 1,006 state/action/result records, all teacher requests/usage and all 503 seeded local choices replay exactly. Mean game length 50.3 turns, maximum 52. Eighteen unique trajectories include two repeats retained in the report.
+
+Teacher-turn agreement is 71.37%, complete mean rank 2.61; placement 22.41%, capture 86.05%, no teacher shifts. Eight full training-context overlaps and 97 within-batch repeats are recorded; after excluding both, agreement is 72.39% on 402 states. Agreement is diagnostic, not strength evidence. See `integrity.json`, `teacher-audit.json`, compressed per-decision audit, append-only decisions and usage, provenance and `../report.json` for exact definitions and replay.
+
+The protocol and candidate remain frozen at SHA256 `e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9`, source commit `e4843b77120ccec82020195f84cfcdf8c0f798ba`. Reservation was persisted before calls at remote commit `f0ea969ac0eabe2f33dceff8c6d2a1856b9844ed`. Project cumulative cost is $1.476009360, remaining $2.773990640; protected protocol reserve remaining $2.650792006. The aggregate report explicitly marks complete=false, strengthPass=false, readyForDeployment=false. Jev remains live.
