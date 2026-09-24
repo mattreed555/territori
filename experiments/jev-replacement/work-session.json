@@ -1,11 +1,10 @@
 {
   "version": 1,
-  "id": "20260924-hybrid-13",
-  "status": "closed",
-  "purpose": "Bounded hybrid-vs-Jev development evaluation and exact replay",
-  "startedAt": "2026-09-24T11:09:44Z",
-  "expiresAt": "2026-09-24T12:00:00Z",
-  "budgetReservationNano": 220000000,
-  "closedAt": "2026-09-24T11:15:22Z",
-  "note": "Ten fixed-hybrid development wins, not acceptance; 504 decisions and 252 charges reconciled. Actual cost149501184nano, no uncertainty. No live changes. No more paid development now; client integration/mobile gates next. Acquire a new exclusive session before work."
+  "id": "20260924-client-14",
+  "status": "active",
+  "purpose": "Offline opt-in client integration, strict errors and actual bundle measurement",
+  "startedAt": "2026-09-24T11:39:00Z",
+  "expiresAt": "2026-09-24T12:25:00Z",
+  "budgetReservationNano": 0,
+  "note": "No paid calls. Keep Jev default and production unchanged. Preserve pre-existing tsconfig build cache."
 }
