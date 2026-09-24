@@ -1,0 +1,117 @@
+{
+  "purpose": "Agreement diagnostics on sealed acceptance teacher turns; not training, model selection or a substitute for complete strength/runtime gates",
+  "evaluationProtocol": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
+  "candidate": {
+    "kind": "learned-search-style-authored-intent",
+    "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "styleSha256": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "epsilon": 0.03,
+    "search": {
+      "version": 2,
+      "policyBeam": 12,
+      "staticBeam": 8,
+      "priorWeight": 0.75
+    },
+    "intent": {
+      "version": 1,
+      "strength": 1,
+      "margin": 1,
+      "learnedStyleWeight": 0.5,
+      "authored": true
+    },
+    "sourceHashes": {
+      "lib/game/rules.ts": "49d95c9d3584787341e27baf30df505f36c9d4c1b4d4af2c735f42de9289a70d",
+      "lib/ai/policy.ts": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3",
+      "lib/ai/features.ts": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3",
+      "lib/ai/search.ts": "2dde84c5c475e3ecf018a0828383893567c198f5ba49229747c5db98de0260d9",
+      "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+      "lib/ai/intent.ts": "ca8f36b5e3a149d12f41e9822961c07ba575ea24293a051852951e87a77db2b4"
+    }
+  },
+  "inputs": {
+    "experiments/jev-replacement/acceptance-v1/acceptance-v1-07/provenance.json": "8628bc37fad3da233cec4e3bd3f4eb1771c74899f616fe9461c599eb1fb03b7e",
+    "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "experiments/jev-replacement/20260924-residual-08/style-ridge-0.1.json": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "experiments/jev-replacement/acceptance-v1/acceptance-v1-07/decisions.jsonl.gz": "d1fa59748bd4e9d32f2b2c94a73e1128ef18550cc8b0804c25c34776033332e4",
+    "experiments/jev-replacement/20260921-all-strategies-01/decisions.jsonl.gz": "a6dbb62911973bffbbfbd7ff5a48b93d768d83a0b2a7934764b159f56ce6197a",
+    "experiments/jev-replacement/20260924-style-06/probe/labels.jsonl.gz": "4141ed0abd0f495ce24fc7dacbca7ebb90017f4aae0f4dd84e718aadd65300d1"
+  },
+  "teacher": {
+    "states": 509,
+    "agreement": 0.7170923379174853,
+    "meanTeacherRank": 2.318271119842829,
+    "teacherInSearchedBeam": 509
+  },
+  "byStrategy": {
+    "Aggressive": {
+      "states": 109,
+      "agreement": 0.7798165137614679,
+      "meanTeacherRank": 1.926605504587156,
+      "teacherInSearchedBeam": 109
+    },
+    "Cautious": {
+      "states": 100,
+      "agreement": 0.8,
+      "meanTeacherRank": 1.95,
+      "teacherInSearchedBeam": 100
+    },
+    "Expansive": {
+      "states": 100,
+      "agreement": 0.45,
+      "meanTeacherRank": 3.06,
+      "teacherInSearchedBeam": 100
+    },
+    "Fluid": {
+      "states": 100,
+      "agreement": 0.77,
+      "meanTeacherRank": 2.45,
+      "teacherInSearchedBeam": 100
+    },
+    "Balanced": {
+      "states": 100,
+      "agreement": 0.78,
+      "meanTeacherRank": 2.24,
+      "teacherInSearchedBeam": 100
+    }
+  },
+  "byTeacherMoveType": {
+    "place": {
+      "states": 114,
+      "agreement": 0.21052631578947367,
+      "meanTeacherRank": 5.105263157894737,
+      "teacherInSearchedBeam": 114
+    },
+    "remove": {
+      "states": 395,
+      "agreement": 0.8632911392405064,
+      "meanTeacherRank": 1.5139240506329115,
+      "teacherInSearchedBeam": 395
+    },
+    "shift": {
+      "states": 0,
+      "agreement": null,
+      "meanTeacherRank": null,
+      "teacherInSearchedBeam": 0
+    }
+  },
+  "excludingExactTrainingContexts": {
+    "states": 501,
+    "agreement": 0.7285429141716567,
+    "meanTeacherRank": 2.291417165668663,
+    "teacherInSearchedBeam": 501
+  },
+  "excludingTrainingAndBatchRepeats": {
+    "states": 379,
+    "agreement": 0.7387862796833773,
+    "meanTeacherRank": 2.308707124010554,
+    "teacherInSearchedBeam": 379
+  },
+  "overlap": {
+    "trainingLabels": 336,
+    "boardSupplyTurnStates": 10,
+    "fullDecisionContextStates": 8,
+    "repeatedInBatch": 126
+  },
+  "rankConvention": "One-based complete policy order: scored searched roots then unsearched moves in learned-prior order; not full-width minimax",
+  "paidCalls": 0
+}
