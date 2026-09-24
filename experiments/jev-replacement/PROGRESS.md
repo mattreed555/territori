@@ -1,5 +1,11 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — all 200 sealed acceptance games (latest)
+
+All ten sequential sealed batches completed and independently replayed: 194W/2D/4L, 97.5% score; all five strategies met 40 games with 20/color and exceeded their 40% score threshold. 200/200 completed, no aborted/truncated/repetition endings, illegal choices or uncertain calls. Strength gate passes; deployment readiness remains false. Full results and confidence intervals in acceptance-v1/report.json, overlap/agreement in acceptance-v1/final-diagnostics.json. Repeated contexts/trajectories materially limit independence and generalization.
+
+5,059 calls and $2.996012040 exact protocol cost; project cumulative $3.872813406, remaining $0.377186594. Every reservation committed before its calls; each batch's raw compressed records, audit and ledger checkpoint durably committed. Final lease closed, no active reservation. Frozen candidate, public Jev default, Site version14, paused hourly automation unchanged. Mobile/browser/normal-mode/deployment gates remain outstanding.
+
 ## 2026-09-24 — sealed acceptance batch02 (latest)
 
 Session `20260924-acceptance-17` CLOSED. The $0.40 reservation was persisted on private GitHub at `f0ea969ac0eabe2f33dceff8c6d2a1856b9844ed` before calls. Frozen protocol/candidate/settings unchanged; no refit, deployment, default, audience or automation change. Batch02 seed260925900 completed20/20 games, all local wins. Cumulative acceptance40/200:39W1L, eight per strategy/four per color. Both batches pass exact replay; aggregate `complete=false`, `strengthPass=false`, `readyForDeployment=false`. Jev remains live.
