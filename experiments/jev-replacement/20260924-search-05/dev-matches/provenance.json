@@ -1,0 +1,65 @@
+{
+  "runId": "20260924-search-05-devmatches",
+  "seed": 24051,
+  "mode": "local-vs-jev",
+  "epsilon": 0.03,
+  "search": {
+    "version": 1,
+    "policyBeam": 12,
+    "staticBeam": 8,
+    "priorWeight": 0.75
+  },
+  "searchSourceSha256": "9af42507e6467cdfb1794763f0ab341cd966834458d0356e309422225894a4fd",
+  "modelSha256": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+  "ruleset": "8x8-25-permanent-majority-single-opening-v1",
+  "sourceCommit": "f5916a591eddc9b8a85057a0abc188c0d229e8e3",
+  "promptSha256": "7730309736cce20b41538ff3db84fe6fc65b7407c3c55c2b0fa20b3accc654fc",
+  "strategiesSha256": "7004e4d1cc2898652c5b68ee118383de7a35fff48ac39ec338a8fe215ea6f0c8",
+  "maxTurns": 160,
+  "matchups": [
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    },
+    {
+      "blue": "Expansive",
+      "red": "Expansive"
+    },
+    {
+      "blue": "Cautious",
+      "red": "Cautious"
+    },
+    {
+      "blue": "Balanced",
+      "red": "Balanced"
+    },
+    {
+      "blue": "Fluid",
+      "red": "Fluid"
+    },
+    {
+      "blue": "Aggressive",
+      "red": "Aggressive"
+    }
+  ],
+  "seedScope": "matchup order and local epsilon sampling (seed + game index); provider decisions are not seeded",
+  "purpose": "training/development validation, not independent acceptance evaluation",
+  "teacherEndpoint": "https://territori.matthew-l-reed.chatgpt.site/api/robot",
+  "startedAt": "2026-09-24T02:28:13.442Z"
+}

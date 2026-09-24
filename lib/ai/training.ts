@@ -11,6 +11,13 @@ export function splitGames(rows:Decision[],seed=1,testFraction=.2) {
   const testGameIds=ids.slice(0,Math.max(1,Math.min(ids.length-1,Math.round(ids.length*testFraction)))),test=new Set(testGameIds);
   return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds};
 }
+/** Preserve an existing development holdout when adding student-state games. */
+export function splitByGameIds(rows:Decision[],testGameIds:string[]) {
+  const ids=[...new Set(rows.map(r=>r.gameId))].sort();
+  if(!Array.isArray(testGameIds)||!testGameIds.length||new Set(testGameIds).size!==testGameIds.length||testGameIds.some(id=>typeof id!=='string'||!ids.includes(id))||testGameIds.length>=ids.length)throw new Error('Invalid explicit game holdout');
+  const test=new Set(testGameIds);
+  return {train:rows.filter(r=>!test.has(r.gameId)),test:rows.filter(r=>test.has(r.gameId)),trainGameIds:ids.filter(id=>!test.has(id)),testGameIds:[...testGameIds]};
+}
 /** Multinomial logistic regression over the legal moves in each state. No ML dependency. */
 export function teacherTargets(row:Decision,mix=0):number[] {
   if(!Number.isFinite(mix)||mix<0||mix>1)throw new Error('Soft target mix must be 0–1');
@@ -25,11 +32,11 @@ export function teacherTargets(row:Decision,mix=0):number[] {
   if(Math.abs(sum-1)>.010000001)throw new Error('Teacher probability mass differs from one by more than 1%');
   return ids.map((id,i)=>(1-mix)*hard[i]+mix*probabilities[id]/sum);
 }
-export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0,sharedPriorStrength=0}={}) {
+export function trainPolicy(rows:Decision[],{seed=1,epochs=60,rate=.03,l2=.001,testFraction=.2,features=FEATURE_NAMES,softTargetMix=0,sharedPriorStrength=0,testGameIds=undefined as string[]|undefined}={}) {
   if(!Number.isInteger(epochs)||epochs<1||!Number.isFinite(rate)||rate<=0||!Number.isFinite(l2)||l2<0)throw new Error('Invalid training parameters');
   if(!Number.isFinite(softTargetMix)||softTargetMix<0||softTargetMix>1)throw new Error('Soft target mix must be 0–1');
   if(!Number.isFinite(sharedPriorStrength)||sharedPriorStrength<0)throw new Error('Shared prior strength must be nonnegative');
-  const teacherRows=rows.filter(r=>r.source==='jev'),split=splitGames(teacherRows,seed,testFraction),random=seededRandom(seed);
+  const teacherRows=rows.filter(r=>r.source==='jev'),split=testGameIds===undefined?splitGames(teacherRows,seed,testFraction):splitByGameIds(teacherRows,testGameIds),random=seededRandom(seed);
   const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
   if(softTargetMix>0)model.training.softTargetMix=softTargetMix;
   function fitRows(rows:Decision[],random:()=>number,prior:Weights|null=null):Weights {

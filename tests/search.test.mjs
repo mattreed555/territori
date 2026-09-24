@@ -20,6 +20,7 @@ test('batched successor enumeration equals validated engine through seeded games
 test('search includes every reply type and agrees with exhaustive two-ply reference',()=>{
  let g=applyMove(newGame(),{type:'place',to:27});g=applyMove(g,{type:'place',to:28});
  const before=JSON.stringify(g),output=rankSearchMoves(g,'Balanced',model,{policyBeam:0,priorWeight:0});
+ assert.equal(output.policyOrder.length,legalMoves(g).length);
  assert.equal(output.ranked.length,legalMoves(g).length);
  for(const r of output.ranked){
   const next=applyMove(g,r.move),replies=legalMoves(next);
@@ -60,6 +61,9 @@ test('search rejects invalid options and finished games and is seeded reproducib
  assert.throws(()=>rankSearchMoves(g,'Balanced',model,null));
  assert.throws(()=>rankSearchMoves(g,'Balanced',model,{priorWeight:Infinity}));
  assert.throws(()=>chooseSearchMove(g,'Balanced',model,{},2));
+ const beam=rankSearchMoves(g,'Balanced',model,{policyBeam:1,staticBeam:0});
+ assert.equal(beam.policyOrder.length,64);assert.equal(new Set(beam.policyOrder.map(moveId)).size,64);
+ assert.equal(moveId(beam.policyOrder[0]),moveId(beam.ranked[0].move));
  assert.equal(moveId(chooseSearchMove(g,'Fluid',model,{},1,seededRandom(2))),moveId(chooseSearchMove(g,'Fluid',model,{},1,seededRandom(2))));
  g.ended='repetition';assert.throws(()=>chooseSearchMove(g,'Balanced',model),/No legal moves/);
 });

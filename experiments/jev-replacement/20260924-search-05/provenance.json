@@ -1,0 +1,54 @@
+{
+  "runId": "20260924-search-05",
+  "sourceBefore": "f5916a591eddc9b8a85057a0abc188c0d229e8e3",
+  "leaseCommit": "5824956be1a9cfd38facc1657b8b423b79c5c992",
+  "sites": {
+    "versionBefore": 14,
+    "versionAfter": 14,
+    "audience": "public",
+    "published": false
+  },
+  "verification": {
+    "testsPassed": 31,
+    "typeScriptPassed": true,
+    "paidBatchReplayAndUsageVerified": true,
+    "paidSourceFrozenBeforeTrainingAndDiagnosticChanges": true
+  },
+  "training": {
+    "teacherDecisions": 831,
+    "newBatchUsedForTraining": false,
+    "holdoutGames": 5,
+    "refitsPromoted": false
+  },
+  "cost": {
+    "calls": 250,
+    "inputTokens": 3539069,
+    "freeOutputTokens": 190355,
+    "addedNano": 148640898,
+    "cumulativeNano": 606310194,
+    "remainingNano": 3643689806,
+    "acceptanceReserveNano": 3250000000,
+    "uncertain": false
+  },
+  "hashes": {
+    "lib/ai/search.ts": "ca56fe7077b08c96fb78ef029b676c2fb58fc417862e5016f5febdb1cf71d689",
+    "lib/ai/training.ts": "1d1572c33e202780478949c7e141371d91552e38903329d1ea46830aa61c8316",
+    "scripts/ai/retrain-student.mjs": "9895f5a7d2f22fdba4b9ca2109b3da81a658a6feb4e6da6853bf7d3c4704b4fa",
+    "scripts/ai/audit-search.mjs": "9e37573e4a1866ec6be6e655a6693317b57473587c63cd559bba7b6a72d3cee7",
+    "scripts/ai/verify-session.mjs": "399d9f6afb1edd4c5c1b6f0a33899e1030679a86e4c4293d2eb5566ed0c44884",
+    "experiments/jev-replacement/20260924-search-05/README.md": "3be82ccdd0b0df879987fb23e9fd25e3a55795139b65d904e7af366666e96f24",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/decisions.jsonl.gz": "1146fa7543217047f76c24bea61ee489a2062c644129ac1741da735a1ea0b9dc",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/evaluation.json": "cc836dfa7f2a9860dfdfd0027f45138460a7750614f10762d4499724a0340da6",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/games.json": "8bf865bbf4f56b3abd963f5c41217ae7dfe147a71fd0bfb0d5d158cde07f20c5",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/integrity.json": "635eed09793f17517f78bb5a3dde8349d22ceb688059d40a535b1fbfe42f19e4",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/provenance.json": "c437f5df11b5881cff3e67580fbdd33992bf6c8ead8f261c03c43bc2ebecd0c8",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/summary.json": "edc417e96212e217854e8d2ccf207241c2cd89be438482c69897dc43e569d8d3",
+    "experiments/jev-replacement/20260924-search-05/dev-matches/usage.jsonl.gz": "85ab99fc8a67b62dea8b9771bc4811da811f5b0cff28b123c8e7381ad2519d8a",
+    "experiments/jev-replacement/20260924-search-05/retrained/comparison.json": "5bb63ea5cc7be39cc407be40dcd35af2b703fe0ac786c4248452510e28b30b94",
+    "experiments/jev-replacement/20260924-search-05/retrained/tactical-hard.json": "ec045da8c49adbb09a4dfdc3f383242be9edf1018f75c472a1e6576dc7467c9c",
+    "experiments/jev-replacement/20260924-search-05/retrained/tactical-soft-prior-strong.json": "fd8b59d4fb81ef509ce6a25cbc44fcb82f2886af54e56c7dbed0a042d3b0a505",
+    "experiments/jev-replacement/20260924-search-05/retrained/tactical-soft-prior.json": "310c6cd27592cd318d55dda5da8aa1a8d8b48894c686e6421f804f935f5cba9b",
+    "experiments/jev-replacement/20260924-search-05/retrained/tactical-soft.json": "43857d2a6d8485bc2c2a449a54197726a7fa079c9d0be436b0b0fdef2547ecf9",
+    "experiments/jev-replacement/20260924-search-05/search-audit.json.gz": "f98e5626cc15ba8551ebd7159c4ffa115c6e888352ac2cf6f5ba4fac4642b85b"
+  }
+}

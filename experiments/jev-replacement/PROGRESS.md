@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — search wins the small Jev development batch (latest)
+
+Session `20260924-search-05` is CLOSED. Reconciled GitHub `f5916a591eddc9b8a85057a0abc188c0d229e8e3`, local `d3a61b5d398ea099ed95b6c4a8464cb3115a5ab8`, and unchanged Sites/live version14 public. Lease/budget reservation was committed as `5824956be1a9cfd38facc1657b8b423b79c5c992` before paid work. The original shared-prior model plus default search won **10/10** local-vs-Jev DEVELOPMENT games, two per strategy, balanced colors. These are NOT acceptance games. All completed at 50 turns without aborts, truncations or repetitions; nine distinct trajectories. Overall conservative95 score interval [57.1%,100%], only [4.0%,100%] for each two-game strategy sample. No readiness claim.
+
+Local made 250 placements; Jev made 56 placements and 194 captures. Sacrificing stones to finish supply while narrowly ahead (1–2 territory points) explains this specific success. Independent replay verifies every state/action/outcome and reconciles all 250 calls with raw responses/usage. Saved teacher-state agreement81.6% is capture-heavy (98.97% captures,21.43% placements,no shifts). Complete policy rank1.928 now includes an explicit trailing order for unsearched moves; it does not claim full-width minimax.
+
+Added explicit whole-game holdout support and four offline refits using the prior269 student-state labels: 545 training decisions, original286 validation decisions untouched. New agreement41.26–43.71% regresses the frozen model's48.25%; do not promote these refits. All31 tests and TypeScript pass. Full model/data/artifact provenance, raw decisions, usage and reproduction commands: `20260924-search-05/README.md`.
+
+The remaining gaps are material: Cautious/Expansive/Fluid still choose identically on the newest50 common sampled positions; no teacher shifts exist. Node p95 33.2ms is NOT a mobile measurement. No independently seeded acceptance games, UI integration, production build/browser/deployment gates yet. Jev remains live default; version14/public unchanged. **Replacement is not ready.**
+
+Cost: 250 calls,3,539,069 input tokens,190,355 free output tokens = **$0.148640898**, no retries or uncertainty. Official pricing/context/usage rechecked2026-09-24. Cumulative additional spend **$0.606310194**, remaining **$3.643689806**, including **$3.25** acceptance reserve. Discretionary development remaining **$0.393689806**. No active financial reservation. This is the task allowance, not the balance after unrelated public-site play.
+
+Next: investigate same-position strategy conditioning with a SMALL bounded common-state teacher-label probe (include useful shifts, record counterfactual labels without inventing outcomes). More narrow student-state retraining alone did not help. Preserve source-game grouping; measure constrained-browser latency before spending the acceptance reserve. Freeze a validated candidate/config before the independent200-game suite. Re-read current goal/lease/ledger and acquire a new durable session before work. This supersedes older next steps.
+
 ## 2026-09-24 — shallow search, offline only (latest)
 
 Session `20260924-search-04` is CLOSED. Reconciled GitHub `5a97341e32abf1521cc6d557c267f990f75dd8ef`, local `b1fffa5f09b5bc56d1ff1469a5d26d85afa31bdc`, and unchanged Sites source/live version 14 (public). Acquired durable lease commit `dc55844a6883820191fb8f7aca8043a9a5d051e9` before implementation. No paid calls, new dependencies, UI/default/audience changes, or deployment.

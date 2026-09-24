@@ -60,7 +60,12 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
     return {move: root.move, score: worst + config.priorWeight * root.prior,
       searchValue: worst, immediateValue: root.value, prior: root.prior, worstReply: reply};
   }).sort((a,b) => b.score-a.score || moveId(a.move).localeCompare(moveId(b.move)));
-  return {ranked: result, nodes, legalRootCount: roots.length, config};
+  // The beam policy never selects an unsearched root. Give those roots an
+  // explicit trailing order (learned prior order) for complete policy-rank
+  // diagnostics, without pretending their minimax values were computed.
+  const searched = new Set(result.map(r => moveId(r.move)));
+  const policyOrder = [...result.map(r => r.move), ...roots.filter(r => !searched.has(moveId(r.move))).map(r => r.move)];
+  return {ranked: result, policyOrder, nodes, legalRootCount: roots.length, config};
 }
 
 export function chooseSearchMove(game: Game, strategy: Strategy, model: PolicyModel,

@@ -4,7 +4,7 @@
   "unit": "nanodollars",
   "allowanceNano": 4250000000,
   "evaluationReserveNano": 3250000000,
-  "spentUpperNano": 457669296,
+  "spentUpperNano": 606310194,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
     "verifiedAt": "2026-09-24T02:26:00Z",
@@ -20,11 +20,17 @@
     {
       "id": "20260924-search-05-devmatches",
       "purpose": "development-evaluation",
-      "status": "reserved",
+      "status": "closed",
       "capNano": 250000000,
       "createdAt": "2026-09-24T02:27:00Z",
       "expiresAt": "2026-09-24T03:25:00Z",
-      "note": "Ten balanced-color search-vs-Jev development games, not acceptance. Exact response usage required, no retries. $3.25 independent evaluation reserve preserved."
+      "note": "Ten balanced-color search-vs-Jev development games, not acceptance. Exact response usage required, no retries. $3.25 independent evaluation reserve preserved.",
+      "closedAt": "2026-09-24T02:29:48.088Z",
+      "calls": 250,
+      "inputTokens": 3539069,
+      "outputTokens": 190355,
+      "spentUpperNano": 148640898,
+      "uncertain": false
     },
     {
       "id": "20260924-search-04",

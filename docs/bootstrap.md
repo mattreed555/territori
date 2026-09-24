@@ -118,6 +118,16 @@ is restricted to close search alternatives, unlike the original uniform epsilon.
 This is two plies, not a proof against longer tactics. Strategy differentiation
 and mobile latency remain open gates. `audit-search.mjs` reports beam coverage
 and conditional ranks explicitly; these are not full-legal-move teacher ranks.
+It also reports a complete **policy order**: searched moves first by search score,
+then unsearched moves by learned-prior rank. This accounts for every legal move
+without claiming full-width minimax values, and leaves the chosen move unchanged.
+
+`retrain-student.mjs --data FILE --data FILE --baseline MODEL --out DIRECTORY`
+reuses a saved model's whole-game development holdout while adding teacher data
+from student-visited games. Local decisions are excluded. `verify-session.mjs
+--run DIRECTORY` independently replays every saved game and checks each paid
+request, response usage and charge against the compressed journal. It rejects
+uncertain sessions rather than treating their costs as exact.
 
 Offline comparisons: `scripts/ai/compare.mjs` fits the original and optional
 capture-reply features with hard or normalized soft teacher targets. See
