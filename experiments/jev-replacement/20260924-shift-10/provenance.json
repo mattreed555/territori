@@ -1,0 +1,125 @@
+{
+  "session": "20260924-shift-10",
+  "reconciledGitHub": "d9314e796ff3386dcb8bac75f6d7773173962413",
+  "reconciledLocal": "5deb64224387dab16b2d0de2e45f5528d22f237a",
+  "leaseCommit": "6d959e2f7230dba33c1461d7f9e605b6544e6970",
+  "paidSourceCommit": "fce006f6de837a46ae9acd9ad64ae11116046dc2",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 120,
+  "costNano": 66640308,
+  "cumulativeSpentUpperNano": 727300182,
+  "remainingNano": 3522699818,
+  "evaluationReserveNano": 3250000000,
+  "verification": {
+    "tests": 45,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "labelsAndUsageReconciled": 120,
+    "positionsReplayed": 12,
+    "localGames": 40,
+    "replayedDecisions": 2486,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured",
+    "refitPromoted": false,
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260924-shift-10/README.md": {
+      "bytes": 9096,
+      "sha256": "33b8c575ecdbef75ca2072b99e959212343cc009f2e328ab02e0442181b4f9e7"
+    },
+    "experiments/jev-replacement/20260924-shift-10/analysis.json": {
+      "bytes": 28552,
+      "sha256": "cb4b4bd9d1630bad52a35ad9b068b16cbbeb94af3fb7c19329a0a48f640525ae"
+    },
+    "experiments/jev-replacement/20260924-shift-10/choices.json.gz": {
+      "bytes": 6018,
+      "sha256": "a29f9026e131309da7e5cbec37af5f55375d749cfff3bd39ef11ad95c63c1f7c"
+    },
+    "experiments/jev-replacement/20260924-shift-10/positions.json": {
+      "bytes": 94866,
+      "sha256": "c105f0a3c0398e712291bda5ee5475f02d883d27be04794bd379b34c7f488390"
+    },
+    "experiments/jev-replacement/20260924-shift-10/previous-vs-base-integrity.json": {
+      "bytes": 477,
+      "sha256": "fb4ed8e7574604ed9fbe9c2eb7b2ccac400fc8044aef83d595b7821ce392d779"
+    },
+    "experiments/jev-replacement/20260924-shift-10/previous-vs-base.json": {
+      "bytes": 10495,
+      "sha256": "e3ceaf1c31d2757a49ac6cbc8caaa4a7181fe1793dbea8fe2ec23acc91941e0b"
+    },
+    "experiments/jev-replacement/20260924-shift-10/previous-vs-base.jsonl.gz": {
+      "bytes": 110549,
+      "sha256": "75577fe64ba32dabdc0a4c8fb2d726cddc1b4e2c06eb6f48c2ceeede60fdb01e"
+    },
+    "experiments/jev-replacement/20260924-shift-10/random-traces.jsonl.gz": {
+      "bytes": 89341,
+      "sha256": "a9185aae7bb23de4e1648bbecd886d89b888c88719cd8dfc7f6a5ee16038c878"
+    },
+    "experiments/jev-replacement/20260924-shift-10/refit-vs-base-integrity.json": {
+      "bytes": 477,
+      "sha256": "ba307f8522a52449e074a751f51a44c31a7b14940b71e3472bdec8de08f16546"
+    },
+    "experiments/jev-replacement/20260924-shift-10/refit-vs-base.json": {
+      "bytes": 10437,
+      "sha256": "c31abacb074e81f1bc46aff69620c903e801dec62302bde383e7e9462f8ab9af"
+    },
+    "experiments/jev-replacement/20260924-shift-10/refit-vs-base.jsonl.gz": {
+      "bytes": 111393,
+      "sha256": "52f1517650344f378a2069d1079067641fc3536447b19f1f3d59b6f03a5f2543"
+    },
+    "experiments/jev-replacement/20260924-shift-10/shift-diagnostic.json": {
+      "bytes": 18659,
+      "sha256": "1535d3c9e80b87c3321f91f9dc33c98d713ba3837364f3865dff0d7a43cdcadc"
+    },
+    "experiments/jev-replacement/20260924-shift-10/style-ridge-0.1.json": {
+      "bytes": 3918,
+      "sha256": "d0b930ac8081f74233474d10834f552265fe91c2d54dd06dd6e2a9ff7649f7e0"
+    },
+    "experiments/jev-replacement/20260924-shift-10/probe/labels.jsonl.gz": {
+      "bytes": 55639,
+      "sha256": "5111b892bf24f5a6eb492577b5c81d2524086d7644f1f9cba4b7370c6fa8e036"
+    },
+    "experiments/jev-replacement/20260924-shift-10/probe/summary.json": {
+      "bytes": 187,
+      "sha256": "2335ae9cd9b4b26892a13a4f9f25c527e68dd78d83590db1ebdef97043cd4ef0"
+    },
+    "experiments/jev-replacement/20260924-shift-10/probe/usage.jsonl.gz": {
+      "bytes": 3300,
+      "sha256": "2f8671dd94dc05669db9329f5785b146429163c7df32d7d4eaa30b8afd7aae38"
+    },
+    "scripts/ai/prepare-shift-probe.mjs": {
+      "bytes": 3956,
+      "sha256": "dfdf0b01b881badbcaab78ea7cfc864ea7f233b9b445655795314e9d9d44ad4d"
+    },
+    "scripts/ai/collect-repeat-probe.mjs": {
+      "bytes": 3463,
+      "sha256": "e7410a716c4cb3f721c205ccd473d0d6a3847546b02aae2668723f7a4f218193"
+    },
+    "scripts/ai/analyze-repeat-probe.mjs": {
+      "bytes": 8861,
+      "sha256": "86d6fff49bbd1e86046e95b2b5b376cc978bc052db5fd0e6adced0ffa64d331c"
+    },
+    "scripts/ai/diagnose-shifts.mjs": {
+      "bytes": 2504,
+      "sha256": "37bb7e1e170e909e97839e5616dc9ebd096b02c381317ca7a072c097521cb76b"
+    },
+    "lib/ai/repeated-probe.ts": {
+      "bytes": 795,
+      "sha256": "c4d40e841747a041cd80e0d5316e558a6a9c4904ca7c21b09070425f4e495548"
+    },
+    "tests/repeated-probe.test.mjs": {
+      "bytes": 948,
+      "sha256": "bc404da9fa199a4a5bc82bfedf1a2900855ebbb512f6aaa26047cf204053ad98"
+    },
+    "experiments/jev-replacement/20260924-shift-10/probe/provenance.json": {
+      "bytes": 738,
+      "sha256": "447e677bb9c6d079bf4938168482bd3c5a78175c00b3c92a2fe3ff73c47b3419"
+    }
+  }
+}

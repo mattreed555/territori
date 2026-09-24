@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-shift-10",
-  "status": "active",
+  "status": "closed",
   "purpose": "Targeted shift probe with repeated-response controls and offline fitting",
   "startedAt": "2026-09-24T07:58:00Z",
   "expiresAt": "2026-09-24T08:45:00Z",
   "budgetReservationNano": 120000000,
-  "note": "At most twelve new positions x five strategies x two repeats. Freeze inputs/collector before calls. Preserve $3.25 evaluation reserve and live Jev. Do not overlap."
+  "closedAt": "2026-09-24T08:13:25Z",
+  "note": "120 metered labels reconciled, $0.066640308 exact cost; repeated controls, grouped refit and 40 free games/replays complete. Refit not promoted. Live Jev and $3.25 acceptance reserve unchanged."
 }

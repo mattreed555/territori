@@ -173,6 +173,15 @@ limitations. `local-tournament.mjs` compares two local models with balanced colo
 it makes no API calls and must not be reported as local-versus-Jev evidence.
 
 The authoritative goal is [jev-replacement-goal.md](jev-replacement-goal.md).
+`prepare-shift-probe.mjs`, `collect-repeat-probe.mjs` and
+`analyze-repeat-probe.mjs` add a bounded two-pass counterfactual experiment.
+The distinct `repeated-counterfactual` wrapper preserves repeat identity; it is
+not silently fed to ordinary trainers. Only the predeclared first pass enters
+the grouped style fit, while the second measures same-input provider variation.
+`diagnose-shifts.mjs` separates omitted root moves from scoring preferences.
+See `experiments/jev-replacement/20260924-shift-10/README.md`; the refit was not
+promoted. All these tools remain separate from normal play.
+
 Read `experiments/jev-replacement/PROGRESS.md` and `budget.json` before paid work.
 The older `simulate` CLI does not enforce a budget; use the bounded collector for
 replacement data generation:

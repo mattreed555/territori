@@ -1,0 +1,639 @@
+{
+  "purpose": "Fluid development root-beam diagnostic, not strength or acceptance",
+  "hashes": {
+    "experiments/jev-replacement/20260924-shift-10/positions.json": "c105f0a3c0398e712291bda5ee5475f02d883d27be04794bd379b34c7f488390",
+    "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "experiments/jev-replacement/20260924-shift-10/style-ridge-0.1.json": "d0b930ac8081f74233474d10834f552265fe91c2d54dd06dd6e2a9ff7649f7e0"
+  },
+  "summary": {
+    "positions": 12,
+    "bestShiftOmitted": 1,
+    "allNearBestShiftsOmitted": 1,
+    "normalShiftChoices": 0,
+    "fullShiftChoices": 0,
+    "styledShiftChoices": 0
+  },
+  "rows": [
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "groupId": "shift-probe:2410:322",
+      "normal": {
+        "move": "remove_61",
+        "searchValue": 0.5,
+        "prior": 0.9571428571428572,
+        "score": 1.217857142857143,
+        "styleScore": 0.1860457430898828,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "remove_61",
+      "full": {
+        "move": "remove_61",
+        "searchValue": 0.5,
+        "prior": 0.9571428571428572,
+        "score": 1.217857142857143,
+        "styleScore": 0.1860457430898828,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_26_27",
+        "searchValue": 0.25,
+        "prior": 0.6285714285714286,
+        "score": 0.7214285714285714,
+        "styleScore": 0.016195679980725464,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.25
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_26_27",
+          "searchValue": 0.25,
+          "prior": 0.6285714285714286,
+          "score": 0.7214285714285714,
+          "styleScore": 0.016195679980725464,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.25
+        },
+        {
+          "move": "shift_28_27",
+          "searchValue": 0.25,
+          "prior": 0.6142857142857143,
+          "score": 0.7107142857142857,
+          "styleScore": 0.016195679980725464,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.25
+        },
+        {
+          "move": "shift_28_36",
+          "searchValue": 0.25,
+          "prior": 0.5714285714285714,
+          "score": 0.6785714285714286,
+          "styleScore": 0.05419778273594503,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.25
+        },
+        {
+          "move": "shift_28_29",
+          "searchValue": -0.25,
+          "prior": 0.9857142857142858,
+          "score": 0.4892857142857143,
+          "styleScore": 0.04166107617125103,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.75
+        },
+        {
+          "move": "shift_28_20",
+          "searchValue": -0.25,
+          "prior": 0.8428571428571429,
+          "score": 0.3821428571428571,
+          "styleScore": -0.0015780728649834354,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.75
+        },
+        {
+          "move": "shift_42_43",
+          "searchValue": -0.25,
+          "prior": 0.8285714285714286,
+          "score": 0.37142857142857144,
+          "styleScore": 0.06135598288969493,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.75
+        },
+        {
+          "move": "shift_26_25",
+          "searchValue": -0.25,
+          "prior": 0.6714285714285714,
+          "score": 0.25357142857142856,
+          "styleScore": 0.043633351775465894,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.75
+        },
+        {
+          "move": "shift_26_34",
+          "searchValue": -0.25,
+          "prior": 0.3,
+          "score": -0.025000000000000022,
+          "styleScore": 0.07971430065795046,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.75
+        },
+        {
+          "move": "shift_42_34",
+          "searchValue": -0.25,
+          "prior": 0.2857142857142857,
+          "score": -0.035714285714285726,
+          "styleScore": 0.06135598288969493,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.75
+        }
+      ],
+      "legalRoots": 70,
+      "normalRoots": 18
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "groupId": "shift-probe:2410:30",
+      "normal": {
+        "move": "place_1",
+        "searchValue": -1.85,
+        "prior": 0.6909090909090909,
+        "score": -1.331818181818182,
+        "styleScore": 0.05701268418327725,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_1",
+      "full": {
+        "move": "place_1",
+        "searchValue": -1.85,
+        "prior": 0.6909090909090909,
+        "score": -1.331818181818182,
+        "styleScore": 0.05701268418327725,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_11_10",
+        "searchValue": -2.5,
+        "prior": 0.8727272727272727,
+        "score": -1.8454545454545455,
+        "styleScore": 0.05490712844711085,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6499999999999999
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_11_10",
+          "searchValue": -2.5,
+          "prior": 0.8727272727272727,
+          "score": -1.8454545454545455,
+          "styleScore": 0.05490712844711085,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6499999999999999
+        }
+      ],
+      "legalRoots": 55,
+      "normalRoots": 13
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "groupId": "shift-probe:2410:332",
+      "normal": {
+        "move": "place_9",
+        "searchValue": 1.5,
+        "prior": 0.9354838709677419,
+        "score": 2.2016129032258065,
+        "styleScore": -0.06301271122543735,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_9",
+      "full": {
+        "move": "place_9",
+        "searchValue": 1.5,
+        "prior": 0.9354838709677419,
+        "score": 2.2016129032258065,
+        "styleScore": -0.06301271122543735,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_41_49",
+        "searchValue": 0.85,
+        "prior": 0.9032258064516129,
+        "score": 1.5274193548387096,
+        "styleScore": 0.03394180107637239,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.65
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_41_49",
+          "searchValue": 0.85,
+          "prior": 0.9032258064516129,
+          "score": 1.5274193548387096,
+          "styleScore": 0.03394180107637239,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.65
+        }
+      ],
+      "legalRoots": 62,
+      "normalRoots": 14
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "groupId": "shift-probe:2410:270",
+      "normal": {
+        "move": "place_14",
+        "searchValue": -0.44999999999999996,
+        "prior": 0.8421052631578947,
+        "score": 0.18157894736842106,
+        "styleScore": 0.08487773943511326,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_14",
+      "full": {
+        "move": "place_14",
+        "searchValue": -0.44999999999999996,
+        "prior": 0.8421052631578947,
+        "score": 0.18157894736842106,
+        "styleScore": 0.08487773943511326,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_44_52",
+        "searchValue": -1.1,
+        "prior": 0.9649122807017544,
+        "score": -0.37631578947368427,
+        "styleScore": 0.06710153544672325,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6500000000000001
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_44_52",
+          "searchValue": -1.1,
+          "prior": 0.9649122807017544,
+          "score": -0.37631578947368427,
+          "styleScore": 0.06710153544672325,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6500000000000001
+        }
+      ],
+      "legalRoots": 57,
+      "normalRoots": 15
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "groupId": "shift-probe:2410:218",
+      "normal": {
+        "move": "place_51",
+        "searchValue": 9.15,
+        "prior": 0.8108108108108109,
+        "score": 9.75810810810811,
+        "styleScore": -0.007587699839708525,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_51",
+      "full": {
+        "move": "place_51",
+        "searchValue": 9.15,
+        "prior": 0.8108108108108109,
+        "score": 9.75810810810811,
+        "styleScore": -0.007587699839708525,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_49_50",
+        "searchValue": 8.5,
+        "prior": 0.8648648648648649,
+        "score": 9.14864864864865,
+        "styleScore": 0.011781344885374759,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6500000000000004
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_49_50",
+          "searchValue": 8.5,
+          "prior": 0.8648648648648649,
+          "score": 9.14864864864865,
+          "styleScore": 0.011781344885374759,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6500000000000004
+        }
+      ],
+      "legalRoots": 74,
+      "normalRoots": 14
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "groupId": "shift-probe:2410:454",
+      "normal": {
+        "move": "place_46",
+        "searchValue": 9.1,
+        "prior": 0.8596491228070176,
+        "score": 9.744736842105263,
+        "styleScore": 0.06046504802865353,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_46",
+      "full": {
+        "move": "place_46",
+        "searchValue": 9.1,
+        "prior": 0.8596491228070176,
+        "score": 9.744736842105263,
+        "styleScore": 0.06046504802865353,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_12_11",
+        "searchValue": 8.45,
+        "prior": 0.9824561403508771,
+        "score": 9.186842105263157,
+        "styleScore": 0.0674749568833141,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6500000000000004
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_12_11",
+          "searchValue": 8.45,
+          "prior": 0.9824561403508771,
+          "score": 9.186842105263157,
+          "styleScore": 0.0674749568833141,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6500000000000004
+        }
+      ],
+      "legalRoots": 57,
+      "normalRoots": 13
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "groupId": "shift-probe:2410:177",
+      "normal": {
+        "move": "place_47",
+        "searchValue": 0.1,
+        "prior": 0.8571428571428571,
+        "score": 0.7428571428571428,
+        "styleScore": 0.002499758475397837,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_47",
+      "full": {
+        "move": "place_47",
+        "searchValue": 0.1,
+        "prior": 0.8571428571428571,
+        "score": 0.7428571428571428,
+        "styleScore": 0.002499758475397837,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_30_38",
+        "searchValue": -0.04999999999999999,
+        "prior": 0.875,
+        "score": 0.60625,
+        "styleScore": 0.08051398476756562,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.15
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_30_38",
+          "searchValue": -0.04999999999999999,
+          "prior": 0.875,
+          "score": 0.60625,
+          "styleScore": 0.08051398476756562,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.15
+        },
+        {
+          "move": "shift_37_38",
+          "searchValue": -0.55,
+          "prior": 0.8928571428571429,
+          "score": 0.11964285714285716,
+          "styleScore": 0.04856841517118039,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.65
+        }
+      ],
+      "legalRoots": 56,
+      "normalRoots": 13
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "groupId": "shift-probe:2410:57",
+      "normal": {
+        "move": "remove_47",
+        "searchValue": -0.3,
+        "prior": 1,
+        "score": 0.45,
+        "styleScore": 0.21257262570209032,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "remove_47",
+      "full": {
+        "move": "remove_47",
+        "searchValue": -0.3,
+        "prior": 1,
+        "score": 0.45,
+        "styleScore": 0.21257262570209032,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_57_49",
+        "searchValue": -0.55,
+        "prior": 0.9436619718309859,
+        "score": 0.15774647887323934,
+        "styleScore": 0.07518660008810138,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.25000000000000006
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_57_49",
+          "searchValue": -0.55,
+          "prior": 0.9436619718309859,
+          "score": 0.15774647887323934,
+          "styleScore": 0.07518660008810138,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.25000000000000006
+        }
+      ],
+      "legalRoots": 71,
+      "normalRoots": 15
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "groupId": "shift-probe:2410:359",
+      "normal": {
+        "move": "place_43",
+        "searchValue": -16,
+        "prior": 0.9193548387096774,
+        "score": -15.310483870967742,
+        "styleScore": -0.0809672525000906,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_43",
+      "full": {
+        "move": "place_43",
+        "searchValue": -16,
+        "prior": 0.9193548387096774,
+        "score": -15.310483870967742,
+        "styleScore": -0.0809672525000906,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_53_52",
+        "searchValue": -16.65,
+        "prior": 0.8387096774193549,
+        "score": -16.020967741935483,
+        "styleScore": 0.01962540076887259,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6499999999999986
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_53_52",
+          "searchValue": -16.65,
+          "prior": 0.8387096774193549,
+          "score": -16.020967741935483,
+          "styleScore": 0.01962540076887259,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6499999999999986
+        }
+      ],
+      "legalRoots": 62,
+      "normalRoots": 13
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "groupId": "shift-probe:2410:479",
+      "normal": {
+        "move": "place_18",
+        "searchValue": 12.2,
+        "prior": 0.918918918918919,
+        "score": 12.889189189189189,
+        "styleScore": -0.04599670251542467,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_18",
+      "full": {
+        "move": "place_18",
+        "searchValue": 12.2,
+        "prior": 0.918918918918919,
+        "score": 12.889189189189189,
+        "styleScore": -0.04599670251542467,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_28_36",
+        "searchValue": 11.55,
+        "prior": 0.8513513513513513,
+        "score": 12.188513513513515,
+        "styleScore": 0.005309000461372788,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.6499999999999986
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_28_36",
+          "searchValue": 11.55,
+          "prior": 0.8513513513513513,
+          "score": 12.188513513513515,
+          "styleScore": 0.005309000461372788,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.6499999999999986
+        }
+      ],
+      "legalRoots": 74,
+      "normalRoots": 15
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "groupId": "shift-probe:2410:441",
+      "normal": {
+        "move": "place_48",
+        "searchValue": 2.8,
+        "prior": 0.8627450980392157,
+        "score": 3.4470588235294115,
+        "styleScore": -0.023418275538629265,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_48",
+      "full": {
+        "move": "place_48",
+        "searchValue": 2.8,
+        "prior": 0.8627450980392157,
+        "score": 3.4470588235294115,
+        "styleScore": -0.023418275538629265,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_58_57",
+        "searchValue": 2.15,
+        "prior": 0.5098039215686274,
+        "score": 2.5323529411764705,
+        "styleScore": 0.10165976428766883,
+        "inNormalBeam": false,
+        "gapToFullBest": -0.6499999999999999
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_58_57",
+          "searchValue": 2.15,
+          "prior": 0.5098039215686274,
+          "score": 2.5323529411764705,
+          "styleScore": 0.10165976428766883,
+          "inNormalBeam": false,
+          "gapToFullBest": -0.6499999999999999
+        }
+      ],
+      "legalRoots": 51,
+      "normalRoots": 13
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "groupId": "shift-probe:2410:251",
+      "normal": {
+        "move": "place_53",
+        "searchValue": 0.55,
+        "prior": 0.9047619047619048,
+        "score": 1.2285714285714286,
+        "styleScore": -0.05186371534241159,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "styledChoice": "place_53",
+      "full": {
+        "move": "place_53",
+        "searchValue": 0.55,
+        "prior": 0.9047619047619048,
+        "score": 1.2285714285714286,
+        "styleScore": -0.05186371534241159,
+        "inNormalBeam": true,
+        "gapToFullBest": 0
+      },
+      "bestShift": {
+        "move": "shift_52_53",
+        "searchValue": -0.1,
+        "prior": 0.8888888888888888,
+        "score": 0.5666666666666667,
+        "styleScore": 0.0647545818063328,
+        "inNormalBeam": true,
+        "gapToFullBest": -0.65
+      },
+      "nearBestShifts": [
+        {
+          "move": "shift_52_53",
+          "searchValue": -0.1,
+          "prior": 0.8888888888888888,
+          "score": 0.5666666666666667,
+          "styleScore": 0.0647545818063328,
+          "inNormalBeam": true,
+          "gapToFullBest": -0.65
+        }
+      ],
+      "legalRoots": 63,
+      "normalRoots": 13
+    }
+  ]
+}

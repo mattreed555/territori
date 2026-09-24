@@ -1,0 +1,1078 @@
+{
+  "purpose": "DEVELOPMENT targeted shifts and repeat controls; not acceptance or representative action frequencies",
+  "hashes": {
+    "experiments/jev-replacement/20260924-shift-10/positions.json": "c105f0a3c0398e712291bda5ee5475f02d883d27be04794bd379b34c7f488390",
+    "experiments/jev-replacement/20260924-shift-10/random-traces.jsonl.gz": "a9185aae7bb23de4e1648bbecd886d89b888c88719cd8dfc7f6a5ee16038c878",
+    "experiments/jev-replacement/20260924-shift-10/probe/labels.jsonl.gz": "5111b892bf24f5a6eb492577b5c81d2524086d7644f1f9cba4b7370c6fa8e036",
+    "experiments/jev-replacement/20260924-shift-10/probe/usage.jsonl.gz": "2f8671dd94dc05669db9329f5785b146429163c7df32d7d4eaa30b8afd7aae38",
+    "experiments/jev-replacement/20260924-shift-10/probe/summary.json": "2335ae9cd9b4b26892a13a4f9f25c527e68dd78d83590db1ebdef97043cd4ef0",
+    "experiments/jev-replacement/20260924-style-06/probe/labels.jsonl.gz": "4141ed0abd0f495ce24fc7dacbca7ebb90017f4aae0f4dd84e718aadd65300d1",
+    "experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json": "53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb",
+    "experiments/jev-replacement/20260924-residual-08/style-ridge-0.1.json": "75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db",
+    "scripts/ai/analyze-repeat-probe.mjs": "86d6fff49bbd1e86046e95b2b5b376cc978bc052db5fd0e6adced0ffa64d331c",
+    "lib/ai/repeated-probe.ts": "c4d40e841747a041cd80e0d5316e558a6a9c4904ca7c21b09070425f4e495548",
+    "lib/ai/style-training.ts": "6fac9d95b16987e5cccdac78a0cc9fb95d002283c41db4a16457cc24bc4ecc82",
+    "lib/ai/style.ts": "80f8c45ba6cd59fc6624297ac67b76426c031beb6496a435d289a9cd96139b6a",
+    "lib/ai/search.ts": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a"
+  },
+  "integrity": {
+    "labels": 120,
+    "positions": 12,
+    "positionsReplayed": true,
+    "usageAndChoicesReconciled": true,
+    "costNano": 66640308,
+    "inputTokens": 1586674,
+    "outputTokens": 87243,
+    "finalResultsInvented": 0
+  },
+  "teacher": {
+    "Aggressive": {
+      "responses": 24,
+      "types": {
+        "place": 6,
+        "remove": 16,
+        "shift": 2
+      },
+      "meanShiftProbability": 0.08381734006734005,
+      "repeatChoiceChanges": 0,
+      "repeatMeanTV": 0.06454545454545453
+    },
+    "Cautious": {
+      "responses": 24,
+      "types": {
+        "place": 6,
+        "remove": 16,
+        "shift": 2
+      },
+      "meanShiftProbability": 0.11399410774410772,
+      "repeatChoiceChanges": 1,
+      "repeatMeanTV": 0.05948653198653198
+    },
+    "Expansive": {
+      "responses": 24,
+      "types": {
+        "place": 10,
+        "remove": 14,
+        "shift": 0
+      },
+      "meanShiftProbability": 0.09374579124579124,
+      "repeatChoiceChanges": 1,
+      "repeatMeanTV": 0.0645117845117845
+    },
+    "Fluid": {
+      "responses": 24,
+      "types": {
+        "place": 7,
+        "remove": 16,
+        "shift": 1
+      },
+      "meanShiftProbability": 0.10455808080808078,
+      "repeatChoiceChanges": 1,
+      "repeatMeanTV": 0.05771043771043771
+    },
+    "Balanced": {
+      "responses": 24,
+      "types": {
+        "place": 6,
+        "remove": 16,
+        "shift": 2
+      },
+      "meanShiftProbability": 0.0996590909090909,
+      "repeatChoiceChanges": 1,
+      "repeatMeanTV": 0.055075757575757577
+    }
+  },
+  "repeatRows": [
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.10767676767676762
+    },
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.06060606060606055
+    },
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.11111111111111113
+    },
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.055959595959595945
+    },
+    {
+      "positionId": "shift-probe:2410:322:64",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.08080808080808077
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.03030303030303031
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.05050505050505049
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.02000000000000001
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.020000000000000007
+    },
+    {
+      "positionId": "shift-probe:2410:30:48",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.05050505050505046
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.06464646464646465
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.06555555555555553
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.060606060606060615
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.054545454545454536
+    },
+    {
+      "positionId": "shift-probe:2410:332:88",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.07808080808080811
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.0771717171717172
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.04515151515151514
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.09090909090909094
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.10101010101010106
+    },
+    {
+      "positionId": "shift-probe:2410:270:48",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.09090909090909088
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.04929292929292929
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.029494949494949532
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.04161616161616155
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0
+    },
+    {
+      "positionId": "shift-probe:2410:218:88",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.010000000000000005
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.07777777777777778
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "strategy": "Cautious",
+      "choiceChanged": true,
+      "tv": 0.07
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "strategy": "Expansive",
+      "choiceChanged": true,
+      "tv": 0.09090909090909087
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "strategy": "Fluid",
+      "choiceChanged": true,
+      "tv": 0.11000000000000003
+    },
+    {
+      "positionId": "shift-probe:2410:454:72",
+      "strategy": "Balanced",
+      "choiceChanged": true,
+      "tv": 0.0505050505050505
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.05050505050505048
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.040404040404040394
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.08080808080808079
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.030303030303030287
+    },
+    {
+      "positionId": "shift-probe:2410:177:49",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.04040404040404041
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.030303030303030287
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.04909090909090909
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.03323232323232325
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.030303030303030314
+    },
+    {
+      "positionId": "shift-probe:2410:57:41",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.030000000000000006
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.04434343434343434
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.060606060606060594
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.04373737373737375
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.07333333333333328
+    },
+    {
+      "positionId": "shift-probe:2410:359:57",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.03848484848484846
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.09747474747474752
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.060606060606060594
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.0808080808080808
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.10101010101010104
+    },
+    {
+      "positionId": "shift-probe:2410:479:81",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.060606060606060615
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.03727272727272727
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.10101010101010098
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.08000000000000002
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.027979797979797993
+    },
+    {
+      "positionId": "shift-probe:2410:441:49",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.06999999999999992
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "strategy": "Aggressive",
+      "choiceChanged": false,
+      "tv": 0.10777777777777778
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "strategy": "Cautious",
+      "choiceChanged": false,
+      "tv": 0.08080808080808086
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "strategy": "Expansive",
+      "choiceChanged": false,
+      "tv": 0.0404040404040404
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "strategy": "Fluid",
+      "choiceChanged": false,
+      "tv": 0.08808080808080807
+    },
+    {
+      "positionId": "shift-probe:2410:251:73",
+      "strategy": "Balanced",
+      "choiceChanged": false,
+      "tv": 0.06060606060606061
+    }
+  ],
+  "betweenStrategies": [
+    {
+      "a": "Aggressive",
+      "b": "Cautious",
+      "positions": 12,
+      "different": 0,
+      "meanTV": 0.11053030303030305
+    },
+    {
+      "a": "Aggressive",
+      "b": "Expansive",
+      "positions": 12,
+      "different": 3,
+      "meanTV": 0.16604377104377105
+    },
+    {
+      "a": "Aggressive",
+      "b": "Fluid",
+      "positions": 12,
+      "different": 0,
+      "meanTV": 0.08672558922558925
+    },
+    {
+      "a": "Aggressive",
+      "b": "Balanced",
+      "positions": 12,
+      "different": 1,
+      "meanTV": 0.08936868686868689
+    },
+    {
+      "a": "Cautious",
+      "b": "Expansive",
+      "positions": 12,
+      "different": 3,
+      "meanTV": 0.12455387205387208
+    },
+    {
+      "a": "Cautious",
+      "b": "Fluid",
+      "positions": 12,
+      "different": 0,
+      "meanTV": 0.10179292929292931
+    },
+    {
+      "a": "Cautious",
+      "b": "Balanced",
+      "positions": 12,
+      "different": 1,
+      "meanTV": 0.08737373737373737
+    },
+    {
+      "a": "Expansive",
+      "b": "Fluid",
+      "positions": 12,
+      "different": 3,
+      "meanTV": 0.16074915824915828
+    },
+    {
+      "a": "Expansive",
+      "b": "Balanced",
+      "positions": 12,
+      "different": 3,
+      "meanTV": 0.1363720538720539
+    },
+    {
+      "a": "Fluid",
+      "b": "Balanced",
+      "positions": 12,
+      "different": 1,
+      "meanTV": 0.08264309764309764
+    }
+  ],
+  "split": {
+    "passUsedForTraining": 0,
+    "trainPositions": 20,
+    "testPositions": 12,
+    "testGroupIds": [
+      "20260921-all-strategies-01:5",
+      "20260921-all-strategies-01:8",
+      "20260921-all-strategies-01:0",
+      "probe-random:2406:6",
+      "probe-random:2406:4",
+      "shift-probe:2410:332",
+      "shift-probe:2410:454",
+      "shift-probe:2410:359",
+      "shift-probe:2410:251"
+    ],
+    "repeatedTrainingContexts": 0
+  },
+  "configuration": {
+    "ridge": 0.1,
+    "weight": 0.5,
+    "margin": 1
+  },
+  "compressedStyleBytes": 1357,
+  "evaluation": {
+    "base": {
+      "states": 60,
+      "agreement": 0.23333333333333334,
+      "meanRank": 7.9,
+      "byDomain": {
+        "original": {
+          "states": 40,
+          "agreement": 0.35,
+          "meanRank": 7.175
+        },
+        "targeted-shift": {
+          "states": 20,
+          "agreement": 0,
+          "meanRank": 9.35
+        }
+      },
+      "byStrategy": {
+        "Aggressive": {
+          "states": 12,
+          "agreement": 0.16666666666666666,
+          "meanRank": 7.833333333333333,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.08333333333333333,
+            "opponentExposureChange": 0.4166666666666667,
+            "ownGroupChange": 0.16666666666666666,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Cautious": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 8.916666666666666,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.5,
+            "ownGroupChange": 0.25,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Expansive": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 6.5,
+          "localShifts": 0,
+          "teacherShifts": 0,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.5,
+            "ownGroupChange": 0.25,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Fluid": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 8.25,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.4166666666666667,
+            "ownGroupChange": 0.25,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Balanced": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 8,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.5833333333333334,
+            "ownGroupChange": 0.25,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        }
+      },
+      "byTeacherType": {
+        "place": {
+          "states": 36,
+          "agreement": 0.25,
+          "meanRank": 9.027777777777779
+        },
+        "remove": {
+          "states": 20,
+          "agreement": 0.25,
+          "meanRank": 4.6
+        },
+        "shift": {
+          "states": 4,
+          "agreement": 0,
+          "meanRank": 14.25
+        }
+      },
+      "pairs": [
+        {
+          "a": "Aggressive",
+          "b": "Cautious",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Aggressive",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Aggressive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 3
+        },
+        {
+          "a": "Aggressive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 3
+        },
+        {
+          "a": "Cautious",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 0
+        },
+        {
+          "a": "Cautious",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 1
+        },
+        {
+          "a": "Cautious",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 1
+        },
+        {
+          "a": "Expansive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 1
+        },
+        {
+          "a": "Expansive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 1
+        },
+        {
+          "a": "Fluid",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 2
+        }
+      ]
+    },
+    "previous": {
+      "states": 60,
+      "agreement": 0.23333333333333334,
+      "meanRank": 7.933333333333334,
+      "byDomain": {
+        "original": {
+          "states": 40,
+          "agreement": 0.35,
+          "meanRank": 7.05
+        },
+        "targeted-shift": {
+          "states": 20,
+          "agreement": 0,
+          "meanRank": 9.7
+        }
+      },
+      "byStrategy": {
+        "Aggressive": {
+          "states": 12,
+          "agreement": 0.16666666666666666,
+          "meanRank": 7.416666666666667,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.25,
+            "opponentExposureChange": 0.3333333333333333,
+            "ownGroupChange": 0.16666666666666666,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Cautious": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 9.083333333333334,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.25,
+            "ownGroupChange": 0.25,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Expansive": {
+          "states": 12,
+          "agreement": 0.3333333333333333,
+          "meanRank": 6.25,
+          "localShifts": 0,
+          "teacherShifts": 0,
+          "localFeatureMeans": {
+            "ownExposureChange": -0.08333333333333333,
+            "opponentExposureChange": 0.4166666666666667,
+            "ownGroupChange": 0.25,
+            "spreadChange": 3.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Fluid": {
+          "states": 12,
+          "agreement": 0.16666666666666666,
+          "meanRank": 8.5,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.08333333333333333,
+            "opponentExposureChange": 0.5,
+            "ownGroupChange": 0.16666666666666666,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Balanced": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 8.416666666666666,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.08333333333333333,
+            "opponentExposureChange": 0.5833333333333334,
+            "ownGroupChange": 0.25,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        }
+      },
+      "byTeacherType": {
+        "place": {
+          "states": 36,
+          "agreement": 0.25,
+          "meanRank": 8.86111111111111
+        },
+        "remove": {
+          "states": 20,
+          "agreement": 0.25,
+          "meanRank": 5
+        },
+        "shift": {
+          "states": 4,
+          "agreement": 0,
+          "meanRank": 14.25
+        }
+      },
+      "pairs": [
+        {
+          "a": "Aggressive",
+          "b": "Cautious",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Aggressive",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 4
+        },
+        {
+          "a": "Aggressive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Aggressive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 5
+        },
+        {
+          "a": "Cautious",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Cautious",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Cautious",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 4
+        },
+        {
+          "a": "Expansive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Expansive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 3
+        },
+        {
+          "a": "Fluid",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 4
+        }
+      ]
+    },
+    "refit": {
+      "states": 60,
+      "agreement": 0.21666666666666667,
+      "meanRank": 7.966666666666667,
+      "byDomain": {
+        "original": {
+          "states": 40,
+          "agreement": 0.325,
+          "meanRank": 7.1
+        },
+        "targeted-shift": {
+          "states": 20,
+          "agreement": 0,
+          "meanRank": 9.7
+        }
+      },
+      "byStrategy": {
+        "Aggressive": {
+          "states": 12,
+          "agreement": 0.08333333333333333,
+          "meanRank": 7.666666666666667,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.25,
+            "opponentExposureChange": 0.3333333333333333,
+            "ownGroupChange": 0.16666666666666666,
+            "spreadChange": 2,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Cautious": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 9.083333333333334,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.4166666666666667,
+            "ownGroupChange": 0.25,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Expansive": {
+          "states": 12,
+          "agreement": 0.3333333333333333,
+          "meanRank": 6.25,
+          "localShifts": 0,
+          "teacherShifts": 0,
+          "localFeatureMeans": {
+            "ownExposureChange": -0.08333333333333333,
+            "opponentExposureChange": 0.4166666666666667,
+            "ownGroupChange": 0.25,
+            "spreadChange": 3.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Fluid": {
+          "states": 12,
+          "agreement": 0.16666666666666666,
+          "meanRank": 8.5,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0.08333333333333333,
+            "opponentExposureChange": 0.3333333333333333,
+            "ownGroupChange": 0.16666666666666666,
+            "spreadChange": 1.5,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        },
+        "Balanced": {
+          "states": 12,
+          "agreement": 0.25,
+          "meanRank": 8.333333333333334,
+          "localShifts": 0,
+          "teacherShifts": 1,
+          "localFeatureMeans": {
+            "ownExposureChange": 0,
+            "opponentExposureChange": 0.5833333333333334,
+            "ownGroupChange": 0.25,
+            "spreadChange": 2.8333333333333335,
+            "place": 0.9166666666666666,
+            "remove": 0.08333333333333333,
+            "shift": 0
+          }
+        }
+      },
+      "byTeacherType": {
+        "place": {
+          "states": 36,
+          "agreement": 0.2222222222222222,
+          "meanRank": 8.916666666666666
+        },
+        "remove": {
+          "states": 20,
+          "agreement": 0.25,
+          "meanRank": 5
+        },
+        "shift": {
+          "states": 4,
+          "agreement": 0,
+          "meanRank": 14.25
+        }
+      },
+      "pairs": [
+        {
+          "a": "Aggressive",
+          "b": "Cautious",
+          "positions": 12,
+          "localDifferent": 4
+        },
+        {
+          "a": "Aggressive",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 5
+        },
+        {
+          "a": "Aggressive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Aggressive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 6
+        },
+        {
+          "a": "Cautious",
+          "b": "Expansive",
+          "positions": 12,
+          "localDifferent": 1
+        },
+        {
+          "a": "Cautious",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Cautious",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Expansive",
+          "b": "Fluid",
+          "positions": 12,
+          "localDifferent": 3
+        },
+        {
+          "a": "Expansive",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 2
+        },
+        {
+          "a": "Fluid",
+          "b": "Balanced",
+          "positions": 12,
+          "localDifferent": 4
+        }
+      ]
+    }
+  }
+}

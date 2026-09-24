@@ -1,5 +1,19 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — targeted shifts with repeated-response controls (latest)
+
+Session `20260924-shift-10` is CLOSED. Reconciled GitHub `d9314e796ff3386dcb8bac75f6d7773173962413`, local `5deb64224387dab16b2d0de2e45f5528d22f237a` and unchanged public Sites version14. Lease/budget commit `6d959e2f7230dba33c1461d7f9e605b6544e6970`; teacher-blind inputs and collector frozen in `fce006f6de837a46ae9acd9ad64ae11116046dc2` before calls. No rule/UI/default/audience/deployment changes or new dependencies.
+
+Collected120 labels: twelve new legally replayable targeted shift positions, all five strategies, two identical-input passes. All calls, raw responses, usage and choices reconcile. Four/60 repeats change choice; mean within-strategy total variation0.0603 versus between-strategy0.0826–0.1660. Aggressive/Cautious/Fluid choose identically on all12 first-pass positions; Fluid shifts only1/24 responses versus Cautious2/24. These repeated, selected states do NOT establish a distinctive Fluid preference, representative frequencies or style significance.
+
+Predeclared ridge0.1/weight0.5 refit uses only first-pass labels plus prior100 labels,20 train/12 held-out positions; no source-group or exact-context leakage. Held-out agreement21.67% versus23.33% for previous residual/base, teacher rank7.97 versus7.93. All get0/20 on new targeted holdout labels; no local held-out Fluid shifts. Full-width audit still selects no shifts; only1/12 boards omits all near-best shifts from the normal beam. Scoring/weak teacher style signal, not simply missing candidates, is the main issue here. **Do not promote the refit or purchase another blind similar batch.**
+
+Forty free games, old and refitted residuals separately against frozen base search, same seeds/colors: both5W11D4L (52.5%) in20 games, identical corresponding outcomes, wide intervals. All2,486 decisions/40 results replay exactly; no aborts/truncations/repetitions/illegal choices. **45 tests, TypeScript and build pass.** New residual gzip1,357 bytes. Exact code, models, logs, controls, metrics and reproduction: `20260924-shift-10/README.md`. No new independent acceptance games or mobile/browser test. Jev remains live; **replacement is not ready**.
+
+Cost **$0.066640308** (1,586,674 input tokens;87,243 free output), no retries/uncertainty. Pricing/usage reverified2026-09-24. Cumulative **$0.727300182**, remaining **$3.522699818**, including protected **$3.25** acceptance reserve; discretionary **$0.272699818**. No active financial reservation.
+
+Next: offline investigation of a small strategy-intent regularizer/alternative style score that can express useful shifts within tactical limits, comparing authored intent separately from learned teacher evidence. The current teacher sample itself lacks a clear Fluid distinction; a bigger model or more blind labels is not justified. Preserve strength and test common-state behavior/free matches before any paid acceptance suite. Mobile-class browser measurement (required preview-control skill was unavailable in session09), all-five style validation, frozen independent200-game evaluation, no-API UI integration and deployment remain. Do not lower readiness gates. This supersedes older next steps.
+
 ## 2026-09-24 — behavior-preserving runtime optimization (latest)
 
 Session `20260924-runtime-09` is CLOSED. Reconciled GitHub `a7424bfa51b48bbcda86cd68ec785857391c1ca2`, local `072d349a870fd6e0ebcf18eba119327f819faf30` and unchanged public Sites version14. Offline lease commit `b29b712029b8be8932cdf510777aaf7db2eab9ce` preceded work. No paid calls, dependency/model changes, UI/default/audience changes or deployment.
