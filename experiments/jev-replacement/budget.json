@@ -4,7 +4,7 @@
   "unit": "nanodollars",
   "allowanceNano": 4250000000,
   "evaluationReserveNano": 3250000000,
-  "spentUpperNano": 606310194,
+  "spentUpperNano": 660659874,
   "scope": "Additional replacement work starting 2026-09-21; bootstrap-smoke predates the stated $4.25 balance and is excluded. Does not meter unrelated public-site play.",
   "pricing": {
     "verifiedAt": "2026-09-24T03:42:00Z",
@@ -20,11 +20,17 @@
     {
       "id": "20260924-style-06-probe",
       "purpose": "development-style-probe",
-      "status": "reserved",
+      "status": "closed",
       "capNano": 100000000,
       "createdAt": "2026-09-24T03:43:00Z",
       "expiresAt": "2026-09-24T04:40:00Z",
-      "note": "At most 20 common positions x five strategies. Counterfactual labels only, no invented game outcomes. No retries. Preserve $3.25 acceptance reserve."
+      "note": "At most 20 common positions x five strategies. Counterfactual labels only, no invented game outcomes. No retries. Preserve $3.25 acceptance reserve.",
+      "closedAt": "2026-09-24T03:49:52.235Z",
+      "calls": 100,
+      "inputTokens": 1294040,
+      "outputTokens": 72633,
+      "spentUpperNano": 54349680,
+      "uncertain": false
     },
     {
       "id": "20260924-search-05-devmatches",

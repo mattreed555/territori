@@ -1,10 +1,20 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
 import {loadModules} from '../scripts/ai/modules.mjs';
 const load=await loadModules(),rules=await load('game/rules'),{validateModel,seededRandom}=await load('ai/policy'),{searchValue,rankSearchMoves,chooseSearchMove}=await load('ai/search');
 const model=validateModel(JSON.parse(await fs.readFile(new URL('../experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json',import.meta.url),'utf8')));
 const {newGame,applyMove,legalMoves,moveId,score}=rules;
+test('a losing learned beam widens to find a shift that defers terminal loss',async()=>{
+ const positions=JSON.parse(gunzipSync(await fs.readFile(new URL('../experiments/jev-replacement/20260924-style-06/positions.json.gz',import.meta.url)))).positions;
+ const g=positions.find(p=>p.category==='shift-defers-visible-terminal-loss').state;
+ for(const strategy of ['Aggressive','Cautious','Expansive','Fluid','Balanced']){
+  const result=rankSearchMoves(g,strategy,model);
+  assert.equal(result.expandedForSafety,true);assert.equal(result.ranked.length,legalMoves(g).length);
+  assert.equal(result.ranked[0].move.type,'shift');assert.ok(result.ranked[0].searchValue>-10000);
+ }
+});
 test('batched successor enumeration equals validated engine through seeded games',()=>{
  const random=seededRandom(2404);
  for(let game=0;game<4;game++){

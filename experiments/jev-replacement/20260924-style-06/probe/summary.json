@@ -1,0 +1,10 @@
+{
+  "completed": 100,
+  "requestedLabels": 100,
+  "failure": null,
+  "calls": 100,
+  "inputTokens": 1294040,
+  "outputTokens": 72633,
+  "spentUpperNano": 54349680,
+  "uncertain": false
+}

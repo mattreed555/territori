@@ -1,0 +1,12 @@
+{
+  "runId": "20260924-style-06-probe",
+  "sourceCommit": "d462e746a4abe3f2e4789514f5f04a61b1fa8038",
+  "positionsSha256": "71955f64ce9954ac7aa88d3871ef7296f96d6843249817d628e2a8e5487d8917",
+  "collectorSha256": "410bd2eef6f14c4c219ce61ca2ceb4f63b1c5719a224905a2d62d60099931dc5",
+  "promptSha256": "7730309736cce20b41538ff3db84fe6fc65b7407c3c55c2b0fa20b3accc654fc",
+  "strategiesSha256": "7004e4d1cc2898652c5b68ee118383de7a35fff48ac39ec338a8fe215ea6f0c8",
+  "purpose": "DEVELOPMENT counterfactual labels only; no played outcomes; split by groupId if used for training",
+  "endpoint": "https://territori.matthew-l-reed.chatgpt.site/api/robot",
+  "requestedLabels": 100,
+  "startedAt": "2026-09-24T03:49:12.545Z"
+}

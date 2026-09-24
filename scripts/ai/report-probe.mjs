@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import path from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import assert from 'node:assert/strict';
 import {parseArgs} from 'node:util';
@@ -6,9 +7,20 @@ import {loadModules} from './modules.mjs';
 import {atomicJSON,chargeForUsage} from './budget.mjs';
 const {values:v}=parseArgs({options:{run:{type:'string'},positions:{type:'string'},model:{type:'string'}}});
 if(!v.run||!v.positions||!v.model)throw Error('Use --run directory --positions positions.json.gz --model policy.json');
-const load=await loadModules(),{STRATEGIES}=await load('game/strategies'),{recordCounterfactual}=await load('ai/counterfactual'),{moveFeatures}=await load('ai/features'),{teacherTargets}=await load('ai/training'),{validateModel}=await load('ai/policy'),{rankSearchMoves}=await load('ai/search'),{moveId}=await load('game/rules');
+const load=await loadModules(),{STRATEGIES}=await load('game/strategies'),{recordCounterfactual}=await load('ai/counterfactual'),{moveFeatures}=await load('ai/features'),{teacherTargets}=await load('ai/training'),{validateModel}=await load('ai/policy'),{rankSearchMoves,SEARCH_VERSION}=await load('ai/search'),{moveId,newGame,applyMove}=await load('game/rules');
 const positions=JSON.parse(gunzipSync(await fs.readFile(v.positions))).positions;
 const lines=async file=>gunzipSync(await fs.readFile(file)).toString().trim().split('\n').map(JSON.parse);
+const traces=await lines(path.join(path.dirname(v.positions),'random-traces.jsonl.gz')),sources=new Map();
+for(const p of positions){
+ if(p.origin==='seeded legal random-play trace'){
+  const trace=traces.find(t=>t.id===p.groupId);assert.ok(trace);let game=newGame();
+  for(const move of trace.moves.slice(0,p.state.ply))game=applyMove(game,move);
+  assert.deepEqual(p.state,game);
+ }else{
+  if(!sources.has(p.origin))sources.set(p.origin,await lines(p.origin));
+  const original=sources.get(p.origin).find(r=>r.kind==='decision'&&'saved:'+r.id===p.id);assert.ok(original);assert.deepEqual(p.state,original.state);assert.equal(p.groupId,original.gameId);
+ }
+}
 const labels=await lines(`${v.run}/labels.jsonl.gz`),journal=await lines(`${v.run}/usage.jsonl.gz`),summary=JSON.parse(await fs.readFile(`${v.run}/summary.json`));
 const model=validateModel(JSON.parse(await fs.readFile(v.model))),strategies=Object.keys(STRATEGIES),features=['territoryGain','opponentTerritoryLost','ownExposureChange','opponentExposureChange','ownGroupChange','spreadChange','place','remove','shift'];
 const requests=journal.filter(e=>e.kind==='request'),usage=journal.filter(e=>e.kind==='usage');
@@ -32,5 +44,5 @@ const pairwise=[];for(let a=0;a<strategies.length;a++)for(let b=a+1;b<strategies
  const pairs=complete.map(p=>[rows.find(r=>r.positionId===p.id&&r.strategy===strategies[a]),rows.find(r=>r.positionId===p.id&&r.strategy===strategies[b])]);
  pairwise.push({a:strategies[a],b:strategies[b],positions:pairs.length,teacherDifferent:pairs.filter(([a,b])=>a.teacher!==b.teacher).length,localDifferent:pairs.filter(([a,b])=>a.local!==b.local).length,meanTeacherTotalVariation:pairs.reduce((s,[a,b])=>s+a.probabilities.reduce((n,p,i)=>n+Math.abs(p-b.probabilities[i]),0)/2,0)/pairs.length});
 }
-await atomicJSON(`${v.run}/analysis.json`,{purpose:'Common-state DEVELOPMENT probe, not match outcomes or acceptance',limitations:['Targeted twenty-position sample, not representative frequency estimates','One teacher response per strategy/state; no repeated same-strategy control for provider noise','Shift sampling proxy does not prove long-term optimality','All future splits must group source groupId, not strategy-specific decision.gameId'],integrity:{labels:labels.length,completePositions:complete.length,inputTokens:input,freeOutputTokens:output,costNano:cost,allUsageAndChoicesVerified:true,finalResultsInvented:0},byStrategy,pairwise,rows});
+await atomicJSON(`${v.run}/analysis.json`,{purpose:'Common-state DEVELOPMENT probe, not match outcomes or acceptance',searchVersion:SEARCH_VERSION,limitations:['Targeted twenty-position sample, not representative frequency estimates','One teacher response per strategy/state; no repeated same-strategy control for provider noise','Shift sampling proxy does not prove long-term optimality','All future splits must group source groupId, not strategy-specific decision.gameId'],integrity:{labels:labels.length,completePositions:complete.length,inputTokens:input,freeOutputTokens:output,costNano:cost,allUsageAndChoicesVerified:true,positionsReplayedOrMatchedToSource:true,finalResultsInvented:0},byStrategy,pairwise,rows});
 console.log(JSON.stringify({completePositions:complete.length,costNano:cost,types:Object.fromEntries(strategies.map(s=>[s,byStrategy[s].chosenTypes])),pairwise}));

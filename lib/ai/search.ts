@@ -3,7 +3,7 @@ import { applyMove, legalSuccessors, moveId, neighbors, other, score, RULES, typ
 import type { Strategy } from '../game/strategies';
 import { rankMoves, type PolicyModel } from './policy';
 
-export const SEARCH_VERSION = 1;
+export const SEARCH_VERSION = 2;
 export type SearchOptions = { policyBeam?: number; staticBeam?: number; priorWeight?: number };
 export const DEFAULT_SEARCH = { policyBeam: 12, staticBeam: 8, priorWeight: .75 } as const;
 const adjacency = Array.from({length: RULES.size ** 2}, (_, i) => neighbors(i));
@@ -50,7 +50,7 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
   const included = new Set(roots.slice(0, config.policyBeam || roots.length).map(r => moveId(r.move)));
   for (const root of [...roots].sort((a,b) => b.value-a.value).slice(0, config.staticBeam)) included.add(moveId(root.move));
   let nodes = roots.length;
-  const result = roots.filter(r => r.next.ended || included.has(moveId(r.move))).map(root => {
+  const evaluateRoot = (root: typeof roots[number]) => {
     let worst = root.value, reply: Move | null = null;
     // Include ALL opposing placements, shifts and captures, not just captures.
     for (const child of legalSuccessors(root.next)) {
@@ -59,13 +59,23 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
     }
     return {move: root.move, score: worst + config.priorWeight * root.prior,
       searchValue: worst, immediateValue: root.value, prior: root.prior, worstReply: reply};
-  }).sort((a,b) => b.score-a.score || moveId(a.move).localeCompare(moveId(b.move)));
+  };
+  const result = roots.filter(r => r.next.ended || included.has(moveId(r.move))).map(evaluateRoot);
+  // A learned beam can exclude every shift, including the only way to defer a
+  // visible terminal loss. If all searched options lose within two plies, widen
+  // to EVERY root before accepting that loss. Normal winning play stays bounded.
+  const expandedForSafety = result.length > 0 && result.every(r => r.searchValue === -WIN) && result.length < roots.length;
+  if (expandedForSafety) {
+    const evaluated = new Set(result.map(r => moveId(r.move)));
+    result.push(...roots.filter(r => !evaluated.has(moveId(r.move))).map(evaluateRoot));
+  }
+  result.sort((a,b) => b.score-a.score || moveId(a.move).localeCompare(moveId(b.move)));
   // The beam policy never selects an unsearched root. Give those roots an
   // explicit trailing order (learned prior order) for complete policy-rank
   // diagnostics, without pretending their minimax values were computed.
   const searched = new Set(result.map(r => moveId(r.move)));
   const policyOrder = [...result.map(r => r.move), ...roots.filter(r => !searched.has(moveId(r.move))).map(r => r.move)];
-  return {ranked: result, policyOrder, nodes, legalRootCount: roots.length, config};
+  return {ranked: result, policyOrder, nodes, legalRootCount: roots.length, config, expandedForSafety};
 }
 
 export function chooseSearchMove(game: Game, strategy: Strategy, model: PolicyModel,

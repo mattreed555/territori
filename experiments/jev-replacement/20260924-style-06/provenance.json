@@ -1,0 +1,41 @@
+{
+  "runId": "20260924-style-06",
+  "baseGithubCommit": "ca90d7b82796e079bacbb04388bf8d3b7cf2c4ec",
+  "leaseCommit": "0091f92f7a96d4ecdb165b4c55b7e0c3d23c912d",
+  "collectionSource": "d462e746a4abe3f2e4789514f5f04a61b1fa8038",
+  "sites": {
+    "versionBefore": 14,
+    "versionAfter": 14,
+    "audience": "public",
+    "published": false
+  },
+  "testsPassed": 33,
+  "typeScriptPassed": true,
+  "searchVersionAfter": 2,
+  "paidLabels": 100,
+  "counterfactualPositionCount": 20,
+  "sourceGroupCount": 14,
+  "paidCostNano": 54349680,
+  "cumulativeNano": 660659874,
+  "remainingNano": 3589340126,
+  "acceptanceReserveNano": 3250000000,
+  "uncertain": false,
+  "hashes": {
+    "lib/ai/search.ts": "12ac0838f8802489c71c57665ef09b56b4d6af65b52ee28dadcd724cedb378e0",
+    "lib/ai/counterfactual.ts": "1afae5777513a145985c5af221b4c63b2479e48c3fd5c99209d2623187ee3ae7",
+    "scripts/ai/prepare-probe.mjs": "fa66047724de12e1473bf24ec5d790cd5a2a90889bb4cae3d54c12a1ada61479",
+    "scripts/ai/collect-probe.mjs": "410bd2eef6f14c4c219ce61ca2ceb4f63b1c5719a224905a2d62d60099931dc5",
+    "scripts/ai/report-probe.mjs": "eba72fbeb0a09ccbcb5e034a8e83506023fbb1afee3519f49601076ab2842cea",
+    "scripts/ai/replay-search.mjs": "1cb9ef3aca9ac4465baf00bc6e85e9442b1234d7b052570fc0f3172ae7a70673",
+    "experiments/jev-replacement/20260924-style-06/README.md": "078c2bf8e2215e2cf447634c72abfb6475cd0404aaeb387dc6ed799358befd51",
+    "experiments/jev-replacement/20260924-style-06/positions.json.gz": "71955f64ce9954ac7aa88d3871ef7296f96d6843249817d628e2a8e5487d8917",
+    "experiments/jev-replacement/20260924-style-06/probe/analysis-v1.json.gz": "d7d2d12364c9f7f27be5a0947d70364c65b9f780c5ecc4ec3a87db615066b095",
+    "experiments/jev-replacement/20260924-style-06/probe/analysis.json.gz": "dbe284c369239f13e78c103db0849ae51a62cce79c01d492d4914a0bf385ac12",
+    "experiments/jev-replacement/20260924-style-06/probe/labels.jsonl.gz": "4141ed0abd0f495ce24fc7dacbca7ebb90017f4aae0f4dd84e718aadd65300d1",
+    "experiments/jev-replacement/20260924-style-06/probe/provenance.json": "9c3d8b3ce207f3536ba2bbf01aa1a8a88bdde5dd7a8493246e513179bd525ee9",
+    "experiments/jev-replacement/20260924-style-06/probe/summary.json": "1b2d6597626c1ae2bfbc4c34ca19d50997939d8bdf172ef834c625a0d0601c3b",
+    "experiments/jev-replacement/20260924-style-06/probe/usage.jsonl.gz": "8723dcf056d5a4289ebc1dfb92f5b76a048125aa7a639b506132128a2fb2525e",
+    "experiments/jev-replacement/20260924-style-06/random-traces.jsonl.gz": "c9ca17ef501cb382581a5c3d4f41276c0728c3ad8b491816ee1e6adea47c44b7",
+    "experiments/jev-replacement/20260924-style-06/search-v2-replay.json": "4e3da51f57678c5154f656e352f940d4f704bd9510c37b7031259ce7007e041c"
+  }
+}

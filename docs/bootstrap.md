@@ -129,6 +129,18 @@ from student-visited games. Local decisions are excluded. `verify-session.mjs
 request, response usage and charge against the compressed journal. It rejects
 uncertain sessions rather than treating their costs as exact.
 
+Common-state strategy probes use `prepare-probe.mjs`, `collect-probe.mjs` and
+`report-probe.mjs`. They record a separate `counterfactual` event kind, not played
+games. Every label retains the source `groupId`; final results stay null. Existing
+training readers ignore these events intentionally. Any future training adapter
+must split by source group, including overlap with ordinary teacher-game data.
+See `experiments/jev-replacement/20260924-style-06/README.md` for the first probe.
+
+Search version 2 expands to all root moves if every initial beam move permits
+a terminal loss within two plies. This prevents a low-ranked but necessary shift
+from being excluded. `replay-search.mjs` compares new search code with a saved
+batch's local choices using the original seeds, without making API calls.
+
 Offline comparisons: `scripts/ai/compare.mjs` fits the original and optional
 capture-reply features with hard or normalized soft teacher targets. See
 `experiments/jev-replacement/20260921-tactical-02/README.md` for commands and

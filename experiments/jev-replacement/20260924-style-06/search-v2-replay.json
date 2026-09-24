@@ -1,0 +1,10 @@
+{
+  "purpose": "Offline observed-state replay, not new match outcomes",
+  "searchVersion": 2,
+  "originalSearchVersion": 1,
+  "sourceDatasetSha256": "1146fa7543217047f76c24bea61ee489a2062c644129ac1741da735a1ea0b9dc",
+  "total": 250,
+  "same": 250,
+  "expandedForSafety": 0,
+  "differences": []
+}

@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-style-06",
-  "status": "active",
+  "status": "closed",
   "purpose": "Common-position strategy probe and counterfactual collection tooling",
   "startedAt": "2026-09-24T03:43:00Z",
   "expiresAt": "2026-09-24T04:40:00Z",
-  "budgetReservationNano": 100000000,
-  "note": "Exclusive session. Up to $0.10 for at most 100 counterfactual teacher labels; keep $3.25 acceptance reserve. Do not overlap or release until usage reconciled."
+  "budgetReservationNano": 0,
+  "closedAt": "2026-09-24T03:56:00Z",
+  "note": "100 counterfactual labels and safety-fix evaluation completed. Exact $0.054349680 reconciled; no active reservation or uncertainty. Read newest progress and cumulative ledger before further work."
 }
