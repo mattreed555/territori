@@ -1,5 +1,5 @@
 /** Opt-in two-ply development policy. No API, dependency, or UI default change. */
-import { applyMove, legalSuccessors, moveId, neighbors, other, score, RULES, type Color, type Game, type Move } from '../game/rules';
+import { legalSuccessors, legalValueSuccessors, moveId, neighbors, other, score, RULES, type Color, type Game, type Move, type ValueState } from '../game/rules';
 import type { Strategy } from '../game/strategies';
 import { rankMoves, type PolicyModel } from './policy';
 
@@ -12,11 +12,7 @@ const WIN = 10000;
 /** Board points, not probabilities. Terminal scores use the actual tiebreak rule.
  * Supplies have a small positive value; captures never replenish them.
  */
-export function searchValue(game: Game, color: Color): number {
-  if (game.ended) {
-    const winner = score(game.board).winner;
-    return winner === color ? WIN : winner === null ? 0 : -WIN;
-  }
+export function searchValue(game: ValueState, color: Color): number {
   const enemy = other(color);
   let territory = 0, stones = 0, exposure = 0;
   for (let i = 0; i < game.board.length; i++) {
@@ -30,6 +26,11 @@ export function searchValue(game: Game, color: Color): number {
     else if (piece === enemy) { territory--; stones--; exposure -= Number(own > opposing); }
     else territory += own && !opposing ? 1 : opposing && !own ? -1 : 0;
   }
+  if (game.ended) {
+    // Connected-area scoring is needed only when the territory count ties.
+    const winner = territory === 0 ? score(game.board).winner : territory > 0 ? color : enemy;
+    return winner === color ? WIN : winner === null ? 0 : -WIN;
+  }
   return territory + .25 * stones - .5 * exposure + .1 * (game.supply[color] - game.supply[enemy]);
 }
 
@@ -42,8 +43,9 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
   if (!Number.isFinite(config.priorWeight) || config.priorWeight < 0 || config.priorWeight > 10)
     throw new Error('Search prior weight must be between 0 and 10');
   const ranked = rankMoves(game, strategy, model);
+  const successors = new Map([...legalSuccessors(game)].map(s=>[moveId(s.move),s.game]));
   const roots = ranked.map(({move}, index) => {
-    const next = applyMove(game, move);
+    const next = successors.get(moveId(move))!;
     return {move, next, value: searchValue(next, game.turn), prior: (ranked.length - index) / ranked.length};
   });
   // Always include every immediate terminal move. Zero policyBeam means full width.
@@ -53,8 +55,8 @@ export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyMod
   const evaluateRoot = (root: typeof roots[number]) => {
     let worst = root.value, reply: Move | null = null;
     // Include ALL opposing placements, shifts and captures, not just captures.
-    for (const child of legalSuccessors(root.next)) {
-      const value = searchValue(child.game, game.turn); nodes++;
+    for (const child of legalValueSuccessors(root.next)) {
+      const value = searchValue(child.state, game.turn); nodes++;
       if (reply === null || value < worst) { worst = value; reply = child.move; }
     }
     return {move: root.move, score: worst + config.priorWeight * root.prior,

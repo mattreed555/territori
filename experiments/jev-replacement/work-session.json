@@ -1,10 +1,11 @@
 {
   "version": 1,
   "id": "20260924-runtime-09",
-  "status": "active",
+  "status": "closed",
   "purpose": "Offline runtime profiling and behavior-preserving optimization",
   "startedAt": "2026-09-24T06:46:00Z",
   "expiresAt": "2026-09-24T07:40:00Z",
   "budgetReservationNano": 0,
-  "note": "No paid calls. Preserve live Jev and evaluation reserve; do not overlap."
+  "closedAt": "2026-09-24T07:00:16Z",
+  "note": "Offline runtime optimization complete; 600 outputs and 2550 seeded choices preserved. Zero cost. 44 tests, typecheck and build pass; mobile gate unmeasured. Live Jev unchanged."
 }

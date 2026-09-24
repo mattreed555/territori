@@ -1,0 +1,88 @@
+{
+  "session": "20260924-runtime-09",
+  "reconciledGitHub": "a7424bfa51b48bbcda86cd68ec785857391c1ca2",
+  "leaseCommit": "b29b712029b8be8932cdf510777aaf7db2eab9ce",
+  "reconciledLocal": "072d349a870fd6e0ebcf18eba119327f819faf30",
+  "site": {
+    "projectId": "appgprj_6ab0465ff30081919f07a4eb2d13014b",
+    "version": 14,
+    "audience": "public",
+    "changed": false
+  },
+  "paidCalls": 0,
+  "costNano": 0,
+  "cumulativeSpentUpperNano": 660659874,
+  "remainingNano": 3589340126,
+  "evaluationReserveNano": 3250000000,
+  "verification": {
+    "tests": 44,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "exactPolicyOutputs": 600,
+    "outputDifferences": 0,
+    "replayedGames": 40,
+    "replayedDecisions": 2550,
+    "newGames": 0,
+    "independentAcceptanceGames": 0,
+    "mobileLatency": "not measured; required managed-preview control-browser skill unavailable",
+    "readiness": false
+  },
+  "artifacts": {
+    "experiments/jev-replacement/20260924-runtime-09/README.md": {
+      "bytes": 5767,
+      "sha256": "46a52ca553980d215a1b4f22867c313bb6f6ebd1a127f5a4cd2cf2092131a2e5"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/after.json": {
+      "bytes": 203606,
+      "sha256": "a422784e3c812e275e1fbde7fc1540f3e7763d77659bbf28f1698da3e8ef6622"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/before.json": {
+      "bytes": 202241,
+      "sha256": "77cfc98ab9b045b198386b55183a877e8f9e5e3af0b648da4ea9d3e217d569f3"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/final.json": {
+      "bytes": 203631,
+      "sha256": "438bf3987f6670614fd844a25c6cdc9f139474e2e41c368dc6113f2941219e64"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/leaf-optimized.json": {
+      "bytes": 203654,
+      "sha256": "1b9a1644954322fe508d46aec8d5688af8d995a9cf51c26c8e3b4a931fe0e2f8"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/residual-replay.json": {
+      "bytes": 477,
+      "sha256": "83ae5957ece4e1ce66d766bc0db238e4bb298a34f361046fd33b545989173baa"
+    },
+    "experiments/jev-replacement/20260924-runtime-09/strong-residual-replay.json": {
+      "bytes": 477,
+      "sha256": "ca0d702e790e1e0145627cfde1751ff7176478397089ef760f22e62660455f85"
+    },
+    "lib/game/rules.ts": {
+      "bytes": 6980,
+      "sha256": "1f5ec95e55e5711642f0ca5a7ffc67843559f47a141295ef59407b706700cc31"
+    },
+    "lib/ai/features.ts": {
+      "bytes": 5745,
+      "sha256": "bc6a392c53ba2958bed493b7c88ebfa1a88650405cdae0737084275ee63f60f3"
+    },
+    "lib/ai/policy.ts": {
+      "bytes": 2742,
+      "sha256": "5d2ba53e53c376a40851eff5847d1fbdb37fab7b76723ef91b3c3e02b604bec3"
+    },
+    "lib/ai/search.ts": {
+      "bytes": 5928,
+      "sha256": "afdc052c01a01dc553069679949320122c1dafb5644c56e37fdeb31452f58b5a"
+    },
+    "scripts/ai/benchmark-policy.mjs": {
+      "bytes": 3362,
+      "sha256": "c3d050004f9f128e0ae17056d52d8a3c4630c38312a9ccb737f39e68dea58ddd"
+    },
+    "scripts/ai/verify-local.mjs": {
+      "bytes": 4049,
+      "sha256": "90d695dfecd498723d7a8df657b5e77a870f22861f998f61e5b8df98343315fe"
+    },
+    "tests/runtime.test.mjs": {
+      "bytes": 3581,
+      "sha256": "483c9ba35e2311f1b4667022f7f5d13355d94317490b8b897c88474dde7ccc1f"
+    }
+  }
+}

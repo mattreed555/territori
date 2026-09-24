@@ -1,6 +1,6 @@
-import { legalMoves, moveId, type Game, type Move } from '../game/rules';
+import { moveId, type Game, type Move } from '../game/rules';
 import { STRATEGIES, type Strategy } from '../game/strategies';
-import { FEATURES, FEATURE_VERSION, moveFeatures } from './features';
+import { FEATURES, FEATURE_VERSION, legalMoveFeatures } from './features';
 import { RULESET } from './dataset';
 export type Weights={weights:number[];mean:number[];scale:number[];samples:number};
 export type PolicyModel={version:1;ruleset:string;featureVersion:number;features:string[];strategies:Partial<Record<Strategy,Weights>>;training:{seed:number;trainGameIds:string[];testGameIds:string[];softTargetMix?:number;sharedPriorStrength?:number}};
@@ -15,7 +15,7 @@ export function validateModel(value:unknown):PolicyModel {
 }
 export function rankMoves(game:Game,strategy:Strategy,model:PolicyModel):{move:Move;score:number}[] {
   const fit=model.strategies[strategy];if(!fit)throw new Error(`No trained policy for ${strategy}`);
-  return legalMoves(game).map(move=>({move,score:moveFeatures(game,move,model.features).reduce((sum,x,j)=>sum+fit.weights[j]*(x-fit.mean[j])/fit.scale[j],0)})).sort((a,b)=>b.score-a.score || moveId(a.move).localeCompare(moveId(b.move)));
+  return legalMoveFeatures(game,model.features).map(({move,values})=>({move,score:values.reduce((sum,x,j)=>sum+fit.weights[j]*(x-fit.mean[j])/fit.scale[j],0)})).sort((a,b)=>b.score-a.score || moveId(a.move).localeCompare(moveId(b.move)));
 }
 export function chooseLocalMove(game:Game,strategy:Strategy,model:PolicyModel,epsilon=0,random:()=>number=Math.random):Move {
   if(!Number.isFinite(epsilon)||epsilon<0||epsilon>1)throw new Error('Randomness must be between 0 and 1');

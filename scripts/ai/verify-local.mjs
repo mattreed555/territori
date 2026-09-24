@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import {parseArgs} from 'node:util';
 import {loadModules} from './modules.mjs';
 import {atomicJSON} from './budget.mjs';
-const {values:v}=parseArgs({options:Object.fromEntries(['run','candidate','baseline','style'].map(k=>[k,{type:'string'}]))});
+const {values:v}=parseArgs({options:Object.fromEntries(['run','candidate','baseline','style','out'].map(k=>[k,{type:'string'}]))});
 if(!v.run||!v.candidate||!v.baseline)throw Error('Use --run tournament-prefix --candidate model --baseline model');
 const load=await loadModules(),{newGame,applyMove,moveId}=await load('game/rules'),{recordDecision,recordResult}=await load('ai/dataset'),{validateModel,chooseLocalMove,seededRandom}=await load('ai/policy'),{chooseSearchMove,SEARCH_VERSION}=await load('ai/search'),{STRATEGIES}=await load('game/strategies');
 const report=JSON.parse(await fs.readFile(v.run+'.json')),bytes=await fs.readFile(v.run+'.jsonl.gz'),events=gunzipSync(bytes).toString().trim().split('\n').map(JSON.parse);
@@ -43,4 +43,4 @@ for(const r of report.results){
  assert.ok(seenResult);
 }
 const evidence={datasetSha256:hash(bytes),candidateSha256:hash(cb),baselineSha256:hash(bb),styleSha256:styleBytes?hash(styleBytes):null,searchVersion:SEARCH_VERSION,games:results,decisions,allStatesChoicesAndOutcomesReproduced:true,paidCalls:0};
-await atomicJSON(v.run+'-integrity.json',evidence);console.log(JSON.stringify(evidence));
+await atomicJSON(v.out||v.run+'-integrity.json',evidence);console.log(JSON.stringify(evidence));

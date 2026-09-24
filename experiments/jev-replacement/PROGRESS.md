@@ -1,5 +1,15 @@
 # Jev replacement checkpoint
 
+## 2026-09-24 — behavior-preserving runtime optimization (latest)
+
+Session `20260924-runtime-09` is CLOSED. Reconciled GitHub `a7424bfa51b48bbcda86cd68ec785857391c1ca2`, local `072d349a870fd6e0ebcf18eba119327f819faf30` and unchanged public Sites version14. Offline lease commit `b29b712029b8be8932cdf510777aaf7db2eab9ce` preceded work. No paid calls, dependency/model changes, UI/default/audience changes or deployment.
+
+Shared starting-board feature work, cached internal adjacency, single validated successor enumeration, compact exact-terminal leaf states and conditional terminal tiebreak scoring reduce repeated computation. No rules or policy semantics changed. All600 complete search/style outputs match the pre-change fingerprints exactly. All2,550 seeded decisions and40 outcomes from both residual-08 tournaments replay exactly; these are NOT new matches. **44 tests, TypeScript and production build pass.**
+
+Unthrottled shared-host Node p95: base93.21→29.27ms, styled102.00→34.60ms. Fallback-only p95: base143.92→41.65ms, styled126.03→78.69ms. All raw timing/output hashes and reproducible commands: `20260924-runtime-09/README.md`. This is NOT a mobile result. Managed Sites browser testing requires a control-browser skill unavailable in the discovered inventory; no unsupported browser path was substituted. Browser/mobile gates remain unmeasured, and offline/data work can continue.
+
+**Replacement is not ready; Jev remains live.** No independent acceptance games yet. Fluid style evidence, all-five validation, mobile latency, no-API UI integration and deployment checks remain. Cost unchanged at **$0.660659874**, remaining **$3.589340126**, including **$3.25** acceptance reserve; no active financial reservation or uncertainty. Next: a small targeted Fluid/shift teacher probe with repeated same-state controls, after a fresh lease/budget/pricing check, alongside an authorized constrained-browser measurement when available. Do not spend the acceptance reserve on an unfrozen candidate or claim a heavier model is necessary. This supersedes older next steps.
+
 ## 2026-09-24 — matched-state strategy residuals (latest)
 
 Session `20260924-residual-08` is CLOSED. Reconciled GitHub `c8f05ab139be5e1bedf09e193f9f5f2ba95b8a17`, local `d6cca17a6f33f137a1e0cb57d26d5681d3612bcd`, and unchanged public Sites version14. Offline lease commit `bbd3eebbb90c8a77a878b8293e978dfd14695003` preceded work. No paid calls, dependencies, UI/default changes, deployment or audience changes.

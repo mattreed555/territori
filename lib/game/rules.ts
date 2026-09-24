@@ -10,6 +10,10 @@ export function neighbors(i: number, size: number = RULES.size): number[] {
   const row = Math.floor(i / size), col = i % size;
   return [row > 0 ? i - size : -1, row < size - 1 ? i + size : -1, col > 0 ? i - 1 : -1, col < size - 1 ? i + 1 : -1].filter(n => n >= 0);
 }
+// Internal immutable-by-convention adjacency. Public neighbors still returns a
+// fresh array, so callers cannot mutate the engine's cached topology.
+const adjacency = Array.from({length:RULES.size ** 2},(_,i)=>neighbors(i));
+const adjacent = (i:number,size:number) => size===RULES.size && Number.isInteger(i) && i>=0 && i<adjacency.length ? adjacency[i] : neighbors(i,size);
 export const positionKey = (board: Cell[], turn: Color, supply: Record<Color, number>) => `${turn}:${supply.blue}:${supply.red}:` + board.map(c => c === 'blue' ? 'B' : c === 'red' ? 'R' : '.').join('');
 export function newGame(): Game {
   const board: Cell[] = Array(RULES.size ** 2).fill(null);
@@ -22,7 +26,7 @@ export function isCapturable(board: Cell[], i: number, size: number = RULES.size
   const owner = board[i];
   if (!owner) return false;
   let allies = 0, enemies = 0;
-  for (const n of neighbors(i, size)) {
+  for (const n of adjacent(i, size)) {
     if (board[n] === owner) allies++;
     else if (board[n] === other(owner)) enemies++;
   }
@@ -31,7 +35,7 @@ export function isCapturable(board: Cell[], i: number, size: number = RULES.size
 export function territory(board: Cell[], size: number = RULES.size): Cell[] {
   return board.map((piece, i) => {
     if (piece) return piece;
-    const reach = new Set(neighbors(i, size).map(n => board[n]).filter(Boolean));
+    const reach = new Set(adjacent(i, size).map(n => board[n]).filter(Boolean));
     return reach.size === 1 ? [...reach][0] as Color : null;
   });
 }
@@ -42,7 +46,7 @@ export function score(board: Cell[], size: number = RULES.size) {
     totals[c]++;
     if (seen.has(i)) return;
     const stack = [i]; seen.add(i); let count = 0;
-    while (stack.length) { const n = stack.pop()!; count++; neighbors(n, size).forEach(j => { if (!seen.has(j) && land[j] === c) { seen.add(j); stack.push(j); } }); }
+    while (stack.length) { const n = stack.pop()!; count++; adjacent(n, size).forEach(j => { if (!seen.has(j) && land[j] === c) { seen.add(j); stack.push(j); } }); }
     largest[c] = Math.max(largest[c], count);
   });
   const delta = totals.blue - totals.red || largest.blue - largest.red;
@@ -54,7 +58,7 @@ export function legalMoves(g: Pick<Game, 'board' | 'turn' | 'supply' | 'ended'>)
   g.board.forEach((c, i) => {
     if (!c && g.supply[g.turn] > 0) moves.push({ type: 'place', to: i });
     if (c === other(g.turn) && isCapturable(g.board, i)) moves.push({ type: 'remove', to: i });
-    if (c === g.turn) neighbors(i).forEach(to => { if (!g.board[to]) moves.push({ type: 'shift', from: i, to }); });
+    if (c === g.turn) adjacent(i, RULES.size).forEach(to => { if (!g.board[to]) moves.push({ type: 'shift', from: i, to }); });
   });
   return moves;
 }
@@ -80,14 +84,30 @@ export function* legalSuccessors(g: Game): Generator<{move: Move; game: Game}> {
   for (const move of legalMoves(g)) yield {move, game: advanceLegalMove(g, move)};
 }
 function advanceLegalMove(g: Game, m: Move): Game {
-  const board = movedBoard(g.board, g.turn, m), supply = { ...g.supply }, captured = { ...g.captured };
-  if (m.type === 'place') supply[g.turn]--;
+  const {board,supply,turn,finalRound,key,ended}=legalMoveOutcome(g,m), captured={...g.captured};
   if (m.type === 'remove') captured[other(g.turn)]++;
+  const positions={...g.positions,[key]:(g.positions[key]||0)+1};
+  return { board, supply, captured, turn, ply: g.ply + 1, finalRound, ended, positions, last: { color: g.turn, move: m } };
+}
+/** Leaf evaluation needs exact terminal/repetition semantics, but not a copied
+ * history, capture ledger or last-move record. This is deliberately NOT a Game:
+ * it cannot be advanced into another turn. Both paths share the outcome helper.
+ */
+export type ValueState = Pick<Game,'board'|'supply'|'ended'>;
+export function* legalValueSuccessors(g:Game):Generator<{move:Move;state:ValueState}> {
+  for(const move of legalMoves(g)){
+    const {board,supply,ended}=legalMoveOutcome(g,move);
+    yield {move,state:{board,supply,ended}};
+  }
+}
+function legalMoveOutcome(g:Game,m:Move) {
+  const board = movedBoard(g.board, g.turn, m), supply = { ...g.supply };
+  if (m.type === 'place') supply[g.turn]--;
   const turn = nextTurn(g);
   const finalRound = g.finalRound || (supply[g.turn] === 0);
-  const key = positionKey(board, turn, supply), positions = { ...g.positions, [key]: (g.positions[key] || 0) + 1 };
-  const ended = finalRound && g.turn === 'red' ? 'supply' : positions[key] >= RULES.repetitions ? 'repetition' : null;
-  return { board, supply, captured, turn, ply: g.ply + 1, finalRound, ended, positions, last: { color: g.turn, move: m } };
+  const key = positionKey(board, turn, supply);
+  const ended:Game['ended'] = finalRound && g.turn === 'red' ? 'supply' : (g.positions[key]||0)+1 >= RULES.repetitions ? 'repetition' : null;
+  return {board,supply,turn,finalRound,key,ended};
 }
 export const coordinate = (i: number) => String.fromCharCode(65 + i % RULES.size) + (Math.floor(i / RULES.size) + 1);
 export function moveLabel(m: Move) { return m.type === 'shift' ? `shifted ${coordinate(m.from)} to ${coordinate(m.to)}` : m.type === 'place' ? `placed at ${coordinate(m.to)}` : `captured at ${coordinate(m.to)}`; }
