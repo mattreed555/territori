@@ -1,12 +1,14 @@
 {
   "version": 1,
   "id": "20260925-mobile-browser-26",
-  "status": "active",
+  "status": "closed",
   "purpose": "Local candidate browser QA",
   "startedAt": "2026-09-25T13:55:42.612Z",
   "expiresAt": "2026-09-25T14:55:42.612Z",
   "budgetReservationNano": 0,
   "financialSessionId": null,
   "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
-  "note": "User-authorized CUA preview; no paid calls, default change, or deployment."
+  "note": "User-authorized CUA local preview on Chrome CDP; desktop functional checks complete. Mobile viewport/CPU unavailable in documented API. No source edits, paid calls, default change, or deployment.",
+  "closedAt": "2026-09-25T13:59:06.348Z",
+  "spentNano": 0
 }
