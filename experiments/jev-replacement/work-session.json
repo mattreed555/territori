@@ -1,14 +1,12 @@
 {
   "version": 1,
-  "id": "20260924-acceptance-25",
-  "status": "closed",
-  "purpose": "Sealed independent acceptance batch10",
-  "startedAt": "2026-09-24T21:26:36.140Z",
-  "expiresAt": "2026-09-25T00:26:36.140Z",
+  "id": "20260925-mobile-browser-26",
+  "status": "active",
+  "purpose": "Local candidate browser QA",
+  "startedAt": "2026-09-25T13:55:42.612Z",
+  "expiresAt": "2026-09-25T14:55:42.612Z",
   "budgetReservationNano": 0,
-  "financialSessionId": "acceptance-v1-10",
+  "financialSessionId": null,
   "protocolSha256": "e55f94b12ce651c93aebd1c7001c9175f6bde226746117361daa6935feec6bb9",
-  "closedAt": "2026-09-24T21:31:10.792Z",
-  "spentNano": 297359244,
-  "note": "Batch10 completed20/20, exact replay and usage; cumulative200/200."
+  "note": "User-authorized CUA preview; no paid calls, default change, or deployment."
 }
