@@ -2,7 +2,7 @@
 import { moveId, type Game, type Move } from '../game/rules';
 import { STRATEGIES, type Strategy } from '../game/strategies';
 import { FEATURE_VERSION, FEATURES, moveFeatures } from './features';
-import { RULESET } from './dataset';
+import { MODEL_RULESET } from './dataset';
 import type { PolicyModel } from './policy';
 import { rankSearchMoves, chooseSearchMove, type SearchOptions } from './search';
 
@@ -13,7 +13,7 @@ export type StyleModel = {
 };
 export function validateStyleModel(value:unknown):StyleModel {
   const m=value as StyleModel, names=Object.keys(STRATEGIES);
-  if(!m || m.kind!=='matched-style' || m.version!==1 || m.ruleset!==RULESET || m.featureVersion!==FEATURE_VERSION ||
+  if(!m || m.kind!=='matched-style' || m.version!==1 || m.ruleset!==MODEL_RULESET || m.featureVersion!==FEATURE_VERSION ||
     !Array.isArray(m.features) || !m.features.length || new Set(m.features).size!==m.features.length || m.features.some(f=>!Object.hasOwn(FEATURES,f)) ||
     !Array.isArray(m.scale) || m.scale.length!==m.features.length || m.scale.some(s=>!Number.isFinite(s)||s<=0) ||
     !m.weights || Object.keys(m.weights).length!==names.length || names.some(s=>!Array.isArray(m.weights[s as Strategy]) || m.weights[s as Strategy].length!==m.features.length || m.weights[s as Strategy].some(w=>!Number.isFinite(w))))throw new Error('Invalid matched-style model');

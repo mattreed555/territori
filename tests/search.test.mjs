@@ -45,6 +45,13 @@ test('terminal values use actual tiebreaks and both colors, not stone count',()=
  assert.equal(searchValue(g,'blue'),10000);assert.equal(searchValue(g,'red'),-10000);
  g.board[63]='red';assert.equal(score(g.board).winner,null);assert.equal(searchValue(g,'blue'),0);
 });
+test('terminal search respects capture points even when territory suggests another winner',()=>{
+ const g=newGame();g.turn='red';g.finalRound=true;g.board[0]='blue';g.board[1]='red';g.captured.red=6;g.supply={blue:24,red:18};
+ const m={type:'remove',to:0},end=applyMove(g,m);
+ assert.equal(end.ended,'supply');assert.equal(score(end.board,end.captured).winner,'blue');
+ const row=rankSearchMoves(g,'Balanced',model,{policyBeam:0,priorWeight:0}).ranked.find(r=>moveId(r.move)===moveId(m));
+ assert.equal(row.searchValue,-10000);
+});
 test('incremental leaf values and first worst replies match full-board reference on varied states',async()=>{
  const positions=JSON.parse(gunzipSync(await fs.readFile(new URL('../experiments/jev-replacement/20260924-varied-12/positions.json.gz',import.meta.url))));
  let roots=0;const kinds=new Set(),colors=new Set();

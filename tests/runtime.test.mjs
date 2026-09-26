@@ -7,11 +7,18 @@ test('fast terminal values preserve territory and connected-area tiebreak result
  for(let run=0;run<2000;run++){
   const g=newGame();g.ended=run%2?'supply':'repetition';
   g.board=g.board.map(()=>[null,'blue','red'][Math.floor(random()*3)]);
-  const result=score(g.board);if(result.totals.blue===result.totals.red)ties++;
+  g.captured={blue:Math.floor(random()*8),red:Math.floor(random()*8)};
+  const result=score(g.board,g.captured);if(result.points.blue===result.points.red)ties++;
   for(const color of ['blue','red'])assert.equal(searchValue(g,color),result.winner===color?10000:result.winner===null?0:-10000);
  }
  assert.ok(ties>10);
  const empty=newGame();empty.ended='repetition';assert.equal(searchValue(empty,'blue'),0);
+});
+test('terminal and fast leaf values account for captures in the correct direction',()=>{
+ const g=newGame();g.board[0]='blue';g.board[63]='red';g.captured.blue=2;g.captured.red=1;
+ assert.equal(searchValue(g,'blue'),-1); // territory equal; red owns one more capture point and supply is equal
+ g.ended='supply';assert.equal(score(g.board,g.captured).winner,'red');
+ assert.equal(searchValue(g,'blue'),-10000);assert.equal(searchValue(g,'red'),10000);
 });
 test('batched features exactly match single-move values through varied legal states',()=>{
  const random=seededRandom(2409);let checked=0;
@@ -38,7 +45,7 @@ test('leaf value states retain exact full-transition outcomes including repetiti
   let g=newGame();
   for(let ply=0;ply<80&&!g.ended;ply++){
    const leaves=[...legalValueSuccessors(g)];assert.deepEqual(leaves.map(x=>moveId(x.move)),legalMoves(g).map(moveId));
-   for(const leaf of leaves){const full=applyMove(g,leaf.move);assert.deepEqual(leaf.state,{board:full.board,supply:full.supply,ended:full.ended});checked++;}
+   for(const leaf of leaves){const full=applyMove(g,leaf.move);assert.deepEqual(leaf.state,{board:full.board,supply:full.supply,captured:full.captured,ended:full.ended});checked++;}
    g=applyMove(g,leaves[Math.floor(random()*leaves.length)].move);
   }
  }

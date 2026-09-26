@@ -1,5 +1,5 @@
 import { applyMove, isCapturable, legalMoves, legalSuccessors, neighbors, nextPositionKey, other, score, RULES, type Cell, type Color, type Game, type Move } from '../game/rules';
-import { captureOutcome } from '../game/jev';
+import { captureOutcome } from '../game/capture';
 export const FEATURE_VERSION = 1;
 const exposure = (board: Cell[], color: Color) => board.reduce<number>((n,c,i) => n + Number(c === color && isCapturable(board,i)),0);
 function largestGroup(board: Cell[], color: Color) {
@@ -46,13 +46,13 @@ export const FEATURES: Record<string,(c: Context)=>number> = {
   placeReserve:c=>Number(c.move.type==='place')*c.game.supply[c.me]/RULES.pieces,
   removeReserve:c=>Number(c.move.type==='remove')*c.game.supply[c.me]/RULES.pieces,
   shiftReserve:c=>Number(c.move.type==='shift')*c.game.supply[c.me]/RULES.pieces,
-  terminalWin:c=>Number(!!c.next.ended && c.after.winner===c.me),
-  terminalLoss:c=>Number(!!c.next.ended && c.after.winner===c.opponent),
+  terminalWin:c=>Number(!!c.next.ended && score(c.next.board,c.next.captured).winner===c.me),
+  terminalLoss:c=>Number(!!c.next.ended && score(c.next.board,c.next.captured).winner===c.opponent),
   repetitionCount:c=>c.game.positions[nextPositionKey(c.game,c.move)] || 0,
 };
 export const FEATURE_NAMES=Object.keys(FEATURES);
 // Opt-in additions. Existing feature meanings/defaults and v1 models stay intact.
-// Capture replies use exactly the same legal one-reply calculation supplied to Jev.
+// Capture replies use the canonical legal one-reply calculation.
 const tactical:Record<string,(c:Context)=>number>={
   movedStoneExposed:c=>Number(c.move.type!=='remove' && isCapturable(c.next.board,c.move.to)),
   captureReplyAvailable:c=>Number(c.capture()!==null),

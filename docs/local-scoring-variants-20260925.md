@@ -1,0 +1,17 @@
+# Local scoring variants rejected (2026-09-25)
+
+Both variants were temporary, local-only changes against published v16 source `7214d1ba126d1d809a71ea3671a90d582ac90966`. Neither is shipped. The current source retains search v2, intent v1, and candidate ID `hybrid-search2-intent1-residual08-v1`. No Jev calls, rule edits, or new model weights were involved.
+
+Inputs: policy `experiments/jev-replacement/20260921-shared-03/tactical-soft-prior-strong.json` (SHA-256 `53b12f62523451c442432c7374a1126746649ef244ffc90d88f20c916cc5f4cb`); style `experiments/jev-replacement/20260924-residual-08/style-ridge-0.1.json` (SHA-256 `75d075adcae50d9a51ef686488f9ee49631e2549c739e2e0ecdec83e429be3db`). Intent strength/margin 1/1; epsilon .03; two independently seeded color streams. The 25-pair smoke used `scripts/ai/intent-selfplay.mjs --seed 2412`, all ordered five-strategy pairings. Its immediate-recapture count is a placed cell removed on the following ply. The direct comparison used 20 games: each of five strategies against its prior-policy counterpart, both colors, seeds 2412 and 2413, max 160 plies; the new side and prior side shared the same seeded stream per color. These are small development samples, not independent acceptance or proof of strength.
+
+| Scoring | Exact temporary change | 25-pair immediate recaptures | Completed / truncated | Mean turns | Direct new-v-prior points / 20 | Direct new/prior recaptures |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Published baseline | `.1 × (own supply − opposing supply)` | 559 | 25 / 0 | 61.6 | — | — |
+| Global reserve value | Replace `.1` with `1` in both leaf evaluators | 411 | 25 / 0 | 65.6 | 8 (4W, 8D, 8L) | 74 / 361 |
+| Exact empty exchange | Keep `.1`; subtract 1 from a nonterminal reply value only when a placement is immediately removed and the complete board equals the pre-placement board, own supply falls by one; terminal outcomes unchanged | 242 | 25 / 0 | 59.28 | 7 (4W, 6D, 10L) | 50 / 358 |
+
+The direct results by strategy (four games each) were, respectively, global: Aggressive 3.5, Cautious .5, Expansive 1, Fluid .5, Balanced 2.5; exact exchange: Aggressive 3, Cautious .5, Expansive 1, Fluid 1.5, Balanced 1. Both changes materially reduced the conspicuous cycle but clearly lost this direct comparison. The exact-exchange variant kept terminal values canonical and did not ban sacrifices; nevertheless, identical-board exchanges can sometimes be an effective supply-tempo tactic. Its reduction is not sufficient reason to ship.
+
+The global variant passed 26 targeted search, style, intent, runtime, and local-player tests. The exact-exchange variant was not run through those reference tests because its added exchange term intentionally differs from the current exhaustive `searchValue` assertion; since it lost the direct comparison, it was reverted without changing those assertions. Neither variant was built or published. Original 200-game acceptance numbers do not transfer to either variant.
+
+To rerun a future versioned candidate against v16, use `node scripts/ai/compare-supply-score.mjs 7214d1ba126d1d809a71ea3671a90d582ac90966` after its implementation; the script prints full per-game rows and aggregates. The current unchanged candidate against its own ref is not a meaningful comparison. A next change needs a better finite-supply horizon or tactical calibration that keeps demonstrable useful exchanges, followed by independent color/strategy strength checks.

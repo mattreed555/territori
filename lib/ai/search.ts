@@ -24,7 +24,7 @@ function cellTerms(board:Cell[],i:number,color:Color):[number,number,number] {
  * Integer totals preserve the reference evaluator's arithmetic exactly. Supply,
  * repetition and final-round outcomes still come from the canonical engine.
  */
-function replyEvaluator(parent:Game,color:Color) {
+export function replyEvaluator(parent:Game,color:Color) {
  const terms=parent.board.map((_,i)=>cellTerms(parent.board,i,color));
  const totals=terms.reduce((a,t)=>[a[0]+t[0],a[1]+t[1],a[2]+t[2]],[0,0,0]);
  const enemy=other(color);
@@ -34,8 +34,9 @@ function replyEvaluator(parent:Game,color:Color) {
    const next=cellTerms(state.board,i,color),before=terms[i];
    territory+=next[0]-before[0];stones+=next[1]-before[1];exposure+=next[2]-before[2];
   }
-  if(state.ended){const winner=territory===0?score(state.board).winner:territory>0?color:enemy;return winner===color?WIN:winner===null?0:-WIN;}
-  return territory+.25*stones-.5*exposure+.1*(state.supply[color]-state.supply[enemy]);
+  const points=territory+state.captured[enemy]-state.captured[color];
+  if(state.ended){const winner=points===0?score(state.board,state.captured).winner:points>0?color:enemy;return winner===color?WIN:winner===null?0:-WIN;}
+  return points+.25*stones-.5*exposure+.1*(state.supply[color]-state.supply[enemy]);
  };
 }
 
@@ -56,12 +57,13 @@ export function searchValue(game: ValueState, color: Color): number {
     else if (piece === enemy) { territory--; stones--; exposure -= Number(own > opposing); }
     else territory += own && !opposing ? 1 : opposing && !own ? -1 : 0;
   }
+  const points = territory + game.captured[enemy] - game.captured[color];
   if (game.ended) {
-    // Connected-area scoring is needed only when the territory count ties.
-    const winner = territory === 0 ? score(game.board).winner : territory > 0 ? color : enemy;
+    // Connected-area scoring is needed only when total points tie.
+    const winner = points === 0 ? score(game.board,game.captured).winner : points > 0 ? color : enemy;
     return winner === color ? WIN : winner === null ? 0 : -WIN;
   }
-  return territory + .25 * stones - .5 * exposure + .1 * (game.supply[color] - game.supply[enemy]);
+  return points + .25 * stones - .5 * exposure + .1 * (game.supply[color] - game.supply[enemy]);
 }
 
 export function rankSearchMoves(game: Game, strategy: Strategy, model: PolicyModel, options: SearchOptions = {}) {

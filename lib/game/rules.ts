@@ -1,4 +1,4 @@
-/** Rules live here; rendering and the Jev adapter consume this pure engine. */
+/** Rules live here; rendering and local AI consume this pure engine. */
 export const RULES = { size: 8, pieces: 25, repetitions: 3 } as const;
 export type Color = 'blue' | 'red';
 export type Cell = Color | null;
@@ -44,7 +44,7 @@ export function territory(board: Cell[], size: number = RULES.size): Cell[] {
     return blue===red?null:blue?'blue':'red';
   });
 }
-export function score(board: Cell[], size: number = RULES.size) {
+export function score(board: Cell[], captured: Record<Color, number> = {blue:0,red:0}, size: number = RULES.size) {
   const land = territory(board, size), totals = { blue: 0, red: 0 }, largest = { blue: 0, red: 0 }, seen = new Uint8Array(board.length);
   land.forEach((c, i) => {
     if (!c) return;
@@ -54,8 +54,10 @@ export function score(board: Cell[], size: number = RULES.size) {
     while (stack.length) { const n = stack.pop()!; count++; for(const j of adjacent(n,size)){if(!seen[j] && land[j]===c){seen[j]=1;stack.push(j);}} }
     largest[c] = Math.max(largest[c], count);
   });
-  const delta = totals.blue - totals.red || largest.blue - largest.red;
-  return { land, totals, largest, winner: delta > 0 ? 'blue' as Color : delta < 0 ? 'red' as Color : null };
+  const captures = { blue: captured.red, red: captured.blue };
+  const points = { blue: totals.blue + captures.blue, red: totals.red + captures.red };
+  const delta = points.blue - points.red || largest.blue - largest.red;
+  return { land, totals, captures, points, largest, winner: delta > 0 ? 'blue' as Color : delta < 0 ? 'red' as Color : null };
 }
 export function legalMoves(g: Pick<Game, 'board' | 'turn' | 'supply' | 'ended'>): Move[] {
   if (g.ended) return [];
@@ -98,11 +100,12 @@ function advanceLegalMove(g: Game, m: Move): Game {
  * history, capture ledger or last-move record. This is deliberately NOT a Game:
  * it cannot be advanced into another turn. Both paths share the outcome helper.
  */
-export type ValueState = Pick<Game,'board'|'supply'|'ended'>;
+export type ValueState = Pick<Game,'board'|'supply'|'captured'|'ended'>;
 export function* legalValueSuccessors(g:Game):Generator<{move:Move;state:ValueState}> {
   for(const move of legalMoves(g)){
     const {board,supply,ended}=legalMoveOutcome(g,move);
-    yield {move,state:{board,supply,ended}};
+    const captured={...g.captured};if(move.type==='remove')captured[other(g.turn)]++;
+    yield {move,state:{board,supply,captured,ended}};
   }
 }
 function legalMoveOutcome(g:Game,m:Move) {

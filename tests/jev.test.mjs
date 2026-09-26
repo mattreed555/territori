@@ -6,10 +6,10 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'territori-test-'));
 process.on('exit', () => fs.rmSync(dir, { recursive: true, force: true }));
-for (const name of ['rules', 'strategies', 'jev']) {
+for (const name of ['rules', 'strategies', 'capture', 'jev']) {
   const source = fs.readFileSync(new URL(`../lib/game/${name}.ts`, import.meta.url), 'utf8');
   const output = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 } }).outputText;
-  fs.writeFileSync(path.join(dir, `${name}.mjs`), output.replaceAll("'./rules'", "'./rules.mjs'").replaceAll("'./strategies'", "'./strategies.mjs'"));
+  fs.writeFileSync(path.join(dir, `${name}.mjs`), output.replaceAll("'./rules'", "'./rules.mjs'").replaceAll("'./strategies'", "'./strategies.mjs'").replaceAll("'./capture'", "'./capture.mjs'"));
 }
 const {newGame} = await import(pathToFileURL(path.join(dir, 'rules.mjs')));
 const {captureOutcome,decisionRequest} = await import(pathToFileURL(path.join(dir, 'jev.mjs')));

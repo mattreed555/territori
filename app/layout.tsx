@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Territori",
-  description: "A simple game of territory. Play against Jev or watch two strategies compete.",
+  description: "A game of territory and captures. Play against local AI or watch two strategies compete.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

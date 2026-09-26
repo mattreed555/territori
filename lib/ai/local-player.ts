@@ -5,13 +5,12 @@ import type { Strategy } from '../game/strategies';
 
 export type LocalPlayer={id:string;choose:(game:Game,strategy:Strategy,random?:()=>number)=>Move};
 type CandidateModule=typeof import('./candidate');
-/** Local-only boundary. Loading assets may fail; never contact Jev on failure. */
+/** Local-only boundary. Loading assets may fail without contacting a remote service. */
 export async function prepareLocalPlayer(settings:Settings,strategies:Strategy[],loadCandidate:()=>Promise<CandidateModule>=()=>import('./candidate')):Promise<LocalPlayer> {
  const s=validateSettings(settings);
- if(s.engine==='jev')throw new Error('Jev is not a local engine');
  if(s.engine==='local'){
   const model=s.model;
-  if(!model || strategies.some(strategy=>!model.strategies[strategy]))throw new Error('The loaded model does not cover these strategies. Load a complete model or choose Jev explicitly in the AI lab.');
+  if(!model || strategies.some(strategy=>!model.strategies[strategy]))throw new Error('The loaded model does not cover these strategies. Load a complete model in the AI lab.');
   return {id:'uploaded-linear-v1',choose:(game,strategy,random=Math.random)=>chooseLocalMove(game,strategy,model,s.epsilon,random)};
  }
  try {

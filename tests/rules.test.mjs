@@ -53,7 +53,20 @@ test('third occurrence ends a shifting loop; captures with new supplies do not r
 });
 test('connected territory breaks tied totals', () => {
  const b=Array(100).fill(null);b[11]='blue';b[13]='blue';b[71]='red';b[79]='red';
- const s=score(b,10);assert.deepEqual(s.totals,{blue:9,red:9});assert.deepEqual(s.largest,{blue:9,red:5});assert.equal(s.winner,'blue');
+ const s=score(b,undefined,10);assert.deepEqual(s.totals,{blue:9,red:9});assert.deepEqual(s.largest,{blue:9,red:5});assert.equal(s.winner,'blue');
+});
+test('opponent stones captured add to own points and decide tied territory', () => {
+ const board=Array(64).fill(null);board[0]='blue';board[63]='red';
+ const tally=score(board,{blue:2,red:1});
+ assert.deepEqual(tally.totals,{blue:3,red:3});
+ assert.deepEqual(tally.captures,{blue:1,red:2});
+ assert.deepEqual(tally.points,{blue:4,red:5});assert.equal(tally.winner,'red');
+});
+test('connected territory breaks a tie in total points despite unequal captures', () => {
+ const board=Array(100).fill(null);board[11]='blue';board[13]='blue';board[71]='red';
+ const tally=score(board,{blue:4,red:0},10);
+ assert.deepEqual(tally.totals,{blue:9,red:5});
+ assert.deepEqual(tally.points,{blue:9,red:9});assert.equal(tally.winner,'blue');
 });
 test('empty opening alternates immediately; normal actions are available from the start', () => {
  let g=newGame();assert.deepEqual(g.supply,{blue:25,red:25});assert.equal(g.board.every(c=>c===null),true);

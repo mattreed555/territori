@@ -1,7 +1,7 @@
 import { moveId } from '../game/rules';
 import { STRATEGIES, type Strategy } from '../game/strategies';
 import { FEATURE_NAMES, FEATURE_VERSION, moveFeatures } from './features';
-import { RULESET, type Decision } from './dataset';
+import { MODEL_RULESET, type Decision } from './dataset';
 import { seededRandom, rankMoves, type PolicyModel, type Weights } from './policy';
 import { trainingGroup, type TrainingDecision } from './training-data';
 export function splitGames(rows:TrainingDecision[],seed=1,testFraction=.2) {
@@ -39,7 +39,7 @@ export function trainPolicy(rows:TrainingDecision[],{seed=1,epochs=60,rate=.03,l
   if(!Number.isFinite(sharedPriorStrength)||sharedPriorStrength<0)throw new Error('Shared prior strength must be nonnegative');
   if(rows.some(r=>r.evaluationProtocol))throw new Error('Independent acceptance decisions are evaluation-only and cannot train a policy');
   const teacherRows=rows.filter(r=>r.source==='jev'),split=testGameIds===undefined?splitGames(teacherRows,seed,testFraction):splitByGameIds(teacherRows,testGameIds),random=seededRandom(seed);
-  const model:PolicyModel={version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
+  const model:PolicyModel={version:1,ruleset:MODEL_RULESET,featureVersion:FEATURE_VERSION,features,strategies:{},training:{seed,trainGameIds:split.trainGameIds,testGameIds:split.testGameIds}};
   if(softTargetMix>0)model.training.softTargetMix=softTargetMix;
   function fitRows(rows:Decision[],random:()=>number,prior:Weights|null=null):Weights {
     const data=rows.map(r=>({x:r.legalMoves.map(m=>moveFeatures(r.state,m,features)),targets:teacherTargets(r,softTargetMix)}));

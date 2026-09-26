@@ -1,6 +1,6 @@
 import { STRATEGIES, type Strategy } from '../game/strategies';
 import { FEATURE_VERSION, moveFeatures } from './features';
-import { RULESET } from './dataset';
+import { MODEL_RULESET } from './dataset';
 import { recordCounterfactual } from './counterfactual';
 import { trainingDecisions } from './training-data';
 import { teacherTargets } from './training';
@@ -50,6 +50,6 @@ export function trainStyle(probes:ReturnType<typeof recordCounterfactual>[],test
     augmented[j]=augmented[j].map(v=>v/divisor);
     for(let k=0;k<n;k++)if(k!==j){const factor=augmented[k][j];for(let c=0;c<n+strategies.length;c++)augmented[k][c]-=factor*augmented[j][c];}
   }
-  const model:StyleModel={kind:'matched-style',version:1,ruleset:RULESET,featureVersion:FEATURE_VERSION,features,scale,weights:Object.fromEntries(strategies.map((s,i)=>[s,augmented.map(row=>row[n+i])])) as Record<Strategy,number[]>,training:{trainGroupIds:groups.filter(g=>!test.has(g)),testGroupIds,positions:data.length,ridge,probabilityFloor}};
+  const model:StyleModel={kind:'matched-style',version:1,ruleset:MODEL_RULESET,featureVersion:FEATURE_VERSION,features,scale,weights:Object.fromEntries(strategies.map((s,i)=>[s,augmented.map(row=>row[n+i])])) as Record<Strategy,number[]>,training:{trainGroupIds:groups.filter(g=>!test.has(g)),testGroupIds,positions:data.length,ridge,probabilityFloor}};
   return validateStyleModel(model);
 }
